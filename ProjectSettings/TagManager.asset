@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - MeleeWeapon
+  - ProjectileWeapon
+  - BOT_Player
+  - BOT_Enemy
+  - DraggableUIPart
+  - UIPartSlot
+  - MenuClickable
+  - slot component
+  - HostedLobby
+  - MatchmakingLobby
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - UIScreens
+  - LANE3
+  - ENEMY LANE3
+  - LANE2
+  - ENEMY LANE2
+  - LANE1
+  - ENEMY LANE1
+  - BotComponent
+  - UIElements
+  - UIParts
+  - ParticleEffects
+  - BG
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 2144070507
+    locked: 0
+  - name: InBetweenBlocker
+    uniqueID: 689220403
+    locked: 0
+  - name: LANE3
+    uniqueID: 2449199441
+    locked: 0
+  - name: LANE2
+    uniqueID: 3959613269
+    locked: 0
+  - name: LANE1
+    uniqueID: 3870500323
+    locked: 0
+  - name: UI
+    uniqueID: 4150311481
+    locked: 0
+  - name: Overlay
+    uniqueID: 1012360337
+    locked: 0
+  - name: LoadingElements
+    uniqueID: 3159393251
+    locked: 0

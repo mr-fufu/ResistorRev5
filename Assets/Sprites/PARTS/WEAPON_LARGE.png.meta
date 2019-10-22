@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: eb3703cdc4adc8940b834be07dd42390
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HEADS_0
+    21300002: HEADS_1
+    21300004: HEADS_2
+    21300006: HEADS_3
+    21300008: HEADS_4
+    21300010: HEADS_5
+    21300012: HEADS_6
+    21300014: HEADS_7
+    21300016: HEADS_8
+    21300018: HEADS_9
+    21300020: HEADS_10
+    21300022: HEADS_11
+    21300024: HEADS_12
+    21300026: HEADS_13
+    21300028: HEADS_14
+    21300030: HEADS_15
+    21300032: TOPLARGE_0
+    21300034: TOPLARGE_1
+    21300036: TOPLARGE_2
+    21300038: TOPLARGE_3
+    21300040: TOPLARGE_4
+    21300042: TOPLARGE_5
+    21300044: TOPLARGE_6
+    21300046: TOPLARGE_7
+    21300048: TOPLARGE_8
+    21300050: TOPLARGE_9
+    21300052: TOPLARGE_10
+    21300054: TOPLARGE_11
+    21300056: TOPLARGE_12
+    21300058: TOPLARGE_13
+    21300060: TOPLARGE_14
+    21300062: TOPLARGE_15
+    21300064: TOPLARGE_16
+    21300066: TOPLARGE_17
+    21300068: WEAPON_LARGE_0
+    21300070: WEAPON_LARGE_1
+    21300072: WEAPON_LARGE_2
+    21300074: WEAPON_LARGE_3
+    21300076: WEAPON_LARGE_4
+    21300078: WEAPON_LARGE_5
+    21300080: WEAPON_LARGE_6
+    21300082: WEAPON_LARGE_7
+    21300084: WEAPON_LARGE_8
+    21300086: WEAPON_LARGE_9
+    21300088: WEAPON_LARGE_10
+    21300090: WEAPON_LARGE_11
+    21300092: WEAPON_LARGE_12
+    21300094: WEAPON_LARGE_13
+    21300096: WEAPON_LARGE_14
+    21300098: WEAPON_LARGE_15
+    21300100: WEAPON_LARGE_16
+    21300102: WEAPON_LARGE_17
+    21300104: WEAPON_LARGE_18
+    21300106: WEAPON_LARGE_19
+    21300108: WEAPON_LARGE_20
+    21300110: WEAPON_LARGE_21
+    21300112: WEAPON_LARGE_22
+    21300114: WEAPON_LARGE_23
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WEAPON_LARGE_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 106
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f26bd9b4a8954458076e796223658a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 106
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64d2bbf74bbfd84c9c5b72b9b52ca81
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 106
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf7acbb537c5aa4491961a414b3f0ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 106
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc0c0d1c866b6a47946514f33345de8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 85
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378bb8e7db160244982dd71795a06f3d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 85
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628697ad358d6de4db5ac5a5cbdf8417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_6
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 85
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129738d6a3e4b734c95802d5d94d3c84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 85
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d47053e229a80489e8ce0a9fac780b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e1513a7cb7fdc449110a66c551ee81
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_9
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 64
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d4303183578bd4d8458ce5f8c6b1ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 64
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d567997b37409449c0aa1e5c8e85c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 64
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960b51f411d29854ca874a0747c75259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 43
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653cab446e2d56f4480f13bfcbecf309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_13
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 43
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3718f6b012290904b85c2d1621e1fc7e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 43
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7db03f39f6a4f34fb88c30c0febede7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 43
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad447bf8e918b114cb79da725018b3c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 22
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c59098320109445b26f4adf4d2f025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_17
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 22
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be78ac68741d9f847a0708627dc5c352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 22
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2218da63910b8b94c82fdcd4af81caa2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 22
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f0d0a320a7df1438cf6ba6401b3a5b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70844d3ff31041549bcad9ae2bbdb988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_21
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a56f81449f6e2d429da88fed361bdcf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f573b87ac65d54448e47e0e0979e498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_LARGE_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 32
+        height: 20
+      alignment: 9
+      pivot: {x: 0.375, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d467bc039f32840965d142e3a9c28b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9ea4ce7a0ea24ad4eb7726fe34081d87
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

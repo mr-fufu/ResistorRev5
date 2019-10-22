@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: 427639aab35cfb946b8eaa51f72010cd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TOPSMALL_0
+    21300002: TOPSMALL_1
+    21300004: TOPSMALL_2
+    21300006: TOPSMALL_3
+    21300008: TOPSMALL_4
+    21300010: TOPSMALL_5
+    21300012: TOPSMALL_6
+    21300014: TOPSMALL_7
+    21300016: TOPSMALL_8
+    21300018: TOPSMALL_9
+    21300020: TOPSMALL_10
+    21300022: TOPSMALL_11
+    21300024: TOPSMALL_12
+    21300026: TOPSMALL_13
+    21300028: TOPSMALL_14
+    21300030: TOPSMALL_15
+    21300032: WEAPON_SMALL_0
+    21300034: WEAPON_SMALL_1
+    21300036: WEAPON_SMALL_2
+    21300038: WEAPON_SMALL_3
+    21300040: WEAPON_SMALL_4
+    21300042: WEAPON_SMALL_5
+    21300044: WEAPON_SMALL_6
+    21300046: WEAPON_SMALL_7
+    21300048: WEAPON_SMALL_8
+    21300050: WEAPON_SMALL_9
+    21300052: WEAPON_SMALL_10
+    21300054: WEAPON_SMALL_11
+    21300056: WEAPON_SMALL_12
+    21300058: WEAPON_SMALL_13
+    21300060: WEAPON_SMALL_14
+    21300062: WEAPON_SMALL_15
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WEAPON_SMALL_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8fa20603d756b047b341d645dc4bd1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 64
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdfe1361c8d0aa4fa68052cc608fc5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 64
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a365f59de62c0344aa6dcc1e214d77e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ebd5739cd971945806d68e2845f259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 43
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b70bad6fca54b548809532cbdd29a33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_5
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 43
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a151018673b049349aabfea0b57c007f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_6
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 43
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1391c16f4f1854093f44c7927b759f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 43
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b563ca5cfbaf874f88824a0c7581ff8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 22
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f2313db655b654e95b8acd7c403587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 22
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a349a38d52908514a8caf48808ae3ef4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_10
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 22
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181d4ce8a0ecaea4c85b66ea2d3d5638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 22
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142ea101b16eb2c428676be6bbdc0f18
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224152bb3b49d1241b4e957ce4081ce0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1687da1d6913c8489545eeb2e29f8a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_14
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd735b8797ec3f4286c76a1fd4f5a39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WEAPON_SMALL_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1
+        width: 20
+        height: 20
+      alignment: 9
+      pivot: {x: 0.25, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac5925bbda55d04e909a415bd66056c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ad57cd9e83624c14ea692e02bd4254b4
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
