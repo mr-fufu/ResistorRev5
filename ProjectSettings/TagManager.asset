@@ -15,6 +15,7 @@ TagManager:
   - slot component
   - HostedLobby
   - MatchmakingLobby
+  - WorkshopBot
   layers:
   - Default
   - TransparentFX

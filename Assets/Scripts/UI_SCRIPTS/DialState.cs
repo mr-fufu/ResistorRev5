@@ -9,6 +9,7 @@ public class DialState : MonoBehaviour {
     private Color selected_color = new Color(1, 1, 1, 1);
     private Color unselected_color = new Color(0, 0, 0, 0);
     private SpriteRenderer dial_sprite;
+    public WorkshopDrag tutorial;
 
     void Start () {
         dial_sprite = GetComponent<SpriteRenderer>();
@@ -29,7 +30,10 @@ public class DialState : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        transform.parent.gameObject.GetComponent<DialController>().dial_state = dial_no;
-        transform.parent.gameObject.GetComponent<DialController>().ChangeViewer();
+        if (tutorial.tutorial_complete)
+        {
+            transform.parent.gameObject.GetComponent<DialController>().dial_state = dial_no;
+            transform.parent.gameObject.GetComponent<DialController>().ChangeViewer();
+        }
     }
 }

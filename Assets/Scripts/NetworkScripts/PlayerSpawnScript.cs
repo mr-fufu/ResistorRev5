@@ -81,6 +81,12 @@ public class PlayerSpawnScript : NetworkBehaviour
 
     void Update()
     {
+        network_manager = GameObject.Find("NetworkManager");
+        if (network_manager != null)
+        {
+            bot_color = network_manager.GetComponent<CustomNetworkManager>().bot_color;
+        }
+
         // simply destroys the player object if the player doesn't have authority. This is
         // because we want to only instantiate a single bot and then update it onto the other
         // player's client. Therefore, you only ever spawn your own bots regardless of whether
@@ -407,7 +413,7 @@ public class PlayerSpawnScript : NetworkBehaviour
         lightning_start_segment.GetComponent<LightningDamage>().enemy_check = enemy_check;
         lightning_start_segment.GetComponent<LightningDamage>().lightning_start = true;
         lightning_start_segment.GetComponent<BoxCollider2D>().size = new Vector2((power + 2) * 26, 60);
-        lightning_start_segment.GetComponent<BoxCollider2D>().size = new Vector2(13 + 13 * (power), 10);
+        lightning_start_segment.GetComponent<BoxCollider2D>().offset = new Vector2(13 + 13 * (power), 10);
 
         // spawn the lightning start on the server
         NetworkServer.Spawn(lightning_start_segment);

@@ -2340,6 +2340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 5
+  tutorial: {fileID: 1075838285}
 --- !u!1 &164276168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,6 +4791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 4
+  tutorial: {fileID: 1075838285}
 --- !u!1 &303641519
 GameObject:
   m_ObjectHideFlags: 0
@@ -8770,6 +8772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 4
+  tutorial: {fileID: 1075838285}
 --- !u!1 &543834661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9312,6 +9315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 5
+  tutorial: {fileID: 1075838285}
 --- !u!1 &566306715
 GameObject:
   m_ObjectHideFlags: 0
@@ -10700,6 +10704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 2
+  tutorial: {fileID: 1075838285}
 --- !u!1 &665104447
 GameObject:
   m_ObjectHideFlags: 0
@@ -17179,6 +17184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 3
+  tutorial: {fileID: 1075838285}
 --- !u!1 &1013596513
 GameObject:
   m_ObjectHideFlags: 0
@@ -23738,6 +23744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 0
+  tutorial: {fileID: 1075838285}
 --- !u!1 &1395281442
 GameObject:
   m_ObjectHideFlags: 0
@@ -24536,6 +24543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 2
+  tutorial: {fileID: 1075838285}
 --- !u!1 &1437839487
 GameObject:
   m_ObjectHideFlags: 0
@@ -27154,6 +27162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 3
+  tutorial: {fileID: 1075838285}
 --- !u!1 &1640188532
 GameObject:
   m_ObjectHideFlags: 0
@@ -31312,6 +31321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 1
+  tutorial: {fileID: 1075838285}
 --- !u!1 &1898727856
 GameObject:
   m_ObjectHideFlags: 0
@@ -31763,6 +31773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 1
+  tutorial: {fileID: 1075838285}
 --- !u!1 &1925103028
 GameObject:
   m_ObjectHideFlags: 0
@@ -34194,6 +34205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dial_state: 0
   dial_no: 0
+  tutorial: {fileID: 1075838285}
 --- !u!1 &2033166759
 GameObject:
   m_ObjectHideFlags: 0

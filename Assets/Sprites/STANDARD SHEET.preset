@@ -4,145 +4,14 @@
 Preset:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: STANDARD SHEET
   m_TargetType:
     m_NativeTypeID: 1006
     m_ManagedTypePPtr: {fileID: 0}
     m_ManagedTypeFallback: 
   m_Properties:
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.size
-    value: 16
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[0].first
-    value: 21300000
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[0].second
-    value: HEADS_0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[1].first
-    value: 21300002
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[1].second
-    value: HEADS_1
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[2].first
-    value: 21300004
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[2].second
-    value: HEADS_2
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[3].first
-    value: 21300006
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[3].second
-    value: HEADS_3
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[4].first
-    value: 21300008
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[4].second
-    value: HEADS_4
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[5].first
-    value: 21300010
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[5].second
-    value: HEADS_5
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[6].first
-    value: 21300012
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[6].second
-    value: HEADS_6
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[7].first
-    value: 21300014
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[7].second
-    value: HEADS_7
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[8].first
-    value: 21300016
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[8].second
-    value: HEADS_8
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[9].first
-    value: 21300018
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[9].second
-    value: HEADS_9
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[10].first
-    value: 21300020
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[10].second
-    value: HEADS_10
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[11].first
-    value: 21300022
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[11].second
-    value: HEADS_11
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[12].first
-    value: 21300024
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[12].second
-    value: HEADS_12
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[13].first
-    value: 21300026
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[13].second
-    value: HEADS_13
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[14].first
-    value: 21300028
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[14].second
-    value: HEADS_14
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[15].first
-    value: 21300030
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_FileIDToRecycleName.Array.data[15].second
-    value: HEADS_15
-    objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_ExternalObjects.Array.size
     value: 0
@@ -404,6 +273,10 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_PlatformSettings.Array.data[0].m_ForceMaximumCompressionQuality_BC6H_BC7
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_PlatformSettings.Array.data[1].m_BuildTarget
     value: Standalone
     objectReference: {fileID: 0}
@@ -441,6 +314,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_PlatformSettings.Array.data[1].m_AndroidETC2FallbackOverride
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_PlatformSettings.Array.data[1].m_ForceMaximumCompressionQuality_BC6H_BC7
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -514,6 +391,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[0].m_SpriteID
     value: e58529389184679469d64c557a22278b
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[0].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[0].m_Vertices.Array.size
@@ -600,6 +481,10 @@ Preset:
     value: 7e9b9d9814662674bb916db0b2225863
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[1].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[1].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -682,6 +567,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[2].m_SpriteID
     value: f1dfbb783c4dad6469f3e4e43342dbd5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[2].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[2].m_Vertices.Array.size
@@ -768,6 +657,10 @@ Preset:
     value: 7779e6879be0f754383cfed628960e92
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[3].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[3].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -850,6 +743,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[4].m_SpriteID
     value: 5dda856e2631f0a49b948594f72918d5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[4].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[4].m_Vertices.Array.size
@@ -936,6 +833,10 @@ Preset:
     value: 6cf70d7340bf71b41bb93fb699fadb9c
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[5].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[5].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -1018,6 +919,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[6].m_SpriteID
     value: b21ef061dc2755f4e8c58bc990b93ec6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[6].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[6].m_Vertices.Array.size
@@ -1104,6 +1009,10 @@ Preset:
     value: 1573396f86ae9854abd5da89a99c127c
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[7].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[7].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -1186,6 +1095,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[8].m_SpriteID
     value: cf850ed1e8db01f40be3fa60b6e222cc
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[8].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[8].m_Vertices.Array.size
@@ -1272,6 +1185,10 @@ Preset:
     value: 01804cd3c2d44df4694dd90f6d325ce1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[9].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[9].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -1354,6 +1271,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[10].m_SpriteID
     value: 1fc25194557406a48a6ed2667b5dd452
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[10].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[10].m_Vertices.Array.size
@@ -1440,6 +1361,10 @@ Preset:
     value: 284908c3b2cdc174d81e68fede2a3dbb
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[11].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[11].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -1522,6 +1447,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[12].m_SpriteID
     value: 7de9247716dc4084fb4710cd8d87f088
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[12].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[12].m_Vertices.Array.size
@@ -1608,6 +1537,10 @@ Preset:
     value: d7793c8786d812e4cbc701257b09a57e
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[13].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[13].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -1690,6 +1623,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[14].m_SpriteID
     value: e27cc9a17052bcb42a98d6be0737d2c2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[14].m_InternalID
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[14].m_Vertices.Array.size
@@ -1776,6 +1713,10 @@ Preset:
     value: 4cb53387d3f52a74f9efef7fd1afa48b
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_Sprites.Array.data[15].m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Sprites.Array.data[15].m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -1808,6 +1749,10 @@ Preset:
     value: 9ea4ce7a0ea24ad4eb7726fe34081d87
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_InternalID
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Vertices.Array.size
     value: 0
     objectReference: {fileID: 0}
@@ -1821,6 +1766,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SpriteSheet.m_Weights.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SpriteSheet.m_SecondaryTextures.Array.size
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
