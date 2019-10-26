@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4204584033711579320}
   - component: {fileID: 2906897245072290014}
   - component: {fileID: 219345901273364800}
+  - component: {fileID: 3674346815617031094}
   m_Layer: 15
   m_Name: H14
   m_TagString: DraggableUIPart
@@ -202,3 +203,16 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &3674346815617031094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177214959279025040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}

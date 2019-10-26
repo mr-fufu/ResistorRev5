@@ -14,6 +14,7 @@ public class PlayerSpawnScript : NetworkBehaviour
 
     private GameObject base_component;
     private GameObject network_manager;
+    public GameObject color_object;
 
     public bool player_1;
     public string bot_tag;
@@ -21,7 +22,13 @@ public class PlayerSpawnScript : NetworkBehaviour
     public PartLibrary[] part_library;
     private int part_type_index;
 
-    public Color bot_color;
+    public Vector4 network_color;
+    public Vector4 bot_color;
+
+    [SyncVar] public float player_red;
+    [SyncVar] public float player_blue;
+    [SyncVar] public float player_green;
+
     private int part_count;
 
     public Transform slot_position;
@@ -30,14 +37,11 @@ public class PlayerSpawnScript : NetworkBehaviour
     private Vector3 lightning_point;
     private bool alternator;
 
+    private Vector3 color_object_location;
+
     void Start()
     {
         // search for the network manager and if found, get the color selected in the lobby scene and use it to spawn bots of the chosen color
-        network_manager = GameObject.Find("NetworkManager");
-        if (network_manager != null)
-        {
-            bot_color = network_manager.GetComponent<CustomNetworkManager>().bot_color;
-        }
 
         // Initialize the part library. Essentially the part library is an array of part_library components
         part_library = new PartLibrary[6];
@@ -58,12 +62,20 @@ public class PlayerSpawnScript : NetworkBehaviour
             gameObject.name = "Player1";
             player_1 = true;
             bot_tag = "BOT_Player";
+
+            network_manager = GameObject.Find("NetworkManager");
+
+            CmdSpawnColorObject(network_manager.GetComponent<CustomNetworkManager>().port_alt, network_manager.GetComponent<CustomNetworkManager>().port_no, false);
         }
         else if (!isServer && hasAuthority)
         {
             gameObject.name = "Player2";
             player_1 = false;
             bot_tag = "BOT_Enemy";
+
+            network_manager = GameObject.Find("NetworkManager");
+
+            CmdSpawnColorObject(network_manager.GetComponent<CustomNetworkManager>().port_alt, network_manager.GetComponent<CustomNetworkManager>().port_no, true);
         }
         else if (isServer && !hasAuthority)
         {
@@ -77,15 +89,16 @@ public class PlayerSpawnScript : NetworkBehaviour
             player_1 = true;
             bot_tag = "BOT_Player";
         }
+
+        player_red = network_color.x;
+        player_blue = network_color.y;
+        player_green = network_color.z;
+
+        bot_color = new Vector4(player_red, player_blue, player_green, 1);
     }
 
     void Update()
     {
-        network_manager = GameObject.Find("NetworkManager");
-        if (network_manager != null)
-        {
-            bot_color = network_manager.GetComponent<CustomNetworkManager>().bot_color;
-        }
 
         // simply destroys the player object if the player doesn't have authority. This is
         // because we want to only instantiate a single bot and then update it onto the other
@@ -110,7 +123,6 @@ public class PlayerSpawnScript : NetworkBehaviour
     [Command]
     public void CmdSpawnBot(string[] part_type_list, string[] name_list, int[] parent_count_list, int[] child_count_1_list, int[] child_count_2_list, int[] child_count_3_list, GameObject spawn_location, string lane_name, GameObject credit_object, int credit_cost)
     {
-
         // Instantiate the leg of the bot first
         //------------------------------------------------------------------
 
@@ -178,10 +190,9 @@ public class PlayerSpawnScript : NetworkBehaviour
 
         //slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = original_sort_order;
 
-
         //--------------------------------------------------------------------------
 
-        Change_children(bot_clone, bot_color, lane_name);
+        ChangeChildren(bot_clone, bot_color, lane_name);
 
         //Debug.Log("Instantiated Bot : " + bot_clone.name);
 
@@ -201,7 +212,7 @@ public class PlayerSpawnScript : NetworkBehaviour
 
             var part_clone = (GameObject)Instantiate(part_library[part_type_index].part_library[search_library(name_list[index2], part_type_index)], spawn_location.transform.position, spawn_location.transform.rotation);
 
-
+            part_clone.gameObject.tag = bot_tag;
 
             if (parent_count_list[index2] == 1)
             {
@@ -242,7 +253,6 @@ public class PlayerSpawnScript : NetworkBehaviour
 
             part_clone.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
 
-            part_clone.gameObject.tag = bot_tag;
             part_clone.gameObject.layer = 13;
 
             //--------------------------------------------------------------------------
@@ -267,7 +277,7 @@ public class PlayerSpawnScript : NetworkBehaviour
             //slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = original_sort_order;
             //--------------------------------------------------------------------------
 
-            Change_children(part_clone, bot_color, lane_name);
+            ChangeChildren(part_clone, bot_color, lane_name);
 
             //part_clone.GetComponent<SpriteRenderer>().sortingLayerName = lane_name[lane_number];
 
@@ -279,7 +289,7 @@ public class PlayerSpawnScript : NetworkBehaviour
     // children of part slots that are parts to the input change_color and lane_name. If part changed
     // has any children, nest change_children
 
-    public void Change_children(GameObject selected_object, Color change_color, string lane_name)
+    public void ChangeChildren(GameObject selected_object, Color change_color, string lane_name)
     {
         part_count = selected_object.transform.childCount;
 
@@ -302,9 +312,9 @@ public class PlayerSpawnScript : NetworkBehaviour
                                     if (selected_object.transform.GetChild(var).GetChild(slot_index).childCount != 0)
                                     {
                                         selected_object.transform.GetChild(var).GetChild(slot_index).gameObject.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
-                                        selected_object.transform.GetChild(var).GetChild(slot_index).gameObject.GetComponent<SpriteRenderer>().color = change_color;
+                                        selected_object.transform.GetChild(var).GetChild(slot_index).gameObject.GetComponent<SpriteRenderer>().color = new Vector4(1,1,1,1);
 
-                                        Change_children(selected_object.transform.GetChild(var).GetChild(slot_index).gameObject, change_color, lane_name);
+                                        ChangeChildren(selected_object.transform.GetChild(var).GetChild(slot_index).gameObject, new Vector4(1, 1, 1, 1), lane_name);
 
                                         part_count = selected_object.transform.childCount;
                                         slot_child_count = selected_object.transform.GetChild(var).childCount;
@@ -312,7 +322,7 @@ public class PlayerSpawnScript : NetworkBehaviour
                                     else
                                     {
                                         selected_object.transform.GetChild(var).GetChild(slot_index).gameObject.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
-                                        selected_object.transform.GetChild(var).GetChild(slot_index).gameObject.GetComponent<SpriteRenderer>().color = change_color;
+                                        selected_object.transform.GetChild(var).GetChild(slot_index).gameObject.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
                                     }
                                 }
                             }
@@ -325,12 +335,34 @@ public class PlayerSpawnScript : NetworkBehaviour
 
     // Spawn a Generic object. May be used later on for simple applications. Currently not in use (probably, check before
     // deleting)
+    [Command]
+
+    public void CmdSpawnColorObject(bool alt, int no, bool enemy)
+    {
+        if (player_1)
+        {
+            color_object_location = new Vector3(300, 200, 0);
+        }
+        else
+        {
+            color_object_location = new Vector3(-300, 200, 0);
+        }
+
+        var bot_color_object = (GameObject)Instantiate(color_object, color_object_location, Quaternion.Euler(Vector3.zero));
+
+        bot_color_object.GetComponent<BotColorObject>().enemy = enemy;
+
+        bot_color_object.GetComponent<BotColorObject>().alt = alt;
+        bot_color_object.GetComponent<BotColorObject>().no = no;
+
+        NetworkServer.Spawn(bot_color_object);
+    }
 
     [Command]
 
-    public void CmdSpawnGeneric(GameObject object_to_spawn, Vector2 spawn_location, GameObject parent_object)
+    public void CmdSpawnGeneric(GameObject object_to_spawn, Vector2 spawn_location, GameObject parent_object, Quaternion object_rotation)
     {
-        var spawned_object = (GameObject)Instantiate(object_to_spawn, spawn_location, Quaternion.Euler(Vector3.zero));
+        var spawned_object = (GameObject)Instantiate(object_to_spawn, spawn_location, object_rotation);
 
         spawned_object.transform.parent = parent_object.transform;
 

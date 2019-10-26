@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PortraitManager : MonoBehaviour
+public class PortraitManager : NetworkBehaviour
 {
     // minor script: changes the profile picture by swapping sprites of the sprite renderer
 
@@ -16,8 +17,8 @@ public class PortraitManager : MonoBehaviour
     public Sprite alt_profile3;
     public Sprite alt_profile4;
 
-    public int profile_no;
-    public bool alt;
+    [SyncVar] public int profile_no;
+    [SyncVar] public bool alt;
     private Sprite[] profile;
     private Sprite[] alt_profile;
 
@@ -60,6 +61,15 @@ public class PortraitManager : MonoBehaviour
         else
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = profile[profile_no];
+        }
+
+        if (gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>() != null)
+        {
+            if (gameObject.transform.parent.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+            {
+                GetComponent<PortraitManager>().alt = GameObject.Find("NetworkManager").GetComponent<CustomNetworkManager>().port_alt;
+                GetComponent<PortraitManager>().profile_no = GameObject.Find("NetworkManager").GetComponent<CustomNetworkManager>().port_no;
+            }
         }
     }
 

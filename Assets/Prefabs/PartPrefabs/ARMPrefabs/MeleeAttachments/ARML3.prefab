@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 4032883033316985173}
   - component: {fileID: 780118036208168234}
   - component: {fileID: 1201436965141742941}
+  - component: {fileID: 926971525}
+  - component: {fileID: 1748969218402468941}
   m_Layer: 15
   m_Name: ARML3
   m_TagString: DraggableUIPart
@@ -256,6 +258,39 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &926971525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268223666398552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18e15ed5495c434d969378156376a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95910869246809662}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
+--- !u!114 &1748969218402468941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268223666398552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
 --- !u!1 &1909909535775514
 GameObject:
   m_ObjectHideFlags: 0

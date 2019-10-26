@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 7340792905661641233}
   - component: {fileID: 5191873726066633613}
   - component: {fileID: 8564373952047981312}
+  - component: {fileID: 4175386527121561790}
   m_Layer: 15
   m_Name: T13
   m_TagString: DraggableUIPart
@@ -505,3 +506,16 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &4175386527121561790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094983698565731782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}

@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6656887215972016847}
   - component: {fileID: 7191074255396374778}
   - component: {fileID: 2500792480401547305}
+  - component: {fileID: 6752264985223850824}
   m_Layer: 15
   m_Name: MR11
   m_TagString: DraggableUIPart
@@ -283,6 +284,19 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &6752264985223850824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255912946262022365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
 --- !u!1001 &1437237737582617078
 PrefabInstance:
   m_ObjectHideFlags: 0

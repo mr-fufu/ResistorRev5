@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 3378115927954973440}
   - component: {fileID: 520817142216543500}
   - component: {fileID: 4073361978069502845}
+  - component: {fileID: 5160893512273881537}
+  - component: {fileID: 2186465876545778704}
   m_Layer: 15
   m_Name: L14
   m_TagString: DraggableUIPart
@@ -335,6 +337,39 @@ MonoBehaviour:
   fuel_instantiated: 0
   fuel_remaining: 0
   fuel_bar: {fileID: 1675964601256096, guid: 69ef6e358812af4459b8df99ecc05830, type: 3}
+--- !u!114 &5160893512273881537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655126684866208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18e15ed5495c434d969378156376a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95488386961147428}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
+--- !u!114 &2186465876545778704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655126684866208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
 --- !u!1 &1239050386227335724
 GameObject:
   m_ObjectHideFlags: 0

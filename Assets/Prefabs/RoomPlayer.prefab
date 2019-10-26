@@ -745,6 +745,12 @@ MonoBehaviour:
   multiplayer_lobby: 0
   host_lobby: 1
   alt_sprite: {fileID: 21300038, guid: 63d158e957e3ea44e8f0a90fd042b9dc, type: 3}
+  use_light: 0
+  hide_sprite: 0
+  forward_light: {fileID: 0}
+  reverse_light: {fileID: 0}
+  use_spawn_block: 0
+  spawn_block: {fileID: 0}
 --- !u!61 &8276974439443685379
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class SpawnBlocker : MonoBehaviour
     private bool spawn_lighting;
     private Vector4 original_color;
     private float fade;
+    private float intensity;
 
     // Start is called before the first frame update
     void Start()
@@ -73,18 +74,22 @@ public class SpawnBlocker : MonoBehaviour
             if (!spawn_lighting)
             {
                 spawn_lighting = true;
+
                 spawn_light.SetActive(true);
-                spawn_light.GetComponent<Light>().intensity = 15f;
+                spawn_light.GetComponent<Light>().intensity = 12f;
 
                 spawn_shadow.SetActive(true);
-                fade = 1;
                 spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, 1);
+
+                fade = 1;
+                intensity = 12;
             }
         }
 
         if (spawn_lighting && !spawn_blocked)
         {
             fade -= 0.01f;
+            intensity -= 0.12f;
 
             if (fade <= 0)
             {
@@ -95,7 +100,7 @@ public class SpawnBlocker : MonoBehaviour
             }
             else
             {
-                spawn_light.GetComponent<Light>().intensity -= 0.15f;
+                spawn_light.GetComponent<Light>().intensity = intensity;
                 spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, fade);
             }
 

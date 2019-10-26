@@ -11,9 +11,26 @@ public class LobbySpriteButton : MonoBehaviour
     public Sprite alt_sprite;
     private Sprite reg_sprite;
 
+    public bool use_light;
+    public bool hide_sprite;
+    public GameObject forward_light;
+    public GameObject reverse_light;
+
+    public bool use_spawn_block;
+    public GameObject spawn_block;
+
     void Start()
     {
         reg_sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
+        if (use_light)
+        {
+            forward_light.SetActive(false);
+            reverse_light.SetActive(false);
+        }
+        if (hide_sprite)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Vector4(0, 0, 0, 0);
+        }
     }
 
     public void OnMouseDown()
@@ -30,11 +47,61 @@ public class LobbySpriteButton : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = alt_sprite;
-    }
+        if (use_spawn_block)
+        {
+            if (!spawn_block.GetComponent<SpawnBlocker>().spawn_blocked)
+            {
+                if (!hide_sprite)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().sprite = alt_sprite;
+                }
+                else
+                {
+                    gameObject.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
+                }
+
+                if (use_light)
+                {
+                    forward_light.SetActive(true);
+                    reverse_light.SetActive(true);
+                }
+            }
+        }
+        else
+        {
+            if (!hide_sprite)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = alt_sprite;
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
+            }
+
+            if (use_light)
+            {
+                forward_light.SetActive(true);
+                reverse_light.SetActive(true);
+            }
+
+        }
+    } 
 
     public void OnMouseExit()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = reg_sprite;
+        if (!hide_sprite)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = reg_sprite;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
+        }
+
+        if (use_light)
+        {
+            forward_light.SetActive(false);
+            reverse_light.SetActive(false);
+        }
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5940998914336425258}
   - component: {fileID: 4278051757945604735}
   - component: {fileID: 815667832946322460}
+  - component: {fileID: 9043975382945215749}
   m_Layer: 15
   m_Name: H5
   m_TagString: DraggableUIPart
@@ -253,6 +254,19 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &9043975382945215749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5279173118673576282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
 --- !u!1 &9016755083575424547
 GameObject:
   m_ObjectHideFlags: 0

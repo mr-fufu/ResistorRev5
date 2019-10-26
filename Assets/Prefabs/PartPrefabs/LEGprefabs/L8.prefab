@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 75290967080926151}
   - component: {fileID: 943185414093447607}
   - component: {fileID: 4436905603703574469}
+  - component: {fileID: 7010283483064066149}
   m_Layer: 15
   m_Name: L8
   m_TagString: DraggableUIPart
@@ -303,6 +304,19 @@ MonoBehaviour:
   fuel_instantiated: 0
   fuel_remaining: 0
   fuel_bar: {fileID: 1675964601256096, guid: 69ef6e358812af4459b8df99ecc05830, type: 3}
+--- !u!114 &7010283483064066149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70182448377517764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
 --- !u!1 &70182448777679238
 GameObject:
   m_ObjectHideFlags: 0

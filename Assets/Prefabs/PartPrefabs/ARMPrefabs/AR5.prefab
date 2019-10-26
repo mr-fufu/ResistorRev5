@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 2250660127557929441}
   - component: {fileID: 6489960563558297487}
   - component: {fileID: 3559502324026542473}
+  - component: {fileID: 5816674739098082919}
   m_Layer: 15
   m_Name: AR5
   m_TagString: DraggableUIPart
@@ -285,6 +286,19 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &5816674739098082919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442298193264708966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
 --- !u!1001 &3446318034222220521
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -231,7 +231,10 @@ public class SpawnController : NetworkBehaviour
         }
 
         // the spawn_list is then the spawn list of the selected bot
-        spawn_list = selected_spawn_bot.GetComponent<SpawnList>();
+        if (selected_spawn_bot != null)
+        {
+            spawn_list = selected_spawn_bot.GetComponent<SpawnList>();
+        }
     }
 
     // These three functions below are all functionally identical save for which lane the bot will spawn in. The functions are called by 3 buttons, each associated

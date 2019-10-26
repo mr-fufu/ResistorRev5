@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 577654421797696260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SceneId:
@@ -78,24 +78,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d9f68da19a5844a17507cc639e366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1896345674355345811, guid: 8258bddaf55dd76429038e46b156e247,
+  color_object: {fileID: 7916960463929230623, guid: 3a8d6da55f25ea14993609d8cff20815,
     type: 3}
-  spawn_bot_1: {fileID: 0}
-  spawn_bot_2: {fileID: 0}
-  spawn_bot_3: {fileID: 0}
-  spawn_bot_4: {fileID: 0}
-  base_component: {fileID: 0}
-  player_no: 0
+  player_1: 0
+  bot_tag: 
   part_library: []
+  network_color: {x: 0, y: 0, z: 0, w: 0}
+  bot_color: {x: 0, y: 0, z: 0, w: 0}
+  player_red: 0
+  player_blue: 0
+  player_green: 0
   slot_position: {fileID: 0}
-  spawn_list: {fileID: 0}
-  spawn_lane: {fileID: 0}
-  spawn_bot: {fileID: 0}
-  spawn_bool: 0
-  selected_no: 0
-  spawn_position: {fileID: 0}
-  spawn_bot_tag: 
-  spawn_lane_name: 
 --- !u!1001 &3891831500986184410
 PrefabInstance:
   m_ObjectHideFlags: 0

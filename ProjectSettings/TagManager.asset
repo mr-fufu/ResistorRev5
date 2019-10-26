@@ -16,6 +16,8 @@ TagManager:
   - HostedLobby
   - MatchmakingLobby
   - WorkshopBot
+  - PART_Player
+  - PART_Enemy
   layers:
   - Default
   - TransparentFX

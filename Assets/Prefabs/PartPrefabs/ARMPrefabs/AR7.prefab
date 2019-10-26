@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 5138129870857421423}
   - component: {fileID: 2852530900887318952}
   - component: {fileID: 2131418689697058463}
+  - component: {fileID: 105583157601095646}
   m_Layer: 15
   m_Name: AR7
   m_TagString: DraggableUIPart
@@ -305,6 +306,19 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &105583157601095646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549899229876741104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
 --- !u!1 &2618746635439304956
 GameObject:
   m_ObjectHideFlags: 0

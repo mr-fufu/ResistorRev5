@@ -28,15 +28,15 @@ public class CustomNetworkManager : NetworkLobbyManager
 
     public void Start()
     {
-        spawn_color[0] = new Vector3(1, 0.9f, 0.6f);
-        spawn_color[1] = new Vector3(0.3f, 0.5f, 0.3f);
-        spawn_color[2] = new Vector3(0.1f, 0.5f, 0.6f);
-        spawn_color[3] = new Vector3(0.5f, 0.9f, 0.8f);
+        spawn_color[0] = new Vector4(1f, 0.9f, 0.6f, 1);
+        spawn_color[1] = new Vector4(0.3f, 0.5f, 0.3f, 1);
+        spawn_color[2] = new Vector4(0.1f, 0.5f, 0.6f, 1);
+        spawn_color[3] = new Vector4(0.5f, 0.9f, 0.8f, 1);  
 
-        spawn_color_alt[0] = new Vector3(0.7f, 0, 0.3f);
-        spawn_color_alt[1] = new Vector3(0.3f, 0.25f, 0.15f);
-        spawn_color_alt[2] = new Vector3(0.82f, 0.3f, 0.3f);
-        spawn_color_alt[3] = new Vector3(0.6f, 0.6f, .9f);
+        spawn_color_alt[0] = new Vector4(0.7f, 0, 0.3f, 1);
+        spawn_color_alt[1] = new Vector4(0.3f, 0.25f, 0.15f, 1);
+        spawn_color_alt[2] = new Vector4(0.82f, 0.3f, 0.3f, 1);
+        spawn_color_alt[3] = new Vector4(0.6f, 0.6f, .9f, 1);
 
         hosted_lobby.SetActive(false);
         matchmaker_lobby.SetActive(false);
@@ -116,8 +116,8 @@ public class CustomNetworkManager : NetworkLobbyManager
     
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
-        Debug.Log(lobby_manager.GetComponent<CustomNetworkManager>().lobbyScene);
+        //Debug.Log(SceneManager.GetActiveScene().name);
+        //Debug.Log(lobby_manager.GetComponent<CustomNetworkManager>().lobbyScene);
 
         if (SceneManager.GetActiveScene().name != lobby_manager.GetComponent<CustomNetworkManager>().lobbyScene)
         {

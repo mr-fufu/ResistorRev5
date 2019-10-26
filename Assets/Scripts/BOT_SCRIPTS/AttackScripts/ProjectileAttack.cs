@@ -239,7 +239,7 @@ public class ProjectileAttack : NetworkBehaviour {
                         // spawns a flare (muzzle flare) gameobject at the point of launch (usually static and destroys itself after animation plays)
                         if (uses_flare)
                         {
-                            player.GetComponent<PlayerSpawnScript>().CmdSpawnGeneric(flare_object, launch_location, gameObject);
+                            player.GetComponent<PlayerSpawnScript>().CmdSpawnGeneric(flare_object, launch_location, gameObject, gameObject.transform.rotation);
                         }
 
                         // index increases after each shot

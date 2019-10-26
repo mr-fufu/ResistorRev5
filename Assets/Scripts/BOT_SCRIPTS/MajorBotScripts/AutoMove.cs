@@ -20,7 +20,11 @@ public class AutoMove : NetworkBehaviour {
     [SyncVar] public bool enemy_check;
     private int move_dir;
     private bool engaged_scan;
-    private int scan_size = 20;
+
+    // Important!!!! Scan size determines how many colliders will be detected colliding with the part
+    // set this too low and game will result in clipping issues. Approximate for upper limit of
+    // bots + projectiles that can collide with the bot at one time.
+    private int scan_size = 80;
 
     Collider2D[] check_colliders = new Collider2D[1];
     ContactFilter2D collider_filter = new ContactFilter2D();

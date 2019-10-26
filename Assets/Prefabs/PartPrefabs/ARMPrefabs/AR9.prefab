@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 2552529309355627484}
   - component: {fileID: 4172695691089108343}
   - component: {fileID: 166091067488894296}
+  - component: {fileID: 848273409550295114}
   m_Layer: 15
   m_Name: AR9
   m_TagString: DraggableUIPart
@@ -269,8 +270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   double_attack: 0
   multi_attack: 0
-  attack_speed: 1
-  variable_attack_speed_modifier: 2
+  attack_speed: 5
+  variable_attack_speed_modifier: 4
   projectile: {fileID: 1656137020809238, guid: 6fe590a654d086346a9266d1ddb175ec, type: 3}
   enemy_check: 0
   launch_point: {fileID: 6023108137907305965}
@@ -360,3 +361,17 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &848273409550295114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992483967407188097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}
+  search_text: 

@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 8516292711693414938}
   - component: {fileID: 1187235565310132080}
   - component: {fileID: 2573482836712010120}
+  - component: {fileID: 2815870008263246471}
   m_Layer: 15
   m_Name: AR11
   m_TagString: DraggableUIPart
@@ -453,3 +454,16 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &2815870008263246471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8270119446318722213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color_object: {fileID: 0}

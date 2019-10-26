@@ -32,7 +32,6 @@ public class CustomHost : MonoBehaviour
     {
         match = setup_match;
         host_name.text = match.name;
-
     }
 
     public void JoinMatch()
