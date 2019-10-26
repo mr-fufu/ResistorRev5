@@ -12,7 +12,7 @@ public class LightningDamage : NetworkBehaviour
     public Transform impact_point;
 
     private Collider2D[] check_colliders;
-    private int scan_size = 20;
+    //private int scan_size = 20;
     private ContactFilter2D collider_filter = new ContactFilter2D();
 
     private Animator anim;

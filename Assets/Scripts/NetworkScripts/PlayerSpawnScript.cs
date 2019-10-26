@@ -341,11 +341,11 @@ public class PlayerSpawnScript : NetworkBehaviour
     {
         if (player_1)
         {
-            color_object_location = new Vector3(300, 200, 0);
+            color_object_location = new Vector3(-300, 200, 0);
         }
         else
         {
-            color_object_location = new Vector3(-300, 200, 0);
+            color_object_location = new Vector3(300, 200, 0);
         }
 
         var bot_color_object = (GameObject)Instantiate(color_object, color_object_location, Quaternion.Euler(Vector3.zero));

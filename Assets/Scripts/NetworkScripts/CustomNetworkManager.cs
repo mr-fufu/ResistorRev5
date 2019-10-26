@@ -17,8 +17,8 @@ public class CustomNetworkManager : NetworkLobbyManager
     public string player_name;
 
     public GameObject player_portrait;
-    private Vector4[] spawn_color = new Vector4[4];
-    private Vector4[] spawn_color_alt = new Vector4[4];
+    public Vector4[] spawn_color = new Vector4[4];
+    public Vector4[] spawn_color_alt = new Vector4[4];
     public Vector4 bot_color = new Vector4();
 
     public bool port_alt;
@@ -28,15 +28,15 @@ public class CustomNetworkManager : NetworkLobbyManager
 
     public void Start()
     {
-        spawn_color[0] = new Vector4(1f, 0.9f, 0.6f, 1);
-        spawn_color[1] = new Vector4(0.3f, 0.5f, 0.3f, 1);
-        spawn_color[2] = new Vector4(0.1f, 0.5f, 0.6f, 1);
-        spawn_color[3] = new Vector4(0.5f, 0.9f, 0.8f, 1);  
+        spawn_color[0] = new Vector4(1f, 0.59f, 0.3f, 1f);
+        spawn_color[1] = new Vector4(0.6f, 0.85f, 0.24f, 1f);
+        spawn_color[2] = new Vector4(0.1f, 0.77f, 1f, 1f);
+        spawn_color[3] = new Vector4(0.34f, 1f, 0.95f, 1f);
 
-        spawn_color_alt[0] = new Vector4(0.7f, 0, 0.3f, 1);
-        spawn_color_alt[1] = new Vector4(0.3f, 0.25f, 0.15f, 1);
-        spawn_color_alt[2] = new Vector4(0.82f, 0.3f, 0.3f, 1);
-        spawn_color_alt[3] = new Vector4(0.6f, 0.6f, .9f, 1);
+        spawn_color_alt[0] = new Vector4(1f, 0.2f, 0.69f, 1f);
+        spawn_color_alt[1] = new Vector4(1f, 0.95f, 0.38f, 1f);
+        spawn_color_alt[2] = new Vector4(1f, 0.29f, 0.29f, 1f);
+        spawn_color_alt[3] = new Vector4(0.85f, 0.94f, 0.97f, 1f);
 
         hosted_lobby.SetActive(false);
         matchmaker_lobby.SetActive(false);

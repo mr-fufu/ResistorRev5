@@ -1,86 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using UnityEngine.UI;
 
-public class NetworkColor : NetworkBehaviour
+public class NetworkColor : MonoBehaviour
 {
-    public GameObject color_object;
+    public bool enemy;
+    public bool light;
+    public bool sprite;
+    public bool text;
+
     public string search_text;
-    [SyncVar] public GameObject leg_component;
+    public GameObject color_object;
+
+    public bool colored;
+    private Vector4 hold_color;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        colored = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<PartStats>().part_type == "LEG")
+        if (!colored)
         {
-            if (search_text != "Player1Color" && search_text != "Player1Color")
+            if (search_text != "Player1Color" && search_text != "Player2Color")
             {
-                if (gameObject.tag == "BOT_Player")
-                {
-                    search_text = "Player1Color";
-                }
-                else if (gameObject.tag == "BOT_Enemy")
+                if (enemy)
                 {
                     search_text = "Player2Color";
+                }
+                else
+                {
+                    search_text = "Player1Color";
                 }
             }
             else
             {
                 if (color_object != null)
                 {
-                    gameObject.GetComponent<SpriteRenderer>().color = color_object.GetComponent<SpriteRenderer>().color;
+                    if (light)
+                    {
+                        GetComponent<Light>().color = color_object.GetComponent<SpriteRenderer>().color;
+                    }
+
+                    if (sprite)
+                    {
+                        hold_color = color_object.GetComponent<SpriteRenderer>().color;
+                        hold_color.w = GetComponent<SpriteRenderer>().color.a;
+                        GetComponent<SpriteRenderer>().color = hold_color;
+                    }
+
+                    if (text)
+                    {
+                        GetComponent<Text>().color = color_object.GetComponent<SpriteRenderer>().color;
+                    }
+
+                    colored = true;
                 }
                 else
                 {
                     color_object = GameObject.Find(search_text);
                 }
             }
-        }
-        else
-        {
-            find_leg_object(gameObject);
-
-            gameObject.GetComponent<SpriteRenderer>().color = leg_component.GetComponent<SpriteRenderer>().color;
-        }
-    }
-
-    void find_leg_object(GameObject find_object)
-    {
-        if (find_object.GetComponent<PartStats>() != null)
-        {
-            if (find_object.GetComponent<PartStats>().part_type == "LEG")
-            {
-                leg_component = find_object;
-            }
-            else
-            {
-                if (find_object.transform.parent != null)
-                {
-                    if (find_object.transform.parent.parent != null)
-                    {
-                        find_leg_object(find_object.transform.parent.parent.gameObject);
-                    }
-                    else
-                    {
-                        leg_component = null;
-                    }
-                }
-                else
-                {
-                    leg_component = null;
-                }
-            }
-        }
-        else
-        {
-            leg_component = null;
         }
     }
 }
