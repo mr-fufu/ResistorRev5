@@ -8,8 +8,8 @@ public class BotColorObject : NetworkBehaviour
     [SyncVar] public bool alt;
     [SyncVar] public int no;
 
-    private Vector4[] spawn_color = new Vector4[4];
-    private Vector4[] spawn_color_alt = new Vector4[4];
+    public Vector4[] spawn_color = new Vector4[4];
+    public Vector4[] spawn_color_alt = new Vector4[4];
 
     [SyncVar] public bool enemy;
 

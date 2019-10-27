@@ -15,21 +15,30 @@ public class SpawnBlocker : MonoBehaviour
     private Vector4 original_color;
     private float fade;
     private float intensity;
+    private bool original_color_set;
 
     // Start is called before the first frame update
     void Start()
     {
-        original_color = spawn_shadow.GetComponent<SpriteRenderer>().color;
         spawn_blocked = false;
         spawn_lighting = false;
         collider_filter = collider_filter.NoFilter();
         spawn_light.GetComponent<Light>().intensity = 0;
-        spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!original_color_set)
+        {
+            if (spawn_shadow.GetComponent<NetworkColor>().colored)
+            {
+                original_color = spawn_shadow.GetComponent<SpriteRenderer>().color;
+                spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, 0);
+                original_color_set = true;
+            }
+        }
+
         check_colliders = new Collider2D[scan_size];
 
         for (int setVar = 0; setVar < scan_size; setVar++)

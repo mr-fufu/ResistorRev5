@@ -529,7 +529,10 @@ public class PlayerSpawnScript : NetworkBehaviour
         // set the damage indicator to the correct value
         damage.GetComponent<DamageValues>().damage_value = damage_value;
 
-        NetworkServer.Spawn(damage);
+        if (damage != null)
+        {
+            NetworkServer.Spawn(damage);
+        }
     }
 
     // spawn impact objects. If the projectile does not pierce then destroy the projectile that caused the impact

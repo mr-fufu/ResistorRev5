@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class NetworkColor : MonoBehaviour
 {
     public bool enemy;
-    public bool light;
+    public bool recolor_light;
     public bool sprite;
     public bool text;
 
@@ -14,7 +14,7 @@ public class NetworkColor : MonoBehaviour
     public GameObject color_object;
 
     public bool colored;
-    private Vector4 hold_color;
+    private Color hold_color;
 
     // Start is called before the first frame update
     void Start()
@@ -42,15 +42,18 @@ public class NetworkColor : MonoBehaviour
             {
                 if (color_object != null)
                 {
-                    if (light)
+                    if (recolor_light)
                     {
                         GetComponent<Light>().color = color_object.GetComponent<SpriteRenderer>().color;
                     }
 
                     if (sprite)
                     {
+                        //hold_color = color_object.GetComponent<SpriteRenderer>().color;
+                        //GetComponent<SpriteRenderer>().color = new Vector4(hold_color.x, hold_color.y, hold_color.z, GetComponent<SpriteRenderer>().color.a);
+
                         hold_color = color_object.GetComponent<SpriteRenderer>().color;
-                        hold_color.w = GetComponent<SpriteRenderer>().color.a;
+                        hold_color.a = GetComponent<SpriteRenderer>().color.a;
                         GetComponent<SpriteRenderer>().color = hold_color;
                     }
 
