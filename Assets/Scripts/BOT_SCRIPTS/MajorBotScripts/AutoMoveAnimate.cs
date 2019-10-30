@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class AutoMoveAnimate : NetworkBehaviour
+public class AutoMoveAnimate : MonoBehaviour
 {
 
     private Animator Anim;
-    [SyncVar] private bool animate;
-
-    private float speed;
+    public bool animate;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +31,6 @@ public class AutoMoveAnimate : NetworkBehaviour
         {
             Anim.SetBool("WalkState", false);
         }
-
 
     }
 }

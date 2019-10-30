@@ -271,7 +271,7 @@ public class WorkshopDrag : MonoBehaviour {
             {
                 // if we are dragging a part then move that part to the cursor, change the scale
                 // to 3 times in the x and y to match the scale of the stage area. Additionally, change
-                // the sorting layer to "Overlay" and change the sort order to 100 (on top of everything else)
+                // the sorting layer to "Inspector" and change the sort order to 100 (on top of everything else)
 
                 // (NOTE) currently, we move the dragged image to the mouse, which causes the defined center point
                 // of the sprite to follow the cursor. The problem is that we may have clicked the image at a diferent location
@@ -286,7 +286,7 @@ public class WorkshopDrag : MonoBehaviour {
 
                 selected_object.localScale = new Vector3(3, 3, 1);
 
-                dragged_image.sortingLayerName = "Overlay";
+                dragged_image.sortingLayerName = "Inspector";
                 dragged_image.sortingOrder = 100;
             }
 

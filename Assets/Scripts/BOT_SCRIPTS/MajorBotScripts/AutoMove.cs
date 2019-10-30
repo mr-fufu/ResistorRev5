@@ -11,13 +11,13 @@ public class AutoMove : NetworkBehaviour {
     public float animated_move_speed;
     public float animated_move_dist;
 
-    [SyncVar] public bool engaged_check = false;
+    public bool engaged_check = false;
     public bool walker_check;
     [SyncVar] public bool spawned;
 
-    [SyncVar] public bool animate_check;
+    public bool animate_check;
 
-    [SyncVar] public bool enemy_check;
+    [SyncVar] public bool enemy_check;  
     private int move_dir;
     private bool engaged_scan;
 

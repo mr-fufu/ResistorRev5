@@ -248,7 +248,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300078, guid: b91c7ba73415b4447b1dbb6747471758, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -523,6 +523,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &9170860253632430599
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +590,9 @@ MonoBehaviour:
   damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
     type: 3}
   impact_point: {fileID: 9145321038028111136}
+  root: 0
+  leg: 1
+  body: 0
 --- !u!61 &6418712086827375903
 BoxCollider2D:
   m_ObjectHideFlags: 0

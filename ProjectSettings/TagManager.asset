@@ -79,6 +79,9 @@ TagManager:
   - name: Overlay
     uniqueID: 1012360337
     locked: 0
+  - name: Inspector
+    uniqueID: 3494226333
+    locked: 0
   - name: LoadingElements
     uniqueID: 3159393251
     locked: 0

@@ -14,21 +14,36 @@ public class MeleeDamage : MonoBehaviour {
     private bool spawned;
     private Vector2 above_target;
 
-	// Use this for initialization
-	void Start () {
+    public bool root;
+    public bool leg;
+    public bool body;
+
+    // Use this for initialization
+    void Start() {
         //Debug.Log(enemy_check);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         damage_val = transform.parent.GetComponent<MeleeAttack>().damage_val;
 
-        attached = transform.parent.GetComponent<PartStats>().attached;
-
-        if (attached)
+        if (root)
         {
-            enemy_check = transform.parent.transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+            attached = GetComponent<PartStats>().attached;
+            enemy_check = transform.parent.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+            damage_val = transform.parent.GetComponent<MeleeAttack>().damage_val * transform.parent.parent.gameObject.GetComponent<StandardStatBlock>().SPEED;
         }
+        else if (body || leg)
+        {
+            attached = transform.parent.GetComponent<PartStats>().attached;
+            enemy_check = transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+        }
+        else
+        {
+            attached = transform.parent.GetComponent<PartStats>().attached;
+            enemy_check = transform.parent.parent.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D Target)

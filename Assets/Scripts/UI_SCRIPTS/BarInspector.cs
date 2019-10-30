@@ -119,6 +119,7 @@ public class BarInspector : MonoBehaviour
 
                         bot_loadout[check_no].transform.position = display_point.transform.position;
                         bot_loadout[check_no].transform.localScale = display_point.transform.localScale;
+                        //bot_loadout[check_no].
 
                         credit_value.GetComponent<UnityEngine.UI.Text>().text = "" + bot_loadout[check_no].GetComponent<StandardStatBlock>().COST;
                     }

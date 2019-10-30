@@ -32,7 +32,14 @@ public class MeleeAttack : MonoBehaviour
 
         if (spawned)
         {
-            EngagedCheck = transform.parent.transform.parent.GetComponent<StandardStatBlock>().engaged_check;
+            if (GetComponent<PartStats>().part_type != "LEG")
+            {
+                EngagedCheck = transform.parent.transform.parent.GetComponent<StandardStatBlock>().engaged_check;
+            }
+            else
+            {
+                EngagedCheck = GetComponent<StandardStatBlock>().engaged_check;
+            }
 
             if (EngagedCheck)
             {
