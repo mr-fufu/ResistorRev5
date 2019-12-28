@@ -94,9 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 15
+  PLATE: 80
   LOGIC: 0
-  RANGE: 1
+  RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: Hornet Missile Launcher
-  part_description: Death by a thousand high velocity impact explosives.
+  part_name: Taraskian Ultimatum
+  part_description: Game Over
   list_index: 0
 --- !u!61 &8126935952782965730
 BoxCollider2D:

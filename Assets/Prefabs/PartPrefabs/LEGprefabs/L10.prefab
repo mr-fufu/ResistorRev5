@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300072, guid: b91c7ba73415b4447b1dbb6747471758, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -179,7 +179,7 @@ MonoBehaviour:
   PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 6
+  ARMOR: 12
   SPEED: 2
   FUEL: 0
   POWER: 0
@@ -190,8 +190,8 @@ MonoBehaviour:
   slot_type: 
   part_type: LEG
   attached: 0
-  part_name: M.I.C. UNIT-04 COMMAND
-  part_description: 'Purpose: Floating is cool. Solution: Make it float.'
+  part_name: ZenTech Meditator
+  part_description: 
   list_index: 0
 --- !u!114 &4668404595795918024
 MonoBehaviour:
@@ -316,6 +316,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3930391499074400648
 GameObject:
   m_ObjectHideFlags: 0

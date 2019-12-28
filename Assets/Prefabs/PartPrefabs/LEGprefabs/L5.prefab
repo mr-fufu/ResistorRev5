@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300056, guid: b91c7ba73415b4447b1dbb6747471758, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -211,6 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87d4e65c6bb087439f7e04966a0ac4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animate: 0
+  speed: 0
 --- !u!61 &3154125253810671725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,14 +259,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 40
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: LEG
   attached: 0
   part_name: InvaderWare Arachnid
-  part_description: 9 total joints. Multiple degrees of articulation. Fast and light.
+  part_description: 
   list_index: 0
 --- !u!114 &2619261211357493838
 MonoBehaviour:
@@ -370,6 +372,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1239050386227335724
 GameObject:
   m_ObjectHideFlags: 0

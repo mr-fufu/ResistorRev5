@@ -190,8 +190,8 @@ public class PartInspector : MonoBehaviour
                 part_name.GetComponent<TypeWriter>().output_string = "";
                 part_description.GetComponent<TypeWriter>().output_string = "";
 
-                part_name.GetComponent<TypeWriter>().clear_character();
-                part_description.GetComponent<TypeWriter>().clear_character();
+                part_name.GetComponent<TypeWriter>().ClearCharacter();
+                part_description.GetComponent<TypeWriter>().ClearCharacter();
 
                 part_name.text = "";
                 part_description.text = "";

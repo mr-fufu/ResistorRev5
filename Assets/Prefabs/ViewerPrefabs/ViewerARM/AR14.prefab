@@ -94,22 +94,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 15
-  LOGIC: 0
+  PLATE: 25
+  LOGIC: 1
   RANGE: 1
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 240
+  COST: 80
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: Hornet Missile Launcher
-  part_description: Death by a thousand high velocity impact explosives.
+  part_name: "ThinkSmart\xAE Ambition"
+  part_description: "Embracing the possibilities laid out before you, leaving the
+    fruit tree bare as it disappears in the distance behind you. ThinkSmart\xAE Ambidex:
+    Think Fruit"
   list_index: 0
 --- !u!61 &8126935952782965730
 BoxCollider2D:

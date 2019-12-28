@@ -97,21 +97,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PLATE: 20
   LOGIC: 0
-  RANGE: 1
+  RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 90
+  COST: 100
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: MIC Chaingun
-  part_description: 'Purpose: Current bots suffer from low rate of fire. Solution:
-    More Bullets.'
+  part_name: M.I.C. UNIT-09 CHAINGUN
+  part_description: 'MANDATE: Eliminate the resistance. RESULT: More Bullets.'
   list_index: 0
 --- !u!61 &4766424650611786653
 BoxCollider2D:

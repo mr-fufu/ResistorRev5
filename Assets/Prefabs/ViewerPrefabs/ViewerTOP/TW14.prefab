@@ -110,7 +110,7 @@ MonoBehaviour:
   attached: 0
   part_name: Crusader Lance
   part_description: Pierce the very soul of your opponent and absolve them of their
-    sins. Repent, opposition of the Lance!
+    sins. Repent, those who oppose the Lance!
   list_index: 0
 --- !u!61 &589351930235157058
 BoxCollider2D:

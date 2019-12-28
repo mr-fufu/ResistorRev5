@@ -165,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4469509256156761903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 18, z: 0}
+  m_LocalPosition: {x: -6, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4469509254613214450}
@@ -259,10 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 50
+  PLATE: 80
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 4
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -274,8 +274,8 @@ MonoBehaviour:
   part_type: TORSO
   attached: 0
   part_name: ZenTech Center
-  part_description: Find the unity of your being, hold it there and let the rest of
-    your self come together and be one with your center.
+  part_description: Find the unity of your being and let the rest come together. Be
+    silent and centered.
   list_index: 0
 --- !u!61 &6317010948311824500
 BoxCollider2D:

@@ -108,8 +108,9 @@ MonoBehaviour:
   slot_type: 
   part_type: TOPLARGE
   attached: 0
-  part_name: External Computational Unit
-  part_description: "Computing\u2026 Computing\u2026 Computed."
+  part_name: HobbyBot Top-mounted Processor
+  part_description: Save precious space and plating by putting critical processing
+    units on the outside of your bot
   list_index: 0
 --- !u!61 &2954215255961162151
 BoxCollider2D:

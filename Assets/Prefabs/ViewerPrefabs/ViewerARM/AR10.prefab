@@ -98,20 +98,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PLATE: 25
   LOGIC: 0
-  RANGE: 1
+  RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 200
+  COST: 140
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: M.I.C. UNIT-12 DOUBLEBARREL
-  part_description: 'Purpose: Need more rockets. Solution: double barrels.'
+  part_name: M.I.C. UNIT-10 DOUBLEBARREL
+  part_description: 'MANDATE : Need more rockets. RESULT : double barrels.'
   list_index: 0
 --- !u!61 &4833903472878550978
 BoxCollider2D:

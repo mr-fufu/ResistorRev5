@@ -165,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5041509960470210208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 18, z: 0}
+  m_LocalPosition: {x: -6, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6971910439325351104}
@@ -261,10 +261,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 40
-  LOGIC: 1
+  LOGIC: 0
   RANGE: 0
-  ARMOR: 0
-  SPEED: 0
+  ARMOR: 2
+  SPEED: 1
   FUEL: 0
   POWER: 0
   FRAME: 0
@@ -274,10 +274,9 @@ MonoBehaviour:
   slot_type: 
   part_type: TORSO
   attached: 0
-  part_name: "ThinkSmart\xAE Limited Edition Core"
-  part_description: "Get the Limited Edition core now! Painted in smooth and sleek
-    industrial canary, there\u2019s nothing quite like it! ThinkSmart\xAE LE Core:
-    get it while it lasts."
+  part_name: "ThinkSmart\xAE Polymer Core"
+  part_description: "Affordable quality and attention to detail, painted in smooth
+    and sleek polymer surface finish. ThinkSmart\xAE Lite Core: Think Quality"
   list_index: 0
 --- !u!61 &724719292751180877
 BoxCollider2D:

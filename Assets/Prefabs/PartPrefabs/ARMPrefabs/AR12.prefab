@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924067256322668167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: -5, z: 0}
+  m_LocalPosition: {x: 14, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7798383848121950074}
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300070, guid: d0908d3680709af48af0169b42dc3ff8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -164,23 +164,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
-  LOGIC: 0
+  PLATE: 25
+  LOGIC: 1
   RANGE: 1
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 90
+  COST: 80
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: MIC Chaingun
-  part_description: 'Purpose: Current bots suffer from low rate of fire. Solution:
-    More Bullets.'
+  part_name: "ThinkSmart\xAE Ambition"
+  part_description: "Embracing the possibilities laid out before you, leaving the
+    fruit tree bare as it disappears in the distance behind you. ThinkSmart\xAE Ambidex:
+    Think Fruit"
   list_index: 0
 --- !u!114 &2250660127557929441
 MonoBehaviour:
@@ -195,26 +196,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   double_attack: 0
-  multi_attack: 0
-  attack_speed: 5
-  variable_attack_speed_modifier: 2
+  multi_attack: 1
+  attack_speed: 3
+  variable_attack_speed_modifier: 0.25
   projectile: {fileID: 1656137020809238, guid: fe6c697a9edd8864bb8c87d8dd60d4c5, type: 3}
   enemy_check: 0
   launch_point: {fileID: 3595979576791002008}
-  launch_point_2: {fileID: 0}
-  launch_point_3: {fileID: 0}
-  launch_point_4: {fileID: 0}
+  launch_point_2: {fileID: 3595979576791002008}
+  launch_point_3: {fileID: 3595979576791002008}
+  launch_point_4: {fileID: 3595979576791002008}
   launch_points: []
   spawned: 0
   attached: 0
   variable_attack_speed: 1
-  variable_range: 1
+  variable_range: 0
   variable_range_value: 0
-  range_stat_dependent: 1
-  variable_speed: 0
-  variable_speed_value: 0
+  range_stat_dependent: 0
+  variable_speed: 1
+  variable_speed_value: 6
   variable_y: 1
-  variable_y_value: 0.5
+  variable_y_value: 1
   variable_damage: 1
   variable_damage_value: 5
   projectile_parent: 0
@@ -299,6 +300,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &3446318034222220521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -319,12 +334,12 @@ PrefabInstance:
     - target: {fileID: 4893912189039369107, guid: 7db5d4ddfa4bca147ae1a9ba300956ae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4893912189039369107, guid: 7db5d4ddfa4bca147ae1a9ba300956ae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4893912189039369107, guid: 7db5d4ddfa4bca147ae1a9ba300956ae,
         type: 3}

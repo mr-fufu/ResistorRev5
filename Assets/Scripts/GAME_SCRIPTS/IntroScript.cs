@@ -94,8 +94,15 @@ public class IntroScript : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
-                    var++;
+                    if (slides[var].GetComponent<TypeWriter>().finish_typing == true)
+                    {
+                        slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
+                        var++;
+                    }
+                    else
+                    {
+                        slides[var].GetComponent<TypeWriter>().InstantType();
+                    }
                 }
 
                 if (slides[var].GetComponent<TypeWriter>().finish_typing == false && slides[var].GetComponent<TypeWriter>().start_typing == false)
@@ -142,7 +149,7 @@ public class IntroScript : MonoBehaviour
                             }
                             else
                             {
-                                var++;
+                                // var++;
                                 wait_time = 0;
                                 transition_time = 0;
                             }

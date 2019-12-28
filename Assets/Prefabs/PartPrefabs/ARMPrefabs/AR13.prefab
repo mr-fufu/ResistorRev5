@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300066, guid: d0908d3680709af48af0169b42dc3ff8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   double_attack: 1
   multi_attack: 0
-  attack_speed: 0.4
+  attack_speed: 0.2
   variable_attack_speed_modifier: 0.1
   projectile: {fileID: 1656137020809238, guid: 420151b06de819049928079d81745dbc, type: 3}
   enemy_check: 0
@@ -185,23 +185,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 80
   LOGIC: 0
-  RANGE: 1
+  RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 250
+  COST: 240
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: Broadsider
-  part_description: "At \u2018em lads! Hit em with everything you\u2019ve got! Run
-    the seas red with their blood!"
+  part_name: Taraskian Ultimatum
+  part_description: 
   list_index: 0
 --- !u!114 &5626947553397886933
 MonoBehaviour:
@@ -271,6 +270,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3480004253311486815
 GameObject:
   m_ObjectHideFlags: 0

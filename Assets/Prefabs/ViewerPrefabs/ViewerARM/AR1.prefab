@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PLATE: 20
   LOGIC: 0
-  RANGE: 2
+  RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
@@ -217,8 +217,7 @@ MonoBehaviour:
   part_type: ARM
   attached: 0
   part_name: Mastodon Missile Launcher
-  part_description: "Go BIG or go HOME. And what\u2019s bigger than a MASTODON??!
-    SHAKE THE EARTH BABY! No machine of metal could ever stop you!"
+  part_description: SHAKE THE EARTH! No machine of metal could ever stop you!
   list_index: 0
 --- !u!61 &3846346722899743964
 BoxCollider2D:

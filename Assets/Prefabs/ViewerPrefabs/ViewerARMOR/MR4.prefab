@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 15
+  PLATE: 30
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -109,9 +109,9 @@ MonoBehaviour:
   part_type: ARMOR
   attached: 0
   part_name: "IndustrialGrade\u2122 Heat Transfer Vent"
-  part_description: "If IndustrialGrade\u2122 knows anything its heat transfer efficiency.
-    The high grade platinum metal used in our components quenches heat generation
-    and raises the efficiency of your bot while generating power."
+  part_description: 'The high grade paladium used in our components raises the efficiency
+    of your bot while generating power. WARNING : Inhaling hot paladium fumes may
+    cause blindness'
   list_index: 0
 --- !u!61 &3123921004872084728
 BoxCollider2D:

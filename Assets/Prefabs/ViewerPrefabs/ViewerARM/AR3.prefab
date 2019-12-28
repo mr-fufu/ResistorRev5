@@ -218,9 +218,8 @@ MonoBehaviour:
   attached: 0
   part_name: "IndustrialGrade\u2122 Eviscerator"
   part_description: "IndustrialGrade\u2122 is the world leader in combustion and waste
-    management technologies and nowe we bring our wealth of experience to our bot
-    components. The eviscerator melts steel and burns circuits at temperatures over
-    5000K. "
+    management technologies. The eviscerator melts steel and burns circuits at temperatures
+    over 5000K.\_"
   list_index: 0
 --- !u!61 &1890919171371337632
 BoxCollider2D:

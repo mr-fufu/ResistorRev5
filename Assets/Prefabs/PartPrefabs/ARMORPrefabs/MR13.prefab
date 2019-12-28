@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2605455852758287513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 0}
+  m_LocalPosition: {x: 6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5771559938862135909}
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300054, guid: cb003cfd71ec9b8488aefb2a8947c6b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -143,14 +143,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 9.5, y: 2.5}
-      - {x: 6, y: 4.5}
-      - {x: -0.5, y: 4.5}
-      - {x: -0.5, y: -5}
-      - {x: 1.5, y: -6.5}
-      - {x: 4.5, y: -6.5}
-      - {x: 8, y: -3.5}
-      - {x: 9.5, y: -1.5}
+    - - {x: -0.5, y: 4}
+      - {x: -0.5, y: -4}
+      - {x: 5.5, y: -4}
+      - {x: 7, y: -3.5}
+      - {x: 7, y: 4}
 --- !u!114 &8197426374547652111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,21 +160,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 10
+  PLATE: 5
   LOGIC: 0
-  RANGE: 1
+  RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 150
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARMOR
   attached: 0
-  part_name: 
+  part_name: Fusion Cannon
   part_description: 
   list_index: 0
 --- !u!114 &6656887215972016847
@@ -194,9 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   double_attack: 0
   multi_attack: 0
-  attack_speed: 10
-  variable_attack_speed_modifier: 0
-  projectile: {fileID: 1656137020809238, guid: 56c8ff4ea85987346a7e5723214ba81d, type: 3}
+  attack_speed: 0.5
+  variable_attack_speed_modifier: 0.25
+  projectile: {fileID: 1656137020809238, guid: 420151b06de819049928079d81745dbc, type: 3}
   enemy_check: 0
   launch_point: {fileID: 4934179197601552039}
   launch_point_2: {fileID: 0}
@@ -209,17 +206,17 @@ MonoBehaviour:
   variable_range: 0
   variable_range_value: 0
   range_stat_dependent: 0
-  variable_speed: 1
-  variable_speed_value: 4
-  variable_y: 1
-  variable_y_value: 0.5
+  variable_speed: 0
+  variable_speed_value: 0
+  variable_y: 0
+  variable_y_value: 0
   variable_damage: 1
-  variable_damage_value: 1
+  variable_damage_value: 40
   projectile_parent: 1
   attack_over: 1
   out_of_fuel: 0
-  uses_fuel: 1
-  fuel_use: 1
+  uses_fuel: 0
+  fuel_use: 0
   use_scan: 1
   logic_dependent: 1
   scanned: 0
@@ -297,6 +294,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &1437237737582617078
 PrefabInstance:
   m_ObjectHideFlags: 0

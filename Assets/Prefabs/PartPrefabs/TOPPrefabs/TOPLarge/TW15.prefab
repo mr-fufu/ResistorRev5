@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300108, guid: eb3703cdc4adc8940b834be07dd42390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,8 +141,7 @@ MonoBehaviour:
   part_type: TOPLARGE
   attached: 0
   part_name: "IndustrialGrade\u2122 Thermal Generator"
-  part_description: "IndustrialGrade\u2122 heats vaporized petroleum to over 2000K
-    to generate enough power to power a bot ten times over."
+  part_description: 
   list_index: 0
 --- !u!114 &4928979129621318888
 MonoBehaviour:
@@ -212,3 +211,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}

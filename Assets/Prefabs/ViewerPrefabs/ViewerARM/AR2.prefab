@@ -110,9 +110,8 @@ MonoBehaviour:
   part_type: ARM
   attached: 0
   part_name: "ThinkSmart\xAE Blizzard"
-  part_description: "We don\u2019t just talk the talk, we walk the walk. At the end
-    of the day what we care about is the ecosystem. Help cool the world with the ThinkSmart\xAE
-    Blizzard."
+  part_description: "Net positive in function and purpose. ThinkSmart\xAE Blizzard:
+    Think Cold"
   list_index: 0
 --- !u!61 &7137325921825964534
 BoxCollider2D:

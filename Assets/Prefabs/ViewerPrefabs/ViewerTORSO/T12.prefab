@@ -576,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7260289810807079511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 18, z: 0}
+  m_LocalPosition: {x: -6, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1592061363755727001}
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 100
+  PLATE: 250
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -681,15 +681,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 180
+  COST: 140
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: TORSO
   attached: 0
-  part_name: "IndustrialGrade\u2122 HighRise"
-  part_description: "IndustrialGrade\u2122 puts you above the competition. With the
-    added height you\u2019ll truly have the upper hand."
+  part_name: M.I.C. UNIT-04 DOMINION
+  part_description: 'MANDATE : Tower above all else. RESULT : More Tower.'
   list_index: 0
 --- !u!61 &6735413513603430456
 BoxCollider2D:

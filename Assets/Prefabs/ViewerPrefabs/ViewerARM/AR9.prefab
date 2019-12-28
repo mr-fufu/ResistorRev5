@@ -103,15 +103,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 70
+  COST: 60
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARM
   attached: 0
   part_name: "ThinkSmart\xAE Ambidex"
-  part_description: "The pinacle of evolution has led us to mankind\u2019s greatest
-    achievement. An arm holding a gun.ThinkSmart\xAE Ambidex: the past is the future."
+  part_description: "Studying our past to evolve our future. An arm holding a gun.ThinkSmart\xAE
+    Ambidex: Think Evolution"
   list_index: 0
 --- !u!61 &5463014953095008377
 BoxCollider2D:

@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 80
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   part_type: HEAD
   attached: 0
   part_name: M.I.C. UNIT-07 BUNKER
-  part_description: 'Purpose: Survive attacks to the head. Solution: Thicker plates.'
+  part_description: 'MANDATE : Survive attacks to the head. RESULT : Less Head.'
   list_index: 0
 --- !u!61 &6169416720750061824
 BoxCollider2D:

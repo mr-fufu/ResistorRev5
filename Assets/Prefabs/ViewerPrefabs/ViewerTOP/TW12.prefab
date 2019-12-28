@@ -108,9 +108,9 @@ MonoBehaviour:
   slot_type: 
   part_type: TOPLARGE
   attached: 0
-  part_name: Leviathan Cannon
-  part_description: Rip through armor, circuits and steel. The fury of this beast
-    cannot be contained.
+  part_name: InvaderWare Leviathan
+  part_description: Rip through armor, circuits and steel alike. The fury of this
+    beast cannot be contained.
   list_index: 0
 --- !u!61 &2130282069923794924
 BoxCollider2D:

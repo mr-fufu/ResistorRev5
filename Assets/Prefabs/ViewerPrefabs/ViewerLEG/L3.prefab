@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7405706620957617435}
   - component: {fileID: 7405706620957617839}
   m_Layer: 15
-  m_Name: UniWheeler
+  m_Name: L3
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,9 +185,8 @@ MonoBehaviour:
   part_type: LEG
   attached: 0
   part_name: "ThinkSmart\xAE Uni Wheel"
-  part_description: "We challenge the norm. We push boundaries. We ask ourselves how
-    many wheels a bot really needs. We got answers. All you need is one. All you need
-    is the ThinkSmart\xAE Uni Wheel."
+  part_description: "Challenge the Status Quo. Challenge the number of wheels you
+    really even need.ThinkSmart\xAE Uni Wheel : Think Wheel"
   list_index: 0
 --- !u!1 &7405706620957617591
 GameObject:

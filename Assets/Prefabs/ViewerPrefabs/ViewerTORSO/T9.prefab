@@ -165,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3846876680296733359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 18, z: 0}
+  m_LocalPosition: {x: -6, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8044818086762836184}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 50
-  LOGIC: 0
+  LOGIC: 1
   RANGE: 1
   ARMOR: 0
   SPEED: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   slot_type: 
   part_type: TORSO
   attached: 0
-  part_name: TallBird
+  part_name: Compact Soldroid
   part_description: All round balanced bot frame. Includes a wireless scanner.
   list_index: 0
 --- !u!61 &3014014236128224611

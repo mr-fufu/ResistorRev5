@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
+  PLATE: 30
   LOGIC: 2
   RANGE: 0
   ARMOR: 0
@@ -102,14 +102,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 15
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: HEAD
   attached: 0
-  part_name: Central Computational Unit
-  part_description: C O M P U T I N G
+  part_name: HobbyBot External Processor
+  part_description: Air cool those hot processors!
   list_index: 0
 --- !u!61 &6612154620517727841
 BoxCollider2D:

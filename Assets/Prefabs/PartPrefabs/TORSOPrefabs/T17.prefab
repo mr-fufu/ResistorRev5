@@ -419,7 +419,7 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 70
+  COST: 60
   melee_component: 0
   slot_component: 0
   slot_type: 

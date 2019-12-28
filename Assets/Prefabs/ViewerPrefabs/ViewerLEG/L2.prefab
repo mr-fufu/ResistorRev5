@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 1726472552805992668}
   - component: {fileID: 1726472552805993314}
   m_Layer: 15
-  m_Name: Tank Treads
+  m_Name: L2
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,20 +307,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 80
+  PLATE: 90
   LOGIC: 0
   RANGE: 0
-  ARMOR: 2
+  ARMOR: 4
   SPEED: 1
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 100
+  COST: 80
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: LEG
   attached: 0
   part_name: M.I.C. UNIT-03 TANK
-  part_description: "Purpose: Wheels break. Solution: Don\u2019t use wheels."
+  part_description: "MANDATE : Wheels break. RESULT : Don\u2019t use wheels."
   list_index: 0

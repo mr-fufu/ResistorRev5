@@ -134,10 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
+  PLATE: 10
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 2
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -309,6 +309,9 @@ MonoBehaviour:
   damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
     type: 3}
   impact_point: {fileID: 5092691563144989375}
+  root: 0
+  leg: 0
+  body: 0
 --- !u!1 &5096549085878685331
 GameObject:
   m_ObjectHideFlags: 0

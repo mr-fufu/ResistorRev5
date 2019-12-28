@@ -94,24 +94,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 2
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 10
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: HEAD
   attached: 0
-  part_name: "IndustrialGrade\u2122 Metalhead"
-  part_description: "IndustrialGrade\u2122 is the number one leader in metal processing
-    and refining. With worldwide operations, we have the finest tool-grade metals
-    on the market."
+  part_name: HobbyBot Blockhead
+  part_description: This head is better than no head. Just barely.
   list_index: 0
 --- !u!61 &5225917331406314663
 BoxCollider2D:

@@ -98,21 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 10
+  PLATE: 60
   LOGIC: 0
-  RANGE: 1
-  ARMOR: 0
+  RANGE: 0
+  ARMOR: 4
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 60
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARMOR
   attached: 0
-  part_name: 
+  part_name: Tortuga Spike Shield
   part_description: 
   list_index: 0
 --- !u!114 &7191074255396374778

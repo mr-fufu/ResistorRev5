@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PLATE: 15
   LOGIC: 0
-  RANGE: 1
+  RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
@@ -140,8 +140,8 @@ MonoBehaviour:
   slot_type: 
   part_type: TOPLARGE
   attached: 0
-  part_name: M.I.C. UNIT-10 RPG
-  part_description: 'Purpose: Bullets are too small. Solution: Bigger bullets.'
+  part_name: M.I.C. UNIT-06 RPG
+  part_description: 'MANDATE : Bullet damage insufficient. RESULT : More Bullet'
   list_index: 0
 --- !u!61 &6581379276178418993
 BoxCollider2D:

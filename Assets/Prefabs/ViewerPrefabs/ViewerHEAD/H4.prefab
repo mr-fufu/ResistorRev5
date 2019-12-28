@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
+  PLATE: 25
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 30
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -110,7 +110,7 @@ MonoBehaviour:
   attached: 0
   part_name: Streamline Glide Fin
   part_description: Once you attach the Glide Fin, your bot will cut through the air
-    like its water. High speed, low drag - feel the Streamline.
+    like water. High speed, low drag - Feel the Streamline.
   list_index: 0
 --- !u!61 &55137346828643828
 BoxCollider2D:

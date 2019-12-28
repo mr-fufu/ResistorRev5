@@ -210,16 +210,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 50
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: TOPLARGE
   attached: 0
   part_name: "IndustrialGrade\u2122 Incinerator"
-  part_description: "IndustrialGrade\u2122 knows that there\u2019s a time and place
-    for everything. That\u2019s why we\u2019ve built the IndustrialGrade\u2122 Incinerator.
-    Smaller than the Eviscerator but just as hot, leaving nothing behind but ash."
+  part_description: "Having mastered the art of thermal manipulation, the IndustrialGrade\u2122
+    Incinerator leaves nothing behind but ash."
   list_index: 0
 --- !u!61 &3254886015081037391
 BoxCollider2D:

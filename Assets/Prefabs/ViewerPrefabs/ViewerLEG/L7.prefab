@@ -323,8 +323,8 @@ MonoBehaviour:
   part_type: LEG
   attached: 0
   part_name: "ThinkSmart\xAE Stratosphere"
-  part_description: "Seven billion people. A species. What do we all have in common?
-    We walk. But no more. ThinkSmart\xAE Stratosphere: the stratosphere is the limit."
+  part_description: "Keep up with the transformation of mobility. Synergy between
+    you and your destination. ThinkSmart\xAE Stratosphere: Think Stratos"
   list_index: 0
 --- !u!1 &7704712943650886610
 GameObject:

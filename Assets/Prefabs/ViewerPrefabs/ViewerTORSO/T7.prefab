@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239992779679944434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 18, z: 0}
+  m_LocalPosition: {x: -6, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 10
+  PLATE: 50
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
   slot_type: 
   part_type: TORSO
   attached: 0
-  part_name: Remote Clam
-  part_description: Rush
+  part_name: InvaderWare Scout
+  part_description: Scouting Ahead.
   list_index: 0
 --- !u!61 &5465242975028177809
 BoxCollider2D:

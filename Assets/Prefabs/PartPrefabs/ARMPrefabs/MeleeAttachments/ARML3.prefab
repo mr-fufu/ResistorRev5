@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300032, guid: d0908d3680709af48af0169b42dc3ff8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -138,10 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 8
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -291,6 +291,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1909909535775514
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +404,9 @@ MonoBehaviour:
   damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
     type: 3}
   impact_point: {fileID: 5462494420595014682}
+  root: 0
+  leg: 0
+  body: 0
 --- !u!1 &1935147722930917081
 GameObject:
   m_ObjectHideFlags: 0

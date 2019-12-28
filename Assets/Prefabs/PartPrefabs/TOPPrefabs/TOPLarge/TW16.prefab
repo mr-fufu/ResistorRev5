@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4811796696566562199}
   - component: {fileID: 6612213525803695013}
   - component: {fileID: 8000609825937374279}
-  - component: {fileID: 2034497635219048590}
   - component: {fileID: 8904640666355788338}
   - component: {fileID: 1922828231452801447}
   m_Layer: 15
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 2144070507
   m_SortingLayer: 1
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300076, guid: eb3703cdc4adc8940b834be07dd42390, type: 3}
+  m_Sprite: {fileID: 21300090, guid: eb3703cdc4adc8940b834be07dd42390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,12 +110,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -5, y: 7}
-      - {x: -5, y: -0.5}
-      - {x: 3.5, y: -0.5}
-      - {x: 4, y: 0.5}
-      - {x: 4, y: 5}
-      - {x: 0.5, y: 7}
+    - - {x: 2, y: 9}
+      - {x: -1, y: 9}
+      - {x: -4, y: 8}
+      - {x: -4, y: -0.5}
+      - {x: 4, y: -0.5}
+      - {x: 4, y: 6}
+      - {x: 3.5, y: 7.5}
 --- !u!114 &6612213525803695013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,21 +129,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 0
+  PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 12
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 0
+  COST: 60
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: TOPLARGE
   attached: 0
-  part_name: 
+  part_name: ZenTech Meditator
   part_description: 
   list_index: 0
 --- !u!114 &8000609825937374279
@@ -179,55 +179,6 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &2034497635219048590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4811796696566562197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efebb4027ad14c447b0da3e3cfdae77e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  double_attack: 0
-  multi_attack: 0
-  attack_speed: 0
-  variable_attack_speed_modifier: 0
-  projectile: {fileID: 0}
-  enemy_check: 0
-  launch_point: {fileID: 0}
-  launch_point_2: {fileID: 0}
-  launch_point_3: {fileID: 0}
-  launch_point_4: {fileID: 0}
-  launch_points: []
-  spawned: 0
-  attached: 0
-  variable_attack_speed: 0
-  variable_range: 0
-  variable_range_value: 0
-  range_stat_dependent: 0
-  variable_speed: 0
-  variable_speed_value: 0
-  variable_y: 0
-  variable_y_value: 0
-  variable_damage: 0
-  variable_damage_value: 0
-  projectile_parent: 0
-  attack_over: 0
-  out_of_fuel: 0
-  uses_fuel: 0
-  fuel_use: 0
-  use_scan: 0
-  logic_dependent: 0
-  scanned: 0
-  range_detector: {fileID: 0}
-  uses_flare: 0
-  flare_object: {fileID: 0}
-  player_name: 
-  player: {fileID: 0}
-  leg_component: {fileID: 0}
 --- !u!114 &8904640666355788338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +214,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}

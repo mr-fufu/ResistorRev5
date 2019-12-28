@@ -42,12 +42,12 @@ GameObject:
   - component: {fileID: 7255912946262022336}
   - component: {fileID: 7255912946262022337}
   - component: {fileID: 8197426374547652111}
-  - component: {fileID: 6656887215972016847}
   - component: {fileID: 7191074255396374778}
   - component: {fileID: 2500792480401547305}
   - component: {fileID: 1291151217}
   - component: {fileID: 1291151216}
   - component: {fileID: 5716060665411596690}
+  - component: {fileID: 5994218229997510156}
   m_Layer: 15
   m_Name: MR12
   m_TagString: DraggableUIPart
@@ -178,58 +178,9 @@ MonoBehaviour:
   slot_type: 
   part_type: ARMOR
   attached: 0
-  part_name: 
+  part_name: Chest Drill
   part_description: 
   list_index: 0
---- !u!114 &6656887215972016847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7255912946262022365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efebb4027ad14c447b0da3e3cfdae77e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  double_attack: 0
-  multi_attack: 0
-  attack_speed: 10
-  variable_attack_speed_modifier: 0
-  projectile: {fileID: 1656137020809238, guid: 56c8ff4ea85987346a7e5723214ba81d, type: 3}
-  enemy_check: 0
-  launch_point: {fileID: 0}
-  launch_point_2: {fileID: 0}
-  launch_point_3: {fileID: 0}
-  launch_point_4: {fileID: 0}
-  launch_points: []
-  spawned: 0
-  attached: 0
-  variable_attack_speed: 0
-  variable_range: 0
-  variable_range_value: 0
-  range_stat_dependent: 0
-  variable_speed: 1
-  variable_speed_value: 4
-  variable_y: 1
-  variable_y_value: 0.5
-  variable_damage: 1
-  variable_damage_value: 1
-  projectile_parent: 1
-  attack_over: 1
-  out_of_fuel: 0
-  uses_fuel: 1
-  fuel_use: 1
-  use_scan: 1
-  logic_dependent: 1
-  scanned: 0
-  range_detector: {fileID: 0}
-  uses_flare: 0
-  flare_object: {fileID: 0}
-  player_name: 
-  player: {fileID: 0}
-  leg_component: {fileID: 0}
 --- !u!114 &7191074255396374778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +299,26 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5994218229997510156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255912946262022365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18e15ed5495c434d969378156376a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 1291151216}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!1 &7793985879998449080
 GameObject:
   m_ObjectHideFlags: 0

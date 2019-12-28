@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawned: 0
-  damage_val: 5
-  attack_speed: 2
+  damage_val: 1
+  attack_speed: 5
   EngagedCheck: 0
   attached: 0
 --- !u!114 &5315076354291365589
@@ -135,10 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 15
+  PLATE: 30
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 4
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -324,6 +324,9 @@ MonoBehaviour:
   damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
     type: 3}
   impact_point: {fileID: 8857962394097390086}
+  root: 0
+  leg: 0
+  body: 0
 --- !u!1 &8855697712862627858
 GameObject:
   m_ObjectHideFlags: 0

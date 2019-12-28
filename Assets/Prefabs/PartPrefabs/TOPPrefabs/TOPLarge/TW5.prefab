@@ -105,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300072, guid: eb3703cdc4adc8940b834be07dd42390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,9 +176,7 @@ MonoBehaviour:
   part_type: TOPLARGE
   attached: 0
   part_name: "IndustrialGrade\u2122 Incinerator"
-  part_description: "IndustrialGrade\u2122 knows that there\u2019s a time and place
-    for everything. That\u2019s why we\u2019ve built the IndustrialGrade\u2122 Incinerator.
-    Smaller than the Eviscerator but just as hot, leaving nothing behind but ash."
+  part_description: 
   list_index: 0
 --- !u!114 &3559408325688221884
 MonoBehaviour:
@@ -297,6 +295,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8551726232646690448
 GameObject:
   m_ObjectHideFlags: 0

@@ -150,7 +150,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300052, guid: d0908d3680709af48af0169b42dc3ff8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -225,9 +225,8 @@ MonoBehaviour:
   part_type: ARM
   attached: 0
   part_name: "ThinkSmart\xAE Blizzard"
-  part_description: "We don\u2019t just talk the talk, we walk the walk. At the end
-    of the day what we care about is the ecosystem. Help cool the world with the ThinkSmart\xAE
-    Blizzard."
+  part_description: "Net positives in both function and purpose. ThinkSmart\xAE Blizzard:
+    Think Cold"
   list_index: 0
 --- !u!114 &192611004496731916
 MonoBehaviour:
@@ -346,6 +345,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7955352597137454678
 GameObject:
   m_ObjectHideFlags: 0

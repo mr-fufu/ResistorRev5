@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300104, guid: eb3703cdc4adc8940b834be07dd42390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -145,9 +145,8 @@ MonoBehaviour:
   slot_type: 
   part_type: TOPLARGE
   attached: 0
-  part_name: Leviathan Cannon
-  part_description: Rip through armor, circuits and steel. The fury of this beast
-    cannot be contained.
+  part_name: InvaderWare Leviathan
+  part_description: 
   list_index: 0
 --- !u!114 &4928979129621318888
 MonoBehaviour:
@@ -197,7 +196,7 @@ MonoBehaviour:
   double_attack: 0
   multi_attack: 0
   attack_speed: 0.4
-  variable_attack_speed_modifier: 0
+  variable_attack_speed_modifier: 0.05
   projectile: {fileID: 1656137020809238, guid: 420151b06de819049928079d81745dbc, type: 3}
   enemy_check: 0
   launch_point: {fileID: 8381179863589001399}
@@ -266,6 +265,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_object: {fileID: 0}
+  search_text: 
+  leg_component: {fileID: 0}
+  alt: 0
+  no: 0
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3601257045181035623
 GameObject:
   m_ObjectHideFlags: 0

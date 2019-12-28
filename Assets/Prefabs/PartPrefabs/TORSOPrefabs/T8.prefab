@@ -198,14 +198,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 120
+  COST: 100
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: TORSO
   attached: 0
   part_name: InvaderWare Supernova
-  part_description: Adjusting for refraction index. Calculating light trajectory.
+  part_description: 
   list_index: 0
 --- !u!114 &5110651756639899608
 MonoBehaviour:

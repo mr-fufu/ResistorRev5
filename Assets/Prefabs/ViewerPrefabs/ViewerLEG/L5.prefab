@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2279707204972693131}
   - component: {fileID: 2279707204972692782}
   m_Layer: 15
-  m_Name: CrawlerLegs
+  m_Name: L5
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 40
   melee_component: 0
   slot_component: 0
   slot_type: 

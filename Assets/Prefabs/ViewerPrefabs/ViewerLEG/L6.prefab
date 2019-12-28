@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 5028341051279964380}
   - component: {fileID: 5028341051279965012}
   m_Layer: 15
-  m_Name: Zen Levitator
+  m_Name: L6
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,12 +310,12 @@ MonoBehaviour:
   PLATE: 100
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 4
   SPEED: 3
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 150
+  COST: 80
   melee_component: 0
   slot_component: 0
   slot_type: 

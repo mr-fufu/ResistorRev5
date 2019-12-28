@@ -110,7 +110,8 @@ MonoBehaviour:
   attached: 0
   part_name: "IndustrialGrade\u2122 Thermal Generator"
   part_description: "IndustrialGrade\u2122 heats vaporized petroleum to over 2000K
-    to generate enough power to power a bot ten times over."
+    to directly heat battery elements. Just 1% of this heat energy is enough to power
+    a bot. We capture over 2%."
   list_index: 0
 --- !u!61 &5573583761990031328
 BoxCollider2D:

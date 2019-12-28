@@ -108,7 +108,7 @@ MonoBehaviour:
   slot_type: 
   part_type: TOPLARGE
   attached: 0
-  part_name: Periscope
+  part_name: SwordCoast Periscope
   part_description: Seek them out. Hunt them down.
   list_index: 0
 --- !u!61 &8752205297664206519

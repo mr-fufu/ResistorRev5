@@ -173,12 +173,12 @@ MonoBehaviour:
   PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 2
+  ARMOR: 4
   SPEED: 3
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 120
+  COST: 90
   melee_component: 0
   slot_component: 0
   slot_type: 

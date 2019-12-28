@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 50
+  PLATE: 120
   LOGIC: 0
   RANGE: 0
-  ARMOR: 3
+  ARMOR: 2
   SPEED: 0
   FUEL: 0
   POWER: 0

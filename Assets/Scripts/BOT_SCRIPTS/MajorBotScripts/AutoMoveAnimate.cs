@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AutoMoveAnimate : MonoBehaviour
 {
-
     private Animator Anim;
     public bool animate;
     public float speed;

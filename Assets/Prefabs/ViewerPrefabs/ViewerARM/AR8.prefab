@@ -103,13 +103,13 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 250
+  COST: 180
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: Broadsider
+  part_name: SwordCoast Broadsider
   part_description: "At \u2018em lads! Hit em with everything you\u2019ve got! Run
     the seas red with their blood!"
   list_index: 0

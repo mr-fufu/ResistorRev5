@@ -109,8 +109,9 @@ MonoBehaviour:
   part_type: TOPLARGE
   attached: 0
   part_name: "IndustrialGrade\u2122 HazTank"
-  part_description: "IndustrialGrade\u2122 makes some of the most dangerous and flammable
-    fuels in the world so you can be sure we know how to store it."
+  part_description: "IndustrialGrade\u2122 makes some of the most flammable fuels
+    in the world and you can be sure we know how to store it. NOTE : Evacuate immediately
+    if HazTank leaks"
   list_index: 0
 --- !u!61 &4666344385276171359
 BoxCollider2D:

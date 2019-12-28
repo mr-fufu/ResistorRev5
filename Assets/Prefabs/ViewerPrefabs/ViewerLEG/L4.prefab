@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7916180058419598853}
   - component: {fileID: 7916180058419598730}
   m_Layer: 15
-  m_Name: Iron Plow
+  m_Name: L4
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 12
   SPEED: 1
   FUEL: 0
   POWER: 0
@@ -258,7 +258,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300044, guid: 18fa509e1e5ab074e9735858cc08ba09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}

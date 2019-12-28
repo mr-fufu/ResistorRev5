@@ -94,24 +94,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 10
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 2
+  ARMOR: 4
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 20
+  COST: 30
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: HEAD
   attached: 0
   part_name: "IndustrialGrade\u2122 Welding Mask"
-  part_description: "At IndustrialGrade\u2122, our number four concern is safety and
-    we\u2019re applying what we know to our part design. With the Welding Mask, your
-    robot can be as safe as our workers! "
+  part_description: "At IndustrialGrade\u2122, our number four concern is safety.
+    With the Welding Mask, your robot can be as safe as our workers."
   list_index: 0
 --- !u!61 &7024077033222938813
 BoxCollider2D:

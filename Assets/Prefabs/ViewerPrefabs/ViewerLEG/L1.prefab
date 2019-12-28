@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2152602465111594667}
   - component: {fileID: 2152602465111594444}
   m_Layer: 15
-  m_Name: Colossus
+  m_Name: L1
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 60
+  PLATE: 100
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   FUEL: 1
   POWER: 1
   FRAME: 0
-  COST: 150
+  COST: 120
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -167,7 +167,7 @@ MonoBehaviour:
   attached: 0
   part_name: "IndustrialGrade\u2122 Colossus"
   part_description: "IndustrialGrade\u2122 is proud to present the Colossus, an 18-cylinder
-    excavator engine that runs on low-grade crude petroleum. Warning: do not inhale
+    excavator engine that runs on low-grade crude petroleum. WARNING: do not inhale
     fumes"
   list_index: 0
 --- !u!50 &2152602465111594444

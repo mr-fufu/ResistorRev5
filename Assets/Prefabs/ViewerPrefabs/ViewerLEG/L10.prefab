@@ -173,7 +173,7 @@ MonoBehaviour:
   PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 6
+  ARMOR: 12
   SPEED: 2
   FUEL: 0
   POWER: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
   slot_type: 
   part_type: LEG
   attached: 0
-  part_name: M.I.C. UNIT-04 COMMAND
-  part_description: 'Purpose: Floating is cool. Solution: Make it float.'
+  part_name: ZenTech Meditator
+  part_description: May peace find you as it does those who would wish you harm
   list_index: 0
 --- !u!1 &2370684799844040469
 GameObject:

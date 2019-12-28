@@ -102,15 +102,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 10
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: ARMOR
   attached: 0
-  part_name: 'External Computational Component '
-  part_description: 01100011 01101111 01101101 01110000 01110101 01110100 01101001
-    01101110 01100111
+  part_name: HobbyBot External Circuitry
+  part_description: Show everybody your hard work and hand-soldered circuitry.
   list_index: 0
 --- !u!61 &4929448625931643271
 BoxCollider2D:

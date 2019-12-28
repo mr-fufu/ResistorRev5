@@ -95,20 +95,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 5
-  LOGIC: 0
-  RANGE: 2
+  LOGIC: 1
+  RANGE: 4
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 30
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: HEAD
   attached: 0
-  part_name: Long Range Scanner
+  part_name: Cyclops Long Range Scanner
   part_description: A high range digital radar sensor that improves robot aiming ability
     and increases weapon range by mapping target location for increased accuracy.
   list_index: 0

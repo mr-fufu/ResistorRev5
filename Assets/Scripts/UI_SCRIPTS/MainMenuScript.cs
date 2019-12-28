@@ -10,6 +10,9 @@ public class MainMenuScript : MonoBehaviour
     public GameObject welder_body;
     public GameObject welder_arm;
 
+    public GameObject dark_welder_body;
+    public GameObject dark_welder_arm;
+
     public GameObject start_game_button;
     public GameObject credits_button;
     public GameObject exit_game_button;
@@ -39,6 +42,9 @@ public class MainMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dark_welder_arm.transform.position = welder_arm.transform.position;
+        dark_welder_body.transform.position = welder_body.transform.position;
+
         var mouse_position = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D ray_hit = (Physics2D.Raycast(mouse_position, Vector2.zero, Mathf.Infinity));
 
@@ -53,6 +59,9 @@ public class MainMenuScript : MonoBehaviour
                 welder_arm.SetActive(true);
                 welder_arm.gameObject.transform.position = new Vector2(welder_arm.gameObject.transform.position.x, ray_hit.collider.gameObject.transform.position.y - 100);
                 welder_body.SetActive(true);
+
+                dark_welder_arm.SetActive(false);
+                dark_welder_body.SetActive(false);
 
                 if (weld_timer <= 0)
                 {
@@ -90,6 +99,9 @@ public class MainMenuScript : MonoBehaviour
 
             welder_arm.SetActive(false);
             welder_body.SetActive(false);
+
+            dark_welder_arm.SetActive(true);
+            dark_welder_body.SetActive(true);
         }
 
         if (Input.GetMouseButtonDown(0))

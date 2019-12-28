@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6741289303770167095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 18, z: 0}
+  m_LocalPosition: {x: -6, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6741289305251598897}
@@ -131,15 +131,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 40
   melee_component: 0
   slot_component: 0
   slot_type: 
   part_type: TORSO
   attached: 0
   part_name: "ThinkSmart\xAE Lightweight Core"
-  part_description: "Excess as far as the eye can see. ThinkSmart\xAE Stratosphere:we
-    have exactly what you need."
+  part_description: "Reduce overhead while getting results.ThinkSmart\xAE Lightweight:
+    Think Light"
   list_index: 0
 --- !u!61 &8815457468206970173
 BoxCollider2D:

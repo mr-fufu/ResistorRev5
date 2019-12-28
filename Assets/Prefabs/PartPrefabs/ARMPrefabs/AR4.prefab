@@ -165,7 +165,7 @@ MonoBehaviour:
   ARMOR: 0
   SPEED: 0
   FUEL: 0
-  POWER: 4
+  POWER: 2
   FRAME: 0
   COST: 120
   melee_component: 0
@@ -173,9 +173,9 @@ MonoBehaviour:
   slot_type: 
   part_type: ARM
   attached: 0
-  part_name: Crusader Light of Gabriel
-  part_description: Shine the light of righteous wisdom upon the non-believers. Unleash
-    thy blessings with the Light of Gabriel and absolve them of their wickedness.
+  part_name: Crusader Excalibur
+  part_description: Wield the blade of righteous destiny upon the non-believers. Unleash
+    thy Wrath with the Excalibur and absolve them of their wicked ways.
   list_index: 0
 --- !u!114 &7065454432520586391
 MonoBehaviour:

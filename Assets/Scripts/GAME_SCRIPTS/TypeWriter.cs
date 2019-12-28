@@ -147,8 +147,23 @@ public class TypeWriter : MonoBehaviour
         return output_string;
     }
 
-    public void clear_character()
+    public void ClearCharacter()
     {
         character = new char[0];
+    }
+
+    public void InstantType()
+    {
+        start_typing = false;
+        finish_typing = true;
+
+        if (!use_string)
+        {
+            typed_text.text = input_text.text;
+        }
+        else
+        {
+            typed_text.text = input_string;
+        }
     }
 }

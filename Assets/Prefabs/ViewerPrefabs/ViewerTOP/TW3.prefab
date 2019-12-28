@@ -110,8 +110,8 @@ MonoBehaviour:
   part_type: TOPLARGE
   attached: 0
   part_name: "ThinkSmart\xAE Snowstorm"
-  part_description: "Best your foes while preserving the pristine beauty of our environment.
-    The ThinkSmart\xAE  Snowstorm: giving back to mother nature."
+  part_description: "Review logistical constructions and analyze the structural foundations
+    by which you achieve your goals. The ThinkSmart\xAE\_ Snowstorm: Think Pristine"
   list_index: 0
 --- !u!61 &7864154900377767850
 BoxCollider2D:

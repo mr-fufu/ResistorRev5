@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 60
+  PLATE: 100
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   FUEL: 2
   POWER: 1
   FRAME: 0
-  COST: 80
+  COST: 120
   melee_component: 0
   slot_component: 0
   slot_type: 

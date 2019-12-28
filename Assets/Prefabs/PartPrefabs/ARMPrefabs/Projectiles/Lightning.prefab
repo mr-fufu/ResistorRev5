@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1874207312130033163}
   - component: {fileID: 3541910908989883724}
   - component: {fileID: 9112128553916626832}
+  - component: {fileID: 8990605846771119350}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -103,7 +104,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 80
   m_Sprite: {fileID: 21300050, guid: e3d4f41b9db99cf499f5a9286caf395d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -238,3 +239,23 @@ MonoBehaviour:
   m_SnapThreshold: 0
   m_InterpolateRotation: 1
   m_InterpolateMovement: 10
+--- !u!114 &8990605846771119350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656137020809238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18e15ed5495c434d969378156376a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 7348594644893675109}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
