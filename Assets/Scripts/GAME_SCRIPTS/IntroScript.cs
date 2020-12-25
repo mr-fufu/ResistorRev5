@@ -159,7 +159,7 @@ public class IntroScript : MonoBehaviour
             }
             else
             {
-                LoadWithScreen("Workshop");
+                LoadWithScreen("LobbyScene");
                 in_load = true;
             }
         }
