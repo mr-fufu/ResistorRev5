@@ -5,13 +5,16 @@
 // <summary>
 //  Used in "PUN Basic tutorial" to handle typical game management requirements
 // </summary>
-// <author>developer@exitgames.com</author>
+// <author>developer@exitgames.com, Samantha Difeo (game specific)</author>
 // --------------------------------------------------------------------------------------------------------------------
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Linq;
 
 using Photon.Realtime;
+using System.Collections.Generic;
 
 namespace Photon.Pun.Demo.PunBasics
 {
@@ -26,21 +29,13 @@ namespace Photon.Pun.Demo.PunBasics
 	public class GameManager : MonoBehaviourPunCallbacks
     {
 
-		#region Public Fields
-
 		static public GameManager Instance;
 
-		#endregion
-
-		#region Private Fields
-
-		private GameObject instance;
-
         [Tooltip("The prefab to use for representing the player")]
-        [SerializeField]
-        private GameObject playerPrefab;
+        [SerializeField] private GameObject playerPrefab;
 
-        #endregion
+        private Dictionary<string, bool> readyStateByPlayer;
+        private bool ready = false;
 
         #region MonoBehaviour CallBacks
 
@@ -50,6 +45,8 @@ namespace Photon.Pun.Demo.PunBasics
         void Start()
 		{
 			Instance = this;
+            readyStateByPlayer = new Dictionary<string, bool>();
+            PlayerManager.OnPlayerPressReady += OnReady;
 
 			// in case we started this demo with the wrong scene being active, simply load the menu scene
 			if (!PhotonNetwork.IsConnected)
@@ -91,7 +88,18 @@ namespace Photon.Pun.Demo.PunBasics
 			{
 				QuitApplication();
 			}
-		}
+
+            // everyone ready and finished making robots, start the main fighting scene
+            if (PhotonNetwork.IsMasterClient && !ready)
+            {
+                if(PhotonNetwork.PlayerList.Length == readyStateByPlayer.Count && !readyStateByPlayer.Values.Contains(false))
+                {
+                    PhotonNetwork.LoadLevel("MainBattleScene");
+                    ready = true;
+                }
+            }
+
+        }
 
         #endregion
 
@@ -109,7 +117,12 @@ namespace Photon.Pun.Demo.PunBasics
 			{
 				Debug.LogFormat( "OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient ); // called before OnPlayerLeftRoom
 
-				LoadArena();
+                if (!readyStateByPlayer.ContainsKey(other.UserId))
+                {
+                    readyStateByPlayer.Add(other.UserId, false);
+                }
+
+                LoadArena();
 			}
 		}
 
@@ -125,7 +138,11 @@ namespace Photon.Pun.Demo.PunBasics
 			{
 				Debug.LogFormat( "OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient ); // called before OnPlayerLeftRoom
 
-				LoadArena(); 
+                if (readyStateByPlayer.ContainsKey(other.UserId))
+                {
+                    readyStateByPlayer.Remove(other.UserId);
+                }
+				LoadArena();
 			}
 		}
 
@@ -150,6 +167,18 @@ namespace Photon.Pun.Demo.PunBasics
 		{
 			Application.Quit();
 		}
+
+        // on player left/enter room functions should deal with keys of dict
+        public void OnReady(string playerId)
+        {
+            readyStateByPlayer[playerId] = true;
+        }
+
+        //goofy way to call, TODO
+        public void OnLocalPressReady()
+        {
+            PlayerManager.LocalPlayerInstance.GetComponent<PlayerManager>().OnReadyButton();
+        }
 
 		#endregion
 

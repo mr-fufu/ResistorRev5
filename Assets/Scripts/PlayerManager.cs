@@ -8,6 +8,7 @@
 // <author>developer@exitgames.com</author>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -21,7 +22,6 @@ namespace Photon.Pun.Demo.PunBasics
     /// </summary>
     public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
-        #region Public Fields
 
         [Tooltip("The current Health of our player")]
         public float Health = 1f;
@@ -29,22 +29,19 @@ namespace Photon.Pun.Demo.PunBasics
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-        #endregion
+        //[Tooltip("The Player's UI GameObject Prefab")]
+        //[SerializeField]
+        //private GameObject playerUiPrefab;
 
-        #region Private Fields
+        //[Tooltip("The Beams GameObject to control")]
+        //[SerializeField]
+        //private GameObject beams;
 
-        [Tooltip("The Player's UI GameObject Prefab")]
-        [SerializeField]
-        private GameObject playerUiPrefab;
-
-        [Tooltip("The Beams GameObject to control")]
-        [SerializeField]
-        private GameObject beams;
+        //string = playerId
+        public static Action<string> OnPlayerPressReady;
 
         //True, when the user is firing
         bool IsFiring;
-
-        #endregion
 
         #region MonoBehaviour CallBacks
 
@@ -53,14 +50,14 @@ namespace Photon.Pun.Demo.PunBasics
         /// </summary>
         public void Awake()
         {
-            if (this.beams == null)
+            /*(if (this.beams == null)
             {
                 Debug.LogError("<Color=Red><b>Missing</b></Color> Beams Reference.", this);
-            }
+           
             else
             {
                 this.beams.SetActive(false);
-            }
+            }*/
 
             // #Important
             // used in GameManager.cs: we keep track of the localPlayer instance to prevent instanciation when levels are synchronized
@@ -79,7 +76,8 @@ namespace Photon.Pun.Demo.PunBasics
         /// </summary>
         public void Start()
         {
-            CameraWork _cameraWork = gameObject.GetComponent<CameraWork>();
+            /*This game has a static camera
+             * CameraWork _cameraWork = gameObject.GetComponent<CameraWork>();
 
             if (_cameraWork != null)
             {
@@ -91,18 +89,18 @@ namespace Photon.Pun.Demo.PunBasics
             else
             {
                 Debug.LogError("<Color=Red><b>Missing</b></Color> CameraWork Component on player Prefab.", this);
-            }
+            }*/
 
             // Create the UI
-            if (this.playerUiPrefab != null)
+            /*if (this.playerUiPrefab != null)
             {
-                GameObject _uiGo = Instantiate(this.playerUiPrefab);
-                _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+                //GameObject _uiGo = Instantiate(this.playerUiPrefab);
+                //_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
             }
             else
             {
                 Debug.LogWarning("<Color=Red><b>Missing</b></Color> PlayerUiPrefab reference on player Prefab.", this);
-            }
+            }*/
 
             #if UNITY_5_4_OR_NEWER
             // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
@@ -141,10 +139,10 @@ namespace Photon.Pun.Demo.PunBasics
                 }
             }
 
-            if (this.beams != null && this.IsFiring != this.beams.activeInHierarchy)
+            /*if (this.beams != null && this.IsFiring != this.beams.activeInHierarchy)
             {
                 this.beams.SetActive(this.IsFiring);
-            }
+            }*/
         }
 
         /// <summary>
@@ -219,8 +217,8 @@ namespace Photon.Pun.Demo.PunBasics
                 transform.position = new Vector3(0f, 5f, 0f);
             }
 
-            GameObject _uiGo = Instantiate(this.playerUiPrefab);
-            _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+            //GameObject _uiGo = Instantiate(this.playerUiPrefab);
+           // _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
         }
 
         #endregion
@@ -282,6 +280,17 @@ namespace Photon.Pun.Demo.PunBasics
                 this.IsFiring = (bool)stream.ReceiveNext();
                 this.Health = (float)stream.ReceiveNext();
             }
+        }
+
+        [PunRPC]
+        void PlayerReady(string playerId, bool isReady)
+        {
+            OnPlayerPressReady.Invoke(playerId);
+        }
+
+        public void OnReadyButton()
+        {
+            photonView.RPC("PlayerReady", RpcTarget.All, PhotonNetwork.LocalPlayer.UserId, true);
         }
 
         #endregion
