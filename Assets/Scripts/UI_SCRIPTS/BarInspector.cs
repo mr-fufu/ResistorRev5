@@ -14,14 +14,9 @@ public class BarInspector : MonoBehaviour
     public GameObject bar_box_3;
     public GameObject bar_box_4;
 
-    private bool[] clone_check;
-
     private GameObject[] bot_loadout;
     private GameObject[] bar_box;
-    private int part_count;
-    private GameObject[] contained_parts;
 
-    // Start is called before the first frame update
     void Start()
     {
         bot_loadout = new GameObject[4];
@@ -33,7 +28,6 @@ public class BarInspector : MonoBehaviour
         bar_box[3] = bar_box_4;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("1"))
@@ -52,53 +46,21 @@ public class BarInspector : MonoBehaviour
         {
             bar_box_4.transform.parent.GetComponent<BarSelectParentLink>().selected_box = bar_box_4.GetComponent<BarSelect>().box_no;
         }
-
-        if (spawn_controller.GetComponent<SpawnController>().spawn_bot_1 != null)
+            
+        // update bot_loadouts
+        for (int i = 1; i < 5; i++)
         {
-            if (spawn_controller.GetComponent<SpawnController>().spawn_bot_1.transform.GetChild(0).childCount != 0)
+            var curSpawnBot = spawn_controller.GetComponent<SpawnController>().spawnBots[i-1];
+            if (curSpawnBot != null)
             {
-                bot_loadout[0] = spawn_controller.GetComponent<SpawnController>().spawn_bot_1.transform.GetChild(0).transform.GetChild(0).gameObject;
-            }
-            else
-            {
-                bot_loadout[0] = null;
-            }
-        }
-
-        if (spawn_controller.GetComponent<SpawnController>().spawn_bot_2 != null)
-        {
-            if (spawn_controller.GetComponent<SpawnController>().spawn_bot_2.transform.GetChild(0).childCount != 0)
-            {
-                bot_loadout[1] = spawn_controller.GetComponent<SpawnController>().spawn_bot_2.transform.GetChild(0).transform.GetChild(0).gameObject;
-            }
-            else
-            {
-                bot_loadout[1] = null;
-            }
-        }
-
-        if (spawn_controller.GetComponent<SpawnController>().spawn_bot_3 != null)
-        {
-
-            if (spawn_controller.GetComponent<SpawnController>().spawn_bot_3.transform.GetChild(0).childCount != 0)
-            {
-                bot_loadout[2] = spawn_controller.GetComponent<SpawnController>().spawn_bot_3.transform.GetChild(0).transform.GetChild(0).gameObject;
-            }
-            else
-            {
-                bot_loadout[2] = null;
-            }
-        }
-
-        if (spawn_controller.GetComponent<SpawnController>().spawn_bot_4 != null)
-        {
-            if (spawn_controller.GetComponent<SpawnController>().spawn_bot_4.transform.GetChild(0).childCount != 0)
-            {
-                bot_loadout[3] = spawn_controller.GetComponent<SpawnController>().spawn_bot_4.transform.GetChild(0).transform.GetChild(0).gameObject;
-            }
-            else
-            {
-                bot_loadout[3] = null;
+                if (curSpawnBot.transform.GetChild(0).childCount != 0)
+                {
+                    bot_loadout[i - 1] = curSpawnBot.transform.GetChild(0).transform.GetChild(0).gameObject;
+                }
+                else
+                {
+                    bot_loadout[i - 1] = null;
+                }
             }
         }
 
@@ -119,7 +81,6 @@ public class BarInspector : MonoBehaviour
 
                         bot_loadout[check_no].transform.position = display_point.transform.position;
                         bot_loadout[check_no].transform.localScale = display_point.transform.localScale;
-                        //bot_loadout[check_no].
 
                         credit_value.GetComponent<UnityEngine.UI.Text>().text = "" + bot_loadout[check_no].GetComponent<StandardStatBlock>().COST;
                     }
@@ -130,7 +91,7 @@ public class BarInspector : MonoBehaviour
 
                     if (bot_loadout[check_no] != null)
                     {
-                        bot_loadout[check_no].transform.localPosition = new Vector2(0,0);
+                        bot_loadout[check_no].transform.localPosition = new Vector2(0, 0);
                     }
                 }
 
@@ -149,7 +110,7 @@ public class BarInspector : MonoBehaviour
 
                 if (bot_loadout[box_no] != null)
                 {
-                    bot_loadout[box_no].transform.localPosition = new Vector2(0,0);
+                    bot_loadout[box_no].transform.localPosition = new Vector2(0, 0);
                 }
             }
         }

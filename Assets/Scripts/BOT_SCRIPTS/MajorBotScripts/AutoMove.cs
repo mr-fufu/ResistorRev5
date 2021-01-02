@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class AutoMove : NetworkBehaviour {
+public class AutoMove : MonoBehaviour 
+{
 
     public Collider2D engaged_target;
 
@@ -13,11 +13,14 @@ public class AutoMove : NetworkBehaviour {
 
     public bool engaged_check = false;
     public bool walker_check;
-    [SyncVar] public bool spawned;
+
+    // TODO SAM: Sync vars
+    public bool spawned;
+    public bool enemy_check;
+
 
     public bool animate_check;
 
-    [SyncVar] public bool enemy_check;  
     private int move_dir;
     private bool engaged_scan;
 
@@ -203,11 +206,6 @@ public class AutoMove : NetworkBehaviour {
 
     public void SkipMove()
     {
-        if (isServer)
-        {
-            transform.Translate(new Vector3(animated_move_dist * move_dir * 8, 0f, 0f));
-        }
+        transform.Translate(new Vector3(animated_move_dist * move_dir * 8, 0f, 0f));
     }
 }
-
-// Time.deltaTime

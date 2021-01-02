@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class Plating : NetworkBehaviour {
+public class Plating : MonoBehaviour {
 
-    // plating script (here bot plating is esssentially bot health)
-    // syncVars are values that are updated across the server when they change
-    // and are handled by the client. I.e. SyncVars can change on non-server or server
-    // clients and both clients will update the value
+    /* plating script (here bot plating is esssentially bot health) */
 
-    [SyncVar] public int max_plating;
-    [SyncVar] public int current_plating;
-    [SyncVar] public bool destruction_trigger = false;
+    // TODO SAM: Sync vars
+    public int max_plating;
+    public int current_plating;
+    public bool destruction_trigger = false;
 
     // plating (health) bar object
     public Object plating_bar;
@@ -28,21 +25,18 @@ public class Plating : NetworkBehaviour {
         Instantiate(plating_bar, gameObject.transform);
 
         // all other values are handled by the server only
-        if (isServer)
-        {
             // check for the spawned bool to see whether the bot has been
             // put into play (legacy carryover from singleplayer)
-            spawned = gameObject.GetComponent<AutoMove>().spawned;
+        spawned = gameObject.GetComponent<AutoMove>().spawned;
 
-            if (spawned)
-            {
-                // sets the max plating to the PLATE stat, the current plating equal to
-                // the max plating and the armor_value equal to the ARMOR stat of the bot
+        if (spawned)
+        {
+            // sets the max plating to the PLATE stat, the current plating equal to
+            // the max plating and the armor_value equal to the ARMOR stat of the bot
 
-                max_plating = gameObject.GetComponent<StandardStatBlock>().PLATE;
-                current_plating = gameObject.GetComponent<StandardStatBlock>().PLATE;
-                armor_value = gameObject.GetComponent<StandardStatBlock>().ARMOR;
-            }
+            max_plating = gameObject.GetComponent<StandardStatBlock>().PLATE;
+            current_plating = gameObject.GetComponent<StandardStatBlock>().PLATE;
+            armor_value = gameObject.GetComponent<StandardStatBlock>().ARMOR;
         }
     }
 
@@ -55,20 +49,17 @@ public class Plating : NetworkBehaviour {
         // also checks if current_plating exceeds max_plating of bot and if so then
         // resets the health to the maximum.
 
-        if (isServer)
+        if (spawned)
         {
-            if (spawned)
+            if (current_plating <= 0)
             {
-                if (current_plating <= 0)
-                {
-                    destruction_trigger = true;
-                    NetworkServer.Destroy(gameObject);
-                }
+                destruction_trigger = true;
+                Destroy(gameObject);
+            }
 
-                if (current_plating > max_plating)
-                {
-                    current_plating = max_plating;
-                }
+            if (current_plating > max_plating)
+            {
+                current_plating = max_plating;
             }
         }
     }
@@ -79,38 +70,17 @@ public class Plating : NetworkBehaviour {
         // value (passed by the projectile script) by the ARMOR stat up to a minimum of 1 incoming
         // damage. Then reduce the current plating by the remaining damage.
 
-        if (isServer)
+        if (spawned)
         {
-            if (spawned)
+            if (DamageInflicted > 1 && DamageInflicted > armor_value)
             {
-                if (DamageInflicted > 1 && DamageInflicted > armor_value)
-                {
-                    current_plating -= (DamageInflicted - armor_value);
-                }
-                else
-                {
-                    current_plating -= 1;
-                }
+                current_plating -= (DamageInflicted - armor_value);
+            }
+            else
+            {
+                current_plating -= 1;
             }
         }
     }
 
-    public void RepairPlating(int RepairInflicted)
-    {
-        // currently not implemented, similar to damage only 
-        if (isServer)
-        {
-            if (spawned)
-            {
-                if ((RepairInflicted + current_plating) > max_plating)
-                {
-                    current_plating = max_plating;
-                }
-                else
-                {
-                    current_plating += RepairInflicted;
-                }
-            }
-        }
-    }
 }

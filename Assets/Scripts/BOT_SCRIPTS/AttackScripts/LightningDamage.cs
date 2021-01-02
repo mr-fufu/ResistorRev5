@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class LightningDamage : NetworkBehaviour
+public class LightningDamage : MonoBehaviour
 {
 
     public bool enemy_check;
@@ -16,10 +15,12 @@ public class LightningDamage : NetworkBehaviour
     private ContactFilter2D collider_filter = new ContactFilter2D();
 
     private Animator anim;
-    [SyncVar] public bool lightning_start;
-    [SyncVar] public bool lightning_middle1;
-    [SyncVar] public bool lightning_middle2;
-    [SyncVar] public bool lightning_end;
+
+    // TODO SAM: These were sync vars
+    public bool lightning_start;
+    public bool lightning_middle1;
+    public bool lightning_middle2;
+    public bool lightning_end;
 
     private string check_tag;
     private Vector2 above_target;
@@ -49,17 +50,6 @@ public class LightningDamage : NetworkBehaviour
         {
             check_tag = "BOT_Player";
         }
-
-        if (isServer)
-        {
-            player_name = "Player1";
-        }
-        else
-        {
-            player_name = "Player2";
-        }
-
-        //Debug.Log(enemy_check);
     }
 	
 	// Update is called once per frame
@@ -69,8 +59,6 @@ public class LightningDamage : NetworkBehaviour
 
     void OnTriggerEnter2D(Collider2D Target)
     {
-        player = GameObject.Find(player_name);
-
         if (Target.tag == check_tag)
         {
             //Debug.Log(check_colliders[checkVar]);
@@ -88,57 +76,7 @@ public class LightningDamage : NetworkBehaviour
                 damage_int_value = 1;
             }
 
-            player.GetComponent<PlayerSpawnScript>().CmdSpawnDamageValues(damage_values, above_target, damage_int_value);
+            BattleFactorySpawn.instance.SpawnDamagePopUp(damage_values, above_target, damage_int_value);
         }
     }
-
-    /*
-    
-        player = GameObject.Find(player_name);
-
-        check_colliders = new Collider2D[scan_size];
-
-        for (int setVar = 0; setVar < scan_size; setVar++)
-        {
-            check_colliders[setVar] = null;
-        }
-
-        gameObject.GetComponent<Collider2D>().OverlapCollider(collider_filter, check_colliders);
-
-        for (int checkVar = 0; checkVar < scan_size; checkVar++)
-        {
-            if (check_colliders[checkVar] != null)
-            {
-                if (check_colliders[checkVar].tag == check_tag)
-                {
-                    //Debug.Log(check_colliders[checkVar]);
-
-                    check_colliders[checkVar].gameObject.GetComponent<Plating>().DamagePlating(damage_val);
-
-                    above_target = new Vector2(check_colliders[checkVar].transform.position.x, check_colliders[checkVar].transform.position.y + 50);
-
-                    if (damage_val > check_colliders[checkVar].gameObject.GetComponent<Plating>().armor_value)
-                    {
-                        damage_int_value = (damage_val - check_colliders[checkVar].gameObject.GetComponent<Plating>().armor_value);
-                    }
-                    if (damage_val <= check_colliders[checkVar].gameObject.GetComponent<Plating>().armor_value)
-                    {
-                        damage_int_value = 1;
-                    }
-
-                    player.GetComponent<PlayerSpawnScript>().CmdSpawnDamageValues(damage_values, above_target, damage_int_value);
-                }
-            }
-        }
-
-    */
-
-    public void DestroySelf()
-    {
-        if (isServer)
-        {
-            NetworkServer.Destroy(gameObject);
-        }
-    }
-
 }

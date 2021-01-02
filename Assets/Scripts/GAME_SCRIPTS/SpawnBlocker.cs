@@ -26,7 +26,6 @@ public class SpawnBlocker : MonoBehaviour
         spawn_light.GetComponent<Light>().intensity = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!original_color_set)

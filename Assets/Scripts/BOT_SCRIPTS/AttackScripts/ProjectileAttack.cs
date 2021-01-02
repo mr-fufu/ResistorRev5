@@ -1,9 +1,9 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class ProjectileAttack : NetworkBehaviour {
+public class ProjectileAttack : MonoBehaviour
+{
 
     // Attached to a bot part that can fire a projectile prefab from a given launch point(s)
 
@@ -66,24 +66,12 @@ public class ProjectileAttack : NetworkBehaviour {
 
     private int index;
 
-    public string player_name;
     public GameObject player;
 
-    [SyncVar] public GameObject leg_component;
+    public GameObject leg_component;
 
-    // Use this for initialization
-    void Start ()
+    void Start()
     {
-        // checks for whether the instance of the game is the server. Player1 is the server, Player2 is the client
-        if (isServer)
-        {
-            player_name = "Player1";
-        }
-        else
-        {
-            player_name = "Player2";
-        }
-
         // set the launch_points array to include the appropriate launch points
         // Also set the launch number to the correct value
         if (double_attack)
@@ -118,7 +106,7 @@ public class ProjectileAttack : NetworkBehaviour {
         // check whether the bot part the projectile attack script is attached to has been attached to 
         // another bot part
         attached = gameObject.GetComponent<PartStats>().attached;
-        
+
         // check whether the range is dependent on and affected by the RANGE stat of the bot
         if (range_stat_dependent)
         {
@@ -129,13 +117,10 @@ public class ProjectileAttack : NetworkBehaviour {
         // find leg object function to search for the leg part of the bot
         find_leg_object(gameObject);
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-        // find the player gameobject based on whether the instance is the client or server
-        player = GameObject.Find(player_name);
-
+    // Update is called once per frame
+    void Update()
+    {
         // if the part is attached to another part, check whether that part (and the bot as a whole) has been spawned in yet
         if (attached)
         {
@@ -218,6 +203,9 @@ public class ProjectileAttack : NetworkBehaviour {
                         // always set to the same launch point and launch_points is an array of size 1 only
                         launch_location = launch_points[index].position;
 
+
+                        //TODO SAM : handle random across server, seed it?
+
                         // variable y is a public bool set by the prefab as an inherent weapon stat that modifies the height between shots
                         // by a small random amount based on the variable y value mostly for aesthetic value for certain wapons (i.e. minigun)
                         if (variable_y)
@@ -231,20 +219,17 @@ public class ProjectileAttack : NetworkBehaviour {
                             leg_component.GetComponent<Fueling>().transmit_fuel(-fuel_use);
                         }
 
-                        // spawn the projectile using the PlayerSpawnScript and the spawn projectile command by passing the projectile prefab, launch location and
-                        // the source of the attack (gameobject that current ProjectileAttack script is attached to) in order to set the projectile as a child of the
-                        // launcher
-                        player.GetComponent<PlayerSpawnScript>().CmdSpawnProjectile(projectile, launch_location, gameObject);
+                        BattleFactorySpawn.instance.SpawnProjectile(projectile, launch_location, gameObject);
 
                         // spawns a flare (muzzle flare) gameobject at the point of launch (usually static and destroys itself after animation plays)
                         if (uses_flare)
                         {
-                            player.GetComponent<PlayerSpawnScript>().CmdSpawnGeneric(flare_object, launch_location, gameObject, gameObject.transform.rotation);
+                            BattleFactorySpawn.instance.SpawnGeneric(flare_object, launch_location, gameObject, gameObject.transform.rotation);
                         }
 
                         // index increases after each shot
                         index++;
-                        
+
                         // reset the index to 0 after it reaches the number of shots (2 for double attack and 4 for multi-attack)
                         // index increases before check so cycles from 0 to 1 for double and 0 to 3 for multi and 0 to 0 for single attack
 
@@ -281,7 +266,7 @@ public class ProjectileAttack : NetworkBehaviour {
                 }
             }
         }
-	}
+    }
 
     // find leg object function: checks each parent gameobject for a PartStats script and if the part type is not LEG then
     // check parent (check exists for if parent exists) for find_leg_object. Records leg gameobject as leg_component otherwise

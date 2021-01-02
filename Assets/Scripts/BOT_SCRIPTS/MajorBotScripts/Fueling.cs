@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking; 
 
-public class Fueling : NetworkBehaviour
+public class Fueling : MonoBehaviour
 {
-    [SyncVar] public bool fuel_used;
+    // TODO SAM: sync vars
+    public bool fuel_used;
+    public int fuel_remaining;
+    private float fuel_clock;
+
     public bool fuel_instantiated;
-    [SyncVar] public int fuel_remaining;
-    [SyncVar] private float fuel_clock;
 
     private int fuel;
 
@@ -18,20 +19,17 @@ public class Fueling : NetworkBehaviour
 
     void Start()
     {
-        if (isServer)
+        // check whether the bot has spawned (Fueling script attached to 
+        // leg part which always contains the automove script)
+        spawned = gameObject.GetComponent<AutoMove>().spawned;
+
+        if (spawned)
         {
-            // check whether the bot has spawned (Fueling script attached to 
-            // leg part which always contains the automove script)
-            spawned = gameObject.GetComponent<AutoMove>().spawned;
+            // start with the fuel value equal to the FUEL stat (affects how quickly fuel
+            // recovers) fuel_remaining starts at 100
+            fuel = gameObject.GetComponent<StandardStatBlock>().FUEL;
 
-            if (spawned)
-            {
-                // start with the fuel value equal to the FUEL stat (affects how quickly fuel
-                // recovers) fuel_remaining starts at 100
-                fuel = gameObject.GetComponent<StandardStatBlock>().FUEL;
-
-                fuel_remaining = 100;
-            }
+            fuel_remaining = 100;
         }
     }
 
@@ -70,12 +68,9 @@ public class Fueling : NetworkBehaviour
     // fuel used in projectile attack). Function is called by projectile attack when projectile is spawned
     public void transmit_fuel(int fuel_transmitted)
     {
-        if (isServer)
+        if (spawned)
         {
-            if (spawned)
-            {
-                fuel_remaining += fuel_transmitted;
-            }
+            fuel_remaining += fuel_transmitted;
         }
     }
 }

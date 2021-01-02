@@ -35,14 +35,14 @@ public class LobbySpriteButton : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (multiplayer_lobby)
+        /*if (multiplayer_lobby)
         {
             gameObject.transform.parent.GetComponent<CustomHost>().JoinMatch();
         }
         else if (host_lobby)
         {
             gameObject.transform.parent.GetComponent<CustomLobbyPlayer>().OnClickJoin();
-        }
+        }*/
     }
 
     public void OnMouseEnter()

@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
 
-public class DamageValues : NetworkBehaviour {
+public class DamageValues : MonoBehaviour
+{
+
+    // TODO SAM: sync var
+    public int damage_value;
 
     public float rise_speed = 1;
-    [SyncVar] public int damage_value;
+    
     public Text displayed_value;
 
-	// Use this for initialization
-	void Start () {
-
-    }
-	
-	// Update is called once per frame
 	void Update () {
         if (rise_speed > 0)
         {

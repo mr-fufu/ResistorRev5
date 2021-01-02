@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-public class LightningAttack : NetworkBehaviour
+public class LightningAttack : MonoBehaviour
 {
     public bool in_range;
     public GameObject range_detector;
@@ -20,35 +19,17 @@ public class LightningAttack : NetworkBehaviour
     private bool enemy_check;
     public int power;
 
-    private float lightning_dist;
-    private Vector3 lightning_point;
-    private bool alternator;
     public bool spawned;
     public bool attached;
 
-    private string player_name;
-    private GameObject player;
 
-    // Start is called before the first frame update
     void Start()
     {
         attached = gameObject.GetComponent<PartStats>().attached;
-
-        if (isServer)
-        {
-            player_name = "Player1";
-        }
-        else
-        {
-            player_name = "Player2";
-        }
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find(player_name);
 
         if (attached)
         {
@@ -80,7 +61,7 @@ public class LightningAttack : NetworkBehaviour
 
                 if (in_range)
                 {
-                    player.GetComponent<PlayerSpawnScript>().CmdSpawnLightning(lightning_object, launch_point.gameObject, lightning_damage, enemy_check, power);
+                    BattleFactorySpawn.instance.SpawnLightning(lightning_object, launch_point.gameObject, lightning_damage, enemy_check, power);
 
                     reloadtime = 100;
                 }

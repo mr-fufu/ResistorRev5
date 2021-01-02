@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using Photon.Pun;
 
-public class Projectile : NetworkBehaviour {
+public class Projectile : MonoBehaviour
+{
 
     public int projectile_speed;
     public bool enemy_check;
@@ -31,18 +32,17 @@ public class Projectile : NetworkBehaviour {
 
     public float ground_y_position;
 
-    // Use this for initialization
     void Start () {
-        if (isServer)
+        if (PhotonNetwork.IsMasterClient)
         {
             player = GameObject.Find("Player1");
         }
-        else if (!isServer)
+        else
         {
             player = GameObject.Find("Player2");
         }
 
-            if (!enemy_check)
+        if (!enemy_check)
         {
             search_tag = "BOT_Enemy";
         }
@@ -51,10 +51,9 @@ public class Projectile : NetworkBehaviour {
             search_tag = "BOT_Player";
         }
 
-            move_dir = 1;
+        move_dir = 1;
     }
 	
-	// Update is called once per frame
 	void Update () {
         transform.Translate(new Vector3(projectile_speed * move_dir * 0.25f* Time.deltaTime * 50, y_velocity, 0f));
 	}
@@ -76,8 +75,8 @@ public class Projectile : NetworkBehaviour {
                 damage_int_value = 1;
             }
 
-            player.GetComponent<PlayerSpawnScript>().CmdSpawnDamageValues(damage_values, above_target, damage_int_value);
-            player.GetComponent<PlayerSpawnScript>().CmdSpawnImpact(use_impact, impact_object, impact_point.position, impact_point.rotation, piercing, gameObject);
+            BattleFactorySpawn.instance.SpawnDamagePopUp(damage_values, above_target, damage_int_value);
+            BattleFactorySpawn.instance.SpawnImpact(use_impact, impact_object, impact_point.position, impact_point.rotation, piercing, gameObject);
         }
     }
 }
