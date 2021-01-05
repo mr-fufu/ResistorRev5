@@ -3491,7 +3491,6 @@ GameObject:
   - component: {fileID: 438687943}
   - component: {fileID: 438687945}
   - component: {fileID: 438687944}
-  - component: {fileID: 438687946}
   m_Layer: 14
   m_Name: EnemySpawnPoint1
   m_TagString: Untagged
@@ -3557,27 +3556,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 90, y: 20}
   m_EdgeRadius: 0
---- !u!50 &438687946
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438687942}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &458217239
 GameObject:
   m_ObjectHideFlags: 0
@@ -8037,7 +8015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb598bcf153cce4468b7e80f1f089a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: 0
 --- !u!4 &1072743614
 Transform:
   m_ObjectHideFlags: 0
