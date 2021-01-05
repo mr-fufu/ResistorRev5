@@ -907,14 +907,13 @@ GameObject:
   m_Component:
   - component: {fileID: 115789606}
   - component: {fileID: 115789605}
-  - component: {fileID: 115789607}
   m_Layer: 0
   m_Name: SpawnController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &115789605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,39 +959,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &115789607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115789604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!1 &120940794
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,13 +3319,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115789605}
-        m_MethodName: SpawnLane2
-        m_Mode: 1
+      - m_Target: {fileID: 1923231279}
+        m_MethodName: SpawnLane
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5926,13 +5892,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115789605}
-        m_MethodName: SpawnLane2
-        m_Mode: 1
+      - m_Target: {fileID: 1923231279}
+        m_MethodName: SpawnLane
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7091,13 +7057,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115789605}
-        m_MethodName: SpawnLane3
-        m_Mode: 1
+      - m_Target: {fileID: 1923231279}
+        m_MethodName: SpawnLane
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7995,7 +7961,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072743614}
-  - component: {fileID: 1072743613}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8003,18 +7968,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1072743613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072743612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb598bcf153cce4468b7e80f1f089a91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1072743614
 Transform:
   m_ObjectHideFlags: 0
@@ -8558,7 +8511,6 @@ GameObject:
   - component: {fileID: 1147159871}
   - component: {fileID: 1147159870}
   - component: {fileID: 1147159872}
-  - component: {fileID: 1147159873}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -8630,39 +8582,6 @@ MonoBehaviour:
   Enemy_Scoring: {fileID: 1098151797}
   player_score_value: 0
   enemy_score_value: 0
---- !u!114 &1147159873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147159869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!1 &1147226122
 GameObject:
   m_ObjectHideFlags: 0
@@ -9394,13 +9313,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115789605}
-        m_MethodName: SpawnLane3
-        m_Mode: 1
+      - m_Target: {fileID: 1923231279}
+        m_MethodName: SpawnLane
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11685,13 +11604,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115789605}
-        m_MethodName: SpawnLane1
-        m_Mode: 1
+      - m_Target: {fileID: 1923231279}
+        m_MethodName: SpawnLane
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13368,6 +13287,68 @@ MonoBehaviour:
   selected_box: 0
   selected_color: {r: 0.5, g: 1, b: 1, a: 1}
   mouseover_color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &1923231278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1923231280}
+  - component: {fileID: 1923231279}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1923231279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923231278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9289dc29e7847c4a9ba8ccf9c0d31bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  credits1: {fileID: 1896814967}
+  credits2: {fileID: 815016575}
+  credit_values: {fileID: 0}
+  player: {fileID: 0}
+  spawnBots: []
+  NUM_BOTS: 4
+  select_bar: {fileID: 1244689678}
+  spawn1: {fileID: 1390116354}
+  spawn2: {fileID: 1409632714}
+  spawn3: {fileID: 1023150547}
+  enemy_spawn_1: {fileID: 438687942}
+  enemy_spawn_2: {fileID: 1078744796}
+  enemy_spawn_3: {fileID: 1424946636}
+  spawn_buttons: {fileID: 458217239}
+  enemy_spawn_buttons: {fileID: 1006139192}
+  spawn_lane: []
+  bot_tag: 
+  player_name: 
+  spawn_list: {fileID: 0}
+--- !u!4 &1923231280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923231278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929361682
 GameObject:
   m_ObjectHideFlags: 0
@@ -14313,13 +14294,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115789605}
-        m_MethodName: SpawnLane1
-        m_Mode: 1
+      - m_Target: {fileID: 1923231279}
+        m_MethodName: SpawnLane
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14660,7 +14641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ba67313e9b7fd4fa9c4dfcdca6e1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_controller: {fileID: 115789604}
+  spawn_controller: {fileID: 1923231278}
   inspector: {fileID: 1423325794}
   display_point: {fileID: 181663196}
   credit_value: {fileID: 2126879109}
