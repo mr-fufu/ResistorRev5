@@ -86,7 +86,10 @@ public class WorkshopDrag : MonoBehaviour {
 
     private Vector3 temp_position;
 
-    // Use this for initialization
+    // for testing purposes, create bot with these two parts
+    [SerializeField] private GameObject L3Object;
+    [SerializeField] private GameObject T7Object;
+
     void Start () {
 
         // find the selected spawn (in this case actually stage) based on the bar select parent link (contains only
@@ -421,6 +424,20 @@ public class WorkshopDrag : MonoBehaviour {
                     selected_object = null;
 
                     dragging = false;
+                }
+            }
+
+            //cheat fill bot up (not visually tho)
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                var slot_component = Instantiate(L3Object.gameObject, Vector3.zero, Quaternion.identity);
+                var slot_component2 = Instantiate(T7Object.gameObject, Vector3.zero, Quaternion.identity);
+
+                GameObject[] stages = new GameObject[4] { stage_1, stage_2, stage_3, stage_4 };
+                for(int i = 0; i < stages.Length; i++)
+                {
+                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, child_count_1, child_count_2, child_count_3, child_count_4, parent_count, slot_component);
+                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().part_name, slot_component2.GetComponent<PartStats>().part_type, child_count_1, child_count_2, child_count_3, child_count_4, parent_count, slot_component2);
                 }
             }
         }

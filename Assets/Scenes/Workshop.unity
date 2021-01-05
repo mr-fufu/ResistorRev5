@@ -611,6 +611,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &33519369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7405706620957617590, guid: 1638ddc654fb44048ae829138df3834c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8708985802827982978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &44255412
 GameObject:
   m_ObjectHideFlags: 0
@@ -9492,6 +9498,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6736620315751832014, guid: ee3f9f606e3b3544da60fb8f82a9be42,
     type: 3}
   m_PrefabInstance: {fileID: 473173971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &477993762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1239992779679944434, guid: 6356b69c4dd94074aacfa221e0aa05ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 2177718516053784820}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &478946784
 GameObject:
@@ -22567,6 +22579,8 @@ MonoBehaviour:
   armor_slot_object: {fileID: 4875086885429186869, guid: 930ae97b5701b1a4f81f38d124509aa1,
     type: 3}
   fade_in_object: {fileID: 1814742009}
+  L3Object: {fileID: 33519369}
+  T7Object: {fileID: 477993762}
 --- !u!114 &1075838286
 MonoBehaviour:
   m_ObjectHideFlags: 0
