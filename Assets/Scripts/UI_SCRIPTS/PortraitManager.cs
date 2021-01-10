@@ -26,6 +26,10 @@ public class PortraitManager : MonoBehaviour
     public bool inc;
     public bool dec;
 
+    public BotColorObject color_hold;
+
+    public Launcher launch;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,5 +106,11 @@ public class PortraitManager : MonoBehaviour
         {
             alt = true;
         }
+    }
+
+    public void CommitColors()
+    {
+        color_hold.UpdateColors(profile_no, alt);
+        launch.Connect();
     }
 }

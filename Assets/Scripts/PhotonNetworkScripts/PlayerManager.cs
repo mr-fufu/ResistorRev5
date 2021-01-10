@@ -21,6 +21,7 @@ using Photon.Pun;
 /// </summary>
 public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
 {
+    public BotColorObject color_script;
 
     [Tooltip("The current Health of our player")]
     public float Health = 1f;
@@ -75,6 +76,8 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     /// </summary>
     public void Start()
     {
+        color_script = GameObject.Find("ColorObject").GetComponent<BotColorObject>();
+
         /*This game has a static camera
             * CameraWork _cameraWork = gameObject.GetComponent<CameraWork>();
 
