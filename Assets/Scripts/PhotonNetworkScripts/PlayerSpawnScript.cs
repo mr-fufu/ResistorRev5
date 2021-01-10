@@ -165,35 +165,19 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             if (parent_count_list[index2] == 1)
             {
                 slot_position = base_component.transform.GetChild(child_count_1_list[index2]).transform;
-
-                part_clone.transform.parent = slot_position;
-                part_clone.transform.localPosition = new Vector2(0, 0);
-                part_clone.transform.localScale = new Vector3(1, 1, 1);
             }
             else if (parent_count_list[index2] == 2)
             {
                 slot_position = base_component.transform.GetChild(child_count_1_list[index2]).GetChild(0).GetChild(child_count_2_list[index2]).transform;
-
-                part_clone.transform.parent = slot_position;
-                part_clone.transform.localPosition = new Vector2(0, 0);
-                part_clone.transform.localScale = new Vector3(1, 1, 1);
             }
             else if (parent_count_list[index2] == 3)
             {
-                slot_position = base_component.transform.GetChild(child_count_1_list[index2]).GetChild(0).GetChild(child_count_2_list[index2]).transform;
-
-                part_clone.transform.parent = slot_position;
-                part_clone.transform.localPosition = new Vector2(0, 0);
-                part_clone.transform.localScale = new Vector3(1, 1, 1);
-            }
-            else if (parent_count_list[index2] == 4)
-            {
                 slot_position = base_component.transform.GetChild(child_count_1_list[index2]).GetChild(0).GetChild(child_count_2_list[index2]).GetChild(0).GetChild(child_count_3_list[index2]).transform;
-
-                part_clone.transform.parent = slot_position;
-                part_clone.transform.localPosition = new Vector2(0, 0);
-                part_clone.transform.localScale = new Vector3(1, 1, 1);
             }
+
+            part_clone.transform.parent = slot_position;
+            part_clone.transform.localPosition = new Vector2(0, 0);
+            part_clone.transform.localScale = new Vector3(1, 1, 1);
 
             part_clone.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
 
@@ -276,7 +260,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
         //TODO SAM: NOT RANDOM
-        botColorObj.GetComponent<BotColorObject>().UpdateColors(Random.Range(0,4));
+        botColorObj.GetComponent<BotColorObject>().UpdateColors(Random.Range(0,4), true);
     }
 
     // Given a part_name and an index, search the appropriate library of the 
