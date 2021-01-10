@@ -78,8 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d9f68da19a5844a17507cc639e366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color_object: {fileID: 7916960463929230623, guid: 3a8d6da55f25ea14993609d8cff20815,
-    type: 3}
+  colorPrefab: {fileID: 0}
   player_1: 0
   bot_tag: 
   part_library: []

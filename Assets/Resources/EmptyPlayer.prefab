@@ -1254,8 +1254,11 @@ MonoBehaviour:
   includeUnity: 1
   includePhoton: 0
   includeSimple: 0
-  componentToggles: []
-  componentLookup: []
+  componentToggles:
+  - component: {fileID: 4248037907998055359}
+    enableIfOwned: 1
+  componentLookup:
+  - {fileID: 4248037907998055359}
 --- !u!114 &3200206698957724768
 MonoBehaviour:
   m_ObjectHideFlags: 0

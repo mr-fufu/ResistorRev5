@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 757655155963156189}
   - component: {fileID: 757655155963156190}
-  - component: {fileID: 757655155963156188}
   m_Layer: 0
   m_Name: SpawnController
   m_TagString: Untagged
@@ -46,46 +45,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits1: {fileID: 0}
   credits2: {fileID: 0}
-  credit_values: []
-  spawn_bot_1: {fileID: 0}
-  spawn_bot_2: {fileID: 0}
-  spawn_bot_3: {fileID: 0}
-  spawn_bot_4: {fileID: 0}
+  credit_values: {fileID: 0}
+  player: {fileID: 0}
+  spawnBots: []
+  NUM_BOTS: 4
   select_bar: {fileID: 0}
   spawn1: {fileID: 0}
   spawn2: {fileID: 0}
   spawn3: {fileID: 0}
-  part_count: 0
---- !u!114 &757655155963156188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757655155963156191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  enemy_spawn_1: {fileID: 0}
+  enemy_spawn_2: {fileID: 0}
+  enemy_spawn_3: {fileID: 0}
+  spawn_buttons: {fileID: 0}
+  enemy_spawn_buttons: {fileID: 0}
+  spawn_lane: []
+  bot_tag: 
+  player_name: 
+  spawn_list: {fileID: 0}
