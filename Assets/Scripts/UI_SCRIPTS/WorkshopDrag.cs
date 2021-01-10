@@ -427,17 +427,20 @@ public class WorkshopDrag : MonoBehaviour {
                 }
             }
 
-            //cheat fill bot up (not visually tho)
+            // TESTING ONLY - cheat fill bot up (not visually tho)
             if (Input.GetKeyDown(KeyCode.B))
             {
-                var slot_component = Instantiate(L3Object.gameObject, Vector3.zero, Quaternion.identity);
-                var slot_component2 = Instantiate(T7Object.gameObject, Vector3.zero, Quaternion.identity);
-
                 GameObject[] stages = new GameObject[4] { stage_1, stage_2, stage_3, stage_4 };
                 for(int i = 0; i < stages.Length; i++)
                 {
+                    var slot_component = Instantiate(L3Object.gameObject, Vector3.zero, Quaternion.identity);
+                    var slot_component2 = Instantiate(T7Object.gameObject, Vector3.zero, Quaternion.identity);
+
                     stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, child_count_1, child_count_2, child_count_3, child_count_4, parent_count, slot_component);
                     stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().part_name, slot_component2.GetComponent<PartStats>().part_type, child_count_1, child_count_2, child_count_3, child_count_4, parent_count, slot_component2);
+
+                    slot_component.transform.SetParent(stages[i].transform);
+                    slot_component2.transform.SetParent(stages[i].transform);
                 }
             }
         }

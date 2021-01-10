@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class LoadingFade : MonoBehaviour
 {
@@ -46,19 +47,20 @@ public class LoadingFade : MonoBehaviour
 
         if (fade_state)
         {
-            if (alpha < 1)
-            {
-                fade_color.a = alpha;
-                alpha += 0.01f;
-                GetComponent<SpriteRenderer>().color = fade_color;
-            }
-            else
+            if(PhotonNetwork.LevelLoadingProgress > 0.96)
             {
                 alpha = 1;
                 fade_color.a = 1;
                 GetComponent<SpriteRenderer>().color = fade_color;
                 fading = false;
                 loaded_in = true;
+            }
+            else
+            {
+                fade_color.a = alpha;
+                alpha += 0.01f;
+                alpha = PhotonNetwork.LevelLoadingProgress;
+                GetComponent<SpriteRenderer>().color = fade_color;
             }
         }
         else

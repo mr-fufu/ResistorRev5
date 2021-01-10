@@ -18,6 +18,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
     public bool player_1;
     public string bot_tag;
 
+    [SerializeField] private GameObject partsLibraryObject;
     public PartLibrary[] part_library;
     private int part_type_index;
 
@@ -44,7 +45,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
         for (int i = 0; i < 6; i++)
         {
-            part_library[i] = transform.GetChild(0).GetChild(i).GetComponent<PartLibrary>();
+            part_library[i] = partsLibraryObject.transform.GetChild(i).GetComponent<PartLibrary>();
         }
 
         // proper sorting of the player. Since there are 2 instances, both with 2 players, there are 4 different
@@ -87,7 +88,8 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         part_type_index = library_index(part_type_list[0]);
 
         // instantiate leg part (0th element in all spawn list arrays)
-        GameObject bot_clone = PhotonNetwork.Instantiate(part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
+
+        GameObject bot_clone = PhotonNetwork.Instantiate("LEGPrefabs/" + part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
 
 
         // deduct credits for spawning bot
@@ -152,7 +154,11 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         {
             part_type_index = library_index(part_type_list[index2]);
 
-            GameObject part_clone = PhotonNetwork.Instantiate(part_library[part_type_index].part_library[search_library(name_list[index2], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
+            // Photon networking requires the folder path under Assets/Resources when instantiating
+            var partPrefab = part_library[part_type_index].part_library[search_library(name_list[index2], part_type_index)];
+            string path = partPrefab.GetComponent<PartStats>().part_type + "Prefabs/" + partPrefab.name;
+
+            GameObject part_clone = PhotonNetwork.Instantiate(path, spawn_location.transform.position, spawn_location.transform.rotation);
 
             part_clone.gameObject.tag = bot_tag;
 
