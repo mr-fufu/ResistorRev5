@@ -89,7 +89,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
         // instantiate leg part (0th element in all spawn list arrays)
 
-        GameObject bot_clone = PhotonNetwork.Instantiate("LEGPrefabs/" + part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
+        GameObject bot_clone = PhotonNetwork.Instantiate("PartPrefabs/LEGPrefabs/" + part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
 
 
         // deduct credits for spawning bot
@@ -156,7 +156,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
             // Photon networking requires the folder path under Assets/Resources when instantiating
             var partPrefab = part_library[part_type_index].part_library[search_library(name_list[index2], part_type_index)];
-            string path = partPrefab.GetComponent<PartStats>().part_type + "Prefabs/" + partPrefab.name;
+            string path = "PartPrefabs/" + partPrefab.GetComponent<PartStats>().part_type + "Prefabs/" + partPrefab.name;
 
             GameObject part_clone = PhotonNetwork.Instantiate(path, spawn_location.transform.position, spawn_location.transform.rotation);
 

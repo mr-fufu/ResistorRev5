@@ -11,7 +11,7 @@ public class CreditCounter : MonoBehaviour
     public int credit_time;
     private int credit_clock;
 
-    void Start()
+    void Awake()
     {
         credit_value = 2500;
         credit_clock = 0;

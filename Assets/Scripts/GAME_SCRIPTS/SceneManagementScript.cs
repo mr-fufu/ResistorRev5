@@ -99,8 +99,8 @@ public class SceneManagementScript : MonoBehaviour
 
         if (set_load)
         {
-            if (loading.loaded_in)
-            {
+            //if (loading.loaded_in)
+            //{
                 if (bot_adjust)
                 {
                     stage_changer.GetComponent<StageSelector>().change_scene = true;
@@ -168,7 +168,7 @@ public class SceneManagementScript : MonoBehaviour
 
                     currently_loading = true;
                 }
-            }
+           // }
         }
     }
 

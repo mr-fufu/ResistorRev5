@@ -95,6 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db79abdd0a59d484c8c403a707379cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_color:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  spawn_color_alt:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &3380104597934609006
 MonoBehaviour:
   m_ObjectHideFlags: 0
