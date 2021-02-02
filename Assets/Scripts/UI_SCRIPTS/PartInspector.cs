@@ -162,7 +162,7 @@ public class PartInspector : MonoBehaviour
             else if (dragging)
             {
                 button_mouse_over = true;
-                selected_object = GetComponent<WorkshopDrag>().selected_object.gameObject;
+                selected_object = GetComponent<WorkshopDrag>().selectedObject.gameObject;
 
                 PLATE = selected_object.GetComponent<PartStats>().PLATE;
                 RANGE = selected_object.GetComponent<PartStats>().RANGE;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class SceneManagementScript : MonoBehaviour
 {
@@ -164,11 +165,10 @@ public class SceneManagementScript : MonoBehaviour
 
                 if (!currently_loading)
                 {
-                    StartCoroutine(LoadAsync(load_location));
+                    StartCoroutine(LoadWithScreen(load_location));
 
                     currently_loading = true;
                 }
-           // }
         }
     }
 
@@ -274,41 +274,12 @@ public class SceneManagementScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadWithScreen(string load_destination)
+    private IEnumerator LoadWithScreen(string load_destination)
     {
         loading_screen.SetActive(true);
-        loading.fade_in = true;
+        loading.FadeInLoadScreen();
 
-        set_load = true;
-        load_location = load_destination;
-    }
-
-    IEnumerator LoadAsync(string load_destination)
-    {
-        bool load_completion = false;
-
-        //if (loading.loaded_in)
-
-        AsyncOperation load_op = SceneManager.LoadSceneAsync(load_destination);
-
-        while (!load_op.isDone)
-        {
-            if (load_op.progress >= 0.89f)
-            {
-                if (!load_completion)
-                {
-                    Debug.Log("load Completed");
-
-                    loading.fade_in = false;
-                    loading.load_complete = true;
-
-                    DontDestroyOnLoad(loading_screen);
-
-                    load_completion = true;
-                }
-            }
-
-            yield return null;
-        }
+        yield return new WaitUntil(() => loading.fadeInComplete == true);
+        PhotonNetwork.LoadLevel(load_destination);
     }
 }

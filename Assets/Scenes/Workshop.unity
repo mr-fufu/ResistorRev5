@@ -17020,6 +17020,7 @@ MonoBehaviour:
   scroll_length: 8
   scroll_holdover: 0
   window_length: 54
+  workshop: {fileID: 1075838285}
 --- !u!1 &834226373
 GameObject:
   m_ObjectHideFlags: 0
@@ -18942,6 +18943,7 @@ MonoBehaviour:
   scroll_length: 7
   scroll_holdover: 0
   window_length: 54
+  workshop: {fileID: 1075838285}
 --- !u!1 &919363452
 GameObject:
   m_ObjectHideFlags: 0
@@ -19410,6 +19412,7 @@ MonoBehaviour:
   scroll_length: 8
   scroll_holdover: 0
   window_length: 54
+  workshop: {fileID: 1075838285}
 --- !u!1001 &937004040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22564,21 +22567,21 @@ MonoBehaviour:
   tutorial8: {fileID: 812904006}
   tutorial_complete: 0
   dragging: 0
-  selected_object: {fileID: 0}
-  dragged_image: {fileID: 0}
-  head_slot_object: {fileID: 6559993845147123916, guid: 664d0abcb7b6db94eb780dbad9a25df3,
+  selectedObject: {fileID: 0}
+  draggedImage: {fileID: 0}
+  headSlotObject: {fileID: 6559993845147123916, guid: 664d0abcb7b6db94eb780dbad9a25df3,
     type: 3}
-  torso_slot_object: {fileID: 3004154075843550233, guid: c22661a61ff3695448dd793f545593c8,
+  torsoSlotObject: {fileID: 3004154075843550233, guid: c22661a61ff3695448dd793f545593c8,
     type: 3}
-  arm_slot_object: {fileID: 2937081915870513032, guid: 1b185a943323ebc42adb497326a0267f,
+  armSlotObject: {fileID: 2937081915870513032, guid: 1b185a943323ebc42adb497326a0267f,
     type: 3}
-  leg_slot_object: {fileID: 849767286707668782, guid: 4dc87a5d940376d47a77c6ef34470169,
+  legSlotObject: {fileID: 849767286707668782, guid: 4dc87a5d940376d47a77c6ef34470169,
     type: 3}
-  top_slot_object: {fileID: 663579890788659688, guid: eef84d0770318fb429af29b227efb3a0,
+  topSlotObject: {fileID: 663579890788659688, guid: eef84d0770318fb429af29b227efb3a0,
     type: 3}
-  armor_slot_object: {fileID: 4875086885429186869, guid: 930ae97b5701b1a4f81f38d124509aa1,
+  armorSlotObject: {fileID: 4875086885429186869, guid: 930ae97b5701b1a4f81f38d124509aa1,
     type: 3}
-  fade_in_object: {fileID: 1814742009}
+  scrollBar: {fileID: 682513971}
   L3Object: {fileID: 33519369}
   T7Object: {fileID: 477993762}
 --- !u!114 &1075838286
@@ -25740,6 +25743,7 @@ MonoBehaviour:
   scroll_length: 9
   scroll_holdover: 0
   window_length: 54
+  workshop: {fileID: 1075838285}
 --- !u!1 &1237410480
 GameObject:
   m_ObjectHideFlags: 0
@@ -32327,6 +32331,7 @@ MonoBehaviour:
   scroll_length: 9
   scroll_holdover: 0
   window_length: 54
+  workshop: {fileID: 1075838285}
 --- !u!1 &1575592069
 GameObject:
   m_ObjectHideFlags: 0
@@ -37840,6 +37845,7 @@ MonoBehaviour:
   scroll_length: 9
   scroll_holdover: 0
   window_length: 54
+  workshop: {fileID: 1075838285}
 --- !u!1 &1849086995
 GameObject:
   m_ObjectHideFlags: 0

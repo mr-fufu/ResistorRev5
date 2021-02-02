@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Photon.Pun;
 
 public class IntroScript : MonoBehaviour
 {
@@ -28,13 +28,6 @@ public class IntroScript : MonoBehaviour
     public GameObject loading_screen;
     public LoadingFade loading;
 
-    private bool in_load;
-
-    private bool set_load;
-    private string load_location;
-    private bool currently_loading;
-
-    // Start is called before the first frame update
     void Start()
     {
         loading = loading_screen.GetComponent<LoadingFade>();
@@ -69,151 +62,102 @@ public class IntroScript : MonoBehaviour
         fade_black.GetComponent<SpriteRenderer>().color = new Vector4(0, 0, 0, 1);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!in_load)
+        if (!initial_fade)
         {
-
-            if (!initial_fade)
+            if (alpha >= 0)
             {
-                if (alpha >= 0)
-                {
-                    slide_color.a = alpha;
-                    alpha -= 0.006f;
-                    fade_black.GetComponent<SpriteRenderer>().color = slide_color;
-                }
-                else
-                {
-                    fade_black.GetComponent<SpriteRenderer>().color = full_transparent;
-                    initial_fade = true;
-                    slide_color = new Vector4(1, 1, 1, 1);
-                }
-            }
-            else if (var < 5)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (slides[var].GetComponent<TypeWriter>().finish_typing == true)
-                    {
-                        slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
-                        var++;
-                    }
-                    else
-                    {
-                        slides[var].GetComponent<TypeWriter>().InstantType();
-                    }
-                }
-
-                if (slides[var].GetComponent<TypeWriter>().finish_typing == false && slides[var].GetComponent<TypeWriter>().start_typing == false)
-                {
-                    if (alpha < 1)
-                    {
-                        alpha += 0.01f;
-                        slide_color.a = alpha;
-                        if (var != 0)
-                        {
-                            slides[var].GetComponent<SpriteRenderer>().color = slide_color;
-                        }
-                    }
-                    else
-                    {
-                        slides[var].GetComponent<TypeWriter>().start_typing = true;
-                        slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
-
-                        alpha = 1;
-                    }
-
-                }
-                else if (slides[var].GetComponent<TypeWriter>().finish_typing == true)
-                {
-                    if (wait_time < 1)
-                    {
-                        wait_time += Time.deltaTime * 10f;
-                    }
-                    else
-                    {
-                        if (alpha > 0)
-                        {
-                            alpha -= 0.01f;
-                            slide_color.a = alpha;
-                            slides[var].GetComponent<SpriteRenderer>().color = slide_color;
-                        }
-                        else
-                        {
-                            slides[var].GetComponent<SpriteRenderer>().color = full_transparent;
-
-                            if (transition_time < 1)
-                            {
-                                transition_time += 20f * Time.deltaTime;
-                            }
-                            else
-                            {
-                                // var++;
-                                wait_time = 0;
-                                transition_time = 0;
-                            }
-                        }
-                    }
-                }
+                slide_color.a = alpha;
+                alpha -= 0.006f;
+                fade_black.GetComponent<SpriteRenderer>().color = slide_color;
             }
             else
             {
-                LoadWithScreen("LobbyScene");
-                in_load = true;
+                fade_black.GetComponent<SpriteRenderer>().color = full_transparent;
+                initial_fade = true;
+                slide_color = new Vector4(1, 1, 1, 1);
             }
         }
-
-        if (set_load)
+        else if (var < 5)
         {
-            if (loading.loaded_in)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (!currently_loading)
+                if (slides[var].GetComponent<TypeWriter>().finish_typing == true)
                 {
-                    StartCoroutine(LoadAsync(load_location));
+                    slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
+                    var++;
+                }
+                else
+                {
+                    slides[var].GetComponent<TypeWriter>().InstantType();
+                }
+            }
 
-                    currently_loading = true;
+            if (slides[var].GetComponent<TypeWriter>().finish_typing == false && slides[var].GetComponent<TypeWriter>().start_typing == false)
+            {
+                if (alpha < 1)
+                {
+                    alpha += 0.01f;
+                    slide_color.a = alpha;
+                    if (var != 0)
+                    {
+                        slides[var].GetComponent<SpriteRenderer>().color = slide_color;
+                    }
+                }
+                else
+                {
+                    slides[var].GetComponent<TypeWriter>().start_typing = true;
+                    slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
+
+                    alpha = 1;
+                }
+
+            }
+            else if (slides[var].GetComponent<TypeWriter>().finish_typing == true)
+            {
+                if (wait_time < 1)
+                {
+                    wait_time += Time.deltaTime * 10f;
+                }
+                else
+                {
+                    if (alpha > 0)
+                    {
+                        alpha -= 0.01f;
+                        slide_color.a = alpha;
+                        slides[var].GetComponent<SpriteRenderer>().color = slide_color;
+                    }
+                    else
+                    {
+                        slides[var].GetComponent<SpriteRenderer>().color = full_transparent;
+
+                        if (transition_time < 1)
+                        {
+                            transition_time += 20f * Time.deltaTime;
+                        }
+                        else
+                        {
+                            // var++;
+                            wait_time = 0;
+                            transition_time = 0;
+                        }
+                    }
                 }
             }
         }
+        else
+        {
+            StartCoroutine(LoadWithScreen("LobbyScene"));
+        }
     }
 
-    public void LoadWithScreen(string load_destination)
+    private IEnumerator LoadWithScreen(string load_destination)
     {
         loading_screen.SetActive(true);
-        loading.fade_in = true;
+        loading.FadeInLoadScreen();
 
-        set_load = true;
-        load_location = load_destination;
-    }
-
-    IEnumerator LoadAsync(string load_destination)
-    {
-        bool load_completion = false;
-
-        //if (loading.loaded_in)
-
-        AsyncOperation load_op = SceneManager.LoadSceneAsync(load_destination);
-
-        while (!load_op.isDone)
-        {
-            if (load_op.progress >= 0.89f)
-            {
-                if (!load_completion)
-                {
-                    Debug.Log("load Completed");
-
-                    loading.fade_in = false;
-                    loading.load_complete = true;
-
-                    DontDestroyOnLoad(loading_screen);
-
-                    load_completion = true;
-                }
-            }
-
-            yield return null;
-        }
-
+        yield return new WaitUntil(() => loading.fadeInComplete == true);
+        PhotonNetwork.LoadLevel(load_destination);
     }
 }

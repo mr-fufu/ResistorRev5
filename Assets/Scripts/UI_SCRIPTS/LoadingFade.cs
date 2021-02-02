@@ -6,98 +6,92 @@ using UnityEngine.SceneManagement;
 
 public class LoadingFade : MonoBehaviour
 {
-    public bool fade_complete;
+    public bool fadeInComplete;
 
     public float alpha = 0;
-    public Color fade_color = new Vector4(1, 1, 1, 1);
-    public Color transparency = new Vector4(1, 1, 1, 1);
+    private Color fadeColor = new Vector4(1, 1, 1, 1);
+    private Color childColor = new Vector4(1, 1, 1, 1);
 
-    private int child_count;
-    public bool fading;
-    public bool set_visible;
+    private int childCount;
+    public bool fadeHold;
+    public bool setVisible;
 
-    public int fade_delay;
+    private int fadeDelay;
 
-    public bool loaded_in;
-    Scene current_scene;
+    Scene currentScene;
 
     void Start()
     {
-        fade_color = GetComponent<SpriteRenderer>().color;
-        DontDestroyOnLoad(gameObject);
+        fadeHold = false;
+        fadeColor = GetComponent<SpriteRenderer>().color;
+        DontDestroyOnLoad(this.gameObject);
 
-        current_scene = SceneManager.GetActiveScene();
-        set_visible = false;
-        fade_complete = false;
+        currentScene = SceneManager.GetActiveScene();
+        setVisible = false;
+        fadeInComplete = false;
+
+        fadeColor.a = 0;
+        GetComponent<SpriteRenderer>().color = fadeColor;
+        childColor.a = fadeColor.a;
+        ChangeChildren(childColor);
     }
 
     void Update()
     {
         // code below fades alpha in/out based on set_visible bool
-        if (set_visible)
+        if (fadeHold != setVisible)
         {
-            if(alpha > 1)
+            if (setVisible)
             {
-                alpha = 1;
-                fade_color.a = 1;
-
-                fading = false;
-                loaded_in = true;
-
-                fade_complete = true;
-            }
-            else
-            {
-                fade_color.a = alpha;
-                alpha += 0.01f;
-                GetComponent<SpriteRenderer>().color = fade_color;
-            }
-        }
-        else
-        {
-            if (alpha < 0)
-            {
-                alpha = 0;
-                fade_color.a = 0;
-                GetComponent<SpriteRenderer>().color = fade_color;
-                fading = false;
-            }
-            else
-            {
-                if (fade_delay > 0)
+                if (alpha > 1)
                 {
-                    fade_delay--;
+                    alpha = 1;
+                    fadeHold = true;
+                    fadeInComplete = true;
                 }
                 else
                 {
-                    fading = true;
-                    fade_color.a = alpha;
-                    alpha -= 0.006f;
-                    GetComponent<SpriteRenderer>().color = fade_color;
+                    alpha += 0.01f;
                 }
             }
-        }
+            else
+            {
+                if (alpha < 0)
+                {
+                    alpha = 0;
+                    fadeHold = false;
+                }
+                else
+                {
+                    if (fadeDelay > 0)
+                    {
+                        fadeDelay--;
+                    }
+                    else
+                    {
+                        alpha -= 0.006f;
+                    }
+                }
+            }
 
-        // if currently fading, change color of sprite and color of child sprites to match fade_color's transparency
-        // otherwise, if fading in is complete and scene has changed, fade back out (to fully transparent)
-        if (fading)
-        {
-            GetComponent<SpriteRenderer>().color = fade_color;
-            transparency.a = fade_color.a;
-            change_children(transparency);
-
+            // if currently fading, change color of sprite and color of child sprites to match fade_color's transparency
+            // otherwise, if fading in is complete and scene has changed, fade back out (to fully transparent)
+            fadeColor.a = alpha;
+            GetComponent<SpriteRenderer>().color = fadeColor;
+            childColor.a = alpha;
+            ChangeChildren(childColor);
         }
         else
         {
-            if (SceneManager.GetActiveScene() != current_scene)
+            if (SceneManager.GetActiveScene() != currentScene)
             {
                 //current_scene = SceneManager.GetActiveScene();
-                set_visible = false;
+                setVisible = false;
             }
         }
 
         // if scene has changed and object has faded out, destroy self
-        if ((alpha == 0) && fade_complete)
+        if ((alpha == 0) && fadeInComplete)
         {
             Destroy(gameObject);
         }
@@ -105,19 +99,19 @@ public class LoadingFade : MonoBehaviour
 
     // method to initiate a scene change. Calling script should then check fade_complete == true i.e. when
     // this object has fully faded in before changing scenes
-    public void change_scene()
+    public void FadeInLoadScreen()
     {
-        set_visible = true;
-        fade_delay = 100;
+        setVisible = true;
+        fadeDelay = 100;
     }
 
-    private void change_children(Color set_color)
+    private void ChangeChildren(Color setColor)
     {
-        child_count = gameObject.transform.childCount;
+        childCount = gameObject.transform.childCount;
 
-        for (int var = 0; var < child_count; var++)
+        for (int var = 0; var < childCount; var++)
         {
-            gameObject.transform.GetChild(var).gameObject.GetComponent<SpriteRenderer>().color = set_color;
+            gameObject.transform.GetChild(var).gameObject.GetComponent<SpriteRenderer>().color = setColor;
         }
     }
 }

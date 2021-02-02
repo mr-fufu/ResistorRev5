@@ -28,10 +28,10 @@ public class WorkshopDrag : MonoBehaviour {
     public GameObject stage_3;
     public GameObject stage_4;
 
-    private int child_count_1;
-    private int child_count_2;
-    private int child_count_3;
-    private int child_count_4;
+    private int childCount1;
+    private int childCount2;
+    private int childCount3;
+    private int childCount4;
 
     private int parent_count;
 
@@ -50,39 +50,38 @@ public class WorkshopDrag : MonoBehaviour {
 
     public bool tutorial_complete;
 
-    public const string drag_tag = "DraggableUIPart";
-    public const string slot_tag = "UIPartSlot";
-    public const string bot_tag = "WorkshopBot";
-    private string selected_part_type;
-    private string placed_slot_type;
+    public const string dragTag = "DraggableUIPart";
+    public const string slotTag = "UIPartSlot";
+    public const string botTag = "WorkshopBot";
+    private string selectedPartType;
+    private string placedSlotType;
 
     public bool dragging = false;
 
-    private Vector2 original_position;
-    private Vector3 mouse_location;
-    private Vector3 original_scale;
-    public Transform selected_object;
-    public SpriteRenderer dragged_image;
+    private Vector2 originalPosition;
+    private Vector3 mouseLocation;
+    private Vector3 originalScale;
+    public Transform selectedObject;
+    public SpriteRenderer draggedImage;
 
-    private GameObject hit_object;
-    private bool occupied;
-    private string original_sort_layer;
-    private int original_sort_order;
+    private string originalSortLayer;
+    private int originalSortOrder;
 
     private int part_count;
 
-    public GameObject head_slot_object;
-    public GameObject torso_slot_object;
-    public GameObject arm_slot_object;
-    public GameObject leg_slot_object;
-    public GameObject top_slot_object;
-    public GameObject armor_slot_object;
-    public GameObject fade_in_object;
+    public GameObject headSlotObject;
+    public GameObject torsoSlotObject;
+    public GameObject armSlotObject;
+    public GameObject legSlotObject;
+    public GameObject topSlotObject;
+    public GameObject armorSlotObject;
 
-    private bool initial_fade_completed;
+    public GameObject scrollBar;
+
+    private bool initialFadeCompleted;
     private float alpha = 1;
-    private Color fade_in_color = new Vector4(1, 1, 1, 1);
-    private Color full_transparent = new Vector4(1, 1, 1, 0);
+    private Color fadeInColor = new Vector4(1, 1, 1, 1);
+    private Color fullTransparent = new Vector4(1, 1, 1, 0);
 
     private Vector3 temp_position;
 
@@ -92,12 +91,14 @@ public class WorkshopDrag : MonoBehaviour {
 
     void Start () {
 
+        scrollBar.SetActive(false);
+
         // find the selected spawn (in this case actually stage) based on the bar select parent link (contains only
         // a single int representing which box is currently selected by the player
         selected_spawn = spawn_selector.GetComponent<BarSelectParentLink>();
 
         // clears the selected object (representing the bot part currently picked up by the player)
-        selected_object = null;
+        selectedObject = null;
 
         // create an array of gameobjects by collating individual slides and activate only the first slide
         // and deactivate the rest. Set the tutorial counter to 0
@@ -130,15 +131,6 @@ public class WorkshopDrag : MonoBehaviour {
         tutorial[7] = tutorial8;
 
         tutorial[0].SetActive(true);
-
-        // activate the fade_in object, basically a solid black shape that becomes transparent over time
-        fade_in_object.SetActive(true);
-
-        // placeholder color component that holds the color (RGB) of the fade_in object it begins with so that
-        // we can alter only the alpha without changing the actual color (RGB) since we cannot change the alpha alone
-        // of a color component attached to a gameobject but conversely ARE allowed to modify a single color component (color.a)
-        // of an arbitrary color component we define. Its weird.
-        fade_in_color = fade_in_object.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -146,7 +138,7 @@ public class WorkshopDrag : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(1))
         {
-            RemovePart(FindObjectsOnClick(bot_tag, false).parent.transform);
+            RemovePart(FindObjectsOnClick(botTag, false).parent.transform);
         }
 
         // check for which stage is currently selected by the player. Stages do not need to be
@@ -177,23 +169,6 @@ public class WorkshopDrag : MonoBehaviour {
         // before anything else, fade in the fade_in object by decreasing the alpha, setting the alpha component of the fade_in_color
         // to the alpha float variable then setting the fade_in_object's color to the intermediary fade_in_color. Once the alpha is less than
         // or equal to 0, set the fade_in_object to full transparent and set the initial fade to true (fade completed)
-        if (!initial_fade_completed)
-        {
-            if (alpha >= 0)
-            {
-                fade_in_color.a = alpha;
-                alpha -= 0.006f;
-                fade_in_object.GetComponent<SpriteRenderer>().color = fade_in_color;
-            }
-            else
-            {
-                fade_in_object.GetComponent<SpriteRenderer>().color = full_transparent;
-                initial_fade_completed = true;
-                fade_in_color = new Vector4(0, 0, 0, 0);
-            }
-        }
-
-        else{
 
             // redundant safety code for testing in case the tutorial has been deactivated (can be removed later)
             if (tutorial_count == 0)
@@ -207,67 +182,65 @@ public class WorkshopDrag : MonoBehaviour {
 
             if (Input.GetMouseButtonDown(0))
             {
-                // if the tutorial has not been completed then lmb will increase the tutorial count (and thus move to the next
-                // slide) Once the tutorial is complete (tutorial_count == 8), tutorial complete = true
-                if (!tutorial_complete)
+            // if the tutorial has not been completed then lmb will increase the tutorial count (and thus move to the next
+            // slide) Once the tutorial is complete (tutorial_count == 8), tutorial complete = true
+            if (!tutorial_complete)
+            {
+                tutorial_count++;
+
+                for (int var = 0; var < 8; var++)
                 {
-                    tutorial_count++;
-
-                    for (int var = 0; var < 8; var++)
+                    if (var != tutorial_count)
                     {
-                        if (var != tutorial_count)
-                        {
-                            tutorial[var].SetActive(false);
-                        }
-                        else if (var == tutorial_count)
-                        {
-                            tutorial[var].SetActive(true);
-                        }
+                        tutorial[var].SetActive(false);
                     }
-
-                    if (tutorial_count == 8)
+                    else if (var == tutorial_count)
                     {
-                        tutorial_complete = true;
-                    }
-                }
-                else
-                {
-                    // upon pressing the lmb (once fade and tutorial complete), check if any colliders were beneath the point of 
-                    // mouse click. If the collider is attached to a valid UI part, then begin dragging
-                    // Additionally, record the original position and scale
-
-                    // if we are currently not dragging anything
-                    if (!dragging)
-                    {
-                        // call the find objects on click for the drag tag, drop is false (since we are picking up a part) 
-                        // and record the result in the selected_object gameobject
-                        selected_object = FindObjectsOnClick(drag_tag, false);
-
-                        // if a valid object is found
-                        if (selected_object != null)
-                        {
-                            // set dragging to true and record the selected object's part type
-                            dragging = true;
-
-                            selected_part_type = selected_object.gameObject.GetComponent<PartStats>().part_type;
-
-                            // record the original position and scale
-                            original_position = selected_object.position;
-                            original_scale = selected_object.localScale;
-
-                            // disable the selected object's collider
-                            selected_object.GetComponent<BoxCollider2D>().enabled = false;
-
-                            // get the selected object's sprite renderer
-                            dragged_image = selected_object.GetComponent<SpriteRenderer>();
-
-                            // record the original sprite sort order
-                            original_sort_layer = selected_object.GetComponent<SpriteRenderer>().sortingLayerName;
-                            original_sort_order = selected_object.GetComponent<SpriteRenderer>().sortingOrder;
-                        }
+                        tutorial[var].SetActive(true);
                     }
                 }
 
+                if (tutorial_count == 8)
+                {
+                    tutorial_complete = true;
+                }
+            }
+            else
+            {
+                // upon pressing the lmb (once fade and tutorial complete), check if any colliders were beneath the point of 
+                // mouse click. If the collider is attached to a valid UI part, then begin dragging
+                // Additionally, record the original position and scale
+
+                // if we are currently not dragging anything
+                if (!dragging)
+                {
+                    // call the find objects on click for the drag tag, drop is false (since we are picking up a part) 
+                    // and record the result in the selected_object gameobject
+                    selectedObject = FindObjectsOnClick(dragTag, false);
+
+                    // if a valid object is found
+                    if (selectedObject != null)
+                    {
+                        // set dragging to true and record the selected object's part type
+                        dragging = true;
+
+                        selectedPartType = selectedObject.gameObject.GetComponent<PartStats>().part_type;
+
+                        // record the original position and scale
+                        originalPosition = selectedObject.position;
+                        originalScale = selectedObject.localScale;
+
+                        // disable the selected object's collider
+                        selectedObject.GetComponent<BoxCollider2D>().enabled = false;
+
+                        // get the selected object's sprite renderer
+                        draggedImage = selectedObject.GetComponent<SpriteRenderer>();
+
+                        // record the original sprite sort order
+                        originalSortLayer = selectedObject.GetComponent<SpriteRenderer>().sortingLayerName;
+                        originalSortOrder = selectedObject.GetComponent<SpriteRenderer>().sortingOrder;
+                    }
+                }
             }
 
             if (dragging)
@@ -283,33 +256,33 @@ public class WorkshopDrag : MonoBehaviour {
                 // that offset through while dragging. This might be quite a bit of work though for very little payoff though it would
                 // be nice and I should get to it at some point.
 
-                mouse_location = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
+                mouseLocation = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
 
-                selected_object.position = new Vector3(mouse_location[0], mouse_location[1], 0);
+                selectedObject.position = new Vector3(mouseLocation[0], mouseLocation[1], 0);
 
-                selected_object.localScale = new Vector3(3, 3, 1);
+                selectedObject.localScale = new Vector3(3, 3, 1);
 
-                dragged_image.sortingLayerName = "Inspector";
-                dragged_image.sortingOrder = 100;
+                draggedImage.sortingLayerName = "Inspector";
+                draggedImage.sortingOrder = 100;
             }
 
             if (Input.GetMouseButtonUp(0))
             {
                 // if an object is currently selected on release
-                if (selected_object != null)
+                if (selectedObject != null)
                 {
                     // find colliders under the mouse with the slot tag
-                    var placement = FindObjectsOnClick(slot_tag, true);
+                    var placement = FindObjectsOnClick(slotTag, true);
 
                     // if there is a slot underneath the mouse
                     if (placement != null)
                     {
                         // record the slot's component type
-                        placed_slot_type = placement.gameObject.GetComponent<PartStats>().slot_type;
+                        placedSlotType = placement.gameObject.GetComponent<PartStats>().slot_type;
 
                         // if the slot's component type matches the component type i.e. the part
                         // fits in the slot
-                        if (placed_slot_type == selected_part_type)
+                        if (placedSlotType == selectedPartType)
                         {
                             // Calls the Function to remove parts that may currently be in the slot
 
@@ -321,15 +294,15 @@ public class WorkshopDrag : MonoBehaviour {
                             // the standard stat block. Additionally, change the sort order of the 
                             // instantiated part back to the original sort order
 
-                            var slot_component = Instantiate(selected_object.gameObject, placement.position, placement.rotation);
+                            var slot_component = Instantiate(selectedObject.gameObject, placement.position, placement.rotation);
 
                             slot_component.transform.parent = placement.transform;
 
                             parent_count = 0;
-                            child_count_1 = 0;
-                            child_count_2 = 0;
-                            child_count_3 = 0;
-                            child_count_4 = 0;
+                            childCount1 = 0;
+                            childCount2 = 0;
+                            childCount3 = 0;
+                            childCount4 = 0;
 
                             if (slot_component.GetComponent<PartStats>().part_type == "LEG")
                             {
@@ -338,31 +311,31 @@ public class WorkshopDrag : MonoBehaviour {
                             else if (slot_component.transform.parent.parent.GetComponent<PartStats>().part_type == "LEG")
                             {
                                 parent_count = 1;
-                                child_count_1 = slot_component.transform.parent.GetSiblingIndex();
+                                childCount1 = slot_component.transform.parent.GetSiblingIndex();
                             }
                             else if (slot_component.transform.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
                             {
                                 parent_count = 2;
-                                child_count_1 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
-                                child_count_2 = slot_component.transform.parent.GetSiblingIndex();
+                                childCount1 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
+                                childCount2 = slot_component.transform.parent.GetSiblingIndex();
                             }
                             else if (slot_component.transform.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
                             {
                                 parent_count = 3;
-                                child_count_1 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
-                                child_count_2 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
-                                child_count_3 = slot_component.transform.parent.GetSiblingIndex();
+                                childCount1 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
+                                childCount2 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
+                                childCount3 = slot_component.transform.parent.GetSiblingIndex();
                             }
                             else if (slot_component.transform.parent.parent.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
                             {
                                 parent_count = 4;
-                                child_count_1 = slot_component.transform.parent.parent.parent.parent.parent.parent.parent.GetSiblingIndex();
-                                child_count_2 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
-                                child_count_3 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
-                                child_count_4 = slot_component.transform.parent.GetSiblingIndex();
+                                childCount1 = slot_component.transform.parent.parent.parent.parent.parent.parent.parent.GetSiblingIndex();
+                                childCount2 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
+                                childCount3 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
+                                childCount4 = slot_component.transform.parent.GetSiblingIndex();
                             }
 
-                            selected_stage.GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, child_count_1, child_count_2, child_count_3, child_count_4, parent_count, slot_component);
+                            selected_stage.GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
 
                             // optional replace new instantiated component with component type name
                             // may be useful if locational damage is implemented
@@ -380,7 +353,7 @@ public class WorkshopDrag : MonoBehaviour {
                             }
 
                             slot_component.GetComponent<PartStats>().attached = true;
-                            slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = original_sort_order;
+                            slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
 
                             fill_child_slots(selected_stage);
 
@@ -394,34 +367,34 @@ public class WorkshopDrag : MonoBehaviour {
 
                             // return the selected component to its original position, scale and sort order
 
-                            selected_object.position = original_position;
-                            selected_object.localScale = original_scale;
-                            selected_object.GetComponent<SpriteRenderer>().sortingOrder = original_sort_order;
-                            selected_object.GetComponent<SpriteRenderer>().sortingLayerName = original_sort_layer;
+                            selectedObject.position = originalPosition;
+                            selectedObject.localScale = originalScale;
+                            selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+                            selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
                         }
                         else
                         {
-                            selected_object.position = original_position;
-                            selected_object.localScale = original_scale;
-                            selected_object.GetComponent<SpriteRenderer>().sortingOrder = original_sort_order;
-                            selected_object.GetComponent<SpriteRenderer>().sortingLayerName = original_sort_layer;
+                            selectedObject.position = originalPosition;
+                            selectedObject.localScale = originalScale;
+                            selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+                            selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
                         }
                     }
                     else
                     {
-                        selected_object.position = original_position;
-                        selected_object.localScale = original_scale;
-                        selected_object.GetComponent<SpriteRenderer>().sortingOrder = original_sort_order;
-                        selected_object.GetComponent<SpriteRenderer>().sortingLayerName = original_sort_layer;
+                        selectedObject.position = originalPosition;
+                        selectedObject.localScale = originalScale;
+                        selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+                        selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
                     }
 
-                    selected_object.position = original_position;
-                    selected_object.localScale = original_scale;
-                    selected_object.GetComponent<SpriteRenderer>().sortingOrder = original_sort_order;
-                    selected_object.GetComponent<SpriteRenderer>().sortingLayerName = original_sort_layer;
+                    selectedObject.position = originalPosition;
+                    selectedObject.localScale = originalScale;
+                    selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+                    selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
 
-                    selected_object.GetComponent<BoxCollider2D>().enabled = true;
-                    selected_object = null;
+                    selectedObject.GetComponent<BoxCollider2D>().enabled = true;
+                    selectedObject = null;
 
                     dragging = false;
                 }
@@ -436,8 +409,8 @@ public class WorkshopDrag : MonoBehaviour {
                     var slot_component = Instantiate(L3Object.gameObject, Vector3.zero, Quaternion.identity);
                     var slot_component2 = Instantiate(T7Object.gameObject, Vector3.zero, Quaternion.identity);
 
-                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, child_count_1, child_count_2, child_count_3, child_count_4, parent_count, slot_component);
-                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().part_name, slot_component2.GetComponent<PartStats>().part_type, child_count_1, child_count_2, child_count_3, child_count_4, parent_count, slot_component2);
+                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
+                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().part_name, slot_component2.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component2);
 
                     slot_component.transform.SetParent(stages[i].transform);
                     slot_component2.transform.SetParent(stages[i].transform);
@@ -491,7 +464,7 @@ public class WorkshopDrag : MonoBehaviour {
             {
                 return ray_hit.collider.gameObject.transform;
             }
-            else if (ray_hit.collider.gameObject.tag == "slot component" || ray_hit.collider.gameObject.tag == bot_tag)
+            else if (ray_hit.collider.gameObject.tag == "slot component" || ray_hit.collider.gameObject.tag == botTag)
             {
                 if (drop)
                 {
@@ -577,7 +550,7 @@ public class WorkshopDrag : MonoBehaviour {
                         {
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slot_type == "LEG")
                             {
-                                var leg_slot = Instantiate(leg_slot_object, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
+                                var leg_slot = Instantiate(legSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
                                 temp_position = part_to_fill.transform.GetChild(var).position;
                                 temp_position.y += 25;
                                 temp_position.z -= 100;
@@ -587,7 +560,7 @@ public class WorkshopDrag : MonoBehaviour {
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slot_type == "ARM")
                             {
-                                var arm_slot = Instantiate(arm_slot_object, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
+                                var arm_slot = Instantiate(armSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
                                 temp_position = part_to_fill.transform.GetChild(var).position;
                                 temp_position.x -= 33;
                                 temp_position.y += 17f;
@@ -598,7 +571,7 @@ public class WorkshopDrag : MonoBehaviour {
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slot_type == "TORSO")
                             {
-                                var torso_slot = Instantiate(torso_slot_object, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
+                                var torso_slot = Instantiate(torsoSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
                                 temp_position = part_to_fill.transform.GetChild(var).position;
                                 temp_position.y += 12;
                                 temp_position.z -= 100;
@@ -608,7 +581,7 @@ public class WorkshopDrag : MonoBehaviour {
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slot_type == "HEAD")
                             {
-                                var head_slot = Instantiate(head_slot_object, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
+                                var head_slot = Instantiate(headSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
                                 temp_position = part_to_fill.transform.GetChild(var).position;
                                 temp_position.y += 14;
                                 temp_position.z -= 100;
@@ -618,7 +591,7 @@ public class WorkshopDrag : MonoBehaviour {
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slot_type == "ARMOR")
                             {
-                                var armor_slot = Instantiate(armor_slot_object, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
+                                var armor_slot = Instantiate(armorSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
                                 temp_position = part_to_fill.transform.GetChild(var).position;
                                 temp_position.x += 14;
                                 temp_position.z -= 100;
@@ -628,7 +601,7 @@ public class WorkshopDrag : MonoBehaviour {
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slot_type == "TOPLARGE")
                             {
-                                var top_slot = Instantiate(top_slot_object, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
+                                var top_slot = Instantiate(topSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
                                 temp_position = part_to_fill.transform.GetChild(var).position;
                                 temp_position.y += 15;
                                 temp_position.z -= 100;

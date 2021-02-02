@@ -14,6 +14,8 @@ public class CustomScroll : MonoBehaviour
     public float scroll_holdover;
     public int window_length;
 
+    public WorkshopDrag workshop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,11 @@ public class CustomScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scroll.value -= Input.mouseScrollDelta.y * (0.2f / scroll_length);
-        scroll_position = (scroll.value * scroll_dist);
+        if (workshop.tutorial_complete)
+        {
+            scroll.value -= Input.mouseScrollDelta.y * (0.2f / scroll_length);
+            scroll_position = (scroll.value * scroll_dist);
+        }
 
         if (scroll_position <= 0)
         {

@@ -29,6 +29,7 @@ public class PortraitManager : MonoBehaviour
     public BotColorObject color_hold;
 
     public Launcher launch;
+    public LoadingFade fade;
 
     // Start is called before the first frame update
     void Start()
@@ -74,43 +75,31 @@ public class PortraitManager : MonoBehaviour
     // ran through it I mean fk it it works
     public void IncProfile()
     {
-        if (profile_no < 3)
-        {
-            profile_no++;
-        }
-        else
-        {
-            profile_no = 0;
-        }
+        profile_no++;
+        profile_no %= 3;
     }
 
     public void DecProfile()
     {
-        if (profile_no > 0)
-        {
-            profile_no--;
-        }
-        else
-        {
-            profile_no = 3;
-        }
+        profile_no--;
+        profile_no %= 3;
     }
 
     public void ToggleAlt()
     {
-        if (alt)
-        {
-            alt = false;
-        }
-        else
-        {
-            alt = true;
-        }
+        alt = !alt;
     }
-
     public void CommitColors()
     {
+        StartCoroutine(Change());
+    }
+    
+    private IEnumerator Change()
+    {
         color_hold.UpdateColors(profile_no, alt);
+        fade.FadeInLoadScreen();
+
+        yield return new WaitUntil(()=>fade.fadeInComplete == true);
         launch.Connect();
     }
 }
