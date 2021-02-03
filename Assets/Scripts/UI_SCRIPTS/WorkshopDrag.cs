@@ -170,18 +170,18 @@ public class WorkshopDrag : MonoBehaviour {
         // to the alpha float variable then setting the fade_in_object's color to the intermediary fade_in_color. Once the alpha is less than
         // or equal to 0, set the fade_in_object to full transparent and set the initial fade to true (fade completed)
 
-            // redundant safety code for testing in case the tutorial has been deactivated (can be removed later)
-            if (tutorial_count == 0)
-            {
-                tutorial[0].SetActive(true);
-            }
-            else
-            {
-                tutorial[0].SetActive(false);
-            }
+        // redundant safety code for testing in case the tutorial has been deactivated (can be removed later)
+        if (tutorial_count == 0)
+        {
+            tutorial[0].SetActive(true);
+        }
+        else
+        {
+            tutorial[0].SetActive(false);
+        }
 
-            if (Input.GetMouseButtonDown(0))
-            {
+        if (Input.GetMouseButtonDown(0))
+        {
             // if the tutorial has not been completed then lmb will increase the tutorial count (and thus move to the next
             // slide) Once the tutorial is complete (tutorial_count == 8), tutorial complete = true
             if (!tutorial_complete)
@@ -242,143 +242,138 @@ public class WorkshopDrag : MonoBehaviour {
                     }
                 }
             }
+        }
 
-            if (dragging)
+        if (dragging)
+        {
+            // if we are dragging a part then move that part to the cursor, change the scale
+            // to 3 times in the x and y to match the scale of the stage area. Additionally, change
+            // the sorting layer to "Inspector" and change the sort order to 100 (on top of everything else)
+
+            // (NOTE) currently, we move the dragged image to the mouse, which causes the defined center point
+            // of the sprite to follow the cursor. The problem is that we may have clicked the image at a diferent location
+            // than the center point, which causes a strange disconnect and doesn't feel like accurate dragging.
+            // proposed solution is to record the offset between the selected_part's center and the cursor and carry
+            // that offset through while dragging. This might be quite a bit of work though for very little payoff though it would
+            // be nice and I should get to it at some point.
+
+            Debug.Log("currentlyDragging");
+
+            mouseLocation = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
+
+            selectedObject.position = new Vector3(mouseLocation[0], mouseLocation[1], 0);
+
+            selectedObject.localScale = new Vector3(3, 3, 1);
+
+            draggedImage.sortingLayerName = "Inspector";
+            draggedImage.sortingOrder = 100;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            // if an object is currently selected on release
+            if (selectedObject != null)
             {
-                // if we are dragging a part then move that part to the cursor, change the scale
-                // to 3 times in the x and y to match the scale of the stage area. Additionally, change
-                // the sorting layer to "Inspector" and change the sort order to 100 (on top of everything else)
+                // find colliders under the mouse with the slot tag
+                var placement = FindObjectsOnClick(slotTag, true);
 
-                // (NOTE) currently, we move the dragged image to the mouse, which causes the defined center point
-                // of the sprite to follow the cursor. The problem is that we may have clicked the image at a diferent location
-                // than the center point, which causes a strange disconnect and doesn't feel like accurate dragging.
-                // proposed solution is to record the offset between the selected_part's center and the cursor and carry
-                // that offset through while dragging. This might be quite a bit of work though for very little payoff though it would
-                // be nice and I should get to it at some point.
-
-                mouseLocation = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
-
-                selectedObject.position = new Vector3(mouseLocation[0], mouseLocation[1], 0);
-
-                selectedObject.localScale = new Vector3(3, 3, 1);
-
-                draggedImage.sortingLayerName = "Inspector";
-                draggedImage.sortingOrder = 100;
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                // if an object is currently selected on release
-                if (selectedObject != null)
+                // if there is a slot underneath the mouse
+                if (placement != null)
                 {
-                    // find colliders under the mouse with the slot tag
-                    var placement = FindObjectsOnClick(slotTag, true);
+                    // record the slot's component type
+                    placedSlotType = placement.gameObject.GetComponent<PartStats>().slot_type;
 
-                    // if there is a slot underneath the mouse
-                    if (placement != null)
+                    // if the slot's component type matches the component type i.e. the part
+                    // fits in the slot
+                    if (placedSlotType == selectedPartType)
                     {
-                        // record the slot's component type
-                        placedSlotType = placement.gameObject.GetComponent<PartStats>().slot_type;
+                        // Calls the Function to remove parts that may currently be in the slot
 
-                        // if the slot's component type matches the component type i.e. the part
-                        // fits in the slot
-                        if (placedSlotType == selectedPartType)
+                        RemovePart(placement.transform);
+
+                        // instantiate the selected component as a child of the slot, then 
+                        // adjust the component to be at the position and scale of the slot and
+                        // if the selected component is not a "LEG" part then add the part stats to
+                        // the standard stat block. Additionally, change the sort order of the 
+                        // instantiated part back to the original sort order
+
+                        var slot_component = Instantiate(selectedObject.gameObject, placement.position, placement.rotation);
+
+                        slot_component.transform.parent = placement.transform;
+
+                        parent_count = 0;
+                        childCount1 = 0;
+                        childCount2 = 0;
+                        childCount3 = 0;
+                        childCount4 = 0;
+
+                        if (slot_component.GetComponent<PartStats>().part_type == "LEG")
                         {
-                            // Calls the Function to remove parts that may currently be in the slot
-
-                            RemovePart(placement.transform);
-
-                            // instantiate the selected component as a child of the slot, then 
-                            // adjust the component to be at the position and scale of the slot and
-                            // if the selected component is not a "LEG" part then add the part stats to
-                            // the standard stat block. Additionally, change the sort order of the 
-                            // instantiated part back to the original sort order
-
-                            var slot_component = Instantiate(selectedObject.gameObject, placement.position, placement.rotation);
-
-                            slot_component.transform.parent = placement.transform;
-
                             parent_count = 0;
-                            childCount1 = 0;
-                            childCount2 = 0;
-                            childCount3 = 0;
-                            childCount4 = 0;
-
-                            if (slot_component.GetComponent<PartStats>().part_type == "LEG")
-                            {
-                                parent_count = 0;
-                            }
-                            else if (slot_component.transform.parent.parent.GetComponent<PartStats>().part_type == "LEG")
-                            {
-                                parent_count = 1;
-                                childCount1 = slot_component.transform.parent.GetSiblingIndex();
-                            }
-                            else if (slot_component.transform.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
-                            {
-                                parent_count = 2;
-                                childCount1 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
-                                childCount2 = slot_component.transform.parent.GetSiblingIndex();
-                            }
-                            else if (slot_component.transform.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
-                            {
-                                parent_count = 3;
-                                childCount1 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
-                                childCount2 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
-                                childCount3 = slot_component.transform.parent.GetSiblingIndex();
-                            }
-                            else if (slot_component.transform.parent.parent.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
-                            {
-                                parent_count = 4;
-                                childCount1 = slot_component.transform.parent.parent.parent.parent.parent.parent.parent.GetSiblingIndex();
-                                childCount2 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
-                                childCount3 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
-                                childCount4 = slot_component.transform.parent.GetSiblingIndex();
-                            }
-
-                            selected_stage.GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
-
-                            // optional replace new instantiated component with component type name
-                            // may be useful if locational damage is implemented
-                            //slot_component.name = placed_slot_type;
-
-                            slot_component.GetComponent<PartStats>().add_stats();
-
-                            slot_component.GetComponent<PartStats>().list_index = (selected_stage.GetComponent<SpawnList>().name_list.Length - 1);
-
-                            slot_component.transform.localScale = placement.transform.localScale;
-
-                            if (slot_component.GetComponent<PartStats>().part_type == "ARM")
-                            {
-                                slot_component.transform.position = new Vector3(slot_component.transform.position.x, slot_component.transform.position.y, -slot_component.transform.position.y * 0.1f - 20);
-                            }
-
-                            slot_component.GetComponent<PartStats>().attached = true;
-                            slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
-
-                            fill_child_slots(selected_stage);
-
-                            // change the new component's tag
-
-                            slot_component.tag = "WorkshopBot";
-
-                            Destroy(slot_component.GetComponent<BoxCollider2D>());
-
-                            slot_component.AddComponent<PolygonCollider2D>();
-
-                            // return the selected component to its original position, scale and sort order
-
-                            selectedObject.position = originalPosition;
-                            selectedObject.localScale = originalScale;
-                            selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
-                            selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
                         }
-                        else
+                        else if (slot_component.transform.parent.parent.GetComponent<PartStats>().part_type == "LEG")
                         {
-                            selectedObject.position = originalPosition;
-                            selectedObject.localScale = originalScale;
-                            selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
-                            selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
+                            parent_count = 1;
+                            childCount1 = slot_component.transform.parent.GetSiblingIndex();
                         }
+                        else if (slot_component.transform.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
+                        {
+                            parent_count = 2;
+                            childCount1 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
+                            childCount2 = slot_component.transform.parent.GetSiblingIndex();
+                        }
+                        else if (slot_component.transform.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
+                        {
+                            parent_count = 3;
+                            childCount1 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
+                            childCount2 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
+                            childCount3 = slot_component.transform.parent.GetSiblingIndex();
+                        }
+                        else if (slot_component.transform.parent.parent.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
+                        {
+                            parent_count = 4;
+                            childCount1 = slot_component.transform.parent.parent.parent.parent.parent.parent.parent.GetSiblingIndex();
+                            childCount2 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
+                            childCount3 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
+                            childCount4 = slot_component.transform.parent.GetSiblingIndex();
+                        }
+
+                        selected_stage.GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
+
+                        // optional replace new instantiated component with component type name
+                        // may be useful if locational damage is implemented
+                        //slot_component.name = placed_slot_type;
+
+                        slot_component.GetComponent<PartStats>().add_stats();
+
+                        slot_component.GetComponent<PartStats>().list_index = (selected_stage.GetComponent<SpawnList>().name_list.Length - 1);
+
+                        slot_component.transform.localScale = placement.transform.localScale;
+
+                        if (slot_component.GetComponent<PartStats>().part_type == "ARM")
+                        {
+                            slot_component.transform.position = new Vector3(slot_component.transform.position.x, slot_component.transform.position.y, -slot_component.transform.position.y * 0.1f - 20);
+                        }
+
+                        slot_component.GetComponent<PartStats>().attached = true;
+                        slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+
+                        fill_child_slots(selected_stage);
+
+                        // change the new component's tag
+
+                        slot_component.tag = "WorkshopBot";
+
+                        Destroy(slot_component.GetComponent<BoxCollider2D>());
+
+                        slot_component.AddComponent<PolygonCollider2D>();
+
+                        // return the selected component to its original position, scale and sort order
+
+                        selectedObject.position = originalPosition;
+                        selectedObject.localScale = originalScale;
+                        selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+                        selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
                     }
                     else
                     {
@@ -387,34 +382,41 @@ public class WorkshopDrag : MonoBehaviour {
                         selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
                         selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
                     }
-
+                }
+                else
+                {
                     selectedObject.position = originalPosition;
                     selectedObject.localScale = originalScale;
                     selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
                     selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
-
-                    selectedObject.GetComponent<BoxCollider2D>().enabled = true;
-                    selectedObject = null;
-
-                    dragging = false;
                 }
+
+                selectedObject.position = originalPosition;
+                selectedObject.localScale = originalScale;
+                selectedObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+                selectedObject.GetComponent<SpriteRenderer>().sortingLayerName = originalSortLayer;
+
+                selectedObject.GetComponent<BoxCollider2D>().enabled = true;
+                selectedObject = null;
+
+                dragging = false;
             }
+        }
 
-            // TESTING ONLY - cheat fill bot up (not visually tho)
-            if (Input.GetKeyDown(KeyCode.B))
+        // TESTING ONLY - cheat fill bot up (not visually tho)
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GameObject[] stages = new GameObject[4] { stage_1, stage_2, stage_3, stage_4 };
+            for (int i = 0; i < stages.Length; i++)
             {
-                GameObject[] stages = new GameObject[4] { stage_1, stage_2, stage_3, stage_4 };
-                for(int i = 0; i < stages.Length; i++)
-                {
-                    var slot_component = Instantiate(L3Object.gameObject, Vector3.zero, Quaternion.identity);
-                    var slot_component2 = Instantiate(T7Object.gameObject, Vector3.zero, Quaternion.identity);
+                var slot_component = Instantiate(L3Object.gameObject, Vector3.zero, Quaternion.identity);
+                var slot_component2 = Instantiate(T7Object.gameObject, Vector3.zero, Quaternion.identity);
 
-                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
-                    stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().part_name, slot_component2.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component2);
+                stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
+                stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().part_name, slot_component2.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component2);
 
-                    slot_component.transform.SetParent(stages[i].transform);
-                    slot_component2.transform.SetParent(stages[i].transform);
-                }
+                slot_component.transform.SetParent(stages[i].transform);
+                slot_component2.transform.SetParent(stages[i].transform);
             }
         }
     }

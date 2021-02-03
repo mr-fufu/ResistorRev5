@@ -97,6 +97,7 @@ public class PortraitManager : MonoBehaviour
     private IEnumerator Change()
     {
         color_hold.UpdateColors(profile_no, alt);
+        fade.gameObject.SetActive(true);
         fade.FadeInLoadScreen();
 
         yield return new WaitUntil(()=>fade.fadeInComplete == true);

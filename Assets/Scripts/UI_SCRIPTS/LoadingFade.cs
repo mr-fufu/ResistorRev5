@@ -24,7 +24,7 @@ public class LoadingFade : MonoBehaviour
     {
         fadeHold = false;
         fadeColor = GetComponent<SpriteRenderer>().color;
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject.transform.parent.gameObject);
 
         currentScene = SceneManager.GetActiveScene();
         setVisible = false;
@@ -51,7 +51,7 @@ public class LoadingFade : MonoBehaviour
                 }
                 else
                 {
-                    alpha += 0.01f;
+                    alpha += 0.005f;
                 }
             }
             else
@@ -69,7 +69,7 @@ public class LoadingFade : MonoBehaviour
                     }
                     else
                     {
-                        alpha -= 0.006f;
+                        alpha -= 0.002f;
                     }
                 }
             }
@@ -85,6 +85,7 @@ public class LoadingFade : MonoBehaviour
         {
             if (SceneManager.GetActiveScene() != currentScene)
             {
+                Destroy(gameObject.transform.parent.GetComponentInChildren<AudioListener>());
                 //current_scene = SceneManager.GetActiveScene();
                 setVisible = false;
             }
@@ -93,7 +94,7 @@ public class LoadingFade : MonoBehaviour
         // if scene has changed and object has faded out, destroy self
         if ((alpha == 0) && fadeInComplete)
         {
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 

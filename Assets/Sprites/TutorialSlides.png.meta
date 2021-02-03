@@ -26,6 +26,30 @@ TextureImporter:
   - first:
       213: 21300014
     second: TutorialSlides_7
+  - first:
+      213: 8437228680676429377
+    second: TutorialSlides_0
+  - first:
+      213: 2811940694846350414
+    second: TutorialSlides_1
+  - first:
+      213: -1277547717376184964
+    second: TutorialSlides_2
+  - first:
+      213: 7861587817760316193
+    second: TutorialSlides_3
+  - first:
+      213: -3752478311119653383
+    second: TutorialSlides_4
+  - first:
+      213: -3431155140000754224
+    second: TutorialSlides_5
+  - first:
+      213: -3547844785577863026
+    second: TutorialSlides_6
+  - first:
+      213: -8226938973220368758
+    second: TutorialSlides_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -115,7 +139,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 150
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45afa73a9943aaf46b1f268b6b9482da
-      internalID: 21300000
+      spriteID: 14ec47068ce071570800000000000000
+      internalID: 8437228680676429377
       vertices: []
       indices: 
       edges: []
@@ -134,9 +158,9 @@ TextureImporter:
       name: TutorialSlides_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 270
         y: 150
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,8 +169,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c529168749795364c9bdcdd0f0063bad
-      internalID: 21300002
+      spriteID: e4428c5e925060720800000000000000
+      internalID: 2811940694846350414
       vertices: []
       indices: 
       edges: []
@@ -155,9 +179,9 @@ TextureImporter:
       name: TutorialSlides_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 540
         y: 150
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de14608c41a48a54b99c66025e124f22
-      internalID: 21300004
+      spriteID: c7d6e2aae1d354ee0800000000000000
+      internalID: -1277547717376184964
       vertices: []
       indices: 
       edges: []
@@ -176,9 +200,9 @@ TextureImporter:
       name: TutorialSlides_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 810
         y: 150
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,8 +211,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f7751ff63689034cae0f4fbbc5e6d4c
-      internalID: 21300006
+      spriteID: 12b5420c778f91d60800000000000000
+      internalID: 7861587817760316193
       vertices: []
       indices: 
       edges: []
@@ -199,7 +223,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,8 +232,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac0458034702ff148a053ab546a04b01
-      internalID: 21300008
+      spriteID: 9f5fa568bd48cebc0800000000000000
+      internalID: -3752478311119653383
       vertices: []
       indices: 
       edges: []
@@ -218,9 +242,9 @@ TextureImporter:
       name: TutorialSlides_5
       rect:
         serializedVersion: 2
-        x: 200
+        x: 270
         y: 0
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09a60780c59d84f48863a138aa17ab2b
-      internalID: 21300010
+      spriteID: 0d5dff644961260d0800000000000000
+      internalID: -3431155140000754224
       vertices: []
       indices: 
       edges: []
@@ -239,9 +263,9 @@ TextureImporter:
       name: TutorialSlides_6
       rect:
         serializedVersion: 2
-        x: 400
+        x: 540
         y: 0
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -250,8 +274,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee942a182932c9b4c941e26905ad2b58
-      internalID: 21300012
+      spriteID: e88d86df6f583cec0800000000000000
+      internalID: -3547844785577863026
       vertices: []
       indices: 
       edges: []
@@ -260,9 +284,9 @@ TextureImporter:
       name: TutorialSlides_7
       rect:
         serializedVersion: 2
-        x: 600
+        x: 810
         y: 0
-        width: 200
+        width: 270
         height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -271,8 +295,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c98035cfc7d9304ca4d40a6b1364922
-      internalID: 21300014
+      spriteID: a8e0260979a04dd80800000000000000
+      internalID: -8226938973220368758
       vertices: []
       indices: 
       edges: []
