@@ -148,6 +148,7 @@ public class IntroScript : MonoBehaviour
         }
         else
         {
+
             StartCoroutine(LoadWithScreen("LobbyScene"));
         }
     }

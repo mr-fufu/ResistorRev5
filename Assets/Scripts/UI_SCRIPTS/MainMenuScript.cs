@@ -117,14 +117,17 @@ public class MainMenuScript : MonoBehaviour
                 {
                     if (ray_hit.collider.gameObject == start_game_button)
                     {
+                        scene_manager.GetComponent<SceneManagementScript>().GoToIntro();
+
+                        /*
                         fade_object.SetActive(true);
 
                         sprite_render = fade_object.GetComponent<SpriteRenderer>();
                         fade_color = fade_object.GetComponent<SpriteRenderer>().color;
                         fade_color.a = 0f;
                         sprite_render.material.color = fade_color;
-
                         StartCoroutine("fade");
+                        */
                     }
                     else if (ray_hit.collider.gameObject == credits_button)
                     {   
@@ -137,9 +140,9 @@ public class MainMenuScript : MonoBehaviour
                     }
                 }
             }
-            
         }
 
+        /*
         if (sprite_render != null)
         {
             if (sprite_render.material.color.a >= 0.9)
@@ -155,6 +158,7 @@ public class MainMenuScript : MonoBehaviour
                 }
             }
         }
+        */
     }
 
     IEnumerator fade()

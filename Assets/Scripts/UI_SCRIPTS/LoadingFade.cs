@@ -43,7 +43,7 @@ public class LoadingFade : MonoBehaviour
         {
             if (setVisible)
             {
-                if (alpha > 1)
+                if (alpha >= 1)
                 {
                     alpha = 1;
                     fadeHold = true;
@@ -85,7 +85,7 @@ public class LoadingFade : MonoBehaviour
         {
             if (SceneManager.GetActiveScene() != currentScene)
             {
-                Destroy(gameObject.transform.parent.GetComponentInChildren<AudioListener>());
+                gameObject.transform.parent.GetComponent<Canvas>().worldCamera = Camera.main;
                 //current_scene = SceneManager.GetActiveScene();
                 setVisible = false;
             }
@@ -95,6 +95,7 @@ public class LoadingFade : MonoBehaviour
         if ((alpha == 0) && fadeInComplete)
         {
             Destroy(gameObject.transform.parent.gameObject);
+            Destroy(gameObject);
         }
     }
 

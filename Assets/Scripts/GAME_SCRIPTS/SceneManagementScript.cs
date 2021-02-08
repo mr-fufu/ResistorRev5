@@ -36,25 +36,16 @@ public class SceneManagementScript : MonoBehaviour
 
     public bool start_true;
 
+    //Only for Networked Loading
     public GameObject loading_screen;
     public LoadingFade loading;
 
-    private bool set_load;
-    private string load_location;
     private bool bot_adjust;
-    private bool currently_loading;
 
     public GameObject EndCard;
 
-    //private AsyncOperation sceneAsync;
-
     private void Start()
     {
-        //var load_screen = (GameObject)Instantiate(loading_screen, new Vector3(0, 0, 0), Quaternion.identity);
-        loading = loading_screen.GetComponent<LoadingFade>();
-        loading_screen.SetActive(false);
-
-        //valueTxt.text = PersistentManager.single_instance.Value.ToString();
         if (start_nixie != null)
         {
             stage_group = new GameObject[4];
@@ -79,7 +70,6 @@ public class SceneManagementScript : MonoBehaviour
         {
             if (camera_object.GetComponent<WorkshopDrag>().tutorial_complete)
             {
-
                 if (Stage1.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
                     Stage2.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
                     Stage3.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
@@ -98,100 +88,71 @@ public class SceneManagementScript : MonoBehaviour
             }
         }
 
-        if (set_load)
+        if (bot_adjust)
         {
-            //if (loading.loaded_in)
-            //{
-                if (bot_adjust)
-                {
-                    stage_changer.GetComponent<StageSelector>().change_scene = true;
+            stage_changer.GetComponent<StageSelector>().change_scene = true;
 
-                    Stage1.SetActive(true);
-                    Stage1.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
-                    Stage1.transform.localScale = new Vector3(1, 1, 1);
-                    Stage1.transform.position = hidden_stage_1.position;
-                    Stage1.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
+            Stage1.SetActive(true);
+            Stage1.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
+            Stage1.transform.localScale = new Vector3(1, 1, 1);
+            Stage1.transform.position = hidden_stage_1.position;
+            Stage1.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
 
-                    if (Stage1.transform.GetChild(0).transform.childCount != 0)
-                    {
-                        Stage1.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
-                        Stage1.transform.localScale = new Vector3(1, 1, 1);
-                    }
+            if (Stage1.transform.GetChild(0).transform.childCount != 0)
+            {
+                Stage1.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+                Stage1.transform.localScale = new Vector3(1, 1, 1);
+            }
 
-                    Stage2.SetActive(true);
-                    Stage2.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
-                    Stage1.transform.localScale = new Vector3(1, 1, 1);
-                    Stage2.transform.position = hidden_stage_2.position;
-                    Stage2.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
+            Stage2.SetActive(true);
+            Stage2.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
+            Stage1.transform.localScale = new Vector3(1, 1, 1);
+            Stage2.transform.position = hidden_stage_2.position;
+            Stage2.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
 
-                    if (Stage2.transform.GetChild(0).transform.childCount != 0)
-                    {
-                        Stage2.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
-                        Stage2.transform.localScale = new Vector3(1, 1, 1);
-                    }
+            if (Stage2.transform.GetChild(0).transform.childCount != 0)
+            {
+                Stage2.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+                Stage2.transform.localScale = new Vector3(1, 1, 1);
+            }
 
-                    Stage3.SetActive(true);
-                    Stage3.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
-                    Stage1.transform.localScale = new Vector3(1, 1, 1);
-                    Stage3.transform.position = hidden_stage_3.position;
-                    Stage3.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
+            Stage3.SetActive(true);
+            Stage3.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
+            Stage1.transform.localScale = new Vector3(1, 1, 1);
+            Stage3.transform.position = hidden_stage_3.position;
+            Stage3.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
 
-                    if (Stage3.transform.GetChild(0).transform.childCount != 0)
-                    {
-                        Stage3.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
-                        Stage3.transform.localScale = new Vector3(1, 1, 1);
-                    }
+            if (Stage3.transform.GetChild(0).transform.childCount != 0)
+            {
+                Stage3.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+                Stage3.transform.localScale = new Vector3(1, 1, 1);
+            }
 
-                    Stage4.SetActive(true);
-                    Stage4.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
-                    Stage1.transform.localScale = new Vector3(1, 1, 1);
-                    Stage4.transform.position = hidden_stage_4.position;
-                    Stage4.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
+            Stage4.SetActive(true);
+            Stage4.transform.GetChild(0).GetComponent<CheckCompletion>().workshop = false;
+            Stage1.transform.localScale = new Vector3(1, 1, 1);
+            Stage4.transform.position = hidden_stage_4.position;
+            Stage4.transform.GetChild(0).gameObject.GetComponent<Collider2D>().enabled = false;
 
-                    if (Stage4.transform.GetChild(0).transform.childCount != 0)
-                    {
-                        Stage4.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
-                        Stage4.transform.localScale = new Vector3(1, 1, 1);
-                    }
+            if (Stage4.transform.GetChild(0).transform.childCount != 0)
+            {
+                Stage4.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+                Stage4.transform.localScale = new Vector3(1, 1, 1);
+            }
 
-                    stage_changer.GetComponent<StageSelector>().set_all_active();
+            stage_changer.GetComponent<StageSelector>().set_all_active();
 
-                    DontDestroyOnLoad(Stage1.gameObject);
-                    DontDestroyOnLoad(Stage2.gameObject);
-                    DontDestroyOnLoad(Stage3.gameObject);
-                    DontDestroyOnLoad(Stage4.gameObject);
-
-                    }
-
-                if (!currently_loading)
-                {
-                    StartCoroutine(LoadWithScreen(load_location));
-
-                    currently_loading = true;
-                }
+            DontDestroyOnLoad(Stage1.gameObject);
+            DontDestroyOnLoad(Stage2.gameObject);
+            DontDestroyOnLoad(Stage3.gameObject);
+            DontDestroyOnLoad(Stage4.gameObject);
         }
     }
 
     public void GoToBattleScene()
     {
-        /*
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainBattleScene", LoadSceneMode.Additive);
-        asyncLoad.allowSceneActivation = false;
-        sceneAsync = asyncLoad;
-
-        //SceneManager.LoadScene("MainBattleScene");
-
-        SceneManager.MoveGameObjectToScene(Stage1, SceneManager.GetSceneByName("MainBattleScene"));
-
-        SceneManager.UnloadSceneAsync("Workshop");
-        */
-
         for (int nixie_count = 0; nixie_count < 4; nixie_count++)
         {
-            //Debug.Log(nixie_count);
-            //Debug.Log(stage_group[nixie_count].GetComponent<CheckCompletion>().complete_check);
-            //Debug.Log(flash_group[nixie_count]);
-
             if (stage_group[nixie_count].GetComponent<CheckCompletion>().complete_check != true)
             {
                 flash_group[nixie_count].GetComponent<FlashScript>().flash = true;
@@ -201,28 +162,15 @@ public class SceneManagementScript : MonoBehaviour
         if (start_true)
         {
             bot_adjust = true;
-
             LoadWithScreen("LobbyScene");
         }
     }
 
     public void SkipToBattle()
     {
-        /*
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainBattleScene", LoadSceneMode.Additive);
-        asyncLoad.allowSceneActivation = false;
-        sceneAsync = asyncLoad;
-
-        //SceneManager.LoadScene("MainBattleScene");
-
-        SceneManager.MoveGameObjectToScene(Stage1, SceneManager.GetSceneByName("MainBattleScene"));
-
-        SceneManager.UnloadSceneAsync("Workshop");
-        */
-
         bot_adjust = true;
 
-        LoadWithScreen("LobbyScene");
+        //LoadWithScreen("LobbyScene");
     }
 
     public void GoToWorkshop()
@@ -232,7 +180,7 @@ public class SceneManagementScript : MonoBehaviour
 
     public void GoToIntro()
     {
-        LoadWithScreen("IntroScene");
+        StartCoroutine(LoadWithoutScreen("IntroScene"));
     }
 
     public void ShowEndScreen(bool win_condition)
@@ -254,8 +202,6 @@ public class SceneManagementScript : MonoBehaviour
         EndCard.SetActive(true);
 
         //DontDestroyOnLoad(CarryOver);
-
-
         //LoadWithScreen("EndScreen");
     }
 
@@ -272,6 +218,16 @@ public class SceneManagementScript : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    private IEnumerator LoadWithoutScreen(string load_destination)
+    {
+        loading_screen.SetActive(true);
+        loading = loading_screen.GetComponent<LoadingFade>();
+        loading.FadeInLoadScreen();
+
+        yield return new WaitUntil(() => loading.fadeInComplete == true);
+        SceneManager.LoadScene(load_destination);
     }
 
     private IEnumerator LoadWithScreen(string load_destination)
