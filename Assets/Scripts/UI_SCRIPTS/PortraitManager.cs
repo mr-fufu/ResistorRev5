@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class PortraitManager : MonoBehaviour
@@ -91,7 +93,10 @@ public class PortraitManager : MonoBehaviour
     }
     public void CommitColors()
     {
-        StartCoroutine(Change());
+        if (PhotonNetwork.NickName != string.Empty)
+        {
+            StartCoroutine(Change());
+        }
     }
     
     private IEnumerator Change()

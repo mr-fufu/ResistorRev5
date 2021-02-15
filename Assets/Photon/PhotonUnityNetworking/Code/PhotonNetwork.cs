@@ -1678,6 +1678,7 @@ namespace Photon.Pun
 
             typedLobby = typedLobby ?? ((NetworkingClient.InLobby) ? NetworkingClient.CurrentLobby : null);  // use given lobby, or active lobby (if any active) or none
 
+            roomOptions.PublishUserId = true;
             EnterRoomParams opParams = new EnterRoomParams();
             opParams.RoomName = roomName;
             opParams.RoomOptions = roomOptions;

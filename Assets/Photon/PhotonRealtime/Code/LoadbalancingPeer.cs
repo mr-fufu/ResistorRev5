@@ -305,8 +305,8 @@ namespace Photon.Realtime
                 if (opParams.PlayerProperties != null && opParams.PlayerProperties.Count > 0)
                 {
                     op[ParameterCode.PlayerProperties] = opParams.PlayerProperties;
+                    op[ParameterCode.Broadcast] = true; // broadcast actor properties
                 }
-                op[ParameterCode.Broadcast] = true; // broadcast actor properties
 
                 this.RoomOptionsToOpParameters(op, opParams.RoomOptions);
             }

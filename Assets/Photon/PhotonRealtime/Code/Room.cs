@@ -316,6 +316,9 @@ namespace Photon.Realtime
                 //this.playerTtl = options.PlayerTtl;       // set via well known properties
                 //this.emptyRoomTtl = options.EmptyRoomTtl; // set via well known properties
             }
+            
+            //Forcing this parameter so can check ready up via UserIds
+            this.PublishUserId = true;
 
             this.isOffline = isOffline;
         }
