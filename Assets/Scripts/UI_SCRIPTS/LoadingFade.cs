@@ -27,7 +27,7 @@ public class LoadingFade : MonoBehaviour
         DontDestroyOnLoad(gameObject.transform.parent.gameObject);
 
         currentScene = SceneManager.GetActiveScene();
-        setVisible = false;
+        //setVisible = false;
         fadeInComplete = false;
 
         fadeColor.a = 0;

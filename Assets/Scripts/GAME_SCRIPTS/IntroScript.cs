@@ -6,149 +6,165 @@ using Photon.Pun;
 
 public class IntroScript : MonoBehaviour
 {
-    public GameObject fade_black;
-    private bool initial_fade;
-    
+    public GameObject slide0;
     public GameObject slide1;
     public GameObject slide2;
     public GameObject slide3;
     public GameObject slide4;
     public GameObject slide5;
-    public GameObject slide6;
 
     private GameObject[] slides;
     private int var;
-    private Color slide_color;
-    private Color full_transparent;
+    private Color slideColor;
+    private Color fullTransparent;
+    private Color fullOpaque;
     private float alpha;
 
-    private float transition_time;
-    private float wait_time;
+    private float initialDelay;
+
+    private float waitTime1;
+    private float waitTime2;
+    private float waitTime3;
 
     public GameObject loading_screen;
     public LoadingFade loading;
 
+    public bool loaded;
+
     void Start()
     {
+
         loading = loading_screen.GetComponent<LoadingFade>();
         loading_screen.SetActive(false);
 
-        alpha = 1;
+        alpha = 0;
 
-        slide_color = new Vector4(0, 0, 0, 1);
-        full_transparent = new Vector4(1, 1, 1, 0);
+        slideColor = new Vector4(1, 1, 1, 1);
+        fullTransparent = new Vector4(1, 1, 1, 0);
+        fullOpaque = new Vector4(1, 1, 1, 1);
 
-        transition_time = 0;
-        wait_time = 0;
+        initialDelay = 0;
+
+        waitTime1 = 0;
+        waitTime2 = 0;
+        waitTime3 = 0;
 
         var = 0;
 
         slides = new GameObject[6];
 
-        slides[0] = slide1;
-        slides[1] = slide2;
-        slides[2] = slide3;
-        slides[3] = slide4;
-        slides[4] = slide5;
-        slides[5] = slide6;
+        slides[0] = slide0;
+        slides[1] = slide1;
+        slides[2] = slide2;
+        slides[3] = slide3;
+        slides[4] = slide4;
+        slides[5] = slide5;
 
         for (int slide_count = 0; slide_count < 6; slide_count++)
         {
-            slides[slide_count].GetComponent<SpriteRenderer>().color = full_transparent;
+            slides[slide_count].GetComponent<SpriteRenderer>().color = fullTransparent;
         }
 
-        slides[0].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
-        fade_black.SetActive(true);
-        fade_black.GetComponent<SpriteRenderer>().color = new Vector4(0, 0, 0, 1);
+        loaded = false;
     }
 
     void Update()
     {
-        if (!initial_fade)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (alpha >= 0)
+            if (slides[var].GetComponent<TypeWriter>().finish_typing != true)
             {
-                slide_color.a = alpha;
-                alpha -= 0.006f;
-                fade_black.GetComponent<SpriteRenderer>().color = slide_color;
+                waitTime1 = 0;
+                waitTime2 = 0;
+                waitTime3 = 0;
+
+                slides[var].GetComponent<TypeWriter>().InstantType();
+                Debug.Log("instant_typed");
+
+                slides[var].GetComponent<SpriteRenderer>().color = fullOpaque;
             }
             else
             {
-                fade_black.GetComponent<SpriteRenderer>().color = full_transparent;
-                initial_fade = true;
-                slide_color = new Vector4(1, 1, 1, 1);
+                waitTime3 = 1;
+                Debug.Log("skiped_wait_time");
             }
+
+            if (initialDelay < 1)
+            {
+                initialDelay = 1;
+            }
+        }
+
+        if (initialDelay < 1)
+        {
+            initialDelay += Time.deltaTime * 5f;
         }
         else if (var < 5)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (slides[var].GetComponent<TypeWriter>().finish_typing == true)
-                {
-                    slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
-                    var++;
-                }
-                else
-                {
-                    slides[var].GetComponent<TypeWriter>().InstantType();
-                }
-            }
-
-            if (slides[var].GetComponent<TypeWriter>().finish_typing == false && slides[var].GetComponent<TypeWriter>().start_typing == false)
+            if (!slides[var].GetComponent<TypeWriter>().finish_typing)
             {
                 if (alpha < 1)
                 {
                     alpha += 0.01f;
-                    slide_color.a = alpha;
-                    if (var != 0)
-                    {
-                        slides[var].GetComponent<SpriteRenderer>().color = slide_color;
-                    }
+                    slideColor.a = alpha;
+                    slides[var].GetComponent<SpriteRenderer>().color = slideColor;
+                }
+                else if (slides[var].GetComponent<SpriteRenderer>().color != fullOpaque)
+                {
+                    slides[var].GetComponent<SpriteRenderer>().color = fullOpaque;
                 }
                 else
                 {
-                    slides[var].GetComponent<TypeWriter>().start_typing = true;
-                    slides[var].GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
-
-                    alpha = 1;
+                    if (waitTime1 < 1)
+                    {
+                        waitTime1 += Time.deltaTime * 5f;
+                    }
+                    else
+                    {
+                        if (!slides[var].GetComponent<TypeWriter>().start_typing)
+                        {
+                            slides[var].GetComponent<TypeWriter>().start_typing = true;
+                        }
+                    }
                 }
-
             }
-            else if (slides[var].GetComponent<TypeWriter>().finish_typing == true)
+            else
             {
-                if (wait_time < 1)
+                if (waitTime2 < 1)
                 {
-                    wait_time += Time.deltaTime * 10f;
+                    waitTime2 += Time.deltaTime * 1f;
                 }
                 else
                 {
                     if (alpha > 0)
                     {
                         alpha -= 0.01f;
-                        slide_color.a = alpha;
-                        slides[var].GetComponent<SpriteRenderer>().color = slide_color;
+                        slideColor.a = alpha;
+                        slides[var].GetComponent<SpriteRenderer>().color = slideColor;
+                    }
+                    else if (slides[var].GetComponent<SpriteRenderer>().color != fullTransparent)
+                    {
+                        slides[var].GetComponent<SpriteRenderer>().color = fullTransparent;
                     }
                     else
                     {
-                        slides[var].GetComponent<SpriteRenderer>().color = full_transparent;
-
-                        if (transition_time < 1)
+                        if (waitTime3 < 1)
                         {
-                            transition_time += 20f * Time.deltaTime;
+                            waitTime3 += 10f * Time.deltaTime;
                         }
                         else
                         {
-                            // var++;
-                            wait_time = 0;
-                            transition_time = 0;
+                            var++;
+                            waitTime1 = 1.0f;
+                            waitTime3 = 0;
                         }
                     }
                 }
             }
         }
-        else
+        else if (!loaded)
         {
-
+            loaded = true;
             StartCoroutine(LoadWithScreen("LobbyScene"));
         }
     }
