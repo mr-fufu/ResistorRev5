@@ -18,11 +18,10 @@ GameObject:
   - component: {fileID: 1406897209}
   - component: {fileID: 3154125253810671725}
   - component: {fileID: 7036764487210136262}
-  - component: {fileID: 3378115927954973440}
-  - component: {fileID: 520817142216543500}
   - component: {fileID: 4073361978069502845}
-  - component: {fileID: 5160893512273881537}
-  - component: {fileID: 2186465876545778704}
+  - component: {fileID: 2797551992495381146}
+  - component: {fileID: 5151615075134438053}
+  - component: {fileID: 8794671847874425057}
   m_Layer: 15
   m_Name: L14
   m_TagString: DraggableUIPart
@@ -59,6 +58,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300054, guid: b91c7ba73415b4447b1dbb6747471758, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -197,8 +197,8 @@ MonoBehaviour:
   engaged_check: 0
   walker_check: 1
   spawned: 0
-  animate_check: 0
   enemy_check: 0
+  animate_check: 0
 --- !u!114 &1406897209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87d4e65c6bb087439f7e04966a0ac4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animate: 0
+  speed: 0
 --- !u!61 &3154125253810671725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,61 +268,6 @@ MonoBehaviour:
   part_name: InvaderWare Martian
   part_description: The War of the Worlds to end all Wars
   list_index: 0
---- !u!114 &3378115927954973440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655126684866208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &520817142216543500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655126684866208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d6c522af31447398568cc65334232b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 2
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 3
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0
-  m_VelocityThreshold: 0
-  m_SnapThreshold: 0
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 10
 --- !u!114 &4073361978069502845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,10 +281,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuel_used: 0
-  fuel_instantiated: 0
   fuel_remaining: 0
+  fuel_instantiated: 0
   fuel_bar: {fileID: 1675964601256096, guid: 69ef6e358812af4459b8df99ecc05830, type: 3}
---- !u!114 &5160893512273881537
+--- !u!114 &2797551992495381146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -346,18 +293,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655126684866208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18e15ed5495c434d969378156376a52, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Animator: {fileID: 95488386961147428}
-  m_ParameterSendBits: 0
-  param0: 
-  param1: 
-  param2: 
-  param3: 
-  param4: 
-  param5: 
---- !u!114 &2186465876545778704
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 5151615075134438053}
+  - {fileID: 8794671847874425057}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &5151615075134438053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,10 +317,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655126684866208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color_object: {fileID: 0}
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &8794671847874425057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655126684866208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: WalkState
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &1239050386227335724
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +392,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

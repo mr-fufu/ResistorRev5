@@ -11,15 +11,14 @@ GameObject:
   - component: {fileID: 675714681462121960}
   - component: {fileID: 675714681462121957}
   - component: {fileID: 2685149605721053602}
-  - component: {fileID: 1775734077806596275}
-  - component: {fileID: 8234613853343165384}
   - component: {fileID: 791279865947806588}
   - component: {fileID: 6671466837209342428}
   - component: {fileID: 5007327611845037138}
-  - component: {fileID: 6847568723238742193}
-  - component: {fileID: 4820143260045953829}
+  - component: {fileID: 1775734077806596275}
+  - component: {fileID: 8234613853343165384}
   - component: {fileID: 2664140732365197034}
-  - component: {fileID: 9036875277287916561}
+  - component: {fileID: 3520988159092642277}
+  - component: {fileID: 4384778041008163336}
   m_Layer: 15
   m_Name: L6
   m_TagString: DraggableUIPart
@@ -56,6 +55,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -117,45 +117,6 @@ MonoBehaviour:
   ENEMY: 0
   spawned: 0
   engaged_check: 0
---- !u!114 &1775734077806596275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675714681462121961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c998a25a3a94e084bac7923f53a2fd04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  engaged_target: {fileID: 0}
-  move_dist: 0
-  animated_move_speed: 0
-  animated_move_dist: 0
-  engaged_check: 0
-  walker_check: 0
-  spawned: 0
-  animate_check: 0
-  enemy_check: 0
---- !u!114 &8234613853343165384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675714681462121961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f0072e5be037d47a1f1a265c0c6da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_plating: 0
-  current_plating: 0
-  destruction_trigger: 0
-  plating_bar: {fileID: 1675964601256096, guid: 335a0e157c388414aa80c3e7ae9c1d19,
-    type: 3}
-  armor_value: 0
 --- !u!50 &791279865947806588
 Rigidbody2D:
   serializedVersion: 4
@@ -232,7 +193,7 @@ MonoBehaviour:
   part_name: ZenTech Levitator
   part_description: 
   list_index: 0
---- !u!114 &6847568723238742193
+--- !u!114 &1775734077806596275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,31 +202,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 675714681462121961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Script: {fileID: 11500000, guid: c998a25a3a94e084bac7923f53a2fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &4820143260045953829
+  engaged_target: {fileID: 0}
+  move_dist: 0
+  animated_move_speed: 0
+  animated_move_dist: 0
+  engaged_check: 0
+  walker_check: 0
+  spawned: 0
+  enemy_check: 0
+  animate_check: 0
+--- !u!114 &8234613853343165384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,19 +223,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 675714681462121961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d6c522af31447398568cc65334232b, type: 3}
+  m_Script: {fileID: 11500000, guid: 42f0072e5be037d47a1f1a265c0c6da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 2
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 2
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0
-  m_VelocityThreshold: 0
-  m_SnapThreshold: 0
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 10
+  max_plating: 0
+  current_plating: 0
+  destruction_trigger: 0
+  plating_bar: {fileID: 1675964601256096, guid: 335a0e157c388414aa80c3e7ae9c1d19,
+    type: 3}
+  armor_value: 0
 --- !u!114 &2664140732365197034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,10 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuel_used: 0
-  fuel_instantiated: 0
   fuel_remaining: 0
+  fuel_instantiated: 0
   fuel_bar: {fileID: 1675964601256096, guid: 69ef6e358812af4459b8df99ecc05830, type: 3}
---- !u!114 &9036875277287916561
+--- !u!114 &3520988159092642277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,24 +257,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 675714681462121961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color_object: {fileID: 0}
-  search_text: 
-  leg_component: {fileID: 0}
-  alt: 0
-  no: 0
-  spawn_color:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  spawn_color_alt:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &4384778041008163336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675714681462121961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 3520988159092642277}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &675714682161579089
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +334,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

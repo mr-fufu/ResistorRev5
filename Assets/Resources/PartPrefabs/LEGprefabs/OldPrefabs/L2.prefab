@@ -16,9 +16,8 @@ GameObject:
   - component: {fileID: 9101774469742398002}
   - component: {fileID: 5815302350636476911}
   - component: {fileID: 6126990915547755036}
-  - component: {fileID: 9140972620983021291}
-  - component: {fileID: 5953870519875055998}
-  - component: {fileID: 4935707494921119918}
+  - component: {fileID: 4380840939763589092}
+  - component: {fileID: 8098550807127404695}
   m_Layer: 15
   m_Name: L2
   m_TagString: DraggableUIPart
@@ -55,6 +54,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -153,8 +153,8 @@ MonoBehaviour:
   engaged_check: 0
   walker_check: 0
   spawned: 0
-  animate_check: 0
   enemy_check: 0
+  animate_check: 0
 --- !u!50 &9101774469742398002
 Rigidbody2D:
   serializedVersion: 4
@@ -231,7 +231,7 @@ MonoBehaviour:
   part_name: M.I.C. UNIT-03 TANK
   part_description: "Purpose: Wheels break. Solution: Don\u2019t use wheels."
   list_index: 0
---- !u!114 &9140972620983021291
+--- !u!114 &4380840939763589092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,31 +240,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7498507300427446997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &5953870519875055998
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &8098550807127404695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,46 +256,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7498507300427446997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d6c522af31447398568cc65334232b, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 2
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 2
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0
-  m_VelocityThreshold: 0
-  m_SnapThreshold: 0
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 10
---- !u!114 &4935707494921119918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7498507300427446997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e53294078df63419de4606ef99cb74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color_object: {fileID: 0}
-  search_text: 
-  leg_component: {fileID: 0}
-  alt: 0
-  no: 0
-  spawn_color:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  spawn_color_alt:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 4380840939763589092}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7498507301186992881
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +317,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
