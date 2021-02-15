@@ -6127,9 +6127,10 @@ GameObject:
   - component: {fileID: 815016578}
   - component: {fileID: 815016577}
   - component: {fileID: 815016581}
+  - component: {fileID: 815016580}
   m_Layer: 5
   m_Name: Enemy Credits
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6208,6 +6209,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815016575}
   m_CullTransparentMesh: 0
+--- !u!114 &815016580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815016575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &815016581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8496,6 +8519,7 @@ GameObject:
   - component: {fileID: 1147159871}
   - component: {fileID: 1147159870}
   - component: {fileID: 1147159872}
+  - component: {fileID: 1147159873}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -8567,6 +8591,28 @@ MonoBehaviour:
   Enemy_Scoring: {fileID: 1098151797}
   player_score_value: 0
   enemy_score_value: 0
+--- !u!114 &1147159873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147159869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1147226122
 GameObject:
   m_ObjectHideFlags: 0
@@ -13012,9 +13058,10 @@ GameObject:
   - component: {fileID: 1896814970}
   - component: {fileID: 1896814969}
   - component: {fileID: 1896814973}
+  - component: {fileID: 1896814972}
   m_Layer: 5
   m_Name: Player Credits
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13093,6 +13140,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896814967}
   m_CullTransparentMesh: 0
+--- !u!114 &1896814972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896814967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &1896814973
 MonoBehaviour:
   m_ObjectHideFlags: 0

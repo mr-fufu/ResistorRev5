@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
+using Photon.Pun;
 
-public class CreditCounter : MonoBehaviour
+public class CreditCounter : MonoBehaviourPunCallbacks
 {
-    //TODO SAM: sync var
     public int credit_value;
 
     public int credit_increase;
     public int credit_time;
     private int credit_clock;
+    private UnityEngine.UI.Text creditsText;
 
     void Awake()
     {
@@ -17,10 +16,17 @@ public class CreditCounter : MonoBehaviour
         credit_clock = 0;
     }
 
+    private void Start()
+    {
+        creditsText = GetComponent<UnityEngine.UI.Text>();
+    }
+
     void Update()
     {
-        GetComponent<UnityEngine.UI.Text>().text = "CREDITS: " + credit_value;
+        creditsText.text = "CREDITS: " + credit_value;
 
+        photonView.RPC("SyncCredits", RpcTarget.Others, credit_value);
+        
         credit_clock++;
         if (credit_clock > credit_time)
         {
@@ -29,4 +35,15 @@ public class CreditCounter : MonoBehaviour
         }
         
     }
+    
+    [PunRPC]
+    private void SyncCredits(int creditsValue)
+    {
+        // update the other person's credits that they sent over the network
+        if (CompareTag("Enemy"))
+        {
+            credit_value = creditsValue;
+        }
+    }
+
 }
