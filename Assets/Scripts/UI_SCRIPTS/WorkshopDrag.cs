@@ -257,8 +257,6 @@ public class WorkshopDrag : MonoBehaviour {
             // that offset through while dragging. This might be quite a bit of work though for very little payoff though it would
             // be nice and I should get to it at some point.
 
-            Debug.Log("currentlyDragging");
-
             mouseLocation = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
 
             selectedObject.position = new Vector3(mouseLocation[0], mouseLocation[1], 0);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -85,44 +86,6 @@ public class StandardStatBlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //if (part_type == "LEG")
-        //{
-        //    if (fuel_used)
-        //    {
-        //        if (!workshop_show_piece)
-        //        {
-        //            if (!fuel_instantiated)
-        //            {
-        //                fuel_object = Instantiate(fuel_bar, gameObject.transform);
-
-        //                fuel_instantiated = true;
-        //            }
-        //            if (fuel_remaining < 100)
-        //            {
-        //                fuel_clock += Time.deltaTime * FUEL * 100f;
-        //                if (fuel_clock > 100)
-        //                {
-        //                    fuel_remaining++;
-        //                    fuel_clock = 0;
-        //                }
-        //            }
-        //            else if (fuel_remaining > 100)
-        //            {
-        //                fuel_remaining = 100;
-        //            }
-        //        }
-        //    }
-        //}
-
-        //if (attached)
-        //{
-        //    if (part_type != "LEG")
-        //    {
-        //        fuel_remaining = transform.parent.transform.parent.GetComponent<StandardStatBlock>().fuel_remaining;
-        //        transform.parent.transform.parent.GetComponent<StandardStatBlock>().fuel_used = fuel_used;
-        //    }
-        //}
-
         // if the part is a leg, check for spawned and engaged_check from the Automove Script.
 
         if (part_type == "LEG")
