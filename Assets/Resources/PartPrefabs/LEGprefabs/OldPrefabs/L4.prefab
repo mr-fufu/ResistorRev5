@@ -154,8 +154,8 @@ GameObject:
   - component: {fileID: 6043026607504053588}
   - component: {fileID: 7215378850290649960}
   - component: {fileID: 4126932796803475092}
-  - component: {fileID: 4568851962851623945}
   - component: {fileID: 3155674966999772413}
+  - component: {fileID: 8202513610316126319}
   m_Layer: 15
   m_Name: L4
   m_TagString: DraggableUIPart
@@ -369,22 +369,6 @@ MonoBehaviour:
   part_name: 'Crusader Iron Steed '
   part_description: 
   list_index: 0
---- !u!114 &4568851962851623945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5506412283938137401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &3155674966999772413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +388,23 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 4568851962851623945}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &8202513610316126319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506412283938137401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 5861738892580857772}
   - component: {fileID: 2460313290947746260}
   - component: {fileID: 5856282960568022792}
-  - component: {fileID: 1110361705183979003}
   - component: {fileID: 4233250866788513849}
+  - component: {fileID: 26520804833071400}
   m_Layer: 15
   m_Name: L3
   m_TagString: DraggableUIPart
@@ -231,22 +231,6 @@ MonoBehaviour:
   part_name: "ThinkSmart\xAE Uni Wheel"
   part_description: 
   list_index: 0
---- !u!114 &1110361705183979003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2169277742613381439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &4233250866788513849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,10 +250,26 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 1110361705183979003}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &26520804833071400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2169277742613381439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &2169277743462892972
 GameObject:
   m_ObjectHideFlags: 0

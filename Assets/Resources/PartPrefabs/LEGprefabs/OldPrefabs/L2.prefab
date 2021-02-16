@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 9101774469742398002}
   - component: {fileID: 5815302350636476911}
   - component: {fileID: 6126990915547755036}
-  - component: {fileID: 4380840939763589092}
   - component: {fileID: 8098550807127404695}
+  - component: {fileID: 2775075458670822730}
   m_Layer: 15
   m_Name: L2
   m_TagString: DraggableUIPart
@@ -231,22 +231,6 @@ MonoBehaviour:
   part_name: M.I.C. UNIT-03 TANK
   part_description: "Purpose: Wheels break. Solution: Don\u2019t use wheels."
   list_index: 0
---- !u!114 &4380840939763589092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7498507300427446997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &8098550807127404695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,10 +250,26 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 4380840939763589092}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &2775075458670822730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498507300427446997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &7498507301186992881
 GameObject:
   m_ObjectHideFlags: 0

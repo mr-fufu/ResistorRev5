@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 5988906474349625992}
   - component: {fileID: 5988906474349625995}
   - component: {fileID: 5988906474349626008}
+  - component: {fileID: 567079021056638103}
   m_Layer: 15
   m_Name: T12
   m_TagString: DraggableUIPart
@@ -337,6 +338,22 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &567079021056638103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5988906474349626007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6153233049273815008
 GameObject:
   m_ObjectHideFlags: 0

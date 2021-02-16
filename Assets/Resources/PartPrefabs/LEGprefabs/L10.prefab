@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4667308556952673127}
   - component: {fileID: 8147744456037082696}
   - component: {fileID: -6516832390742559923}
+  - component: {fileID: 5198317767711683711}
   m_Layer: 15
   m_Name: L10
   m_TagString: DraggableUIPart
@@ -269,6 +270,22 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &5198317767711683711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305709388873873263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6305709389057677736
 GameObject:
   m_ObjectHideFlags: 0

@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 5625933200070999547}
   - component: {fileID: 4889182385006210666}
   - component: {fileID: 7633381459589208448}
+  - component: {fileID: 5097992728119791057}
   m_Layer: 15
   m_Name: AR8
   m_TagString: DraggableUIPart
@@ -329,3 +330,19 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &5097992728119791057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396519483901342488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
