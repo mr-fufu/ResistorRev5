@@ -25,6 +25,7 @@ namespace Photon.Pun
     /// Triggers are raised true during one frame only.
     /// </remarks>
     [AddComponentMenu("Photon Networking/Photon Animator View")]
+
     public class PhotonAnimatorView : MonoBehaviourPun, IPunObservable
     {
         #region Enums
@@ -119,9 +120,13 @@ namespace Photon.Pun
 
         #region Unity
 
+        // Added in case animator is on the child
+        // need a different method if multiple children have animators
+        [SerializeField] private Animator childAnimator;
+        
         private void Awake()
         {
-            this.m_Animator = GetComponent<Animator>();
+            this.m_Animator = childAnimator != null ? childAnimator : GetComponent<Animator>();
         }
 
         private void Update()
