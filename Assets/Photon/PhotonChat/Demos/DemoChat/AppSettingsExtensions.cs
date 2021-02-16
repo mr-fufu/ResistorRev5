@@ -9,7 +9,7 @@ public static class AppSettingsExtensions
         {
             AppIdChat = appSettings.AppIdChat,
             AppVersion = appSettings.AppVersion,
-            FixedRegion = appSettings.IsBestRegion ? null : appSettings.FixedRegion,
+            FixedRegion = appSettings.FixedRegion, //appSettings.IsBestRegion ? null : appSettings.FixedRegion,
             NetworkLogging = appSettings.NetworkLogging,
             Protocol = appSettings.Protocol,
             EnableProtocolFallback = appSettings.EnableProtocolFallback,

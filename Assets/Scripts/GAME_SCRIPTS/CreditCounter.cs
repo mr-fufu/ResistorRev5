@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using Photon.Pun;
 
 public class CreditCounter : MonoBehaviourPunCallbacks
@@ -6,8 +7,8 @@ public class CreditCounter : MonoBehaviourPunCallbacks
     public int credit_value;
 
     public int credit_increase;
-    public int credit_time;
-    private int credit_clock;
+    public float credit_time;
+    private float credit_clock;
     private UnityEngine.UI.Text creditsText;
 
     void Awake()
@@ -23,17 +24,17 @@ public class CreditCounter : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        creditsText.text = "CREDITS: " + credit_value;
+        credit_clock += 10.0f * Time.deltaTime;
 
-        photonView.RPC("SyncCredits", RpcTarget.Others, credit_value);
-        
-        credit_clock++;
         if (credit_clock > credit_time)
         {
             credit_clock = 0;
             credit_value += credit_increase;
+
+            creditsText.text = "CREDITS: " + credit_value;
+
+            photonView.RPC("SyncCredits", RpcTarget.Others, credit_value);
         }
-        
     }
     
     [PunRPC]

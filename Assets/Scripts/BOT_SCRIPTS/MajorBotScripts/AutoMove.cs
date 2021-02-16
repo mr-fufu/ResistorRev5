@@ -18,7 +18,6 @@ public class AutoMove : MonoBehaviour
     public bool spawned;
     public bool enemy_check;
 
-
     public bool animate_check;
 
     private int move_dir;
