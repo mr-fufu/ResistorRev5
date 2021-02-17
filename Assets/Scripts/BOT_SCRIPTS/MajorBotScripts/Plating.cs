@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Plating : MonoBehaviour {
@@ -29,6 +30,8 @@ public class Plating : MonoBehaviour {
             // put into play (legacy carryover from singleplayer)
         spawned = gameObject.GetComponent<AutoMove>().spawned;
 
+        current_plating = 10;
+        
         if (spawned)
         {
             // sets the max plating to the PLATE stat, the current plating equal to
@@ -54,7 +57,10 @@ public class Plating : MonoBehaviour {
             if (current_plating <= 0)
             {
                 destruction_trigger = true;
-                //Destroy(gameObject);
+                if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
+                {
+                    PhotonNetwork.Destroy(gameObject);
+                }
             }
 
             if (current_plating > max_plating)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class PartStats : MonoBehaviour
@@ -128,16 +129,7 @@ public class PartStats : MonoBehaviour
         {
             target_location = gameObject;
         }
-
-        target_location.GetComponent<StandardStatBlock>().transmit_PLATE(PLATE);
-        target_location.GetComponent<StandardStatBlock>().transmit_LOGIC(LOGIC);
-        target_location.GetComponent<StandardStatBlock>().transmit_ARMOR(ARMOR);
-        target_location.GetComponent<StandardStatBlock>().transmit_SPEED(SPEED);
-        target_location.GetComponent<StandardStatBlock>().transmit_FUEL(FUEL);
-        target_location.GetComponent<StandardStatBlock>().transmit_POWER(POWER);
-        target_location.GetComponent<StandardStatBlock>().transmit_RANGE(RANGE);
-        target_location.GetComponent<StandardStatBlock>().transmit_FRAME(FRAME);
-        target_location.GetComponent<StandardStatBlock>().transmit_COST(COST);
+        target_location.GetComponent<StandardStatBlock>().transmitStats(PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
 
         if (melee_component)
         {
@@ -154,15 +146,7 @@ public class PartStats : MonoBehaviour
             target_location = gameObject.transform.parent.transform.parent.gameObject;           
         }
 
-        target_location.GetComponent<StandardStatBlock>().transmit_PLATE(-PLATE);
-        target_location.GetComponent<StandardStatBlock>().transmit_LOGIC(-LOGIC);
-        target_location.GetComponent<StandardStatBlock>().transmit_ARMOR(-ARMOR);
-        target_location.GetComponent<StandardStatBlock>().transmit_SPEED(-SPEED);
-        target_location.GetComponent<StandardStatBlock>().transmit_FUEL(-FUEL);
-        target_location.GetComponent<StandardStatBlock>().transmit_POWER(-POWER);
-        target_location.GetComponent<StandardStatBlock>().transmit_RANGE(-RANGE);
-        target_location.GetComponent<StandardStatBlock>().transmit_FRAME(-FRAME);
-        target_location.GetComponent<StandardStatBlock>().transmit_COST(-COST);
+        target_location.GetComponent<StandardStatBlock>().transmitStats(-PLATE, -LOGIC, -RANGE, -ARMOR, -SPEED, -FUEL, -POWER, -COST);
 
         if (melee_component)
         {

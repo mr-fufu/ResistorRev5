@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ExitGames.Client.Photon.StructWrapping;
 using UnityEngine;
 using Photon.Pun;
 
@@ -99,7 +100,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         
         bot_clone.GetComponent<PhotonView>().RPC("SyncIsEnemy", RpcTarget.All, !PhotonNetwork.IsMasterClient);
         bot_clone.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
-       
+ 
         // set the ENEMY of the SSB to the appropriate value depending on the player_1 bool (true for player 1 and false for player 2
         // i.e. player 2 controls enemy bots on the right side of screen. Similarly, set the bot_tag to the appropriate tag (BOT_Player or
         // BOT_Enemy)
@@ -133,6 +134,12 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         // add the stats from the part stats script to the SSB
         bot_clone.GetComponent<PartStats>().add_stats();
 
+        var statBlock = bot_clone.GetComponent<StandardStatBlock>();
+        if (statBlock != null)
+        {
+            statBlock.UpdateStats();
+        }
+        
         if (bot_clone.GetComponent<PartStats>().part_type == "ARM")
         {
             bot_clone.transform.position = new Vector3(bot_clone.transform.position.x, bot_clone.transform.position.y, -bot_clone.transform.position.y * 0.1f - 10);

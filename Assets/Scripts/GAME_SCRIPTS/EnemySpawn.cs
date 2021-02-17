@@ -87,7 +87,7 @@ public class EnemySpawn : MonoBehaviour
                 lane_select = Random.Range(0, 3);
 
                 var enemy_clone = Instantiate(bot_to_spawn, spawn_lane[lane_select].position, spawn_lane[lane_select].rotation);
-                enemy_clone.GetComponent<StandardStatBlock>().ENEMY = true;
+                //enemy_clone.GetComponent<StandardStatBlock>().ENEMY = true;
                 enemy_clone.GetComponent<AutoMove>().spawned = true;
                 enemy_clone.gameObject.tag = "BOT_Enemy";
                 enemy_clone.gameObject.layer = 13;

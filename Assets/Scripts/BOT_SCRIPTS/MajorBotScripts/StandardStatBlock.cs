@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StandardStatBlock : MonoBehaviour {
 
@@ -31,16 +32,32 @@ public class StandardStatBlock : MonoBehaviour {
 
     public int melee_components = 0;
 
-    public int PLATE;
-    public int LOGIC;
-    public int RANGE;
-    public int ARMOR;
-    public int SPEED;
-    public int FUEL;
-    public int POWER;
-    public int AGILITY;
-    public int COST;
-    public bool ENEMY;
+
+    // for overloaded setters
+    private int _plate, _range, _speed, _power;
+    public int PLATE{ get => _plate; private set => _plate = Math.Max(1, value); }
+    public int LOGIC{ get; private set; }
+    public int RANGE{ get => _range; private set => _range = Math.Max(1, value); }
+    public int ARMOR{ get; private set; }
+    public int SPEED{ get => _speed; private set => _speed = Math.Max(1, value); }
+    public int FUEL{ get; private set; }
+    public int POWER{ get => _power; private set => _power = Math.Max(1, value); }
+    public int COST{ get; private set; }
+    public bool ENEMY{ get; private set; }
+    
+    [PunRPC]
+    public void SyncStats(int newPlate, int newLogic, int newRange, int newArmor, 
+        int newSpeed, int newFuel, int newPower, int newCost)
+    {
+        PLATE = newPlate;
+        LOGIC = newLogic;
+        RANGE = newRange;
+        ARMOR = newArmor;
+        SPEED = newSpeed;
+        FUEL = newFuel;
+        POWER = newPower;
+        COST = newCost;
+    }
 
     [PunRPC]
     public void SyncIsEnemy(bool isEnemy)
@@ -96,6 +113,11 @@ public class StandardStatBlock : MonoBehaviour {
     {
         // if the part is a leg, check for spawned and engaged_check from the Automove Script.
 
+        if (workshop_show_piece)
+        {
+            UpdateStats();
+        }
+        
         if (part_type == "LEG")
         {
             if (!workshop_show_piece)
@@ -113,30 +135,12 @@ public class StandardStatBlock : MonoBehaviour {
             // additional tesla weapons increasing lightning range and damage may be more
             // acceptable aesthetically
 
-            if (spawned)
-            {
-                if (PLATE < 1)
-                {
-                    PLATE = 1;
-                }
-
-                if (SPEED < 1)
-                {
-                    SPEED = 1;
-                }
-
-                if (RANGE < 1)
-                {
-                    RANGE = 1;
-                }
-
-                if (POWER < 1)
-                {
-                    POWER = 1;
-                }
-            }
+            // ^ moved to private setters
         }
+    }
 
+    public void UpdateStats()
+    { 
         // Pull Stats from double or quadruple objects according to part type (specified in initialization start() of
         // this script as well. Also, for battle scene spawned bots, pull the spawned and engaged bools in adition to stats
 
@@ -144,55 +148,64 @@ public class StandardStatBlock : MonoBehaviour {
         {
             if (part_type == "TORSO")
             {
-                PLATE = double_parent_object.GetComponent<StandardStatBlock>().PLATE;
-                LOGIC = double_parent_object.GetComponent<StandardStatBlock>().LOGIC;
-                RANGE = double_parent_object.GetComponent<StandardStatBlock>().RANGE;
-                ARMOR = double_parent_object.GetComponent<StandardStatBlock>().ARMOR;
-                SPEED = double_parent_object.GetComponent<StandardStatBlock>().SPEED;
-                FUEL = double_parent_object.GetComponent<StandardStatBlock>().FUEL;
-                POWER = double_parent_object.GetComponent<StandardStatBlock>().POWER;
-                AGILITY = double_parent_object.GetComponent<StandardStatBlock>().AGILITY;
-                ENEMY = double_parent_object.GetComponent<StandardStatBlock>().ENEMY;
+                var doubleStatBlock = double_parent_object.GetComponent<StandardStatBlock>();
+                PLATE = doubleStatBlock.PLATE;
+                LOGIC = doubleStatBlock.LOGIC;
+                RANGE = doubleStatBlock.RANGE;
+                ARMOR = doubleStatBlock.ARMOR;
+                SPEED = doubleStatBlock.SPEED;
+                FUEL = doubleStatBlock.FUEL;
+                POWER = doubleStatBlock.POWER;
+                ENEMY = doubleStatBlock.ENEMY;
 
                 if (!workshop_show_piece)
                 {
                     engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
+                    
+                    GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+                        PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                 }
             }
             else if (part_type == "ARMOR")
             {
                 if (double_parent_object.GetComponent<PartStats>().part_type == "TORSO")
                 {
-                    PLATE = quadruple_parent_object.GetComponent<StandardStatBlock>().PLATE;
-                    LOGIC = quadruple_parent_object.GetComponent<StandardStatBlock>().LOGIC;
-                    RANGE = quadruple_parent_object.GetComponent<StandardStatBlock>().RANGE;
-                    ARMOR = quadruple_parent_object.GetComponent<StandardStatBlock>().ARMOR;
-                    SPEED = quadruple_parent_object.GetComponent<StandardStatBlock>().SPEED;
-                    FUEL = quadruple_parent_object.GetComponent<StandardStatBlock>().FUEL;
-                    POWER = quadruple_parent_object.GetComponent<StandardStatBlock>().POWER;
-                    AGILITY = quadruple_parent_object.GetComponent<StandardStatBlock>().AGILITY;
-                    ENEMY = quadruple_parent_object.GetComponent<StandardStatBlock>().ENEMY;
+                    var quadStatBlock = quadruple_parent_object.GetComponent<StandardStatBlock>();
+                    PLATE = quadStatBlock.PLATE;
+                    LOGIC = quadStatBlock.LOGIC;
+                    RANGE = quadStatBlock.RANGE;
+                    ARMOR = quadStatBlock.ARMOR;
+                    SPEED = quadStatBlock.SPEED;
+                    FUEL = quadStatBlock.FUEL;
+                    POWER = quadStatBlock.POWER;
+                    ENEMY = quadStatBlock.ENEMY;
 
                     if (!workshop_show_piece)
                     {
                         engaged_check = quadruple_parent_object.GetComponent<AutoMove>().engaged_check;
+                        
+                        GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+                            PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                     }
                 }
                 else if (double_parent_object.GetComponent<PartStats>().part_type == "LEG")
                 {
-                    PLATE = double_parent_object.GetComponent<StandardStatBlock>().PLATE;
-                    LOGIC = double_parent_object.GetComponent<StandardStatBlock>().LOGIC;
-                    RANGE = double_parent_object.GetComponent<StandardStatBlock>().RANGE;
-                    ARMOR = double_parent_object.GetComponent<StandardStatBlock>().ARMOR;
-                    SPEED = double_parent_object.GetComponent<StandardStatBlock>().SPEED;
-                    FUEL = double_parent_object.GetComponent<StandardStatBlock>().FUEL;
-                    POWER = double_parent_object.GetComponent<StandardStatBlock>().POWER;
-                    AGILITY = double_parent_object.GetComponent<StandardStatBlock>().AGILITY;
-                    ENEMY = double_parent_object.GetComponent<StandardStatBlock>().ENEMY;
+                    var doubleStatBlock = double_parent_object.GetComponent<StandardStatBlock>();
+                    PLATE = doubleStatBlock.PLATE;
+                    LOGIC = doubleStatBlock.LOGIC;
+                    RANGE = doubleStatBlock.RANGE;
+                    ARMOR = doubleStatBlock.ARMOR;
+                    SPEED = doubleStatBlock.SPEED;
+                    FUEL = doubleStatBlock.FUEL;
+                    POWER = doubleStatBlock.POWER;
+                    ENEMY = doubleStatBlock.ENEMY;
 
                     if (!workshop_show_piece)
                     {
                         engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
+                        
+                        GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+                            PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                     }
                 }
             }
@@ -204,208 +217,49 @@ public class StandardStatBlock : MonoBehaviour {
     // case the later will cause the TORSO to then pass the value to the LEG. Only when the function arrives at the
     // LEG will the SSB stat value change (will be increased by the transmitted value).
 
-    //-----------------------------------------------------------------------------
-
-    public void transmit_PLATE(int transmit_val)
+    public void transmitStats(int newPlate, int newLogic, int newRange, int newArmor, 
+        int newSpeed, int newFuel, int newPower, int newCost)
     {
+
         part_type = gameObject.GetComponent<PartStats>().part_type;
 
         if (part_type == "TORSO")
         {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().PLATE += transmit_val;
+            var torsoStatBlock = transform.parent.transform.parent.GetComponent<StandardStatBlock>();
+            
+            torsoStatBlock.PLATE += newPlate;
+            torsoStatBlock.LOGIC += newLogic;
+            torsoStatBlock.RANGE += newRange;
+            torsoStatBlock.ARMOR += newArmor;
+            torsoStatBlock.SPEED += newSpeed;
+            torsoStatBlock.FUEL += newFuel;
+            torsoStatBlock.POWER += newPower;
+            torsoStatBlock. COST += newCost;
         }
         else if (part_type == "ARMOR")
         {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_PLATE(transmit_val);
+            var torsoStatBlock = transform.parent.transform.parent.GetComponent<StandardStatBlock>();
+            torsoStatBlock.transmitStats(newPlate, newLogic, newRange, newArmor, newSpeed, newFuel, newPower, newCost);
         }
         else if (part_type == "LEG")
         {
-            gameObject.GetComponent<StandardStatBlock>().PLATE += transmit_val;
+            PLATE += newPlate;
+            LOGIC += newLogic;
+            RANGE += newRange;
+            ARMOR += newArmor;
+            SPEED += newSpeed;
+            FUEL += newFuel;
+            POWER += newPower;
+            COST += newCost;
+        }
+
+        if (!workshop_show_piece)
+        {
+            GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+                PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
         }
     }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_LOGIC(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().LOGIC += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_LOGIC(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().LOGIC += transmit_val;
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_RANGE(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().RANGE += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_RANGE(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().RANGE += transmit_val;
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_ARMOR(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().ARMOR += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_ARMOR(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().ARMOR += transmit_val;
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_SPEED(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().SPEED += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_SPEED(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().SPEED += transmit_val;
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_FUEL(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().FUEL += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_FUEL(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().FUEL += transmit_val;
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_POWER(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().POWER += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_POWER(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().POWER += transmit_val;
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_FRAME(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().AGILITY += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_FRAME(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().AGILITY += transmit_val;
-        }
-    }
-
-    //-----------------------------------------------------------------------------
-
-    public void transmit_COST(int transmit_val)
-    {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
-
-        if (part_type == "TORSO")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().COST += transmit_val;
-        }
-        else if (part_type == "ARMOR")
-        {
-            transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_COST(transmit_val);
-        }
-        else if (part_type == "LEG")
-        {
-            gameObject.GetComponent<StandardStatBlock>().COST += transmit_val;
-        }
-    }
-
-    // I used to calculate fuel remaining in the SSB but a bot should only have one part calculating fuel and both
-    // LEG and TORSO have SSB component. Therefore, fueling and all fuel related code has been moved to a separate
-    // script called Fueling(similar to plating) that is exclusively attached to LEG-type bot parts.
-
-    //public void transmit_fuel_remaining(int fuel_val)
-    //{
-    //    part_type = gameObject.GetComponent<PartStats>().part_type;
-
-    //    if (part_type == "TORSO")
-    //    {
-    //        transform.parent.transform.parent.GetComponent<StandardStatBlock>().fuel_remaining += fuel_val;
-    //    }
-    //    else if (part_type == "ARMOR")
-    //    {
-    //        transform.parent.transform.parent.GetComponent<StandardStatBlock>().transmit_fuel_remaining(fuel_val);
-    //    }
-    //    else if (part_type == "LEG")
-    //    {
-    //        gameObject.GetComponent<StandardStatBlock>().fuel_remaining += fuel_val;
-    //    }
-    //}
-
+    
     public void transmit_melee(int melee_val)
     {
         part_type = gameObject.GetComponent<PartStats>().part_type;
