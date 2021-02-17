@@ -25,7 +25,7 @@ public class ScoringBlock : MonoBehaviour {
 
             if (cross_robot.gameObject.GetComponent<PartStats>().part_type == "LEG")
             {
-                Destroy(cross_robot.gameObject);
+                PhotonNetwork.Destroy(cross_robot.gameObject);
 
                 scoreCounter.player_score_value -= 1;
                 scoreCounter.ChangeScore();
@@ -37,7 +37,7 @@ public class ScoringBlock : MonoBehaviour {
 
             if (cross_robot.gameObject.GetComponent<PartStats>().part_type == "LEG")
             {
-                Destroy(cross_robot.gameObject);
+                PhotonNetwork.Destroy(cross_robot.gameObject);
 
                 scoreCounter.enemy_score_value -= 1;
                 scoreCounter.ChangeScore();

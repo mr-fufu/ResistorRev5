@@ -60,6 +60,7 @@ public class StandardStatBlock : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+        spawned = true;
         //fuel_remaining = 100;
 
         // get part_type and attached from attached PartStats script
@@ -99,7 +100,6 @@ public class StandardStatBlock : MonoBehaviour {
         {
             if (!workshop_show_piece)
             {
-                spawned = gameObject.GetComponent<AutoMove>().spawned;
                 engaged_check = gameObject.GetComponent<AutoMove>().engaged_check;
             }
 
@@ -156,7 +156,6 @@ public class StandardStatBlock : MonoBehaviour {
 
                 if (!workshop_show_piece)
                 {
-                    spawned = double_parent_object.GetComponent<AutoMove>().spawned;
                     engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
                 }
             }
@@ -176,7 +175,6 @@ public class StandardStatBlock : MonoBehaviour {
 
                     if (!workshop_show_piece)
                     {
-                        spawned = quadruple_parent_object.GetComponent<AutoMove>().spawned;
                         engaged_check = quadruple_parent_object.GetComponent<AutoMove>().engaged_check;
                     }
                 }
@@ -194,7 +192,6 @@ public class StandardStatBlock : MonoBehaviour {
 
                     if (!workshop_show_piece)
                     {
-                        spawned = double_parent_object.GetComponent<AutoMove>().spawned;
                         engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
                     }
                 }

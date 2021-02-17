@@ -54,7 +54,7 @@ public class Plating : MonoBehaviour {
             if (current_plating <= 0)
             {
                 destruction_trigger = true;
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
 
             if (current_plating > max_plating)
