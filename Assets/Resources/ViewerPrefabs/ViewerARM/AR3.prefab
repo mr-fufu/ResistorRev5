@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 569977110981756596}
   - component: {fileID: 1210251832890009658}
-  - component: {fileID: 3028965818345224137}
   m_Layer: 15
   m_Name: Detection Object
   m_TagString: Untagged
@@ -89,24 +88,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3028965818345224137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7598087760561834511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 416394610fa92f849871fa266c380dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scanned: 0
-  fixed_range: 0
-  range_overide: 1
-  range_overide_value: 5
-  scan_overide: 0
-  scan_overide_value: 0
 --- !u!1 &7838020242776473887
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +136,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -217,9 +200,9 @@ MonoBehaviour:
   part_type: ARM
   attached: 0
   part_name: "IndustrialGrade\u2122 Eviscerator"
-  part_description: "IndustrialGrade\u2122 is the world leader in combustion and waste
-    management technologies. The eviscerator melts steel and burns circuits at temperatures
-    over 5000K.\_"
+  part_description: "IndustrialGrade\u2122 is the world leader in combustion and
+    waste management technologies. The eviscerator melts steel and burns circuits
+    at temperatures over 5000K.\_"
   list_index: 0
 --- !u!61 &1890919171371337632
 BoxCollider2D:

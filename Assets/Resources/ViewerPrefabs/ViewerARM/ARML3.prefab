@@ -243,9 +243,7 @@ GameObject:
   - component: {fileID: 6290798788227451428}
   - component: {fileID: 6174756384534768536}
   - component: {fileID: 6203191071787880426}
-  - component: {fileID: 6067160311914496733}
   - component: {fileID: 7480885482001340921}
-  - component: {fileID: 3408895177574615313}
   - component: {fileID: 5576438605451705320}
   m_Layer: 15
   m_Name: ARML3
@@ -339,23 +337,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6067160311914496733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288738624882424972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 713ee87ec34f89c43a3ceb57d5fb00e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawned: 0
-  damage_val: 5
-  attack_speed: 3
-  EngagedCheck: 0
-  attached: 0
 --- !u!114 &7480885482001340921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,20 +366,6 @@ MonoBehaviour:
   part_name: ZenTech Arm of Western Plains
   part_description: Ceaseless, Undending
   list_index: 0
---- !u!114 &3408895177574615313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288738624882424972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f933ece77038544180e0966e0ad8a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EngagedCheck: 0
-  continuous_attack: 0
 --- !u!61 &5576438605451705320
 BoxCollider2D:
   m_ObjectHideFlags: 0

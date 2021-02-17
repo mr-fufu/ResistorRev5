@@ -51,7 +51,7 @@ public class LoadingFade : MonoBehaviour
                 }
                 else
                 {
-                    alpha += 0.005f;
+                    alpha += 1.5f * Time.deltaTime;
                 }
             }
             else
@@ -69,7 +69,7 @@ public class LoadingFade : MonoBehaviour
                     }
                     else
                     {
-                        alpha -= 0.002f;
+                        alpha -= 1.5f * Time.deltaTime;
                     }
                 }
             }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 483130382442213615}
   - component: {fileID: 3558712150296318429}
-  - component: {fileID: 8141911285463867814}
   m_Layer: 15
   m_Name: Range_detector
   m_TagString: Untagged
@@ -58,19 +57,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8141911285463867814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203206800078096245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b0dd7f7292b0c64fbfda94b4edc80ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scanned: 0
 --- !u!1 &1995621206506273409
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +98,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5851535291992875316}
   - component: {fileID: 5851535291992875323}
-  - component: {fileID: 86628182994423654}
   - component: {fileID: 8241111999559659470}
   - component: {fileID: 1312252983132584038}
   m_Layer: 15
@@ -188,29 +173,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &86628182994423654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5851535291992875322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f371d951efe364c90871297f28391a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  in_range: 0
-  range_detector: {fileID: 1203206800078096245}
-  attack_speed: 1
-  lightning_damage: 10
-  lightning_object: {fileID: 1656137020809238, guid: ea1e55553d295b442b57e6d02f61ea9b,
-    type: 3}
-  lightning_length: 26
-  launch_point: {fileID: 4412820952195151961}
-  power: 10
-  spawned: 0
-  attached: 0
 --- !u!114 &8241111999559659470
 MonoBehaviour:
   m_ObjectHideFlags: 0

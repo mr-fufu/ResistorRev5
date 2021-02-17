@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5094503139256886019}
   - component: {fileID: 4922156768672383679}
-  - component: {fileID: 5181407718011774669}
-  - component: {fileID: 4821229411734979167}
   - component: {fileID: 8140440640976395225}
   - component: {fileID: 2317531413385023750}
   m_Layer: 15
@@ -87,42 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5181407718011774669
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5095877688638346667}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2356ebe8368f9814786b6d8be115f1bf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4821229411734979167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5095877688638346667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 713ee87ec34f89c43a3ceb57d5fb00e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawned: 0
-  damage_val: 25
-  attack_speed: 0.5
-  EngagedCheck: 0
-  attached: 0
 --- !u!114 &8140440640976395225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5092965300769487875}
   - component: {fileID: 5071209223310673217}
-  - component: {fileID: 5183547868744324587}
-  - component: {fileID: 5127752854873148991}
   m_Layer: 15
   m_Name: MeleeAttach
   m_TagString: MeleeWeapon
@@ -238,48 +198,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 7}
   m_EdgeRadius: 0
---- !u!95 &5183547868744324587
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5096519785683872745}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51e774203182acb4e947e1d8393cc834, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5127752854873148991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5096519785683872745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b80b005df7f286843a14727ddb365209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy_check: 0
-  attached: 0
-  damage_val: 0
-  sparks_object: {fileID: 1256788592060736, guid: 8caca961ef1473242a62e19b5c4c96fa,
-    type: 3}
-  damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
-    type: 3}
-  impact_point: {fileID: 5092691563144989375}
-  root: 0
-  leg: 0
-  body: 0
 --- !u!1 &5096549085878685331
 GameObject:
   m_ObjectHideFlags: 0

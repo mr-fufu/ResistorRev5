@@ -51,6 +51,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -151,7 +153,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7334129782100662719}
   - component: {fileID: 1573533841325123384}
-  - component: {fileID: 7140253252068214176}
   m_Layer: 15
   m_Name: Detection Object
   m_TagString: Untagged
@@ -199,24 +200,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7140253252068214176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757098831689970421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 416394610fa92f849871fa266c380dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scanned: 0
-  fixed_range: 0
-  range_overide: 0
-  range_overide_value: 0
-  scan_overide: 0
-  scan_overide_value: 0
 --- !u!1 &4032807971785444420
 GameObject:
   m_ObjectHideFlags: 0

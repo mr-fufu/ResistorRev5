@@ -10,10 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8745682989818389768}
   - component: {fileID: 8908863651319465140}
-  - component: {fileID: 8648504565756780742}
-  - component: {fileID: 8800423267569462769}
   - component: {fileID: 5315076354291365589}
-  - component: {fileID: 98327568573064765}
   - component: {fileID: 981798378920251578}
   m_Layer: 15
   m_Name: ARML2
@@ -88,42 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8648504565756780742
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743059215111246752}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 253a165bddc75054594316047e6975e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8800423267569462769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743059215111246752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 713ee87ec34f89c43a3ceb57d5fb00e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawned: 0
-  damage_val: 1
-  attack_speed: 5
-  EngagedCheck: 0
-  attached: 0
 --- !u!114 &5315076354291365589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,20 +114,6 @@ MonoBehaviour:
   part_name: ZenTech Arm of Eastern Shores
   part_description: Torn against Tides
   list_index: 0
---- !u!114 &98327568573064765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743059215111246752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f933ece77038544180e0966e0ad8a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EngagedCheck: 0
-  continuous_attack: 0
 --- !u!61 &981798378920251578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -203,8 +150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8737123188360133128}
   - component: {fileID: 8758703172162667338}
-  - component: {fileID: 8647490280577356768}
-  - component: {fileID: 8702317629793912884}
   m_Layer: 15
   m_Name: MeleeAttach
   m_TagString: MeleeWeapon
@@ -253,48 +198,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 7}
   m_EdgeRadius: 0
---- !u!95 &8647490280577356768
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743701794257251810}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51e774203182acb4e947e1d8393cc834, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8702317629793912884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8743701794257251810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b80b005df7f286843a14727ddb365209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy_check: 0
-  attached: 0
-  damage_val: 5
-  sparks_object: {fileID: 1256788592060736, guid: 8caca961ef1473242a62e19b5c4c96fa,
-    type: 3}
-  damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
-    type: 3}
-  impact_point: {fileID: 8857962394097390086}
-  root: 0
-  leg: 0
-  body: 0
 --- !u!1 &8855697712862627858
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,9 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8857591801426760676}
   - component: {fileID: 8651784255457174410}
-  - component: {fileID: 8914821955615964052}
   - component: {fileID: 9117023036621427309}
-  - component: {fileID: 5967892127702798464}
   m_Layer: 15
   m_Name: Chainsaw
   m_TagString: Untagged
@@ -411,25 +312,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8914821955615964052
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8856132433442965610}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 638656b2f61491e4d8b81e762ade9246, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &9117023036621427309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,16 +328,3 @@ MonoBehaviour:
   adjust_layer: 0
   layer_adjust: 0
   parent_layer_update: 0
---- !u!114 &5967892127702798464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8856132433442965610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfa72722503671047a5f3df7c5525a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawned: 0
