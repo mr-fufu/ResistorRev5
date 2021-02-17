@@ -139,11 +139,12 @@ public class SpawnController : MonoBehaviourPunCallbacks
     {
         if (!spawn_lane[laneIndex - 1].GetComponent<SpawnBlocker>().spawn_blocked)
         {
-            if (selected_spawn_bot.transform.GetChild(0).GetChild(0).GetComponent<StandardStatBlock>().COST <= credit_values.GetComponent<CreditCounter>().credit_value)
+            credit_cost = selected_spawn_bot.transform.GetChild(0).GetChild(0).GetComponent<StandardStatBlock>().COST;
+            if (credit_cost <= credit_values.GetComponent<CreditCounter>().credit_value)
             {
-                credit_cost = selected_spawn_bot.transform.GetChild(0).GetChild(0).GetComponent<StandardStatBlock>().COST;
-
-                player.GetComponent<PlayerSpawnScript>().SpawnBot(spawn_list.part_type_list, spawn_list.name_list, spawn_list.parent_count_list, spawn_list.child_count_1_list, spawn_list.child_count_2_list, spawn_list.child_count_3_list, spawn_lane[laneIndex - 1], "LANE" + laneIndex, credit_values, credit_cost);
+                player.GetComponent<PlayerSpawnScript>().SpawnBot(spawn_list.part_type_list, spawn_list.name_list, 
+                    spawn_list.parent_count_list, spawn_list.child_count_1_list, spawn_list.child_count_2_list, spawn_list.child_count_3_list, 
+                    spawn_lane[laneIndex - 1], "LANE" + laneIndex, credit_values, credit_cost);
             }
         }
     }

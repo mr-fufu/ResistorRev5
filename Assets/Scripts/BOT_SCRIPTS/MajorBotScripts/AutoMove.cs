@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class AutoMove : MonoBehaviour 
@@ -14,8 +15,13 @@ public class AutoMove : MonoBehaviour
     public bool engaged_check = false;
     public bool walker_check;
 
-    // TODO SAM: Sync vars
     public bool spawned;
+
+    [PunRPC]
+    public void SyncHasSpawnedBot(bool hasSpawned)
+    {
+        spawned = hasSpawned;
+    }
     public bool enemy_check;
 
     public bool animate_check;
@@ -53,7 +59,7 @@ public class AutoMove : MonoBehaviour
         // checks the standard stat block to see whether the robot belongs
         // to the player or is an enemy robot (ENEMY is false if belongs to player
         // on the left or true if player is on the right)
-        enemy_check = gameObject.GetComponent<StandardStatBlock>().ENEMY;
+        enemy_check = !PhotonNetwork.IsMasterClient; //gameObject.GetComponent<StandardStatBlock>().ENEMY;
 
     }
 

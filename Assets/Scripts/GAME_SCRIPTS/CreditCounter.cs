@@ -38,13 +38,19 @@ public class CreditCounter : MonoBehaviourPunCallbacks
     }
     
     [PunRPC]
-    private void SyncCredits(int creditsValue)
+    public void SyncCredits(int creditsValue)
     {
         // update the other person's credits that they sent over the network
-        if (CompareTag("Enemy"))
+        var isEnemyCreditCounter = CompareTag("Enemy");
+        var isPlayerOne = PhotonNetwork.IsMasterClient;
+        
+        if (isEnemyCreditCounter && isPlayerOne)
+        {
+            credit_value = creditsValue;
+        }
+        else if (!isEnemyCreditCounter && !isPlayerOne)
         {
             credit_value = creditsValue;
         }
     }
-
 }

@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine;
 
-public class ScoreCounter : MonoBehaviourPunCallbacks {
+public class ScoreCounter : MonoBehaviour, IPunObservable {
 
     public Text Player_Scoring;
     public Text Enemy_Scoring;
     
+    [SerializeField]
     public int player_score_value;
+    [SerializeField]
     public int enemy_score_value;
 
     private SceneManagementScript sceneMgmt;
@@ -17,15 +20,16 @@ public class ScoreCounter : MonoBehaviourPunCallbacks {
         enemy_score_value = 10;
 
         sceneMgmt = GetComponent<SceneManagementScript>();
+        
+        Player_Scoring.text = "" + player_score_value;
+        Enemy_Scoring.text = "" + enemy_score_value;
     }
 
-    void Update()
+    public void ChangeScore()
     {
         Player_Scoring.text = "" + player_score_value;
         Enemy_Scoring.text = "" + enemy_score_value;
 
-        photonView.RPC("SyncScore", RpcTarget.Others, player_score_value);
-        
         if (PhotonNetwork.IsMasterClient)
         {
             if (player_score_value == 0)
@@ -52,9 +56,24 @@ public class ScoreCounter : MonoBehaviourPunCallbacks {
         }
     }
 
-    [PunRPC]
-    private void SyncScore(int score)
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        enemy_score_value = score;
+        if (stream.IsWriting)
+        {
+            int sentScore = PhotonNetwork.IsMasterClient ? player_score_value : enemy_score_value;
+            stream.SendNext(sentScore);
+        }
+        else if(stream.IsReading)
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                enemy_score_value = (int)stream.ReceiveNext();
+            }
+            else
+            {
+              player_score_value  = (int)stream.ReceiveNext();
+            }
+             
+        }
     }
 }

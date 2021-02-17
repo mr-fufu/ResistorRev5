@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class PlatingValues : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         plating_value = transform.parent.gameObject.GetComponent<Plating>();
-        enemy_check = transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+        enemy_check = !PhotonNetwork.IsMasterClient; //transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
     }
 	
 	// Update is called once per frame

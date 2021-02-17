@@ -89,20 +89,21 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
         // instantiate leg part (0th element in all spawn list arrays)
 
-        GameObject bot_clone = PhotonNetwork.Instantiate("PartPrefabs/LEGPrefabs/" + part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
-
-
+        GameObject bot_clone = (GameObject) PhotonNetwork.Instantiate("PartPrefabs/LEGprefabs/" + part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
+        
         // deduct credits for spawning bot
         credit_object.GetComponent<CreditCounter>().credit_value -= credit_cost;
+        //credit_object.GetComponent<PhotonView>().RPC("SyncCredits", RpcTarget.Others, credit_cost);
 
         // set the newly spawned bot's automove script's spawned bool to true. Set the sorting layer to the one passed through lane_name
         bot_clone.GetComponent<AutoMove>().spawned = true;
+        //bot_clone.GetComponent<PhotonView>().RPC("SyncHasSpawnedBot", RpcTarget.Others, true);
         bot_clone.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
 
         // set the ENEMY of the SSB to the appropriate value depending on the player_1 bool (true for player 1 and false for player 2
         // i.e. player 2 controls enemy bots on the right side of screen. Similarly, set the bot_tag to the appropriate tag (BOT_Player or
         // BOT_Enemy)
-        bot_clone.GetComponent<StandardStatBlock>().ENEMY = !player_1;
+        bot_clone.GetComponent<StandardStatBlock>().ENEMY = !PhotonNetwork.IsMasterClient; //!player_1;
 
         bot_clone.gameObject.tag = bot_tag;
 
