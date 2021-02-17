@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1571160290749724119}
   - component: {fileID: 1018173341895825576}
   - component: {fileID: 42486241970619728}
-  - component: {fileID: 7298144963155415407}
   - component: {fileID: 3106771132552030032}
   - component: {fileID: -2819758262582546565}
   m_Layer: 15
@@ -148,19 +147,6 @@ MonoBehaviour:
   part_description: Superheated thermal exhaust boosts your bot to unprecedented
     speeds. High speed, low drag - feel the Streamline.
   list_index: 0
---- !u!114 &7298144963155415407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100620838968029424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f5e4aa71205824f9dd1a805fb96f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enable_object: {fileID: 455389098596852732}
 --- !u!114 &3106771132552030032
 MonoBehaviour:
   m_ObjectHideFlags: 0

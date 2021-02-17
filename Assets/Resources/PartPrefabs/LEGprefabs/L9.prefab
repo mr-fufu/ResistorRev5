@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 1630520260187061612}
   - component: {fileID: 5180112251785882520}
   - component: {fileID: 208098267894236496}
-  - component: {fileID: 6436952982523974859}
   - component: {fileID: 408162209524942064}
   - component: {fileID: 7703307299512802397}
   - component: {fileID: -5548957901348522870}
@@ -60,6 +59,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -109,16 +109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workshop_show_piece: 0
   melee_components: 0
-  PLATE: 0
-  LOGIC: 0
-  RANGE: 0
-  ARMOR: 0
-  SPEED: 0
-  FUEL: 0
-  POWER: 0
-  AGILITY: 0
-  COST: 0
-  ENEMY: 0
   spawned: 0
   engaged_check: 0
 --- !u!50 &1630520260187061614
@@ -238,19 +228,6 @@ MonoBehaviour:
   plating_bar: {fileID: 1675964601256096, guid: 335a0e157c388414aa80c3e7ae9c1d19,
     type: 3}
   armor_value: 0
---- !u!114 &6436952982523974859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630520260187061610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f5e4aa71205824f9dd1a805fb96f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enable_object: {fileID: 45636706026755533}
 --- !u!114 &408162209524942064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +281,8 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1846452553979453281}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -372,6 +350,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -510,6 +489,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -657,12 +637,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
---- !u!1 &45636706026755533 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1816585904176796, guid: 46bf4c64c06fd1b4d94319c90af50b77,
-    type: 3}
-  m_PrefabInstance: {fileID: 46256984591444817}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &50763459753382137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77,

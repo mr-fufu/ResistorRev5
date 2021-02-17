@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2662374228148505759}
   - component: {fileID: 2662374228148505756}
   - component: {fileID: 3723020482202018149}
-  - component: {fileID: 1073450626829737927}
   - component: {fileID: 6822604181810888249}
   - component: {fileID: 2662374228148505758}
   - component: {fileID: -259289738600912001}
@@ -171,19 +170,6 @@ MonoBehaviour:
   part_name: Streamline Shocktube
   part_description: 
   list_index: 0
---- !u!114 &1073450626829737927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2662374228148505753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f5e4aa71205824f9dd1a805fb96f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enable_object: {fileID: 1771808175104624417}
 --- !u!95 &6822604181810888249
 Animator:
   serializedVersion: 3
@@ -223,7 +209,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: -259289738600912001}
-  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -717,12 +702,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
---- !u!1 &1771808175104624417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1816585904176796, guid: 46bf4c64c06fd1b4d94319c90af50b77,
-    type: 3}
-  m_PrefabInstance: {fileID: 1770141191786674621}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1765623721221194261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77,

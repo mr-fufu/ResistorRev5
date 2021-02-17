@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 560731578459078831}
   - component: {fileID: 372890032579608061}
-  - component: {fileID: 784092321415182008}
   - component: {fileID: 545916284568857886}
   - component: {fileID: 8606232397812243619}
   - component: {fileID: 7479528493960338356}
@@ -88,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &784092321415182008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566372121615511797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f5e4aa71205824f9dd1a805fb96f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enable_object: {fileID: 6352966870927075338}
 --- !u!60 &545916284568857886
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -259,12 +245,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
---- !u!1 &6352966870927075338 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1816585904176796, guid: 46bf4c64c06fd1b4d94319c90af50b77,
-    type: 3}
-  m_PrefabInstance: {fileID: 6353507709507819158}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6358026021869251902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77,

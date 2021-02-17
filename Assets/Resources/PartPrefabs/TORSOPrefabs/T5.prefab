@@ -152,7 +152,6 @@ GameObject:
   - component: {fileID: 3609166389687808517}
   - component: {fileID: 3609166389687808518}
   - component: {fileID: 2782321128433428675}
-  - component: {fileID: 5951639679782540594}
   - component: {fileID: 3609166389687808520}
   - component: {fileID: -6364223404999565672}
   m_Layer: 15
@@ -310,19 +309,6 @@ MonoBehaviour:
     can power IndustrialGrade\u2122 bot components the way the IndustrialGrade\u2122
     Hercules does -  with the reliability of solid fuel."
   list_index: 0
---- !u!114 &5951639679782540594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3609166389687808523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f5e4aa71205824f9dd1a805fb96f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enable_object: {fileID: 8273332879748792512}
 --- !u!114 &3609166389687808520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +328,6 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
   - {fileID: -6364223404999565672}
   viewIdField: 0
   InstantiationId: 0
@@ -841,12 +826,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8160529b179d2e242b60de0fca703600, type: 3}
---- !u!1 &8273332879748792512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1256788592060736, guid: 8160529b179d2e242b60de0fca703600,
-    type: 3}
-  m_PrefabInstance: {fileID: 8274448840471013760}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8276243935992486266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4397375677985018, guid: 8160529b179d2e242b60de0fca703600,
