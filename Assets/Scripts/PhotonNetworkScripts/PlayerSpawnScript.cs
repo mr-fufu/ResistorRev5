@@ -96,14 +96,13 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         //credit_object.GetComponent<PhotonView>().RPC("SyncCredits", RpcTarget.Others, credit_cost);
 
         // set the newly spawned bot's automove script's spawned bool to true. Set the sorting layer to the one passed through lane_name
-        bot_clone.GetComponent<AutoMove>().spawned = true;
-        //bot_clone.GetComponent<PhotonView>().RPC("SyncHasSpawnedBot", RpcTarget.Others, true);
+        
+        bot_clone.GetComponent<PhotonView>().RPC("SyncIsEnemy", RpcTarget.All, !PhotonNetwork.IsMasterClient);
         bot_clone.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
-
+       
         // set the ENEMY of the SSB to the appropriate value depending on the player_1 bool (true for player 1 and false for player 2
         // i.e. player 2 controls enemy bots on the right side of screen. Similarly, set the bot_tag to the appropriate tag (BOT_Player or
         // BOT_Enemy)
-        bot_clone.GetComponent<StandardStatBlock>().ENEMY = !PhotonNetwork.IsMasterClient; //!player_1;
 
         bot_clone.gameObject.tag = bot_tag;
 

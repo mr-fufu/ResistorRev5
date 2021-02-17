@@ -39,8 +39,11 @@ public class AutoMove : MonoBehaviour
 
 
     // Use this for initialization
-    void Start () {
-
+    void Start ()
+    {
+        //rip #2
+        //spawned = true;
+        
         // get move_dist from the speed of the bot, this is the main
         // variable that controls how fast the robot moves
         move_dist = gameObject.GetComponent<StandardStatBlock>().SPEED;
@@ -64,8 +67,11 @@ public class AutoMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
 
+        //rip
+        enemy_check = GetComponent<StandardStatBlock>().ENEMY;
         if (spawned)
         {
             //-------------------------------------------------------------------

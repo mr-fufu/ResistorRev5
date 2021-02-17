@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class StandardStatBlock : MonoBehaviour {
@@ -40,6 +41,12 @@ public class StandardStatBlock : MonoBehaviour {
     public int AGILITY;
     public int COST;
     public bool ENEMY;
+
+    [PunRPC]
+    public void SyncIsEnemy(bool isEnemy)
+    {
+        ENEMY = isEnemy;
+    }
 
     public bool spawned;
     public bool engaged_check;
