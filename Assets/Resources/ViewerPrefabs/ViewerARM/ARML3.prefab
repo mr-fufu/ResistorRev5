@@ -28,8 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2057083723951302094}
+  m_Children: []
   m_Father: {fileID: 6292653767099995428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,36 +99,6 @@ MonoBehaviour:
   adjust_layer: 0
   layer_adjust: 0
   parent_layer_update: 0
---- !u!1 &5591660517957605133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2057083723951302094}
-  m_Layer: 15
-  m_Name: ImpactPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2057083723951302094
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5591660517957605133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 9055128728195859156}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6288254376476295886
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +109,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6292653767099995428}
   - component: {fileID: 6313671041451011174}
-  - component: {fileID: 6201895277272022220}
-  - component: {fileID: 6257566664803493656}
   m_Layer: 15
   m_Name: MeleeAttach
   m_TagString: MeleeWeapon
@@ -190,48 +157,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 7}
   m_EdgeRadius: 0
---- !u!95 &6201895277272022220
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288254376476295886}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51e774203182acb4e947e1d8393cc834, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6257566664803493656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288254376476295886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b80b005df7f286843a14727ddb365209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy_check: 0
-  attached: 0
-  damage_val: 0
-  sparks_object: {fileID: 1256788592060736, guid: 8caca961ef1473242a62e19b5c4c96fa,
-    type: 3}
-  damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
-    type: 3}
-  impact_point: {fileID: 2057083723951302094}
-  root: 0
-  leg: 0
-  body: 0
 --- !u!1 &6288738624882424972
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +167,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6290798788227451428}
   - component: {fileID: 6174756384534768536}
-  - component: {fileID: 6203191071787880426}
   - component: {fileID: 7480885482001340921}
   - component: {fileID: 5576438605451705320}
   m_Layer: 15
@@ -318,25 +242,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6203191071787880426
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288738624882424972}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 253a165bddc75054594316047e6975e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7480885482001340921
 MonoBehaviour:
   m_ObjectHideFlags: 0
