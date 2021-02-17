@@ -145,6 +145,32 @@ public class WorkshopDrag : MonoBehaviour {
         // activated/deactivated since the stage selector script does that for us (though it could be moved here to be simplified)
         // also, whichever stage is the selected stage will constantly call the fill_child_slots function which will continuously
         // find all slot_components on the stage and fill them with the corresponding part icon (more detail in the fill_child_slots function)
+
+        if (Input.GetKeyDown("1"))
+        {
+            selected_stage = stage_1;
+            fill_child_slots(selected_stage);
+            selected_spawn.selected_box = 1;
+        }
+        else if (Input.GetKeyDown("2"))
+        {
+            selected_stage = stage_2;
+            fill_child_slots(selected_stage);
+            selected_spawn.selected_box = 2;
+        }
+        else if (Input.GetKeyDown("3"))
+        {
+            selected_stage = stage_3;
+            fill_child_slots(selected_stage);
+            selected_spawn.selected_box = 3;
+        }
+        else if (Input.GetKeyDown("4"))
+        {
+            selected_stage = stage_4;
+            fill_child_slots(selected_stage);
+            selected_spawn.selected_box = 4;
+        }
+
         if (selected_spawn.selected_box == 1)
         {
             selected_stage = stage_1;
