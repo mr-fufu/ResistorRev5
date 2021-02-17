@@ -244,16 +244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workshop_show_piece: 0
   melee_components: 0
-  PLATE: 0
-  LOGIC: 0
-  RANGE: 0
-  ARMOR: 0
-  SPEED: 0
-  FUEL: 0
-  POWER: 0
-  AGILITY: 0
-  COST: 0
-  ENEMY: 0
   spawned: 0
   engaged_check: 0
 --- !u!114 &7616484088153651992

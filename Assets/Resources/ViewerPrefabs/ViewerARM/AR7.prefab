@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 418612539211182917}
   - component: {fileID: 1194620569625215938}
   - component: {fileID: 8451827386534434813}
-  - component: {fileID: 1554472371379561530}
   - component: {fileID: 5853591630400189471}
   m_Layer: 15
   m_Name: AR7
@@ -50,6 +49,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -112,8 +113,8 @@ MonoBehaviour:
   part_type: ARM
   attached: 0
   part_name: Streamline TurboJet
-  part_description: Superheated thermal exhaust boosts your bot to unprecedented speeds.
-    High speed, low drag - feel the Streamline.
+  part_description: Superheated thermal exhaust boosts your bot to unprecedented
+    speeds. High speed, low drag - feel the Streamline.
   list_index: 0
 --- !u!114 &8451827386534434813
 MonoBehaviour:
@@ -128,39 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable_object: {fileID: 1608640417309500782}
---- !u!114 &1554472371379561530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254162377185834594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!61 &5853591630400189471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -235,6 +203,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -344,8 +314,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4579361680483052878}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 5
   m_Range: 20

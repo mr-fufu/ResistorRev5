@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 684004513127803938}
   - component: {fileID: 2996693506276610454}
   - component: {fileID: 1101710929649986071}
-  - component: {fileID: -4734391370089952499}
   - component: {fileID: -7308761196230972295}
   m_Layer: 15
   m_Name: T17
@@ -140,16 +139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workshop_show_piece: 0
   melee_components: 0
-  PLATE: 0
-  LOGIC: 0
-  RANGE: 0
-  ARMOR: 0
-  SPEED: 0
-  FUEL: 0
-  POWER: 0
-  AGILITY: 0
-  COST: 0
-  ENEMY: 0
   spawned: 0
   engaged_check: 0
 --- !u!114 &3837163788193427587
@@ -236,26 +225,12 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
+  - {fileID: -7308761196230972295}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-4734391370089952499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101710929649986064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &-7308761196230972295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +246,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
-  m_UseLocal: 1
+  m_UseLocal: 0
 --- !u!1 &2996693506203190480
 GameObject:
   m_ObjectHideFlags: 0

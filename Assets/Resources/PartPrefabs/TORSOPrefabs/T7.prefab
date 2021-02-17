@@ -133,16 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workshop_show_piece: 0
   melee_components: 0
-  PLATE: 0
-  LOGIC: 0
-  RANGE: 0
-  ARMOR: 0
-  SPEED: 0
-  FUEL: 0
-  POWER: 0
-  AGILITY: 0
-  COST: 0
-  ENEMY: 0
   spawned: 0
   engaged_check: 0
 --- !u!114 &7984332643876208184
@@ -192,7 +182,8 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -8113397034474902001}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -211,4 +202,4 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
-  m_UseLocal: 1
+  m_UseLocal: 0

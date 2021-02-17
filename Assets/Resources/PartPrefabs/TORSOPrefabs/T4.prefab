@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 6822604181810888249}
   - component: {fileID: 2662374228148505758}
   - component: {fileID: -259289738600912001}
-  - component: {fileID: -6926020055152185496}
   m_Layer: 15
   m_Name: T4
   m_TagString: DraggableUIPart
@@ -141,16 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workshop_show_piece: 0
   melee_components: 0
-  PLATE: 0
-  LOGIC: 0
-  RANGE: 0
-  ARMOR: 0
-  SPEED: 0
-  FUEL: 0
-  POWER: 0
-  AGILITY: 0
-  COST: 0
-  ENEMY: 0
   spawned: 0
   engaged_check: 0
 --- !u!114 &3723020482202018149
@@ -232,7 +221,9 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -259289738600912001}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -251,23 +242,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!114 &-6926020055152185496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2662374228148505753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  m_UseLocal: 0
 --- !u!1 &2662374228628709360
 GameObject:
   m_ObjectHideFlags: 0

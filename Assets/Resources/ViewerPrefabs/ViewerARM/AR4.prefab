@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 5851535291992875323}
   - component: {fileID: 86628182994423654}
   - component: {fileID: 8241111999559659470}
-  - component: {fileID: 1176502644935217039}
   - component: {fileID: 1312252983132584038}
   m_Layer: 15
   m_Name: AR4
@@ -152,6 +151,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -237,42 +238,9 @@ MonoBehaviour:
   part_type: ARM
   attached: 0
   part_name: Crusader Excalibur
-  part_description: Wield the blade of righteous destiny upon the non-believers. Unleash
-    thy Wrath with the Excalibur and absolve them of their wicked ways.
+  part_description: Wield the blade of righteous destiny upon the non-believers.
+    Unleash thy Wrath with the Excalibur and absolve them of their wicked ways.
   list_index: 0
---- !u!114 &1176502644935217039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5851535291992875322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 0
-    i1: 0
-    i2: 0
-    i3: 0
-    i4: 0
-    i5: 0
-    i6: 0
-    i7: 0
-    i8: 0
-    i9: 0
-    i10: 0
-    i11: 0
-    i12: 0
-    i13: 0
-    i14: 0
-    i15: 0
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!61 &1312252983132584038
 BoxCollider2D:
   m_ObjectHideFlags: 0
