@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -142,6 +143,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 1248450411921985675}
+  - {fileID: -5382981697670308787}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -160,7 +162,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
-  m_UseLocal: 1
+  m_UseLocal: 0
 --- !u!114 &-5382981697670308787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +178,10 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+  childAnimator: {fileID: 0}
 --- !u!1 &8490488995871141510
 GameObject:
   m_ObjectHideFlags: 0
