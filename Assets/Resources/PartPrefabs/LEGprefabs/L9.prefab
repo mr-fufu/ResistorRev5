@@ -36,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 1630520260187061610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10, y: -16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1630520260825798151}
   - {fileID: 7670271365449168885}
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 50, y: 26}
+  m_Size: {x: 100.09765, y: 100}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -145,18 +145,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 7, y: 13.300001}
+  m_Offset: {x: 10, y: 25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.28, y: 0}
-    oldSize: {x: 50, y: 26}
-    newSize: {x: 50, y: 26}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 100, y: 100}
+    newSize: {x: 100.09765, y: 100}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 45, y: 26.600002}
+  m_Size: {x: 50, y: 70}
   m_EdgeRadius: 0
 --- !u!114 &1630520260187061612
 MonoBehaviour:
@@ -225,8 +225,9 @@ MonoBehaviour:
   max_plating: 0
   current_plating: 0
   destruction_trigger: 0
-  plating_bar: {fileID: 1675964601256096, guid: 335a0e157c388414aa80c3e7ae9c1d19,
+  platingBarPrefab: {fileID: 1675964601256096, guid: 335a0e157c388414aa80c3e7ae9c1d19,
     type: 3}
+  platingBar: {fileID: 0}
   armor_value: 0
 --- !u!114 &408162209524942064
 MonoBehaviour:
@@ -329,7 +330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630520260825798148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalPosition: {x: 0, y: 41.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1630520260187061613}
@@ -402,15 +403,15 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.6666667}
-    oldSize: {x: 8, y: 6}
+    pivot: {x: 0.5, y: 0.33333334}
+    oldSize: {x: 15, y: 3}
     newSize: {x: 8, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 4}
+  m_Size: {x: 13, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &1630520260825798150
 MonoBehaviour:
@@ -468,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8705756220981146073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14, z: 0}
+  m_LocalPosition: {x: -3, y: 33.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1630520260187061613}
@@ -541,8 +542,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.25, y: 0.6666667}
-    oldSize: {x: 8, y: 6}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 6}
     newSize: {x: 8, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -593,11 +594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.5
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.5
+      value: 31.5
       objectReference: {fileID: 0}
     - target: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
       propertyPath: m_LocalPosition.z
@@ -633,6 +634,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850747076596874358, guid: 46bf4c64c06fd1b4d94319c90af50b77,
+        type: 3}
+      propertyPath: viewIdField
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

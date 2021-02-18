@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4492889469514462647}
   - component: {fileID: 4492889469514462633}
-  - component: {fileID: 4492889469514462632}
   - component: {fileID: 3109953871083934566}
   - component: {fileID: 471152748331683750}
   - component: {fileID: 4376054307054205770}
@@ -77,48 +76,18 @@ SpriteRenderer:
   m_SortingLayerID: 1012360337
   m_SortingLayer: 8
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300034, guid: cb003cfd71ec9b8488aefb2a8947c6b1, type: 3}
+  m_Sprite: {fileID: -2316572319593910206, guid: cb003cfd71ec9b8488aefb2a8947c6b1,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 40, y: 32}
+  m_Size: {x: 100, y: 100}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4492889469514462632
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4492889469514462644}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.05, y: 0.625}
-    oldSize: {x: 10, y: 12}
-    newSize: {x: 40, y: 32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.5, y: 4}
-      - {x: -0.5, y: -3.5}
-      - {x: 0.5, y: -4}
-      - {x: 4, y: -4}
-      - {x: 5, y: -3.5}
-      - {x: 5, y: 4}
 --- !u!114 &3109953871083934566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9134334691913329136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 11, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 789095743772890892}

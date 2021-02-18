@@ -15,7 +15,8 @@ public class Plating : MonoBehaviour {
     public bool destruction_trigger = false;
 
     // plating (health) bar object
-    public Object plating_bar;
+    public Object platingBarPrefab;
+    public GameObject platingBar;
 
     // the amount of armor the bot has (each point of armor reduces incoming damage by 1 point)
     public int armor_value;
@@ -30,7 +31,12 @@ public class Plating : MonoBehaviour {
     {
         // instantiate health bar object (UI display for bot plating/health) as a child
         // of current gameobject.
-        Instantiate(plating_bar, gameObject.transform);
+        if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
+        {
+            platingBar = PhotonNetwork.Instantiate("ParticlesAndEffects/" + platingBarPrefab.name, gameObject.transform.position, gameObject.transform.rotation);
+            platingBar.transform.parent = gameObject.transform;
+        }
+
     }
 
     public void InitializePlating(int plate, int armor)
@@ -55,7 +61,13 @@ public class Plating : MonoBehaviour {
             destruction_trigger = true;
             if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
             {
+                PhotonNetwork.Destroy(platingBar);
                 PhotonNetwork.Destroy(gameObject);
+
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
 

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7670343623913490230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: -7.75, z: 0}
+  m_LocalPosition: {x: 11.5, y: -8.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5240568542732823869}
@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 7672739969876563676}
   - component: {fileID: 7531449375639500598}
   - component: {fileID: 7776758321132061720}
-  - component: {fileID: 187644171963652609}
   - component: {fileID: 7671003187742802989}
   - component: {fileID: 5240035957143222866}
   - component: {fileID: -3028759417078881152}
@@ -108,12 +107,13 @@ SpriteRenderer:
   m_SortingLayerID: 1012360337
   m_SortingLayer: 8
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300054, guid: d0908d3680709af48af0169b42dc3ff8, type: 3}
+  m_Sprite: {fileID: 7181121174516347733, guid: d0908d3680709af48af0169b42dc3ff8,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 40, y: 32}
+  m_Size: {x: 100, y: 100}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -168,39 +168,6 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 0}
   leg_component: {fileID: 0}
---- !u!60 &187644171963652609
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7670462145903118386}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4, y: 0.75}
-    oldSize: {x: 40, y: 32}
-    newSize: {x: 40, y: 32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -6.5, y: 4.5}
-      - {x: -7, y: 1.5}
-      - {x: -7, y: -12.5}
-      - {x: -6.5, y: -13.5}
-      - {x: 5, y: -13.5}
-      - {x: 9, y: -12}
-      - {x: 9, y: -4.5}
-      - {x: 3, y: 4.5}
 --- !u!114 &7671003187742802989
 MonoBehaviour:
   m_ObjectHideFlags: 0

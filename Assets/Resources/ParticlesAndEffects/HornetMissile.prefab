@@ -143,7 +143,6 @@ MonoBehaviour:
   impact_point: {fileID: 4192024644656430}
   y_velocity: 0
   piercing: 0
-  player: {fileID: 0}
   damage_int_value: 0
   ground_y_position: 0
 --- !u!61 &61417591149183388
@@ -184,10 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0567fe57a3f1a44eae4403de04f1acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 10
+  LifeTime: 20
   player: {fileID: 0}
   impact: 1
   non_networked_destroy: 0
+  enemy_check: 0
 --- !u!114 &7072477883395645249
 MonoBehaviour:
   m_ObjectHideFlags: 0

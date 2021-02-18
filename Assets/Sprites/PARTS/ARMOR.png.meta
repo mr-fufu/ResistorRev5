@@ -98,8 +98,56 @@ TextureImporter:
   - first:
       213: 21300062
     second: FRONT_15
+  - first:
+      213: -407623548588027991
+    second: ARMOR_0
+  - first:
+      213: -2316572319593910206
+    second: ARMOR_1
+  - first:
+      213: -4167324824439088876
+    second: ARMOR_2
+  - first:
+      213: 857711690286389737
+    second: ARMOR_3
+  - first:
+      213: -2367472969495491987
+    second: ARMOR_4
+  - first:
+      213: 8203399838415730133
+    second: ARMOR_5
+  - first:
+      213: 2364259157997489451
+    second: ARMOR_6
+  - first:
+      213: 7126017264643267911
+    second: ARMOR_7
+  - first:
+      213: 7434936326571698711
+    second: ARMOR_8
+  - first:
+      213: -3502517991747760685
+    second: ARMOR_9
+  - first:
+      213: 5863789346184139170
+    second: ARMOR_10
+  - first:
+      213: -3495227424394018220
+    second: ARMOR_11
+  - first:
+      213: -5113141584908061385
+    second: ARMOR_12
+  - first:
+      213: 2940547054959194465
+    second: ARMOR_13
+  - first:
+      213: -4677322269005688422
+    second: ARMOR_14
+  - first:
+      213: 6416037049710904988
+    second: ARMOR_15
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -119,6 +167,7 @@ TextureImporter:
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -153,12 +202,14 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -168,9 +219,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -182,337 +233,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FRONT_0
+      name: ARMOR_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 76
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 0
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96c1a2e22f721ad47ad16b4dc969c4bc
-      internalID: 21300032
+      spriteID: 9af8350da84d75af0800000000000000
+      internalID: -407623548588027991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_1
+      name: ARMOR_1
       rect:
         serializedVersion: 2
-        x: 22
-        y: 76
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54bd939903f10794c9c6dca4fb226b7c
-      internalID: 21300034
+      spriteID: 2403a12cfb1e9dfd0800000000000000
+      internalID: -2316572319593910206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_2
+      name: ARMOR_2
       rect:
         serializedVersion: 2
-        x: 43
-        y: 76
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72e4b7cf992999d42b951c32a9be30ca
-      internalID: 21300036
+      spriteID: 41914afc620ba26c0800000000000000
+      internalID: -4167324824439088876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_3
+      name: ARMOR_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 76
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a87af364f848b4343a6ad6b981875470
-      internalID: 21300038
+      spriteID: 9e9583bec3437eb00800000000000000
+      internalID: 857711690286389737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_4
+      name: ARMOR_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 51
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 0
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be7dce6fc4fa6894b9b11b47a33263bd
-      internalID: 21300040
+      spriteID: d6ac1eda0eb052fd0800000000000000
+      internalID: -2367472969495491987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_5
+      name: ARMOR_5
       rect:
         serializedVersion: 2
-        x: 22
-        y: 51
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b87f38a8290e444b8f0e804d0592c01
-      internalID: 21300042
+      spriteID: 5d5344780b458d170800000000000000
+      internalID: 8203399838415730133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_6
+      name: ARMOR_6
       rect:
         serializedVersion: 2
-        x: 43
-        y: 51
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a319d4437a83674cb758cf23d5617c6
-      internalID: 21300044
+      spriteID: b2d87658d298fc020800000000000000
+      internalID: 2364259157997489451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_7
+      name: ARMOR_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 51
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a0508737cffc08458d14a7703272c4d
-      internalID: 21300046
+      spriteID: 74ddc5a62f2b4e260800000000000000
+      internalID: 7126017264643267911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_8
+      name: ARMOR_8
       rect:
         serializedVersion: 2
-        x: 1
-        y: 26
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b272d2266974bc44a12d9bb1e2d27c7
-      internalID: 21300048
+      spriteID: 71a24f072333e2760800000000000000
+      internalID: 7434936326571698711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_9
+      name: ARMOR_9
       rect:
         serializedVersion: 2
-        x: 22
-        y: 26
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ced9ad2c26479546bcd92ba98f043b8
-      internalID: 21300050
+      spriteID: 3ddc572917e846fc0800000000000000
+      internalID: -3502517991747760685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_10
+      name: ARMOR_10
       rect:
         serializedVersion: 2
-        x: 43
-        y: 26
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdccbee44d6fc854da8ca61587c33a83
-      internalID: 21300052
+      spriteID: 2a19609b75d506150800000000000000
+      internalID: 5863789346184139170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_11
+      name: ARMOR_11
       rect:
         serializedVersion: 2
-        x: 64
-        y: 26
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3e950cda334a9b439aea1504be9d69a
-      internalID: 21300054
+      spriteID: 4528acf0d257e7fc0800000000000000
+      internalID: -3495227424394018220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_12
+      name: ARMOR_12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c726c90718e761d4494d3554d45a51aa
-      internalID: 21300056
+      spriteID: 735f641b1d87a09b0800000000000000
+      internalID: -5113141584908061385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_13
+      name: ARMOR_13
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a573c5db7c13834cbde729a5c08888b
-      internalID: 21300058
+      spriteID: 161f92087fbeec820800000000000000
+      internalID: 2940547054959194465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_14
+      name: ARMOR_14
       rect:
         serializedVersion: 2
-        x: 43
-        y: 1
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29e962ca1f6a5b44498335aa2b3dc447
-      internalID: 21300060
+      spriteID: a9154e78d20d61fb0800000000000000
+      internalID: -4677322269005688422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FRONT_15
+      name: ARMOR_15
       rect:
         serializedVersion: 2
-        x: 64
-        y: 1
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.05, y: 0.625}
+        x: 600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45e6bc8445ff1714cac277696c5369de
-      internalID: 21300062
+      spriteID: c9683cdf3b75a0950800000000000000
+      internalID: 6416037049710904988
       vertices: []
       indices: 
       edges: []

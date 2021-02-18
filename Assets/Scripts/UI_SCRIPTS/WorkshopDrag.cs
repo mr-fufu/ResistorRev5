@@ -287,7 +287,7 @@ public class WorkshopDrag : MonoBehaviour {
 
             selectedObject.position = new Vector3(mouseLocation[0], mouseLocation[1], 0);
 
-            selectedObject.localScale = new Vector3(3, 3, 1);
+            selectedObject.localScale = new Vector3(2.4f, 2.4f, 1);
 
             draggedImage.sortingLayerName = "Inspector";
             draggedImage.sortingOrder = 100;

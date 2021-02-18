@@ -71,8 +71,29 @@ TextureImporter:
   - first:
       213: 21300044
     second: AttachmentSlots_6
+  - first:
+      213: 4780023789021366662
+    second: AttachmentSlots_0
+  - first:
+      213: -6335652276384328535
+    second: AttachmentSlots_1
+  - first:
+      213: -6244962982311729553
+    second: AttachmentSlots_2
+  - first:
+      213: -6140388967752301130
+    second: AttachmentSlots_3
+  - first:
+      213: 2437165983056089518
+    second: AttachmentSlots_4
+  - first:
+      213: 6765995365607519997
+    second: AttachmentSlots_5
+  - first:
+      213: 675968942276353904
+    second: AttachmentSlots_6
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -92,6 +113,7 @@ TextureImporter:
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -126,6 +148,8 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -158,27 +182,27 @@ TextureImporter:
       name: AttachmentSlots_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 40
-        width: 16
-        height: 12
+        x: 15
+        y: 173
+        width: 20
+        height: 6
       alignment: 9
-      pivot: {x: 0.375, y: 0.083333336}
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: -6}
-        - {x: 4, y: -6}
-        - {x: 4, y: -1}
-        - {x: -8, y: -1}
+      - - {x: -10, y: 4}
+        - {x: -10, y: -4}
+        - {x: 10, y: -4}
+        - {x: 10, y: 4}
       physicsShape:
-      - - {x: -8, y: -6}
-        - {x: 4, y: -6}
-        - {x: 4, y: -3}
-        - {x: -8, y: -3}
-      tessellationDetail: 1
+      - - {x: -8, y: 2}
+        - {x: -8, y: -2}
+        - {x: 8, y: -2}
+        - {x: 8, y: 2}
+      tessellationDetail: 0
       bones: []
-      spriteID: 6476268c5d53ca6479a9baebdf724a28
-      internalID: 21300032
+      spriteID: 689098a7f4e065240800000000000000
+      internalID: 4780023789021366662
       vertices: []
       indices: 
       edges: []
@@ -187,27 +211,27 @@ TextureImporter:
       name: AttachmentSlots_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 40
-        width: 16
-        height: 12
+        x: 70
+        y: 173
+        width: 10
+        height: 6
       alignment: 9
-      pivot: {x: 0.25, y: 0.083333336}
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: -6}
-        - {x: 0, y: -6}
-        - {x: 0, y: -1}
-        - {x: -8, y: -1}
+      - - {x: -5, y: 4}
+        - {x: -5, y: -4}
+        - {x: 5, y: -4}
+        - {x: 5, y: 4}
       physicsShape:
-      - - {x: -8, y: -6}
-        - {x: 0, y: -6}
-        - {x: 0, y: -1}
-        - {x: -8, y: -1}
+      - - {x: -3, y: 2}
+        - {x: -3, y: -2}
+        - {x: 3, y: -2}
+        - {x: 3, y: 2}
       tessellationDetail: 0
       bones: []
-      spriteID: 7e774b745a3ba914aa390b0c92f0bda9
-      internalID: 21300034
+      spriteID: 9a497b582dd3318a0800000000000000
+      internalID: -6335652276384328535
       vertices: []
       indices: 
       edges: []
@@ -216,27 +240,19 @@ TextureImporter:
       name: AttachmentSlots_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 27
-        width: 16
-        height: 12
-      alignment: 9
-      pivot: {x: 0.125, y: 0.16666667}
+        x: 22
+        y: 122
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: -6}
-        - {x: -4, y: -6}
-        - {x: -4, y: -3}
-        - {x: -8, y: -3}
-      physicsShape:
-      - - {x: -8, y: -6}
-        - {x: -4, y: -6}
-        - {x: -4, y: -3}
-        - {x: -8, y: -3}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d7f8cd187cf6c946bad31f1a7bca4b9
-      internalID: 21300036
+      spriteID: f6668db314f6559a0800000000000000
+      internalID: -6244962982311729553
       vertices: []
       indices: 
       edges: []
@@ -245,27 +261,27 @@ TextureImporter:
       name: AttachmentSlots_3
       rect:
         serializedVersion: 2
-        x: 18
-        y: 27
-        width: 16
-        height: 12
+        x: 73
+        y: 115
+        width: 6
+        height: 20
       alignment: 9
-      pivot: {x: 0.0625, y: 0.5833334}
+      pivot: {x: 0.33333334, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: 6}
-        - {x: -8, y: -5}
-        - {x: -3, y: -5}
-        - {x: -3, y: 6}
+      - - {x: -4, y: 10}
+        - {x: -4, y: -10}
+        - {x: 4, y: -10}
+        - {x: 4, y: 10}
       physicsShape:
-      - - {x: -8, y: 6}
-        - {x: -8, y: -4}
-        - {x: -5, y: -4}
-        - {x: -5, y: 6}
+      - - {x: -2, y: 8}
+        - {x: -2, y: -8}
+        - {x: 2, y: -8}
+        - {x: 2, y: 8}
       tessellationDetail: 0
       bones: []
-      spriteID: 173822d5f842c04488a8b595aeba505c
-      internalID: 21300038
+      spriteID: 6b5856a54c4f8caa0800000000000000
+      internalID: -6140388967752301130
       vertices: []
       indices: 
       edges: []
@@ -274,27 +290,27 @@ TextureImporter:
       name: AttachmentSlots_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 14
-        width: 16
-        height: 12
-      alignment: 9
-      pivot: {x: 0, y: 0.5}
+        x: 23
+        y: 72
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: 2}
-        - {x: -8, y: -2}
-        - {x: -5, y: -2}
-        - {x: -5, y: 2}
+      - - {x: -2, y: 3}
+        - {x: -2, y: -3}
+        - {x: 2, y: -3}
+        - {x: 2, y: 3}
       physicsShape:
-      - - {x: -8, y: 2}
-        - {x: -8, y: -2}
-        - {x: -5, y: -2}
-        - {x: -5, y: 2}
+      - - {x: -2, y: 3}
+        - {x: -2, y: -3}
+        - {x: 2, y: -3}
+        - {x: 2, y: 3}
       tessellationDetail: 0
       bones: []
-      spriteID: d9705cc209617504982b7dfbf3a37cbb
-      internalID: 21300040
+      spriteID: ea159b68c8d82d120800000000000000
+      internalID: 2437165983056089518
       vertices: []
       indices: 
       edges: []
@@ -303,27 +319,31 @@ TextureImporter:
       name: AttachmentSlots_5
       rect:
         serializedVersion: 2
-        x: 18
-        y: 14
-        width: 16
+        x: 69
+        y: 69
+        width: 12
         height: 12
-      alignment: 9
-      pivot: {x: 0.25, y: 0.6666667}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: 6}
-        - {x: -8, y: -2}
-        - {x: 0, y: -2}
-        - {x: 0, y: 6}
+      - - {x: -2, y: 6}
+        - {x: -6, y: 2}
+        - {x: -6, y: -2}
+        - {x: -2, y: -6}
+        - {x: 2, y: -6}
+        - {x: 6, y: -2}
+        - {x: 6, y: 2}
+        - {x: 2, y: 6}
       physicsShape:
-      - - {x: -7, y: 5}
-        - {x: -7, y: -1}
-        - {x: -1, y: -1}
-        - {x: -1, y: 5}
-      tessellationDetail: 1
+      - - {x: -4, y: 4}
+        - {x: -4, y: -4}
+        - {x: 4, y: -4}
+        - {x: 4, y: 4}
+      tessellationDetail: 0
       bones: []
-      spriteID: 1427e37590dc0764db09b7e9a7c61ed7
-      internalID: 21300042
+      spriteID: df6b9feefe4a5ed50800000000000000
+      internalID: 6765995365607519997
       vertices: []
       indices: 
       edges: []
@@ -332,27 +352,19 @@ TextureImporter:
       name: AttachmentSlots_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 16
-        height: 12
+        x: 10
+        y: 23
+        width: 30
+        height: 6
       alignment: 9
-      pivot: {x: 0.5, y: 0.6666667}
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: -3}
-        - {x: 8, y: -3}
-        - {x: 8, y: 4}
-        - {x: -8, y: 4}
-      physicsShape:
-      - - {x: -8, y: -1}
-        - {x: 8, y: -1}
-        - {x: 8, y: 2}
-        - {x: -8, y: 2}
-      tessellationDetail: 1
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
       bones: []
-      spriteID: 1054c4135cb48164f886a32c801fc057
-      internalID: 21300044
+      spriteID: 07f149beb26816900800000000000000
+      internalID: 675968942276353904
       vertices: []
       indices: 
       edges: []

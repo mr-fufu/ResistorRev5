@@ -110,8 +110,68 @@ TextureImporter:
   - first:
       213: 21300070
     second: TORSO_19
+  - first:
+      213: 8785603100365277986
+    second: TORSO_0
+  - first:
+      213: 3106743252200394688
+    second: TORSO_1
+  - first:
+      213: -5084183945078558742
+    second: TORSO_2
+  - first:
+      213: 8091303768848853341
+    second: TORSO_3
+  - first:
+      213: 1403451474152083277
+    second: TORSO_4
+  - first:
+      213: -5002792108061270694
+    second: TORSO_5
+  - first:
+      213: -3601669837766566351
+    second: TORSO_6
+  - first:
+      213: 1450490715264207479
+    second: TORSO_7
+  - first:
+      213: -6936854165506872205
+    second: TORSO_8
+  - first:
+      213: 612752944184580013
+    second: TORSO_9
+  - first:
+      213: 2760346700425506450
+    second: TORSO_10
+  - first:
+      213: -806521861029296084
+    second: TORSO_11
+  - first:
+      213: -2531319454010944373
+    second: TORSO_12
+  - first:
+      213: -8359699370509863601
+    second: TORSO_13
+  - first:
+      213: 7099398374104379462
+    second: TORSO_14
+  - first:
+      213: 4492282400229800899
+    second: TORSO_15
+  - first:
+      213: 7471945740123558871
+    second: TORSO_16
+  - first:
+      213: -2631354123283649726
+    second: TORSO_17
+  - first:
+      213: -8596945298171814630
+    second: TORSO_18
+  - first:
+      213: 4809570105260751309
+    second: TORSO_19
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -131,6 +191,7 @@ TextureImporter:
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -165,12 +226,14 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -180,9 +243,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -197,18 +260,18 @@ TextureImporter:
       name: TORSO_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 261
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 0
+        y: 800
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e18705e706df2f4683f432e292be41b
+      spriteID: 04305410000000000800000000000000
       internalID: 21300032
       vertices: []
       indices: 
@@ -218,18 +281,18 @@ TextureImporter:
       name: TORSO_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 261
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 200
+        y: 800
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db576d4d045e5744cbddecfd20f3eb94
+      spriteID: 24305410000000000800000000000000
       internalID: 21300034
       vertices: []
       indices: 
@@ -239,18 +302,18 @@ TextureImporter:
       name: TORSO_2
       rect:
         serializedVersion: 2
-        x: 147
-        y: 261
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fa1dc3aae734ab458cf0446d5915268
+      spriteID: 44305410000000000800000000000000
       internalID: 21300036
       vertices: []
       indices: 
@@ -260,18 +323,18 @@ TextureImporter:
       name: TORSO_3
       rect:
         serializedVersion: 2
-        x: 220
-        y: 261
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 600
+        y: 800
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3aa8b02ee1c166849bb67ed989b664d4
+      spriteID: 64305410000000000800000000000000
       internalID: 21300038
       vertices: []
       indices: 
@@ -281,18 +344,18 @@ TextureImporter:
       name: TORSO_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 196
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 0
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 364da2cf369f8c842ab20f41cdabd9db
+      spriteID: 84305410000000000800000000000000
       internalID: 21300040
       vertices: []
       indices: 
@@ -302,18 +365,18 @@ TextureImporter:
       name: TORSO_5
       rect:
         serializedVersion: 2
-        x: 74
-        y: 196
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6a6c71851928824c9a8b27c0e19da20
+      spriteID: a4305410000000000800000000000000
       internalID: 21300042
       vertices: []
       indices: 
@@ -323,18 +386,18 @@ TextureImporter:
       name: TORSO_6
       rect:
         serializedVersion: 2
-        x: 147
-        y: 196
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d39dec0f8bd2e049ace8d35541f6c03
+      spriteID: c4305410000000000800000000000000
       internalID: 21300044
       vertices: []
       indices: 
@@ -344,18 +407,18 @@ TextureImporter:
       name: TORSO_7
       rect:
         serializedVersion: 2
-        x: 220
-        y: 196
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58a8cf0dac370034a80856472a363e08
+      spriteID: e4305410000000000800000000000000
       internalID: 21300046
       vertices: []
       indices: 
@@ -365,18 +428,18 @@ TextureImporter:
       name: TORSO_8
       rect:
         serializedVersion: 2
-        x: 1
-        y: 131
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 0
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eca8e35ce097aec43929a9e35cd9e51d
+      spriteID: 05305410000000000800000000000000
       internalID: 21300048
       vertices: []
       indices: 
@@ -386,18 +449,18 @@ TextureImporter:
       name: TORSO_9
       rect:
         serializedVersion: 2
-        x: 74
-        y: 131
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6914245d7a279246a910b7a6e162f7a
+      spriteID: 25305410000000000800000000000000
       internalID: 21300050
       vertices: []
       indices: 
@@ -407,18 +470,18 @@ TextureImporter:
       name: TORSO_10
       rect:
         serializedVersion: 2
-        x: 147
-        y: 131
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43437ed4d76f01e4985d15c3596b17c6
+      spriteID: 45305410000000000800000000000000
       internalID: 21300052
       vertices: []
       indices: 
@@ -428,18 +491,18 @@ TextureImporter:
       name: TORSO_11
       rect:
         serializedVersion: 2
-        x: 220
-        y: 131
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d462ef4475ae4b499cfd7cbfcf54ed7
+      spriteID: 65305410000000000800000000000000
       internalID: 21300054
       vertices: []
       indices: 
@@ -449,18 +512,18 @@ TextureImporter:
       name: TORSO_12
       rect:
         serializedVersion: 2
-        x: 1
-        y: 66
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7f4b00c5a8d0344c8b0d04f04570718
+      spriteID: 85305410000000000800000000000000
       internalID: 21300056
       vertices: []
       indices: 
@@ -470,18 +533,18 @@ TextureImporter:
       name: TORSO_13
       rect:
         serializedVersion: 2
-        x: 74
-        y: 66
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 475041b8d559d85488522c15e489c89e
+      spriteID: a5305410000000000800000000000000
       internalID: 21300058
       vertices: []
       indices: 
@@ -491,18 +554,18 @@ TextureImporter:
       name: TORSO_14
       rect:
         serializedVersion: 2
-        x: 147
-        y: 66
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 344dc11d8d43e5a43a73ec91737b9468
+      spriteID: c5305410000000000800000000000000
       internalID: 21300060
       vertices: []
       indices: 
@@ -512,18 +575,18 @@ TextureImporter:
       name: TORSO_15
       rect:
         serializedVersion: 2
-        x: 220
-        y: 66
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdb9e61b9f9e4534fbc9e87421a5e82c
+      spriteID: e5305410000000000800000000000000
       internalID: 21300062
       vertices: []
       indices: 
@@ -533,18 +596,18 @@ TextureImporter:
       name: TORSO_16
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23d72ec7df8bc474ab11b3bfba60f0fb
+      spriteID: 06305410000000000800000000000000
       internalID: 21300064
       vertices: []
       indices: 
@@ -554,18 +617,18 @@ TextureImporter:
       name: TORSO_17
       rect:
         serializedVersion: 2
-        x: 74
-        y: 1
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd291d7ad15097e4685c13df3b1f4149
+      spriteID: 26305410000000000800000000000000
       internalID: 21300066
       vertices: []
       indices: 
@@ -575,18 +638,18 @@ TextureImporter:
       name: TORSO_18
       rect:
         serializedVersion: 2
-        x: 147
-        y: 1
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49e79d1aa2fed534881062064c1080f8
+      spriteID: 46305410000000000800000000000000
       internalID: 21300068
       vertices: []
       indices: 
@@ -596,18 +659,18 @@ TextureImporter:
       name: TORSO_19
       rect:
         serializedVersion: 2
-        x: 220
-        y: 1
-        width: 72
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.0625}
+        x: 600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47be31e98ff6ebe4b906022bbd75ab02
+      spriteID: 66305410000000000800000000000000
       internalID: 21300070
       vertices: []
       indices: 

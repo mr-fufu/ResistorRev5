@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 560731578459078831}
   - component: {fileID: 372890032579608061}
-  - component: {fileID: 545916284568857886}
   - component: {fileID: 8606232397812243619}
   - component: {fileID: 7479528493960338356}
   - component: {fileID: -5761823412297786626}
@@ -87,38 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &545916284568857886
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566372121615511797}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.375, y: 0.05}
-    oldSize: {x: 16, y: 10}
-    newSize: {x: 16, y: 10}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -2.5, y: 9}
-      - {x: -5, y: 6.5}
-      - {x: -5, y: -0.5}
-      - {x: 5, y: -0.5}
-      - {x: 6, y: 1.5}
-      - {x: 6, y: 8}
-      - {x: 5.5, y: 9}
 --- !u!114 &8606232397812243619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520515303619496, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850747076596874358, guid: 46bf4c64c06fd1b4d94319c90af50b77,
+        type: 3}
+      propertyPath: viewIdField
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

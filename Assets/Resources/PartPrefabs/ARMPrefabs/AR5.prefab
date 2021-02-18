@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86192333104980182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: -5, z: 0}
+  m_LocalPosition: {x: 25.5, y: -8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7050853559843735851}
@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6090943864897805110}
   - component: {fileID: 6090943864897805105}
-  - component: {fileID: 6090943864897805104}
   - component: {fileID: 1000015989010972656}
   - component: {fileID: 1358739396815413168}
   - component: {fileID: 8756311676507891957}
@@ -108,50 +107,18 @@ SpriteRenderer:
   m_SortingLayerID: 1012360337
   m_SortingLayer: 8
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300062, guid: d0908d3680709af48af0169b42dc3ff8, type: 3}
+  m_Sprite: {fileID: -2567307733237649106, guid: d0908d3680709af48af0169b42dc3ff8,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 40, y: 32}
+  m_Size: {x: 100, y: 100}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!60 &6090943864897805104
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6090943864897805111}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4, y: 0.75}
-    oldSize: {x: 40, y: 32}
-    newSize: {x: 40, y: 32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -4.5, y: 5}
-      - {x: -5.5, y: 3}
-      - {x: -5.5, y: -7.5}
-      - {x: -3, y: -11}
-      - {x: 5.5, y: -11}
-      - {x: 17.5, y: -8.5}
-      - {x: 17.5, y: -1}
-      - {x: 6, y: 5}
 --- !u!114 &1000015989010972656
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -143,9 +143,8 @@ MonoBehaviour:
   impact_point: {fileID: 4192024644656430}
   y_velocity: 0
   piercing: 0
-  player: {fileID: 0}
   damage_int_value: 0
-  ground_y_position: 0
+  ground_y_position: -95
 --- !u!61 &61417591149183388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,10 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0567fe57a3f1a44eae4403de04f1acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 20
+  LifeTime: 30
   player: {fileID: 0}
   impact: 1
   non_networked_destroy: 0
+  enemy_check: 0
 --- !u!114 &4318700845263466831
 MonoBehaviour:
   m_ObjectHideFlags: 0
