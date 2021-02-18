@@ -146,7 +146,7 @@ MonoBehaviour:
   y_velocity: 0
   piercing: 1
   damage_int_value: 0
-  ground_y_position: -95
+  ground_y_position: -25
 --- !u!61 &61417591149183388
 BoxCollider2D:
   m_ObjectHideFlags: 0

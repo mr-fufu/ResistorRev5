@@ -274,7 +274,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8719370125135841625}
-  viewIdField: 1011
+  viewIdField: 0
   InstantiationId: 1011
   isRuntimeInstantiated: 1
 --- !u!114 &8719370125135841625
@@ -419,8 +419,8 @@ MonoBehaviour:
   max_plating: 120
   current_plating: 120
   destruction_trigger: 0
-  plating_bar: {fileID: 1675964601256096, guid: 335a0e157c388414aa80c3e7ae9c1d19,
-    type: 3}
+  platingBarPrefab: {fileID: 0}
+  platingBar: {fileID: 0}
   armor_value: 4
 --- !u!50 &4785633477011113967
 Rigidbody2D:
@@ -489,7 +489,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3997264365007359567}
-  viewIdField: 1008
+  viewIdField: 0
   InstantiationId: 1008
   isRuntimeInstantiated: 1
 --- !u!114 &3997264365007359567
@@ -614,7 +614,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 2844863293104328953}
-  viewIdField: 1010
+  viewIdField: 0
   InstantiationId: 1010
   isRuntimeInstantiated: 1
 --- !u!114 &2844863293104328953
@@ -769,7 +769,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3072937268008989326}
-  viewIdField: 1012
+  viewIdField: 0
   InstantiationId: 1012
   isRuntimeInstantiated: 1
 --- !u!114 &3072937268008989326
@@ -1571,7 +1571,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8068590510309344390}
-  viewIdField: 1009
+  viewIdField: 0
   InstantiationId: 1009
   isRuntimeInstantiated: 1
 --- !u!114 &8068590510309344390

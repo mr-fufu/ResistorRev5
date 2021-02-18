@@ -145,7 +145,7 @@ MonoBehaviour:
   y_velocity: 0
   piercing: 1
   damage_int_value: 0
-  ground_y_position: 0
+  ground_y_position: -95
 --- !u!61 &61417591149183388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,6 +207,7 @@ MonoBehaviour:
   player: {fileID: 0}
   impact: 0
   non_networked_destroy: 0
+  enemy_check: 0
 --- !u!114 &7559488811873334680
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ using Photon.Pun;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-public class Plating : MonoBehaviour {
+public class Plating : MonoBehaviourPunCallbacks
+{
 
     /* plating script (here bot plating is essentially bot health) */
 
@@ -20,7 +21,6 @@ public class Plating : MonoBehaviour {
 
     // the amount of armor the bot has (each point of armor reduces incoming damage by 1 point)
     public int armor_value;
-    private bool spawned;
 
     private void Awake()
     {
@@ -31,12 +31,15 @@ public class Plating : MonoBehaviour {
     {
         // instantiate health bar object (UI display for bot plating/health) as a child
         // of current gameobject.
-        if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
+        /*
+         * if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
         {
             platingBar = PhotonNetwork.Instantiate("ParticlesAndEffects/" + platingBarPrefab.name, gameObject.transform.position, gameObject.transform.rotation);
             platingBar.transform.parent = gameObject.transform;
         }
+        */
 
+        platingBar = (GameObject)Instantiate(platingBarPrefab, gameObject.transform);
     }
 
     public void InitializePlating(int plate, int armor)
@@ -61,9 +64,8 @@ public class Plating : MonoBehaviour {
             destruction_trigger = true;
             if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
             {
-                PhotonNetwork.Destroy(platingBar);
+                Destroy(platingBar);
                 PhotonNetwork.Destroy(gameObject);
-
             }
             else
             {
@@ -83,16 +85,26 @@ public class Plating : MonoBehaviour {
         // value (passed by the projectile script) by the ARMOR stat up to a minimum of 1 incoming
         // damage. Then reduce the current plating by the remaining damage.
 
-        if (DamageInflicted > 1 && DamageInflicted > armor_value)
+        if (GetComponent<StandardStatBlock>().ENEMY != PhotonNetwork.IsMasterClient)
         {
-            current_plating -= (DamageInflicted - armor_value);
-        }
-        else
-        {
-            current_plating -= 1;
+            if (DamageInflicted > 1 && DamageInflicted > armor_value)
+            {
+                current_plating -= (DamageInflicted - armor_value);
+            }
+            else
+            {
+                current_plating -= 1;
+            }
+
+            photonView.RPC("SyncPlating", RpcTarget.Others, current_plating);
         }
 
         Debug.LogError("new:" + current_plating );
     }
 
+    [PunRPC]
+    public void SyncPlating(int newPlating)
+    {
+        current_plating = newPlating;
+    }
 }

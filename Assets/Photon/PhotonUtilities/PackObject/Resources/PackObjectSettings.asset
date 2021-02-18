@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6f0c5216a0f3b4380229e8558194bd, type: 3}
   m_Name: PackObjectSettings
   m_EditorClassIdentifier: 
-  autoGenerate: 0
+  autoGenerate: 1
   deleteBadCode: 1

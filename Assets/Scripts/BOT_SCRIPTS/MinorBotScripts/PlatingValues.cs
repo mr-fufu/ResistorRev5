@@ -15,10 +15,12 @@ public class PlatingValues : MonoBehaviour {
 	
 	void Update () {
 		bar_value.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 3, gameObject.transform.position.z);
-        bar_value.maxValue = plating_value.max_plating;
-        bar_value.value = plating_value.current_plating;
-
-        if (plating_value == null)
+        if (plating_value != null)
+        {
+            bar_value.maxValue = plating_value.max_plating;
+            bar_value.value = plating_value.current_plating;
+        }
+        else
         {
             Destroy(gameObject);
         }
