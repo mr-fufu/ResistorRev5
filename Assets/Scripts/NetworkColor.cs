@@ -14,7 +14,7 @@ public class NetworkColor : MonoBehaviour
     public GameObject color_object;
 
     public bool colored;
-    private Color hold_color;
+    public Color hold_color;
 
     // Start is called before the first frame update
     void Start()

@@ -69,6 +69,10 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
         SpawnColorObject();
 
+        BotColorObject myColorObj =  FindObjectOfType<BotColorObject>();
+
+        network_color = myColorObj.GetColors();
+        
         player_red = network_color.x;
         player_blue = network_color.y;
         player_green = network_color.z;
@@ -145,7 +149,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         var partStats = bot_clone.GetComponent<PartStats>();
         if (partStats != null)
         {
-            bot_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color);
+            bot_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color.x, bot_color.y, bot_color.z, bot_color.w);
         }
         
         if (bot_clone.GetComponent<PartStats>().part_type == "ARM")
@@ -233,7 +237,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             var partStatsNotLeg = part_clone.GetComponent<PartStats>();
             if (partStatsNotLeg != null)
             {
-                part_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color);
+                part_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color.x, bot_color.y, bot_color.z, bot_color.w);
             }
 
             part_clone.GetComponent<PartStats>().attached = true;
@@ -296,8 +300,10 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         var botColorObj = PhotonNetwork.Instantiate(colorPrefab.name, color_object_location, Quaternion.Euler(Vector3.zero));
 
 
+        
+        
         //TODO SAM: NOT RANDOM
-        botColorObj.GetComponent<BotColorObject>().UpdateColors(Random.Range(0,4), true);
+        //botColorObj.GetComponent<BotColorObject>().UpdateColors(Random.Range(0,4), true);
     }
 
     // Given a part_name and an index, search the appropriate library of the 

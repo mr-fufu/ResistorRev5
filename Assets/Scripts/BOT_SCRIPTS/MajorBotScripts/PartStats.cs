@@ -65,8 +65,9 @@ public class PartStats : MonoBehaviour
     public int list_index;
 
     [PunRPC]
-    public void SyncColor(Vector4 colorVec)
+    public void SyncColor(float r, float b, float g, float a)
     {
+        var colorVec = new Vector4(r,b,g,a);
         GetComponent<SpriteRenderer>().color = colorVec;
     }
     
