@@ -147,4 +147,18 @@ public class PartStats : MonoBehaviour
             target_location.GetComponent<StandardStatBlock>().transmit_melee(-1);
         }
     }
+
+    public void deconstruct()
+    {
+        int childCount = transform.childCount;
+        for (int childIndex = 0; childIndex < childCount; childIndex++)
+        {
+            var part = transform.GetChild(childIndex).gameObject.GetComponent<PartStats>();
+            if (part != null)
+            {
+                part.deconstruct();
+            }
+        }
+        PhotonNetwork.Destroy(gameObject);
+    }
 }

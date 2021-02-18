@@ -65,7 +65,7 @@ public class Plating : MonoBehaviourPunCallbacks
             if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
             {
                 Destroy(platingBar);
-                PhotonNetwork.Destroy(gameObject);
+                GetComponent<PartStats>().deconstruct();
             }
             else
             {
@@ -99,7 +99,7 @@ public class Plating : MonoBehaviourPunCallbacks
             photonView.RPC("SyncPlating", RpcTarget.Others, current_plating);
         }
 
-        Debug.LogError("new:" + current_plating );
+        //Debug.LogError("new:" + current_plating );
     }
 
     [PunRPC]
