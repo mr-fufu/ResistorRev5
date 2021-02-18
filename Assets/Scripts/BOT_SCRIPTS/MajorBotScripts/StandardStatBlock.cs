@@ -57,6 +57,12 @@ public class StandardStatBlock : MonoBehaviour {
         FUEL = newFuel;
         POWER = newPower;
         COST = newCost;
+
+        var plating = GetComponent<Plating>();
+        if (plating != null)
+        {
+            plating.InitializePlating(PLATE, ARMOR);
+        }
     }
 
     [PunRPC]
@@ -162,7 +168,7 @@ public class StandardStatBlock : MonoBehaviour {
                 {
                     engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
                     
-                    GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+                    GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.All,
                         PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                 }
             }
@@ -184,7 +190,7 @@ public class StandardStatBlock : MonoBehaviour {
                     {
                         engaged_check = quadruple_parent_object.GetComponent<AutoMove>().engaged_check;
                         
-                        GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+                        GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.All,
                             PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                     }
                 }
@@ -204,7 +210,7 @@ public class StandardStatBlock : MonoBehaviour {
                     {
                         engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
                         
-                        GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+                        GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.All,
                             PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                     }
                 }
@@ -255,7 +261,7 @@ public class StandardStatBlock : MonoBehaviour {
 
         if (!workshop_show_piece)
         {
-            GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.Others,
+            GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.All,
                 PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
         }
     }

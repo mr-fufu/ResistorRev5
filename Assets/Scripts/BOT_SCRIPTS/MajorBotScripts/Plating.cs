@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class Plating : MonoBehaviour {
 
@@ -19,6 +21,11 @@ public class Plating : MonoBehaviour {
     public int armor_value;
     private bool spawned;
 
+    private void Awake()
+    {
+        current_plating = 1;
+    }
+
     void Start()
     {
         // instantiate health bar object (UI display for bot plating/health) as a child
@@ -29,18 +36,13 @@ public class Plating : MonoBehaviour {
             // check for the spawned bool to see whether the bot has been
             // put into play (legacy carryover from singleplayer)
         spawned = gameObject.GetComponent<AutoMove>().spawned;
+    }
 
-        current_plating = 10;
-        
-        if (spawned)
-        {
-            // sets the max plating to the PLATE stat, the current plating equal to
-            // the max plating and the armor_value equal to the ARMOR stat of the bot
-
-            max_plating = gameObject.GetComponent<StandardStatBlock>().PLATE;
-            current_plating = gameObject.GetComponent<StandardStatBlock>().PLATE;
-            armor_value = gameObject.GetComponent<StandardStatBlock>().ARMOR;
-        }
+    public void InitializePlating(int plate, int armor)
+    {
+        max_plating = plate;
+        current_plating = plate;
+        armor_value = armor;
     }
 
     void Update()

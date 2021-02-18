@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class DestroyAfterTime : MonoBehaviour 
@@ -18,11 +19,13 @@ public class DestroyAfterTime : MonoBehaviour
 
                 if (impact)
                 {
-                    BattleFactorySpawn.instance.SpawnImpact(impact, GetComponent<Projectile>().impact_object, GetComponent<Projectile>().impact_point.position, GetComponent<Projectile>().impact_point.rotation, false, gameObject);
+                    BattleFactorySpawn.instance.SpawnImpact(impact, GetComponent<Projectile>().impact_object, GetComponent<Projectile>().impact_point.position, 
+                        GetComponent<Projectile>().impact_point.rotation, false, gameObject, GetComponent<Projectile>().enemy_check);
                 }
-
-                // TODO SAM: this was on network
-                Destroy(gameObject);
+                if (GetComponent<Projectile>().enemy_check != PhotonNetwork.IsMasterClient)
+                {
+                    PhotonNetwork.Destroy(gameObject);
+                }
             }
             else
             {
@@ -30,4 +33,12 @@ public class DestroyAfterTime : MonoBehaviour
             }
         }
 	}
+
+    public void destroy_trigger()
+    {
+        if (GetComponent<Projectile>().enemy_check != PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
+    }
 }

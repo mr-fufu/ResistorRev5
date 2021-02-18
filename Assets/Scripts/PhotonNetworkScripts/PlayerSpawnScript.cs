@@ -163,7 +163,13 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
             // Photon networking requires the folder path under Assets/Resources when instantiating
             var partPrefab = part_library[part_type_index].part_library[search_library(name_list[index2], part_type_index)];
-            string path = "PartPrefabs/" + partPrefab.GetComponent<PartStats>().part_type + "Prefabs/" + partPrefab.name;
+            var partType = partPrefab.GetComponent<PartStats>().part_type;
+            if(partType.Equals("TOPLARGE"))
+            {
+                partType = "TOP";
+            }
+            
+            string path = "PartPrefabs/" + partType + "Prefabs/" + partPrefab.name;
 
             GameObject part_clone = PhotonNetwork.Instantiate(path, spawn_location.transform.position, spawn_location.transform.rotation);
 
