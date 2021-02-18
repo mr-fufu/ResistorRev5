@@ -64,6 +64,12 @@ public class PartStats : MonoBehaviour
 
     public int list_index;
 
+    [PunRPC]
+    public void SyncColor(Vector4 colorVec)
+    {
+        GetComponent<SpriteRenderer>().color = colorVec;
+    }
+    
     // Valid part Types include
     // LEG 
     // HEAD

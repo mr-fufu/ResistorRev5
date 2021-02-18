@@ -100,6 +100,8 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         
         bot_clone.GetComponent<PhotonView>().RPC("SyncIsEnemy", RpcTarget.All, !PhotonNetwork.IsMasterClient);
         bot_clone.GetComponent<SpriteRenderer>().sortingLayerName = lane_name;
+        
+        
  
         // set the ENEMY of the SSB to the appropriate value depending on the player_1 bool (true for player 1 and false for player 2
         // i.e. player 2 controls enemy bots on the right side of screen. Similarly, set the bot_tag to the appropriate tag (BOT_Player or
@@ -138,6 +140,12 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         if (statBlock != null)
         {
             statBlock.UpdateStats();
+        }
+
+        var partStats = bot_clone.GetComponent<PartStats>();
+        if (partStats != null)
+        {
+            bot_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color);
         }
         
         if (bot_clone.GetComponent<PartStats>().part_type == "ARM")
@@ -220,6 +228,12 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             else
             {
                 part_clone.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
+            }
+            
+            var partStatsNotLeg = part_clone.GetComponent<PartStats>();
+            if (partStatsNotLeg != null)
+            {
+                part_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color);
             }
 
             part_clone.GetComponent<PartStats>().attached = true;

@@ -84,6 +84,10 @@ public class PortraitManager : MonoBehaviour
     public void DecProfile()
     {
         profile_no--;
+        if (profile_no < 0)
+        {
+            profile_no = 3;
+        }
         profile_no %= 3;
     }
 
