@@ -92,7 +92,7 @@ public class PartStats : MonoBehaviour
 
         if (slot_component)
         {
-            if (slot_type != "LEG" && slot_type != "HEAD" && slot_type != "ARM" && slot_type != "TOPLARGE" && slot_type != "TOPSMALL" && slot_type != "ARMOR" && slot_type != "TORSO")
+            if (slot_type != "LEG" && slot_type != "HEAD" && slot_type != "ARM" && slot_type != "TOPLARGE" && slot_type != "ARMOR" && slot_type != "TORSO")
             {
                 Debug.Log(gameObject.transform.parent.gameObject.name);
                 Debug.Log("!!!INVALID SLOT TYPE!!!");
@@ -100,18 +100,12 @@ public class PartStats : MonoBehaviour
         }
         else if (!slot_component)
         {
-            if (part_type != "LEG" && part_type != "HEAD" && part_type != "ARM" && part_type != "TOPLARGE" && part_type != "TOPSMALL" && part_type != "ARMOR" && part_type != "TORSO")
+            if (part_type != "LEG" && part_type != "HEAD" && part_type != "ARM" && part_type != "TOPLARGE" && part_type != "ARMOR" && part_type != "TORSO")
             {
                 Debug.Log(gameObject.name);
                 Debug.Log("!!!INVALID PART TYPE!!!");
             }
         }
-    }
-
-    // Update is called once per frame
-    void update()
-    {
-
     }
 
     // function called when part is attached. If the part is not a LEG part then

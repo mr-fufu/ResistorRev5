@@ -14,7 +14,6 @@ public class AutoMove : MonoBehaviour
     public bool engaged_check = false;
     public bool walker_check;
 
-    // TODO SAM: Sync vars
     public bool spawned;
     public bool enemy_check;
 
