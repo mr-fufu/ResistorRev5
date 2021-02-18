@@ -212,7 +212,7 @@ MonoBehaviour:
   piercing: 0
   player: {fileID: 0}
   damage_int_value: 0
-  ground_y_position: 0
+  ground_y_position: 45
 --- !u!114 &4253437263212054637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +233,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: -6466499502676766227}
+  - {fileID: -263013288659629127}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -266,6 +267,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: MoveUp
+  - Type: 4
+    SynchronizeType: 0
+    Name: MoveDown
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
   childAnimator: {fileID: 0}

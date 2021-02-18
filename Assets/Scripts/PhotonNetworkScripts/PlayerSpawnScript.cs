@@ -164,6 +164,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             // Photon networking requires the folder path under Assets/Resources when instantiating
             var partPrefab = part_library[part_type_index].part_library[search_library(name_list[index2], part_type_index)];
             var partType = partPrefab.GetComponent<PartStats>().part_type;
+
             if(partType.Equals("TOPLARGE"))
             {
                 partType = "TOP";
@@ -173,6 +174,15 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
             GameObject part_clone = PhotonNetwork.Instantiate(path, spawn_location.transform.position, spawn_location.transform.rotation);
 
+            part_clone.GetComponent<PhotonView>().RPC("SyncIsEnemy", RpcTarget.All, !PhotonNetwork.IsMasterClient);
+            
+            var projectileAttack = part_clone.GetComponent<ProjectileAttack>();
+            if (projectileAttack != null)
+            {
+                projectileAttack.enemy_check = !PhotonNetwork.IsMasterClient;
+                part_clone.GetComponent<PhotonView>().RPC("SyncIsEnemyForProjectiles", RpcTarget.All, !PhotonNetwork.IsMasterClient);
+            }
+            
             part_clone.gameObject.tag = bot_tag;
 
             if (parent_count_list[index2] == 1)

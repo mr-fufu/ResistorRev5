@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 public class Plating : MonoBehaviour {
 
-    /* plating script (here bot plating is esssentially bot health) */
+    /* plating script (here bot plating is essentially bot health) */
 
     // TODO SAM: Sync vars
     public int max_plating;
@@ -31,15 +31,11 @@ public class Plating : MonoBehaviour {
         // instantiate health bar object (UI display for bot plating/health) as a child
         // of current gameobject.
         Instantiate(plating_bar, gameObject.transform);
-
-        // all other values are handled by the server only
-            // check for the spawned bool to see whether the bot has been
-            // put into play (legacy carryover from singleplayer)
-        spawned = gameObject.GetComponent<AutoMove>().spawned;
     }
 
     public void InitializePlating(int plate, int armor)
     {
+        Debug.Log("Initializing Plating");
         max_plating = plate;
         current_plating = plate;
         armor_value = armor;
@@ -54,21 +50,18 @@ public class Plating : MonoBehaviour {
         // also checks if current_plating exceeds max_plating of bot and if so then
         // resets the health to the maximum.
 
-        if (spawned)
+        if (current_plating <= 0)
         {
-            if (current_plating <= 0)
+            destruction_trigger = true;
+            if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
             {
-                destruction_trigger = true;
-                if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
-                {
-                    PhotonNetwork.Destroy(gameObject);
-                }
+                PhotonNetwork.Destroy(gameObject);
             }
+        }
 
-            if (current_plating > max_plating)
-            {
-                current_plating = max_plating;
-            }
+        if (current_plating > max_plating)
+        {
+            current_plating = max_plating;
         }
     }
 
@@ -78,17 +71,16 @@ public class Plating : MonoBehaviour {
         // value (passed by the projectile script) by the ARMOR stat up to a minimum of 1 incoming
         // damage. Then reduce the current plating by the remaining damage.
 
-        if (spawned)
+        if (DamageInflicted > 1 && DamageInflicted > armor_value)
         {
-            if (DamageInflicted > 1 && DamageInflicted > armor_value)
-            {
-                current_plating -= (DamageInflicted - armor_value);
-            }
-            else
-            {
-                current_plating -= 1;
-            }
+            current_plating -= (DamageInflicted - armor_value);
         }
+        else
+        {
+            current_plating -= 1;
+        }
+
+        Debug.LogError("new:" + current_plating );
     }
 
 }

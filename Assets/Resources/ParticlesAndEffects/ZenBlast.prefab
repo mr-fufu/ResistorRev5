@@ -144,7 +144,6 @@ MonoBehaviour:
   impact_point: {fileID: 4192024644656430}
   y_velocity: 0
   piercing: 1
-  player: {fileID: 0}
   damage_int_value: 0
   ground_y_position: 0
 --- !u!61 &61417591149183388

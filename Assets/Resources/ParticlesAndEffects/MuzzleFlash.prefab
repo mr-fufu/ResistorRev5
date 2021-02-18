@@ -123,6 +123,7 @@ MonoBehaviour:
   player: {fileID: 0}
   impact: 0
   non_networked_destroy: 0
+  enemy_check: 0
 --- !u!114 &7838406405619500714
 MonoBehaviour:
   m_ObjectHideFlags: 0

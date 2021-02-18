@@ -64,7 +64,7 @@ public class StandardStatBlock : MonoBehaviour {
             plating.InitializePlating(PLATE, ARMOR);
         }
     }
-
+    
     [PunRPC]
     public void SyncIsEnemy(bool isEnemy)
     {
@@ -117,9 +117,15 @@ public class StandardStatBlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+
         // if the part is a leg, check for spawned and engaged_check from the Automove Script.
 
         if (workshop_show_piece)
+        {
+            UpdateStats();
+        }
+
+        if (PLATE <= 1 && !workshop_show_piece)
         {
             UpdateStats();
         }
@@ -150,6 +156,9 @@ public class StandardStatBlock : MonoBehaviour {
         // Pull Stats from double or quadruple objects according to part type (specified in initialization start() of
         // this script as well. Also, for battle scene spawned bots, pull the spawned and engaged bools in adition to stats
 
+        if (ENEMY == PhotonNetwork.IsMasterClient)
+            return;
+        
         if (attached)
         {
             if (part_type == "TORSO")
@@ -162,7 +171,7 @@ public class StandardStatBlock : MonoBehaviour {
                 SPEED = doubleStatBlock.SPEED;
                 FUEL = doubleStatBlock.FUEL;
                 POWER = doubleStatBlock.POWER;
-                ENEMY = doubleStatBlock.ENEMY;
+                //ENEMY = doubleStatBlock.ENEMY;
 
                 if (!workshop_show_piece)
                 {
@@ -184,7 +193,7 @@ public class StandardStatBlock : MonoBehaviour {
                     SPEED = quadStatBlock.SPEED;
                     FUEL = quadStatBlock.FUEL;
                     POWER = quadStatBlock.POWER;
-                    ENEMY = quadStatBlock.ENEMY;
+                    //ENEMY = quadStatBlock.ENEMY;
 
                     if (!workshop_show_piece)
                     {
@@ -204,7 +213,7 @@ public class StandardStatBlock : MonoBehaviour {
                     SPEED = doubleStatBlock.SPEED;
                     FUEL = doubleStatBlock.FUEL;
                     POWER = doubleStatBlock.POWER;
-                    ENEMY = doubleStatBlock.ENEMY;
+                    //ENEMY = doubleStatBlock.ENEMY;
 
                     if (!workshop_show_piece)
                     {

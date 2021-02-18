@@ -214,7 +214,7 @@ MonoBehaviour:
   LifeTime: 60
   player: {fileID: 0}
   impact: 0
-  non_networked_destroy: 0
+  non_networked_destroy: 1
 --- !u!114 &1465033758474234890
 MonoBehaviour:
   m_ObjectHideFlags: 0

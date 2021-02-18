@@ -1,6 +1,7 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+ using Photon.Pun;
+ using UnityEngine;
 
 public class ProjectileAttack : MonoBehaviour
 {
@@ -20,6 +21,12 @@ public class ProjectileAttack : MonoBehaviour
     public GameObject projectile;
     private float reloadtime = 100;
     public bool enemy_check;
+
+    [PunRPC]
+    public void SyncIsEnemyForProjectiles(bool isEnemy)
+    {
+        enemy_check = isEnemy;
+    }
 
     public Transform launch_point;
     public Transform launch_point_2;
@@ -72,6 +79,7 @@ public class ProjectileAttack : MonoBehaviour
 
     void Start()
     {
+        spawned = true;
         // set the launch_points array to include the appropriate launch points
         // Also set the launch number to the correct value
         if (double_attack)
@@ -121,14 +129,15 @@ public class ProjectileAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if the part is attached to another part, check whether that part (and the bot as a whole) has been spawned in yet
-        if (attached)
-        {
-            spawned = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().spawned;
-        }
 
-        if (spawned)
+
+        if (enemy_check == PhotonNetwork.IsMasterClient)
+            return;
+
+        //rip #3
+        if (true)
         {
+
             // find the fuel remaining value (similar to plating) on the leg bot part of the robot and set fuel_used bool to true
             // to instantiate the fuel bar. Check the fuel remaining and set out_of_fuel bool accordingly.
             if (uses_fuel)
@@ -177,7 +186,7 @@ public class ProjectileAttack : MonoBehaviour
             // check to see whether the bot is an ENEMY (belongs to player 2 or the player on the right side of the screen)
             // by checking the SSB of the double parent (since single parent is the slot component and the double parent is
             // the part being attached to)
-            enemy_check = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+            //enemy_check = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
 
             // if the weapon has scanned an opposing bot (or if scanned is always true and the projectile attack doesn't or cannot use scan)
             if (scanned)
@@ -189,7 +198,10 @@ public class ProjectileAttack : MonoBehaviour
                     // affected only by the attack_speed (a public int set by the prefab as a stat inherent to the weapon)
                     if (variable_attack_speed)
                     {
-                        reloadtime -= (attack_speed * 0.5f + transform.parent.transform.parent.GetComponent<StandardStatBlock>().LOGIC * variable_attack_speed_modifier) * Time.deltaTime * 50;
+                        reloadtime -=
+                            (attack_speed * 0.5f +
+                             transform.parent.transform.parent.GetComponent<StandardStatBlock>().LOGIC *
+                             variable_attack_speed_modifier) * Time.deltaTime * 50;
                     }
                     else
                     {
@@ -224,7 +236,8 @@ public class ProjectileAttack : MonoBehaviour
                         // spawns a flare (muzzle flare) gameobject at the point of launch (usually static and destroys itself after animation plays)
                         if (uses_flare)
                         {
-                            BattleFactorySpawn.instance.SpawnGeneric(flare_object, launch_location, gameObject, gameObject.transform.rotation);
+                            BattleFactorySpawn.instance.SpawnGeneric(flare_object, launch_location, gameObject,
+                                gameObject.transform.rotation);
                         }
 
                         // index increases after each shot

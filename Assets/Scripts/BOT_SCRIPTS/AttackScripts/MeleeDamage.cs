@@ -18,14 +18,15 @@ public class MeleeDamage : MonoBehaviour {
     public bool leg;
     public bool body;
 
-    // Use this for initialization
-    void Start() {
-        //Debug.Log(enemy_check);
+    private MeleeAttack _meleeAttack;
+    
+    void Start()
+    {
+        _meleeAttack = transform.parent.GetComponent<MeleeAttack>();
     }
 
-    // Update is called once per frame
     void Update() {
-        damage_val = transform.parent.GetComponent<MeleeAttack>().damage_val;
+        damage_val = _meleeAttack.damage_val;
 
         if (root)
         {

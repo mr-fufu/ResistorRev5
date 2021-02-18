@@ -23,7 +23,8 @@ public class BattleFactorySpawn : MonoBehaviour
     {
         //GameObject spawned_object = Instantiate(object_to_spawn, spawn_location, object_rotation);
         GameObject spawned_object = PhotonNetwork.Instantiate("ParticlesAndEffects/" + object_to_spawn.name, spawn_location, object_rotation);
-
+        spawned_object.GetComponent<DestroyAfterTime>().enemy_check = !PhotonNetwork.IsMasterClient;
+        spawned_object.GetComponent<PhotonView>().RPC("SyncIsEnemyForGeneric", RpcTarget.Others, !PhotonNetwork.IsMasterClient);
         spawned_object.transform.parent = parent_object.transform;
     }
 
@@ -58,6 +59,7 @@ public class BattleFactorySpawn : MonoBehaviour
 
         // sets which player the projectile belongs to (ENEMY on the right side of screen, Non-ENEMY on the left)
         clone.GetComponent<Projectile>().enemy_check = projectileAttack.enemy_check;
+        clone.GetComponent<PhotonView>().RPC("SyncIsEnemyForProjectilesAgain", RpcTarget.All, projectileAttack.enemy_check);
 
         // sets the projectile to be on the same layer as the launcher (for lane sort purposes)
         clone.GetComponent<SpriteRenderer>().sortingLayerName = projectile_launcher.GetComponent<SpriteRenderer>().sortingLayerName;

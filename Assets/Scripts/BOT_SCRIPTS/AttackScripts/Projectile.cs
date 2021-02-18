@@ -8,6 +8,14 @@ public class Projectile : MonoBehaviour
 
     public int projectile_speed;
     public bool enemy_check;
+
+    [PunRPC]
+    public void SyncIsEnemyForProjectilesAgain(bool isEnemy)
+    {
+        enemy_check = isEnemy;
+        search_tag = enemy_check ? "BOT_Player" : "BOT_Enemy";
+    }
+    
     public int damage_val;
 
     public bool random_impact;
@@ -26,22 +34,13 @@ public class Projectile : MonoBehaviour
     private int move_dir = 0;
     private Vector2 above_target;
 
-    public GameObject player;
 
     public int damage_int_value;
 
     public float ground_y_position;
 
     void Start () {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            player = GameObject.Find("Player1");
-        }
-        else
-        {
-            player = GameObject.Find("Player2");
-        }
-
+        
         if (!enemy_check)
         {
             search_tag = "BOT_Enemy";

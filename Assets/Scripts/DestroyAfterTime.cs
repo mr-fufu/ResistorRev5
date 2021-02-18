@@ -9,6 +9,13 @@ public class DestroyAfterTime : MonoBehaviour
     public GameObject player;
     public bool impact;
     public bool non_networked_destroy;
+    public bool enemy_check;
+
+    [PunRPC]
+    public void SyncIsEnemyForGeneric(bool isEnemy)
+    {
+        enemy_check = isEnemy;
+    }
 
 	void Update () {
         LifeTime -= Time.deltaTime;
@@ -22,7 +29,10 @@ public class DestroyAfterTime : MonoBehaviour
                     BattleFactorySpawn.instance.SpawnImpact(impact, GetComponent<Projectile>().impact_object, GetComponent<Projectile>().impact_point.position, 
                         GetComponent<Projectile>().impact_point.rotation, false, gameObject, GetComponent<Projectile>().enemy_check);
                 }
-                if (GetComponent<Projectile>().enemy_check != PhotonNetwork.IsMasterClient)
+                
+                var proj = GetComponent<Projectile>();
+                var isEnemy = proj == null ? enemy_check : proj.enemy_check;
+                if (isEnemy != PhotonNetwork.IsMasterClient)
                 {
                     PhotonNetwork.Destroy(gameObject);
                 }
@@ -36,9 +46,18 @@ public class DestroyAfterTime : MonoBehaviour
 
     public void destroy_trigger()
     {
-        if (GetComponent<Projectile>().enemy_check != PhotonNetwork.IsMasterClient)
+        if (non_networked_destroy)
         {
-            PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
+        }
+        else
+        {
+            var proj = GetComponent<Projectile>();
+            var isEnemy = proj == null ? enemy_check : proj.enemy_check;
+            if (isEnemy != PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
 }

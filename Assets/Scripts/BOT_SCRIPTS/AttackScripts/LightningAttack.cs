@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class LightningAttack : MonoBehaviour
@@ -22,10 +23,13 @@ public class LightningAttack : MonoBehaviour
     public bool spawned;
     public bool attached;
 
+    private StandardStatBlock _standardStatBlock;
+
 
     void Start()
     {
         attached = gameObject.GetComponent<PartStats>().attached;
+        _standardStatBlock = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>();;
     }
 
     void Update()
@@ -33,24 +37,20 @@ public class LightningAttack : MonoBehaviour
 
         if (attached)
         {
-            spawned = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().spawned;
+            spawned = _standardStatBlock.spawned;
         }
 
         if (spawned)
         {
-            enemy_check = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
-            power = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().POWER;
+            enemy_check = _standardStatBlock.ENEMY;
+            power = _standardStatBlock.POWER;
             lightning_damage = power * 4;
-        }
-
-        if (spawned)
-        {
 
             reloadtime -= attack_speed * Time.deltaTime * 50 * 0.65f;
             if (reloadtime <= 0)
             {
 
-                if (transform.parent.transform.parent.GetComponent<StandardStatBlock>().LOGIC > 0)
+                if (_standardStatBlock.LOGIC > 0)
                 {
                     in_range = range_detector.GetComponent<LightningRange>().scanned;
                 }
@@ -61,8 +61,10 @@ public class LightningAttack : MonoBehaviour
 
                 if (in_range)
                 {
-                    BattleFactorySpawn.instance.SpawnLightning(lightning_object, launch_point.gameObject, lightning_damage, enemy_check, power);
-
+                    if (enemy_check != PhotonNetwork.IsMasterClient)
+                    {
+                        BattleFactorySpawn.instance.SpawnLightning(lightning_object, launch_point.gameObject, lightning_damage, enemy_check, power);
+                    }
                     reloadtime = 100;
                 }
             }
