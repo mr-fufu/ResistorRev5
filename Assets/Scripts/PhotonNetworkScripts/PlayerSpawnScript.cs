@@ -126,12 +126,12 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         if (bot_clone.GetComponent<StandardStatBlock>().melee_components > 0)
         {
             bot_clone.GetComponent<Collider2D>().offset = new Vector2(0, 25);
-            bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(30, 70);
+            bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(50, 70);
         }
         else
         {
             bot_clone.GetComponent<Collider2D>().offset = new Vector2(10, 25);
-            bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(50, 70);
+            bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(70, 70);
         }
 
         //--------------------------------------------------------------------------

@@ -3230,7 +3230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &181665748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16954,6 +16954,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MR15
       objectReference: {fileID: 0}
+    - target: {fileID: 1187290242159401831, guid: f2cb1019a98d2b14e9c33ebcc0236c73,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2cb1019a98d2b14e9c33ebcc0236c73, type: 3}
 --- !u!4 &821560783 stripped
@@ -19851,7 +19856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &939053457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48961,6 +48966,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TW14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731435588036652229, guid: 68cc7c93912bae64e972baf0dae2df64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68cc7c93912bae64e972baf0dae2df64, type: 3}
