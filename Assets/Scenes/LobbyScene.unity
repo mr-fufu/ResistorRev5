@@ -2188,8 +2188,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2041748144783116652}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: CommitColors
+        m_TargetAssemblyTypeName: PortraitManager, Assembly-CSharp
+        m_MethodName: OnClick_StartGameAndCommitColors
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8003,6 +8003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 1232202923}
   maxPlayersPerRoom: 2
+  roomNameTitle: {fileID: 684547647}
 --- !u!4 &1815099187
 Transform:
   m_ObjectHideFlags: 0
@@ -8248,7 +8249,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -144655815
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &2013839867

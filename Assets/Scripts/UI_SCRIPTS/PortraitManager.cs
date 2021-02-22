@@ -95,12 +95,13 @@ public class PortraitManager : MonoBehaviour
     {
         alt = !alt;
     }
-    public void CommitColors()
+
+    public void OnClick_StartGameAndCommitColors()
     {
-        if (PhotonNetwork.NickName != string.Empty)
-        {
-            StartCoroutine(Change());
-        }
+        if (PhotonNetwork.NickName == string.Empty)
+            return;
+        
+        StartCoroutine(Change());
     }
     
     private IEnumerator Change()
@@ -110,6 +111,6 @@ public class PortraitManager : MonoBehaviour
         fade.FadeInLoadScreen();
 
         yield return new WaitUntil(()=>fade.fadeInComplete == true);
-        launch.Connect();
+        PhotonNetwork.LoadLevel("Workshop");
     }
 }

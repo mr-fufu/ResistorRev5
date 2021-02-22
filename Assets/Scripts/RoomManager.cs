@@ -90,7 +90,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		
 		cancelButton.gameObject.SetActive(true);
 		addRoomButton.gameObject.SetActive(false);
-		playButton.gameObject.SetActive(true);
+		playButton.gameObject.SetActive(false);
 		
 		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(false); }
 	}
@@ -123,8 +123,26 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		Debug.Log("new button");
 		
 		Button newRoom = Instantiate(roomButtonPrefab, Vector3.zero, Quaternion.identity, uiControls);
+		newRoom.onClick.AddListener(delegate {OnClick_JoinRoom(newRoom);});
 		_roomAndButtons.Add(room, newRoom);
 		newRoom.GetComponentInChildren<TextMeshProUGUI>().text = room.Name;
+	}
+
+	private void OnClick_JoinRoom(Button roomButton)
+	{
+		if (PhotonNetwork.CurrentRoom != null)
+		{
+			Debug.LogError("Can click join room, yet already in a room!");
+			return;
+		}
+
+		if (!_roomAndButtons.ContainsValue(roomButton))
+		{
+			Debug.LogError("Room not found!");
+			return;
+		}
+
+		PhotonNetwork.JoinRoom(roomButton.GetComponentInChildren<TextMeshProUGUI>().text);
 	}
 
 	public override void OnLeftRoom()
@@ -137,6 +155,32 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		playButton.gameObject.SetActive(false);
 		
 		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(true); }
+	}
+
+
+	public override void OnJoinedRoom()
+	{
+		//TODO: show player's name
+		Debug.Log("Joined a room");
+		
+		if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+		{
+			playButton.gameObject.SetActive(true);
+		}
+		
+		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(false); }
+	}
+
+	public override void OnPlayerEnteredRoom(Player newPlayer)
+	{
+		base.OnPlayerEnteredRoom(newPlayer);
+		
+		Debug.Log("Someone else joined your room :)");
+		
+		if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
+		{
+			playButton.gameObject.SetActive(true);
+		}
 	}
 
 	//leave the room, will call OnLeftRoom

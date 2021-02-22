@@ -201,19 +201,6 @@ public class Launcher : MonoBehaviourPunCallbacks
 		
 		roomNameTitle.transform.parent.gameObject.SetActive(true);
 		roomNameTitle.text = PhotonNetwork.CurrentRoom.Name;
-		
-		// #Critical: We only load if we are the first player, else we rely on  PhotonNetwork.AutomaticallySyncScene to sync our instance scene.
-		if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
-		{
-			Debug.Log("We load the 'Room for 1' ");
-
-			// #Critical
-			// Load the Room Level. 
-			//PhotonNetwork.LoadLevel("Workshop");
-			
-			// TODO: allow play button to appear
-
-		}
 	}
 
 	#endregion
