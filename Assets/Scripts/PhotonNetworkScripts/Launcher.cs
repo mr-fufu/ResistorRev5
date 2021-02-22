@@ -8,11 +8,16 @@
 // <author>developer@exitgames.com</author>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 using Photon.Realtime;
 using Photon.Pun;
+using TMPro;
 
 #pragma warning disable 649
 
@@ -24,10 +29,6 @@ public class Launcher : MonoBehaviourPunCallbacks
 
 	#region Private Serializable Fields
 
-	[Tooltip("The Ui Panel to let the user enter name, connect and play")]
-	[SerializeField]
-	private GameObject controlPanel;
-
 	[Tooltip("The Ui Text to inform the user about the connection progress")]
 	[SerializeField]
 	private Text feedbackText;
@@ -35,10 +36,10 @@ public class Launcher : MonoBehaviourPunCallbacks
 	[Tooltip("The maximum number of players per room")]
 	[SerializeField]
 	private byte maxPlayersPerRoom = 2;
-
-	[Tooltip("The UI Loader Anime")]
-	[SerializeField]
-	private LoaderAnime loaderAnime;
+	
+	[Tooltip("For when joined a room")]
+	[SerializeField] 
+	private TextMeshProUGUI roomNameTitle = null;
 
 	#endregion
 
@@ -64,17 +65,23 @@ public class Launcher : MonoBehaviourPunCallbacks
 	/// </summary>
 	void Awake()
 	{
-		if (loaderAnime==null)
-		{
-			Debug.LogError("<Color=Red><b>Missing</b></Color> loaderAnime Reference.",this);
-		}
-
-        // #Critical
+		// #Critical
         // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
         PhotonNetwork.AutomaticallySyncScene = true;
     }
 
-    #endregion
+	//On starting the lobby scene with the launcher in it, connect
+	private void Start()
+	{
+		roomNameTitle.transform.parent.gameObject.SetActive(false);
+		
+		if (SceneManager.GetActiveScene().name.Equals("LobbyScene"))
+		{
+			Connect();
+		}
+	}
+
+	#endregion
 
     #region Public Methods
 
@@ -93,21 +100,12 @@ public class Launcher : MonoBehaviourPunCallbacks
 
 		PhotonNetwork.SendRate = 12;
 
-		// hide the Play button for visual consistency
-		controlPanel.SetActive(false);
-
-		// start the loader animation for visual effect.
-		if (loaderAnime!=null)
-		{
-			loaderAnime.StartLoaderAnimation();
-		}
-
 		// we check if we are connected or not, we join if we are , else we initiate the connection to the server.
 		if (PhotonNetwork.IsConnected)
 		{
-			LogFeedback("Joining Room...");
+			LogFeedback("Connected");
 			// #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnJoinRandomFailed() and we'll create one.
-			PhotonNetwork.JoinRandomRoom();
+			//PhotonNetwork.JoinRandomRoom();
 		}else{
 
 			LogFeedback("Connecting...");
@@ -139,8 +137,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     #region MonoBehaviourPunCallbacks CallBacks
     // below, we implement some callbacks of PUN
     // you can find PUN's callbacks in the class MonoBehaviourPunCallbacks
-
-
     /// <summary>
     /// Called after the connection to the master is established and authenticated
     /// </summary>
@@ -151,11 +147,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 		// we don't want to do anything.
 		if (isConnecting)
 		{
-			LogFeedback("OnConnectedToMaster: Next -> try to Join Random Room");
+			LogFeedback("OnConnectedToMaster: Next -> Join a Lobby (region dependent)");
 			Debug.Log("PUN Basics Tutorial/Launcher: OnConnectedToMaster() was called by PUN. Now this client is connected and could join a room.\n Calling: PhotonNetwork.JoinRandomRoom(); Operation will fail if no room found");
-		
-			// #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
-			PhotonNetwork.JoinRandomRoom();
 		}
 	}
 
@@ -167,11 +160,12 @@ public class Launcher : MonoBehaviourPunCallbacks
 	/// </remarks>
 	public override void OnJoinRandomFailed(short returnCode, string message)
 	{
-		LogFeedback("<Color=Red>OnJoinRandomFailed</Color>: Next -> Create a new Room");
+		LogFeedback("<Color=Red>OnJoinRandomFailed</Color>: Next -> TODO");
 		Debug.Log("PUN Basics Tutorial/Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
 
+		//TODO: deal with join failures
 		// #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
-		PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = this.maxPlayersPerRoom});
+		//PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = this.maxPlayersPerRoom, IsVisible = true} );
 	}
 
 
@@ -184,11 +178,9 @@ public class Launcher : MonoBehaviourPunCallbacks
 		Debug.LogError("PUN Basics Tutorial/Launcher:Disconnected");
 
 		// #Critical: we failed to connect or got disconnected. There is not much we can do. Typically, a UI system should be in place to let the user attemp to connect again.
-		loaderAnime.StopLoaderAnimation();
+		//loaderAnime.StopLoaderAnimation();
 
 		isConnecting = false;
-		controlPanel.SetActive(true);
-
 	}
 
 	/// <summary>
@@ -207,20 +199,22 @@ public class Launcher : MonoBehaviourPunCallbacks
 		LogFeedback("<Color=Green>OnJoinedRoom</Color> with "+PhotonNetwork.CurrentRoom.PlayerCount+" Player(s)");
 		Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.\nFrom here on, your game would be running.");
 		
+		roomNameTitle.transform.parent.gameObject.SetActive(true);
+		roomNameTitle.text = PhotonNetwork.CurrentRoom.Name;
+		
 		// #Critical: We only load if we are the first player, else we rely on  PhotonNetwork.AutomaticallySyncScene to sync our instance scene.
-		if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+		if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
 		{
 			Debug.Log("We load the 'Room for 1' ");
 
 			// #Critical
 			// Load the Room Level. 
-
-            //TODO
-			PhotonNetwork.LoadLevel("Workshop");
+			//PhotonNetwork.LoadLevel("Workshop");
+			
+			// TODO: allow play button to appear
 
 		}
 	}
 
 	#endregion
-		
 }
