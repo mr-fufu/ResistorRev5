@@ -25,8 +25,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	[SerializeField] private Button playButton = null;
 	[SerializeField] private Transform connectingToLobbyPopUp = null;
 	[Tooltip("Only used to reconnect in case of disconnect. Connection normally happens on start of Lobby scene")]
-	[SerializeField] private Button connectButton = null;
+	[SerializeField] private Button reconnectButton = null;
 	[SerializeField] private Transform availableRoomsPrompt = null;
+	[SerializeField] private Transform roomTitle = null;
 
 	private Dictionary<RoomInfo, Button> _roomAndButtons;
 
@@ -36,13 +37,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		_oldRooms = new List<RoomInfo>();
 
 		connectingToLobbyPopUp.gameObject.SetActive(true);
-		connectButton.gameObject.SetActive(false);
-		cancelButton.gameObject.SetActive(false);
-		addRoomButton.gameObject.SetActive(false);
 		playButton.gameObject.SetActive(false);
-
-		availableRoomsPrompt.gameObject.SetActive(false);
-		roomGrid.gameObject.SetActive(false);
+		
+		UpdateUI(false, false);
 	}
 
 	public override void OnConnectedToMaster()
@@ -51,27 +48,36 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		PhotonNetwork.AddCallbackTarget(this);
 
 		connectingToLobbyPopUp.gameObject.SetActive(false);
-		connectButton.gameObject.SetActive(false);
-		addRoomButton.gameObject.SetActive(true);
-
-		availableRoomsPrompt.gameObject.SetActive(true);
-		roomGrid.gameObject.SetActive(true);
+		UpdateUI(false, true);
 	}
 
 	public override void OnDisconnected(DisconnectCause cause)
 	{
 		base.OnDisconnected(cause);
-		
-		cancelButton.gameObject.SetActive(false);
-		addRoomButton.gameObject.SetActive(false);
-		playButton.gameObject.SetActive(false);
-        connectButton.gameObject.SetActive(true);
 
-		availableRoomsPrompt.gameObject.SetActive(true);
-		roomGrid.gameObject.SetActive(true);
+		UpdateUI(false, false);
+		playButton.gameObject.SetActive(false);
 	}
 
 	public void OnClick_Connect() => connectingToLobbyPopUp.gameObject.SetActive(true);
+
+	private void UpdateUI(bool inRoom, bool isConnected = true)
+	{
+		//connection stuff
+		reconnectButton.gameObject.SetActive(!isConnected);
+		
+		//room stuff
+		roomTitle.gameObject.SetActive(inRoom && isConnected);
+		cancelButton.gameObject.SetActive(inRoom && isConnected);
+		
+		//lobby stuff
+		addRoomButton.gameObject.SetActive(!inRoom && isConnected);
+		
+		//hide room listings
+		availableRoomsPrompt.gameObject.SetActive(!inRoom && isConnected);
+		roomGrid.gameObject.SetActive(!inRoom && isConnected);
+		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(!inRoom && isConnected); }
+	}
 	
 	public void OnClick_CreateRoom()
 	{
@@ -99,12 +105,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		base.OnCreatedRoom();
 		
 		print("Room Created Successfully");
-		
-		cancelButton.gameObject.SetActive(true);
-		addRoomButton.gameObject.SetActive(false);
-		playButton.gameObject.SetActive(false);
-		
-		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(false); }
 	}
 	
 	public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -121,7 +121,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 			if (room.IsOpen)
 			{
 				//RoomReceived(room);
-				SpawnRoom(room);
+				ShowOrCreateRoomButtons(room);
 			}
 			else
 			{
@@ -132,14 +132,21 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	}
 
 	[PunRPC]
-	public void SpawnRoom(RoomInfo room)
+	public void ShowOrCreateRoomButtons(RoomInfo room)
 	{
 		Debug.Log("new button");
-		
-		Button newRoom = Instantiate(roomButtonPrefab, Vector3.zero, Quaternion.identity, roomGrid);
-		newRoom.onClick.AddListener(delegate {OnClick_JoinRoom(newRoom);});
-		_roomAndButtons.Add(room, newRoom);
-		newRoom.GetComponentInChildren<TextMeshProUGUI>().text = room.Name;
+
+		if (_roomAndButtons.ContainsKey(room))
+		{
+			_roomAndButtons[room].gameObject.SetActive(true);
+		}
+		else
+		{
+			Button newRoom = Instantiate(roomButtonPrefab, Vector3.zero, Quaternion.identity, roomGrid);
+			newRoom.onClick.AddListener(delegate {OnClick_JoinRoom(newRoom);});
+			_roomAndButtons.Add(room, newRoom);
+			newRoom.GetComponentInChildren<TextMeshProUGUI>().text = room.Name;
+		}
 	}
 
 	private void OnClick_JoinRoom(Button roomButton)
@@ -164,14 +171,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		base.OnEnable();
 		base.OnLeftRoom();
 		
-		cancelButton.gameObject.SetActive(false);
-		addRoomButton.gameObject.SetActive(true);
 		playButton.gameObject.SetActive(false);
-
-		availableRoomsPrompt.gameObject.SetActive(true);
-		roomGrid.gameObject.SetActive(true);
-
-		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(true); }
+		UpdateUI(false);
 	}
 
 
@@ -180,18 +181,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		//TODO: show player's name
 		Debug.Log("Joined a room");
 
-		addRoomButton.gameObject.SetActive(false);
-		cancelButton.gameObject.SetActive(true);
-
-		availableRoomsPrompt.gameObject.SetActive(false);
-		roomGrid.gameObject.SetActive(false);
+		UpdateUI(true);
 
 		if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
 		{
 			playButton.gameObject.SetActive(true);
 		}
-		
-		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(false); }
 	}
 
 	public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -218,6 +213,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 			{
 				//Destroy the associated button, room is closed or hidden
 				var roomAndButton = _roomAndButtons[oldRooms[i]];
+				_roomAndButtons.Remove(oldRooms[i]);
 				Destroy(roomAndButton);
 				Debug.Log(roomAndButton.name + " is Destroyed");
 			}

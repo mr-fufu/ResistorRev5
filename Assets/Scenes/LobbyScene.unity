@@ -1779,8 +1779,9 @@ MonoBehaviour:
     type: 3}
   playButton: {fileID: 1092205519}
   connectingToLobbyPopUp: {fileID: 956413264}
-  connectButton: {fileID: 1585008291}
+  reconnectButton: {fileID: 1585008291}
   availableRoomsPrompt: {fileID: 2083377988}
+  roomTitle: {fileID: 1138274059}
 --- !u!4 &930874238
 Transform:
   m_ObjectHideFlags: 0
