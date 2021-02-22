@@ -142,32 +142,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	//leave the room, will call OnLeftRoom
 	public void OnClick_CancelButton() => PhotonNetwork.LeaveRoom();
 
-	/*private void RoomReceived(RoomInfo room)
-	{
-		int index = RoomListButtons.FindIndex(x => x.RoomName == room.Name);
-
-		if (index == -1)
-		{
-			if (room.IsVisible && room.PlayerCount < room.MaxPlayers)
-			{
-				Button roomListingObj = Instantiate(RoomButtonPrefab);
-				roomListingObj.transform.SetParent(transform, false);
-
-				RoomList roomListing = roomListingObj.GetComponent<RoomList>();
-				RoomListButtons.Add(roomListing);
-
-				index = (RoomListButtons.Count - 1);
-			}
-		}
-
-		if (index != -1)
-		{
-			RoomList roomListing = RoomListButtons[index];
-			roomListing.SetRoomNameText(room.Name);
-			roomListing.Updated = true;
-		}
-	}*/
-
 	[PunRPC]
 	public void RemoveOldRoomButtons(List<RoomInfo> oldRooms)
 	{
