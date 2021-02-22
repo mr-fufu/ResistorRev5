@@ -16,8 +16,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	private const byte MAXPlayersPerRoom = 5;
 	
 	private int _curRoomCount;
+	private List<RoomInfo> _oldRooms;
 
-	[SerializeField] private Transform uiControls = null;
+	[SerializeField] private Transform roomGrid = null;
 	[SerializeField] private Button cancelButton = null;
 	[SerializeField] private Button addRoomButton = null;
 	[SerializeField] private Button roomButtonPrefab = null;
@@ -25,18 +26,23 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	[SerializeField] private Transform connectingToLobbyPopUp = null;
 	[Tooltip("Only used to reconnect in case of disconnect. Connection normally happens on start of Lobby scene")]
 	[SerializeField] private Button connectButton = null;
+	[SerializeField] private Transform availableRoomsPrompt = null;
 
 	private Dictionary<RoomInfo, Button> _roomAndButtons;
 
 	private void Start()
 	{
 		_roomAndButtons = new Dictionary<RoomInfo, Button>();
+		_oldRooms = new List<RoomInfo>();
 
 		connectingToLobbyPopUp.gameObject.SetActive(true);
 		connectButton.gameObject.SetActive(false);
 		cancelButton.gameObject.SetActive(false);
 		addRoomButton.gameObject.SetActive(false);
 		playButton.gameObject.SetActive(false);
+
+		availableRoomsPrompt.gameObject.SetActive(false);
+		roomGrid.gameObject.SetActive(false);
 	}
 
 	public override void OnConnectedToMaster()
@@ -47,6 +53,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		connectingToLobbyPopUp.gameObject.SetActive(false);
 		connectButton.gameObject.SetActive(false);
 		addRoomButton.gameObject.SetActive(true);
+
+		availableRoomsPrompt.gameObject.SetActive(true);
+		roomGrid.gameObject.SetActive(true);
 	}
 
 	public override void OnDisconnected(DisconnectCause cause)
@@ -56,7 +65,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		cancelButton.gameObject.SetActive(false);
 		addRoomButton.gameObject.SetActive(false);
 		playButton.gameObject.SetActive(false);
-		connectButton.gameObject.SetActive(true);
+        connectButton.gameObject.SetActive(true);
+
+		availableRoomsPrompt.gameObject.SetActive(true);
+		roomGrid.gameObject.SetActive(true);
 	}
 
 	public void OnClick_Connect() => connectingToLobbyPopUp.gameObject.SetActive(true);
@@ -99,11 +111,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	{
 		//base.OnEnable();
 		Debug.Log("room list update func");
-		
+
+		_oldRooms.Clear();
+
 		foreach (RoomInfo room in roomList)
 		{
 			//update rooms to only the open ones
-			var oldRooms = roomList.Where(x => x.RemovedFromList);
 			_curRoomCount = roomList.Count(x => x.IsOpen);
 			if (room.IsOpen)
 			{
@@ -112,9 +125,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 			}
 			else
 			{
-				RemoveOldRoomButtons(oldRooms.ToList());
+				_oldRooms.Add(room);
 			}
 		}
+		RemoveOldRoomButtons(_oldRooms);
 	}
 
 	[PunRPC]
@@ -122,7 +136,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	{
 		Debug.Log("new button");
 		
-		Button newRoom = Instantiate(roomButtonPrefab, Vector3.zero, Quaternion.identity, uiControls);
+		Button newRoom = Instantiate(roomButtonPrefab, Vector3.zero, Quaternion.identity, roomGrid);
 		newRoom.onClick.AddListener(delegate {OnClick_JoinRoom(newRoom);});
 		_roomAndButtons.Add(room, newRoom);
 		newRoom.GetComponentInChildren<TextMeshProUGUI>().text = room.Name;
@@ -153,7 +167,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 		cancelButton.gameObject.SetActive(false);
 		addRoomButton.gameObject.SetActive(true);
 		playButton.gameObject.SetActive(false);
-		
+
+		availableRoomsPrompt.gameObject.SetActive(true);
+		roomGrid.gameObject.SetActive(true);
+
 		foreach (var button in _roomAndButtons.Values) { button.gameObject.SetActive(true); }
 	}
 
@@ -162,7 +179,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	{
 		//TODO: show player's name
 		Debug.Log("Joined a room");
-		
+
+		addRoomButton.gameObject.SetActive(false);
+		cancelButton.gameObject.SetActive(true);
+
+		availableRoomsPrompt.gameObject.SetActive(false);
+		roomGrid.gameObject.SetActive(false);
+
 		if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
 		{
 			playButton.gameObject.SetActive(true);

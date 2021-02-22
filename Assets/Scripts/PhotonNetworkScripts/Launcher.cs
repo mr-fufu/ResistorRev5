@@ -200,7 +200,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 		Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.\nFrom here on, your game would be running.");
 		
 		roomNameTitle.transform.parent.gameObject.SetActive(true);
-		roomNameTitle.text = PhotonNetwork.CurrentRoom.Name;
+		roomNameTitle.text = "You are in " + PhotonNetwork.CurrentRoom.Name;
 	}
 
 	#endregion
