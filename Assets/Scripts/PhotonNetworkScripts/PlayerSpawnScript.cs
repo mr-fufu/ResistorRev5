@@ -67,17 +67,21 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             bot_tag = "BOT_Enemy";
         }
 
-        SpawnColorObject();
+        //SpawnColorObject();
 
+        //TODO: sam remove
         BotColorObject myColorObj =  FindObjectOfType<BotColorObject>();
 
         network_color = myColorObj.GetColors();
         
         player_red = network_color.x;
-        player_blue = network_color.y;
-        player_green = network_color.z;
+        player_green = network_color.y;
+        player_blue = network_color.z;
 
-        bot_color = new Vector4(player_red, player_blue, player_green, 1);
+        bot_color = new Vector4(player_red, player_green, player_blue, 1);
+
+        Debug.Log("current Color Object is " + myColorObj);
+        Debug.Log("current color is " + network_color);
     }
 
     // Bot spawning command function. Takes the spawn list arrays as well as the spawn location, name of the lane the bot is spawned into, the credits object
@@ -149,7 +153,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         var partStats = bot_clone.GetComponent<PartStats>();
         if (partStats != null)
         {
-            bot_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color.x, bot_color.y, bot_color.z, bot_color.w);
+            bot_clone.GetComponent<PhotonView>().RPC("SyncBotColor", RpcTarget.All, bot_color.x, bot_color.y, bot_color.z, bot_color.w);
         }
         
         if (bot_clone.GetComponent<PartStats>().part_type == "ARM")
@@ -237,7 +241,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             var partStatsNotLeg = part_clone.GetComponent<PartStats>();
             if (partStatsNotLeg != null)
             {
-                part_clone.GetComponent<PhotonView>().RPC("SyncColor", RpcTarget.All, bot_color.x, bot_color.y, bot_color.z, bot_color.w);
+                part_clone.GetComponent<PhotonView>().RPC("SyncBotColor", RpcTarget.All, bot_color.x, bot_color.y, bot_color.z, bot_color.w);
             }
 
             part_clone.GetComponent<PartStats>().attached = true;

@@ -54,6 +54,8 @@ public class PortraitManager : MonoBehaviour
         alt_profile[1] = alt_profile2;
         alt_profile[2] = alt_profile3;
         alt_profile[3] = alt_profile4;
+
+        color_hold.UpdateColors(profile_no, alt);
     }
 
     // Update is called once per frame
@@ -78,7 +80,9 @@ public class PortraitManager : MonoBehaviour
     public void IncProfile()
     {
         profile_no++;
-        profile_no %= 3;
+        profile_no %= 4;
+
+        color_hold.UpdateColors(profile_no, alt);
     }
 
     public void DecProfile()
@@ -88,12 +92,15 @@ public class PortraitManager : MonoBehaviour
         {
             profile_no = 3;
         }
-        profile_no %= 3;
+        profile_no %= 4;
+
+        color_hold.UpdateColors(profile_no, alt);
     }
 
     public void ToggleAlt()
     {
         alt = !alt;
+        color_hold.UpdateColors(profile_no, alt);
     }
 
     public void OnClick_StartGameAndCommitColors()

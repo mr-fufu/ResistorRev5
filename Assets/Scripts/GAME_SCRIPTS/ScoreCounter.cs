@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using UnityEngine;
 
-public class ScoreCounter : MonoBehaviour, IPunObservable {
+public class ScoreCounter : MonoBehaviour {
 
     public Text Player_Scoring;
     public Text Enemy_Scoring;
@@ -15,7 +15,24 @@ public class ScoreCounter : MonoBehaviour, IPunObservable {
 
     private SceneManagementScript sceneMgmt;
 
-	void Start () {
+    [PunRPC]
+    public void SyncScore(bool EnemyScored)
+    {
+        if (EnemyScored)
+        {
+            player_score_value -= 1;
+            player_score_value = Mathf.Max(player_score_value, 0);
+        }
+        else
+        {
+            enemy_score_value -= 1;
+            enemy_score_value = Mathf.Max(enemy_score_value, 0);
+        }
+
+        ChangeScore();
+    }
+
+    void Start () {
         player_score_value = 10;    
         enemy_score_value = 10;
 
@@ -32,48 +49,27 @@ public class ScoreCounter : MonoBehaviour, IPunObservable {
 
         if (PhotonNetwork.IsMasterClient)
         {
-            if (player_score_value == 0)
+            if (player_score_value <= 0)
             {
                 sceneMgmt.ShowEndScreen(false);
             }
 
-            if (enemy_score_value == 0)
+            if (enemy_score_value <= 0)
             {
                 sceneMgmt.ShowEndScreen(true);
             }
         }
         else
         {
-            if (player_score_value == 0)
+            if (player_score_value <= 0)
             {
                 sceneMgmt.ShowEndScreen(true);
             }
 
-            if (enemy_score_value == 0)
+            if (enemy_score_value <= 0)
             {
                 sceneMgmt.ShowEndScreen(false);
             }
-        }
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            int sentScore = PhotonNetwork.IsMasterClient ? player_score_value : enemy_score_value;
-            stream.SendNext(sentScore);
-        }
-        else if(stream.IsReading)
-        {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                enemy_score_value = (int)stream.ReceiveNext();
-            }
-            else
-            {
-              player_score_value  = (int)stream.ReceiveNext();
-            }
-             
         }
     }
 }

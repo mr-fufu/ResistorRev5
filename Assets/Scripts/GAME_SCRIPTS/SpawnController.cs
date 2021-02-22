@@ -137,7 +137,7 @@ public class SpawnController : MonoBehaviourPunCallbacks
 
     public void SpawnLane(int laneIndex)
     {
-        if (!spawn_lane[laneIndex - 1].GetComponent<SpawnBlocker>().spawn_blocked)
+        if (!spawn_lane[laneIndex - 1].GetComponent<SpawnBlocker>().spawnBlocked)
         {
             credit_cost = selected_spawn_bot.transform.GetChild(0).GetChild(0).GetComponent<StandardStatBlock>().COST;
             if (credit_cost <= credit_values.GetComponent<CreditCounter>().credit_value)

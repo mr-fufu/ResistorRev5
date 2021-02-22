@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class BotColorObject : MonoBehaviour
 {
-    public Vector4[] spawn_color = new Vector4[4];
-    public Vector4[] spawn_color_alt = new Vector4[4];
+    private Vector4[] spawn_color = new Vector4[4];
+    private Vector4[] spawn_color_alt = new Vector4[4];
 
     private void Awake()
     {
@@ -36,6 +38,8 @@ public class BotColorObject : MonoBehaviour
 
     public Vector4 GetColors()
     {
+        Debug.LogError("Got Colors");
+
         return gameObject.GetComponent<SpriteRenderer>().color;
     }
 }

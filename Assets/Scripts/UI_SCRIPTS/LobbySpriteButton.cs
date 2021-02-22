@@ -49,7 +49,7 @@ public class LobbySpriteButton : MonoBehaviour
     {
         if (use_spawn_block)
         {
-            if (!spawn_block.GetComponent<SpawnBlocker>().spawn_blocked)
+            if (!spawn_block.GetComponent<SpawnBlocker>().spawnBlocked)
             {
                 if (!hide_sprite)
                 {

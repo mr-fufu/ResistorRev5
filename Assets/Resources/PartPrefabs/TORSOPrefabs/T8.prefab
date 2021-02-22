@@ -156,6 +156,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 100
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -178,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   double_attack: 0
   multi_attack: 0
-  attack_speed: 0.6
+  attack_speed: 0.3
   variable_attack_speed_modifier: 0
   projectile: {fileID: 1656137020809238, guid: 420151b06de819049928079d81745dbc, type: 3}
   enemy_check: 0
@@ -198,7 +199,7 @@ MonoBehaviour:
   variable_y: 0
   variable_y_value: 0
   variable_damage: 1
-  variable_damage_value: 50
+  variable_damage_value: 40
   projectile_parent: 1
   attack_over: 1
   out_of_fuel: 0

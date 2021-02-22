@@ -4,37 +4,41 @@ using UnityEngine;
 
 public class SpawnBlocker : MonoBehaviour
 {
-    public bool spawn_blocked;
+    public bool spawnBlocked;
+
     private Collider2D[] check_colliders;
     private int scan_size = 20;
     private ContactFilter2D collider_filter = new ContactFilter2D();
     private int empty_count;
-    public GameObject spawn_light;
-    public GameObject spawn_shadow;
-    private bool spawn_lighting;
-    private Vector4 original_color;
+
+    public GameObject spawnLight;
+    public GameObject spawnShadow;
+    public GameObject networkColor;
+
+    private bool spawnLighting;
+    private Vector4 originalColor;
     private float fade;
     private float intensity;
-    private bool original_color_set;
+    private bool originalColorSet;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawn_blocked = false;
-        spawn_lighting = false;
+        spawnBlocked = false;
+        spawnLighting = false;
         collider_filter = collider_filter.NoFilter();
-        spawn_light.GetComponent<Light>().intensity = 0;
+        spawnLight.GetComponent<Light>().intensity = 0;
     }
 
     void Update()
     {
-        if (!original_color_set)
+        if (!originalColorSet)
         {
-            if (spawn_shadow.GetComponent<NetworkColor>().colored)
+            if (networkColor.GetComponent<NetworkColor>().colored)
             {
-                original_color = spawn_shadow.GetComponent<SpriteRenderer>().color;
-                spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, 0);
-                original_color_set = true;
+                originalColor = spawnShadow.GetComponent<SpriteRenderer>().color;
+                spawnShadow.GetComponent<SpriteRenderer>().color = new Vector4(originalColor.x, originalColor.y, originalColor.z, 0);
+                originalColorSet = true;
             }
         }
 
@@ -59,7 +63,7 @@ public class SpawnBlocker : MonoBehaviour
             {
                 if (check_colliders[checkVar].gameObject.tag == "BOT_Player" || check_colliders[checkVar].gameObject.tag == "BOT_Enemy")
                 {
-                    spawn_blocked = true;
+                    spawnBlocked = true;
                 }
                 else
                 {
@@ -74,42 +78,42 @@ public class SpawnBlocker : MonoBehaviour
 
         if (empty_count == scan_size)
         {
-            spawn_blocked = false;
+            spawnBlocked = false;
         }
 
-        if (spawn_blocked)
+        if (spawnBlocked)
         {
-            if (!spawn_lighting)
+            if (!spawnLighting)
             {
-                spawn_lighting = true;
+                spawnLighting = true;
 
-                spawn_light.SetActive(true);
-                spawn_light.GetComponent<Light>().intensity = 12f;
+                spawnLight.SetActive(true);
+                spawnLight.GetComponent<Light>().intensity = 12f;
 
-                spawn_shadow.SetActive(true);
-                spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, 1);
+                spawnShadow.SetActive(true);
+                spawnShadow.GetComponent<SpriteRenderer>().color = new Vector4(originalColor.x, originalColor.y, originalColor.z, 1);
 
                 fade = 1;
                 intensity = 12;
             }
         }
 
-        if (spawn_lighting && !spawn_blocked)
+        if (spawnLighting && !spawnBlocked)
         {
             fade -= 0.01f;
             intensity -= 0.12f;
 
             if (fade <= 0)
             {
-                spawn_lighting = false;
+                spawnLighting = false;
 
-                spawn_light.GetComponent<Light>().intensity = 0;
-                spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, 0);
+                spawnLight.GetComponent<Light>().intensity = 0;
+                spawnShadow.GetComponent<SpriteRenderer>().color = new Vector4(originalColor.x, originalColor.y, originalColor.z, 0);
             }
             else
             {
-                spawn_light.GetComponent<Light>().intensity = intensity;
-                spawn_shadow.GetComponent<SpriteRenderer>().color = new Vector4(original_color.x, original_color.y, original_color.z, fade);
+                spawnLight.GetComponent<Light>().intensity = intensity;
+                spawnShadow.GetComponent<SpriteRenderer>().color = new Vector4(originalColor.x, originalColor.y, originalColor.z, fade);
             }
 
 
