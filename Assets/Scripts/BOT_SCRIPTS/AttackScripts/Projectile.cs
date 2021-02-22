@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviourPunCallbacks
 {
 
     public int projectile_speed;
@@ -83,6 +83,7 @@ public class Projectile : MonoBehaviour
     {
         if (enemy_check != PhotonNetwork.IsMasterClient)
         {
+            Debug.Log("[Projectile Script] Projectile non-network destroyed : " + photonView.IsMine);
             PhotonNetwork.Destroy(gameObject);
         }
     }

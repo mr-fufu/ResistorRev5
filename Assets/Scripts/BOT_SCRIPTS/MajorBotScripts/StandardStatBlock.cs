@@ -43,7 +43,7 @@ public class StandardStatBlock : MonoBehaviour {
     public int FUEL{ get; private set; }
     public int POWER{ get => _power; private set => _power = Math.Max(1, value); }
     public int COST{ get; private set; }
-    public bool ENEMY{ get; private set; }
+    public bool ENEMY{ get; set; }
     
     [PunRPC]
     public void SyncStats(int newPlate, int newLogic, int newRange, int newArmor, 
@@ -63,12 +63,6 @@ public class StandardStatBlock : MonoBehaviour {
         {
             plating.InitializePlating(PLATE, ARMOR);
         }
-    }
-    
-    [PunRPC]
-    public void SyncIsEnemy(bool isEnemy)
-    {
-        ENEMY = isEnemy;
     }
 
     public bool spawned;

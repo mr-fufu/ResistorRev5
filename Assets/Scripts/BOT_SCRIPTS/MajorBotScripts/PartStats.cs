@@ -39,6 +39,7 @@ public class PartStats : MonoBehaviour
     public int POWER;
     public int FRAME;
     public int COST;
+    public bool ENEMY;
 
     // A pseudo-stat, the melee_component simply transmits down to tell the bot whether
     // a melee part is currently attached (usually an arm). The bool causes the LEG part's
@@ -70,7 +71,19 @@ public class PartStats : MonoBehaviour
         var colorVec = new Vector4(r,b,g,a);
         GetComponent<SpriteRenderer>().color = colorVec;
     }
-    
+
+    [PunRPC]
+    public void SyncIsEnemy(bool isEnemy)
+    {
+        ENEMY = isEnemy;
+
+        var statBlock = GetComponent<StandardStatBlock>();
+        if (statBlock != null)
+        {
+            statBlock.ENEMY = ENEMY;
+        }
+    }
+
     // Valid part Types include
     // LEG 
     // HEAD

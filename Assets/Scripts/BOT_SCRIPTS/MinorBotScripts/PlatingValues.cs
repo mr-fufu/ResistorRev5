@@ -4,8 +4,8 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlatingValues : MonoBehaviour {
-
+public class PlatingValues : MonoBehaviourPunCallbacks
+{
     public Slider bar_value;
     public Plating plating_value;
 
@@ -22,6 +22,7 @@ public class PlatingValues : MonoBehaviour {
         }
         else
         {
+            Debug.Log("[PlatingValues Script] Plating Bar non-network destroyed : " + photonView.IsMine);
             Destroy(gameObject);
         }
     }

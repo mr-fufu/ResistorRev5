@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class DestroyAfterTime : MonoBehaviour 
+public class DestroyAfterTime : MonoBehaviourPunCallbacks
 {
     public float LifeTime;
     public GameObject player;
@@ -32,15 +32,17 @@ public class DestroyAfterTime : MonoBehaviour
                 var isEnemy = proj == null ? enemy_check : proj.enemy_check;
                 if (isEnemy != PhotonNetwork.IsMasterClient)
                 {
+                    Debug.Log("[DestroyTime Script] Object network destroyed : " + photonView.IsMine);
                     PhotonNetwork.Destroy(gameObject);
                 }
                 else
                 {
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
                 }
             }
             else
             {
+                //Debug.Log("[DestroyTime Script] Object non-network destroyed by " + photonView.IsMine);
                 Destroy(gameObject);
             }
         }
@@ -58,6 +60,7 @@ public class DestroyAfterTime : MonoBehaviour
             var isEnemy = proj == null ? enemy_check : proj.enemy_check;
             if (isEnemy != PhotonNetwork.IsMasterClient)
             {
+                Debug.Log("[DestroyTime Script] Projectile network destroyed : " + photonView.IsMine);
                 PhotonNetwork.Destroy(gameObject);
             }
         }

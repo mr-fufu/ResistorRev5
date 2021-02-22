@@ -64,11 +64,13 @@ public class Plating : MonoBehaviourPunCallbacks
             destruction_trigger = true;
             if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
             {
+                Debug.Log("[Plating Script] Plating Bar non-network destroyed : " + photonView.IsMine);
                 Destroy(platingBar);
                 GetComponent<PartStats>().deconstruct();
             }
             else
             {
+                Debug.Log("[Plating Script] Bot non-network destroyed : " + photonView.IsMine);
                 Destroy(gameObject);
             }
         }
