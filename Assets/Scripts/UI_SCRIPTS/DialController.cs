@@ -27,8 +27,8 @@ public class DialController : MonoBehaviour {
 
         part_viewer[0] = leg_viewer;
         part_viewer[1] = torso_viewer;
-        part_viewer[2] = head_viewer;
-        part_viewer[3] = arm_viewer;
+        part_viewer[2] = arm_viewer;
+        part_viewer[3] = head_viewer;
         part_viewer[4] = weapon_viewer;
         part_viewer[5] = armor_viewer;
 

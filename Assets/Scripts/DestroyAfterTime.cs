@@ -23,18 +23,20 @@ public class DestroyAfterTime : MonoBehaviour
         {
             if (!non_networked_destroy)
             {
-
                 if (impact)
                 {
                     BattleFactorySpawn.instance.SpawnImpact(impact, GetComponent<Projectile>().impact_object, GetComponent<Projectile>().impact_point.position, 
                         GetComponent<Projectile>().impact_point.rotation, false, gameObject, GetComponent<Projectile>().enemy_check);
                 }
-                
                 var proj = GetComponent<Projectile>();
                 var isEnemy = proj == null ? enemy_check : proj.enemy_check;
                 if (isEnemy != PhotonNetwork.IsMasterClient)
                 {
                     PhotonNetwork.Destroy(gameObject);
+                }
+                else
+                {
+                    Destroy(gameObject);
                 }
             }
             else
