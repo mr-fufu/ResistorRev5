@@ -20,8 +20,10 @@ public class WorkshopDrag : MonoBehaviour {
     // Then, when building the part, the PlayerSpawnScript in a NETWORKED scene goes through a library of NETWORKED parts (organized by part_type i.e. ARM, HEAD, TORSO, ETC) and finds the
     // corresponding part by type and name and spawns it in the appropriate position (position as in 1st child of 4th child of 2nd child in heiarchy etc, basically pinpointing a position on a family tree)
 
-    public float clickCount;
-    public Transform placement;
+    private float clickCount;
+    private Transform placement;
+
+    private AudioSource audioSource;
 
     public int tutorial_count;
     private GameObject[] tutorial;
@@ -51,7 +53,7 @@ public class WorkshopDrag : MonoBehaviour {
     public GameObject tutorial7;
     public GameObject tutorial8;
 
-    public bool tutorial_complete;
+    public bool tutorialComplete;
 
     public const string dragTag = "DraggableUIPart";
     public const string slotTag = "UIPartSlot";
@@ -70,7 +72,7 @@ public class WorkshopDrag : MonoBehaviour {
     private string originalSortLayer;
     private int originalSortOrder;
 
-    private int part_count;
+    private int partCount;
 
     public GameObject headSlotObject;
     public GameObject torsoSlotObject;
@@ -81,18 +83,19 @@ public class WorkshopDrag : MonoBehaviour {
 
     public GameObject scrollBar;
 
-    private bool initialFadeCompleted;
-    private float alpha = 1;
-    private Color fadeInColor = new Vector4(1, 1, 1, 1);
-    private Color fullTransparent = new Vector4(1, 1, 1, 0);
-
-    private Vector3 temp_position;
+    private Vector3 tempPosition;
+    public Transform returnTransform;
+    public List<Transform> returnChild;
+    public int returnIndex;
 
     // for testing purposes, create bot with these two parts
     [SerializeField] private GameObject L3Object;
     [SerializeField] private GameObject T7Object;
 
     void Start () {
+        returnIndex = 0;
+
+        audioSource = GetComponent<AudioSource>();
 
         scrollBar.SetActive(false);
 
@@ -143,7 +146,16 @@ public class WorkshopDrag : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(1))
         {
-            RemovePart(FindObjectsOnClick(botTag, false).parent.transform);
+            var removeObject = FindObjectsOnClick(botTag, false);
+            if (removeObject != null)
+            {
+                RemovePart(removeObject.parent.transform);
+
+                if (tutorialComplete)
+                {
+                    audioSource.Play();
+                }
+            }
         }
 
         // check for which stage is currently selected by the player. Stages do not need to be
@@ -154,47 +166,47 @@ public class WorkshopDrag : MonoBehaviour {
         if (Input.GetKeyDown("1"))
         {
             selectedStage = stage_1;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
             selected_spawn.selected_box = 1;
         }
         else if (Input.GetKeyDown("2"))
         {
             selectedStage = stage_2;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
             selected_spawn.selected_box = 2;
         }
         else if (Input.GetKeyDown("3"))
         {
             selectedStage = stage_3;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
             selected_spawn.selected_box = 3;
         }
         else if (Input.GetKeyDown("4"))
         {
             selectedStage = stage_4;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
             selected_spawn.selected_box = 4;
         }
 
         if (selected_spawn.selected_box == 1)
         {
             selectedStage = stage_1;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
         }
         else if (selected_spawn.selected_box == 2)
         {
             selectedStage = stage_2;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
         }
         else if (selected_spawn.selected_box == 3)
         {
             selectedStage = stage_3;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
         }
         else if (selected_spawn.selected_box == 4)
         {
             selectedStage = stage_4;
-            fill_child_slots(selectedStage);
+            fillChildSlots(selectedStage);
         }
 
         // before anything else, fade in the fade_in object by decreasing the alpha, setting the alpha component of the fade_in_color
@@ -215,7 +227,7 @@ public class WorkshopDrag : MonoBehaviour {
         {
             // if the tutorial has not been completed then lmb will increase the tutorial count (and thus move to the next
             // slide) Once the tutorial is complete (tutorial_count == 8), tutorial complete = true
-            if (!tutorial_complete)
+            if (!tutorialComplete)
             {
                 tutorial_count++;
 
@@ -233,7 +245,7 @@ public class WorkshopDrag : MonoBehaviour {
 
                 if (tutorial_count == 8)
                 {
-                    tutorial_complete = true;
+                    tutorialComplete = true;
                 }
             }
             else
@@ -345,6 +357,8 @@ public class WorkshopDrag : MonoBehaviour {
 
                         var slot_component = Instantiate(selectedObject.gameObject, placement.position, placement.rotation);
 
+                        audioSource.Play();
+
                         slot_component.transform.parent = placement.transform;
 
                         parent_count = 0;
@@ -404,7 +418,7 @@ public class WorkshopDrag : MonoBehaviour {
                         slot_component.GetComponent<PartStats>().attached = true;
                         slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
 
-                        fill_child_slots(selectedStage);
+                        fillChildSlots(selectedStage);
 
                         // change the new component's tag
 
@@ -538,47 +552,85 @@ public class WorkshopDrag : MonoBehaviour {
 
     public Transform FindStageObjects(string findType)
     {
+        returnChild.Clear();
+
+        returnTransform = null;
         var search = SearchStage(findType, selectedStage.transform.GetChild(0));
 
         if (search != null)
         {
-            return search;
+            if (search.Count > 1)
+            {
+                if (returnIndex < search.Count)
+                {
+                    returnTransform = search[returnIndex];
+                }
+                else
+                {
+                    returnTransform = search[0];
+                    returnIndex = 0;
+                }
+
+                returnIndex++;
+            }
+            else
+            {
+                returnTransform = search[0];
+            }
         }
 
-        return null;
+        return returnTransform;
     }
 
-    public Transform SearchStage(string findType, Transform searchObject)
+    public List<Transform> SearchStage(string findType, Transform searchObject)
     {
         var partStats = searchObject.GetComponent<PartStats>();
         if (partStats != null)
         {
             if (partStats.slot_component && partStats.slotType == findType)
             {
-                return searchObject.transform;
-            }
-            else if (searchObject.transform.childCount > 0)
-            {
-                if (searchObject.transform.GetChild(0).childCount > 0)
+                Debug.Log("found " + searchObject);
+
+                if (!returnChild.Contains(searchObject))
                 {
-                    for (int i = 0; i < searchObject.transform.GetChild(0).childCount; i++)
+                    returnChild.Add(searchObject);
+                }
+            }
+            else if (searchObject.childCount > 0)
+            {
+                if (searchObject.GetChild(0).childCount > 0)
+                {
+                    Debug.Log("searching through " + searchObject.GetChild(0));
+
+                    for (int i = 0; i < searchObject.GetChild(0).childCount; i++)
                     {
-                        return SearchStage(findType, searchObject.transform.GetChild(0).GetChild(i));
+                        List<Transform> searchChild = SearchStage(findType, searchObject.GetChild(0).GetChild(i));
+
+                        if (searchChild != null)
+                        {
+                            for (int j = 0; j < searchChild.Count; j++)
+                            {
+                                if (!returnChild.Contains(searchChild[j]))
+                                {
+                                    returnChild.AddRange(searchChild);
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
 
-        return null;
+        return returnChild;
     }
 
     public void remove_children(GameObject remove_object)
     {
-        part_count = remove_object.transform.childCount;
+        partCount = remove_object.transform.childCount;
 
-        if (part_count != 0)
+        if (partCount != 0)
         {
-            for (int var = 0; var < (part_count); var++)
+            for (int var = 0; var < (partCount); var++)
             {
                 if (remove_object.transform.GetChild(var).GetComponent<PartStats>() != null)
                 {
@@ -596,7 +648,7 @@ public class WorkshopDrag : MonoBehaviour {
 
                                     selectedStage.GetComponent<SpawnList>().RemoveIndex(remove_object.transform.GetChild(var).GetChild(0).GetComponent<PartStats>().list_index);
 
-                                    part_count = remove_object.transform.childCount;
+                                    partCount = remove_object.transform.childCount;
                                 }
                                 else
                                 {
@@ -612,13 +664,13 @@ public class WorkshopDrag : MonoBehaviour {
         }
     }
 
-    public void fill_child_slots(GameObject part_to_fill)
+    public void fillChildSlots(GameObject part_to_fill)
     {
-        part_count = part_to_fill.transform.childCount;
+        partCount = part_to_fill.transform.childCount;
 
-        if (part_count != 0)
+        if (partCount != 0)
         {
-            for (int var = 0; var < (part_count); var++)
+            for (int var = 0; var < (partCount); var++)
             {
                 if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>() != null)
                 {
@@ -628,8 +680,8 @@ public class WorkshopDrag : MonoBehaviour {
                         {
                             if (part_to_fill.transform.GetChild(var).GetChild(0).gameObject.transform.childCount != 0)
                             {
-                                fill_child_slots(part_to_fill.transform.GetChild(var).GetChild(0).gameObject);
-                                part_count = part_to_fill.transform.childCount;
+                                fillChildSlots(part_to_fill.transform.GetChild(var).GetChild(0).gameObject);
+                                partCount = part_to_fill.transform.childCount;
                             }
                         }
                         else
@@ -637,62 +689,62 @@ public class WorkshopDrag : MonoBehaviour {
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "LEG")
                             {
                                 var leg_slot = Instantiate(legSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
-                                temp_position = part_to_fill.transform.GetChild(var).position;
-                                temp_position.y += 25;
-                                temp_position.z -= 100;
-                                leg_slot.transform.position = temp_position;
+                                tempPosition = part_to_fill.transform.GetChild(var).position;
+                                tempPosition.y += 25;
+                                tempPosition.z -= 100;
+                                leg_slot.transform.position = tempPosition;
                                 leg_slot.transform.localScale = new Vector3(2, 2, 1);
                                 leg_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "ARM")
                             {
                                 var arm_slot = Instantiate(armSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
-                                temp_position = part_to_fill.transform.GetChild(var).position;
-                                temp_position.x -= 33;
-                                temp_position.y += 17f;
-                                temp_position.z -= 50;
-                                arm_slot.transform.position = temp_position;
+                                tempPosition = part_to_fill.transform.GetChild(var).position;
+                                tempPosition.x -= 33;
+                                tempPosition.y += 17f;
+                                tempPosition.z -= 50;
+                                arm_slot.transform.position = tempPosition;
                                 arm_slot.transform.localScale = new Vector3(1, 1, 1);
                                 arm_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "TORSO")
                             {
                                 var torso_slot = Instantiate(torsoSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
-                                temp_position = part_to_fill.transform.GetChild(var).position;
-                                temp_position.y += 12;
-                                temp_position.z -= 100;
-                                torso_slot.transform.position = temp_position;
-                                torso_slot.transform.localScale = new Vector3(1, 1, 1);
+                                tempPosition = part_to_fill.transform.GetChild(var).position;
+                                tempPosition.y += 20;
+                                tempPosition.z -= 100;
+                                torso_slot.transform.position = tempPosition;
+                                torso_slot.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                                 torso_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "HEAD")
                             {
                                 var head_slot = Instantiate(headSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
-                                temp_position = part_to_fill.transform.GetChild(var).position;
-                                temp_position.y += 14;
-                                temp_position.z -= 100;
-                                head_slot.transform.position = temp_position;
-                                head_slot.transform.localScale = new Vector3(1, 1, 1);
+                                tempPosition = part_to_fill.transform.GetChild(var).position;
+                                tempPosition.y += 18;
+                                tempPosition.z -= 100;
+                                head_slot.transform.position = tempPosition;
+                                head_slot.transform.localScale = new Vector3(1.3f, 1.3f, 1);
                                 head_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "ARMOR")
                             {
                                 var armor_slot = Instantiate(armorSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
-                                temp_position = part_to_fill.transform.GetChild(var).position;
-                                temp_position.x += 14;
-                                temp_position.z -= 100;
-                                armor_slot.transform.position = temp_position;
-                                armor_slot.transform.localScale = new Vector3(1, 1, 1);
+                                tempPosition = part_to_fill.transform.GetChild(var).position;
+                                tempPosition.x += 18;
+                                tempPosition.z -= 100;
+                                armor_slot.transform.position = tempPosition;
+                                armor_slot.transform.localScale = new Vector3(1.3f, 1.3f, 1);
                                 armor_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
                             if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "TOPLARGE")
                             {
                                 var top_slot = Instantiate(topSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
-                                temp_position = part_to_fill.transform.GetChild(var).position;
-                                temp_position.y += 15;
-                                temp_position.z -= 100;
-                                top_slot.transform.position = temp_position;
-                                top_slot.transform.localScale = new Vector3(1, 1, 1);
+                                tempPosition = part_to_fill.transform.GetChild(var).position;
+                                tempPosition.y += 15;
+                                tempPosition.z -= 100;
+                                top_slot.transform.position = tempPosition;
+                                top_slot.transform.localScale = new Vector3(1.3f, 1.3f, 1);
                                 top_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
                         }

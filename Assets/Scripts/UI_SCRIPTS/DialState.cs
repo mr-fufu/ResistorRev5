@@ -30,7 +30,7 @@ public class DialState : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        if (tutorial.tutorial_complete)
+        if (tutorial.tutorialComplete)
         {
             transform.parent.gameObject.GetComponent<DialController>().dial_state = dial_no;
             transform.parent.gameObject.GetComponent<DialController>().ChangeViewer();

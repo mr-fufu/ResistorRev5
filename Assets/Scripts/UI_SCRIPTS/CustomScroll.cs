@@ -29,7 +29,7 @@ public class CustomScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (workshop.tutorial_complete)
+        if (workshop.tutorialComplete)
         {
             scroll.value -= Input.mouseScrollDelta.y * (0.2f / scroll_length);
             scroll_position = (scroll.value * scroll_dist);

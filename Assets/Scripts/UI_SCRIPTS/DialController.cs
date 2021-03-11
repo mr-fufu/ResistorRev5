@@ -63,7 +63,7 @@ public class DialController : MonoBehaviour {
 
     public void IndexIncrease()
     {
-        if (camera_object.GetComponent<WorkshopDrag>().tutorial_complete)
+        if (camera_object.GetComponent<WorkshopDrag>().tutorialComplete)
         {
             dial_state++;
 

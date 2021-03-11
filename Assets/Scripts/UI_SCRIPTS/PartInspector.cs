@@ -72,7 +72,6 @@ public class PartInspector : MonoBehaviour
     private int COST;
 
     private bool button_mouse_over;
-    private bool credits_showing;
 
     private GameObject selected_stage;
     private int selected_value;
@@ -86,11 +85,8 @@ public class PartInspector : MonoBehaviour
     public float max_LOGIC;
     public float max_COST;
 
-    private GradientColorKey[] color_key;
-
     private bool dragging;
     private GameObject selected_object;
-    private bool show_info;
 
     public string holdover_name;
     public string holdover_description;
@@ -107,7 +103,7 @@ public class PartInspector : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<WorkshopDrag>().tutorial_complete)
+        if (GetComponent<WorkshopDrag>().tutorialComplete)
         {
             selected_value = nixie_select.GetComponent<BarSelectParentLink>().selected_box;
             if (selected_value == 1)

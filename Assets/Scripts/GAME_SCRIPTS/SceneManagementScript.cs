@@ -73,7 +73,7 @@ public class SceneManagementScript : MonoBehaviour
     {
         if (startNixie != null)
         {
-            if (cameraObject.GetComponent<WorkshopDrag>().tutorial_complete)
+            if (cameraObject.GetComponent<WorkshopDrag>().tutorialComplete)
             {
                 if (Stage1.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
                     Stage2.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
