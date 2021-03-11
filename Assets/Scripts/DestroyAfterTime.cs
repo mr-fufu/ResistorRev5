@@ -30,39 +30,32 @@ public class DestroyAfterTime : MonoBehaviourPunCallbacks
                 }
                 var proj = GetComponent<Projectile>();
                 var isEnemy = proj == null ? enemy_check : proj.enemy_check;
-                if (isEnemy != PhotonNetwork.IsMasterClient)
+                if (photonView.IsMine)
                 {
                     Debug.Log("[DestroyTime Script] Object network destroyed : " + photonView.IsMine);
                     PhotonNetwork.Destroy(gameObject);
                 }
-                else
-                {
-                    //Destroy(gameObject);
-                }
             }
             else
             {
-                //Debug.Log("[DestroyTime Script] Object non-network destroyed by " + photonView.IsMine);
-                Destroy(gameObject);
+              Destroy(gameObject);
             }
         }
 	}
 
     public void destroy_trigger()
     {
-        if (non_networked_destroy)
+        if (!non_networked_destroy)
         {
-            Destroy(gameObject);
-        }
-        else
-        {
-            var proj = GetComponent<Projectile>();
-            var isEnemy = proj == null ? enemy_check : proj.enemy_check;
-            if (isEnemy != PhotonNetwork.IsMasterClient)
+            if (photonView.IsMine)
             {
                 Debug.Log("[DestroyTime Script] Projectile network destroyed : " + photonView.IsMine);
                 PhotonNetwork.Destroy(gameObject);
             }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

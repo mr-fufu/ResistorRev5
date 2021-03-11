@@ -61,29 +61,31 @@ public class Projectile : MonoBehaviourPunCallbacks
     {
         if (Target.gameObject.tag == search_tag)
         {
-            Target.gameObject.GetComponent<Plating>().DamagePlating(damage_val);
-
-            above_target = new Vector2(Target.transform.position.x, Target.transform.position.y + 50);
-
-            if (damage_val > Target.GetComponent<Plating>().armor_value)
+            if (photonView.IsMine)
             {
-                damage_int_value = (damage_val - Target.GetComponent<Plating>().armor_value);
-            }
-            if (damage_val <= Target.GetComponent<Plating>().armor_value)
-            {
-                damage_int_value = 1;
-            }
+                Target.gameObject.GetComponent<Plating>().DamagePlating(damage_val);
 
-            BattleFactorySpawn.instance.SpawnDamagePopUp(damage_values, above_target, damage_int_value);
-            BattleFactorySpawn.instance.SpawnImpact(use_impact, impact_object, impact_point.position, impact_point.rotation, piercing, gameObject, enemy_check);
+                above_target = new Vector2(Target.transform.position.x, Target.transform.position.y + 50);
+
+                if (damage_val > Target.GetComponent<Plating>().armor_value)
+                {
+                    damage_int_value = (damage_val - Target.GetComponent<Plating>().armor_value);
+                }
+                else
+                {
+                    damage_int_value = 1;
+                }
+
+                BattleFactorySpawn.instance.SpawnDamagePopUpNetwork(damage_values, above_target, damage_int_value);
+                BattleFactorySpawn.instance.SpawnImpact(use_impact, impact_object, impact_point.position, impact_point.rotation, piercing, gameObject, enemy_check);
+            }
         }
     }
 
     public void destroy_trigger()
     {
-        if (enemy_check != PhotonNetwork.IsMasterClient)
+        if (photonView.IsMine)
         {
-            Debug.Log("[Projectile Script] Projectile non-network destroyed : " + photonView.IsMine);
             PhotonNetwork.Destroy(gameObject);
         }
     }

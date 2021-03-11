@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class AutoMove : MonoBehaviour 
+public class AutoMove : MonoBehaviourPunCallbacks
 {
 
     public Collider2D engaged_target;
@@ -29,7 +30,6 @@ public class AutoMove : MonoBehaviour
 
     Collider2D[] check_colliders = new Collider2D[1];
     ContactFilter2D collider_filter = new ContactFilter2D();
-
 
     // Use this for initialization
     void Start () {

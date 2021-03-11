@@ -105,6 +105,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: ARM
@@ -244,6 +245,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: TOPLARGE
@@ -291,7 +293,6 @@ GameObject:
   - component: {fileID: 2371983128156587431}
   - component: {fileID: 7966261772254102805}
   - component: {fileID: 5651052850505598274}
-  - component: {fileID: -2390974619522857257}
   m_Layer: 15
   m_Name: T15
   m_TagString: DraggableUIPart
@@ -403,6 +404,7 @@ MonoBehaviour:
   POWER: 2
   FRAME: 0
   COST: 140
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -430,23 +432,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -2390974619522857257}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-2390974619522857257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5651052850505598275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0

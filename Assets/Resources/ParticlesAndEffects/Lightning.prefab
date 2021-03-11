@@ -185,6 +185,7 @@ MonoBehaviour:
   lightning_middle1: 0
   lightning_middle2: 0
   lightning_end: 0
+  check_tag: 
   damage_int_value: 0
 --- !u!114 &-571981141473703336
 MonoBehaviour:

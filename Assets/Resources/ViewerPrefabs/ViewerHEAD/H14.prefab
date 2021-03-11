@@ -101,10 +101,11 @@ MonoBehaviour:
   RANGE: 0
   ARMOR: 0
   SPEED: 0
-  FUEL: 1
-  POWER: 1
+  FUEL: 2
+  POWER: 2
   FRAME: 0
   COST: 50
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 

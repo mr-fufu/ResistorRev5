@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class LightningAttack : MonoBehaviour
+public class LightningAttack : MonoBehaviourPunCallbacks
 {
     public bool in_range;
     public GameObject range_detector;
@@ -12,59 +12,49 @@ public class LightningAttack : MonoBehaviour
     public int lightning_damage;
 
     public GameObject lightning_object;
+    private LightningRange range;
 
     public float lightning_length;
 
     public Transform launch_point;
     private float reloadtime = 100;
-    private bool enemy_check;
+    public bool enemy_check;
     public int power;
+    public int logic;
 
-    public bool spawned;
-    public bool attached;
-
-    private StandardStatBlock _standardStatBlock;
-
+    [PunRPC]
+    public void SyncLightningAttack(bool isEnemy)
+    {
+        enemy_check = isEnemy;
+    }
 
     void Start()
     {
-        attached = gameObject.GetComponent<PartStats>().attached;
-        _standardStatBlock = transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>();;
+        if (photonView.IsMine)
+        {
+            range = range_detector.GetComponent<LightningRange>();
+
+            var parentStatBlock = transform.parent.transform.parent.GetComponent<StandardStatBlock>();
+            logic = parentStatBlock.LOGIC;
+            power = parentStatBlock.POWER;
+            lightning_damage = power * 4;
+        }
     }
 
     void Update()
     {
-
-        if (attached)
+        if (photonView.IsMine)
         {
-            spawned = _standardStatBlock.spawned;
-        }
-
-        if (spawned)
-        {
-            enemy_check = _standardStatBlock.ENEMY;
-            power = _standardStatBlock.POWER;
-            lightning_damage = power * 4;
-
             reloadtime -= attack_speed * Time.deltaTime * 50 * 0.65f;
+
             if (reloadtime <= 0)
             {
-
-                if (_standardStatBlock.LOGIC > 0)
-                {
-                    in_range = range_detector.GetComponent<LightningRange>().scanned;
-                }
-                else
-                {
-                    in_range = true;
-                }
+                in_range = logic > 0 ? range.scanned : true;
 
                 if (in_range)
                 {
-                    if (enemy_check != PhotonNetwork.IsMasterClient)
-                    {
-                        BattleFactorySpawn.instance.SpawnLightning(lightning_object, launch_point.gameObject, lightning_damage, enemy_check, power);
-                    }
+                    BattleFactorySpawn.instance.SpawnLightning(lightning_object, launch_point.gameObject, lightning_damage, enemy_check, power);
+
                     reloadtime = 100;
                 }
             }

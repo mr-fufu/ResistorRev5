@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7187008503300923570}
   - component: {fileID: 8560313324631819901}
   - component: {fileID: 1887923486438529697}
-  - component: {fileID: -6815617586598554567}
   m_Layer: 15
   m_Name: MR11
   m_TagString: DraggableUIPart
@@ -101,12 +100,13 @@ MonoBehaviour:
   PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 18
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 100
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -134,23 +134,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -6815617586598554567}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-6815617586598554567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7187008503300923567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0

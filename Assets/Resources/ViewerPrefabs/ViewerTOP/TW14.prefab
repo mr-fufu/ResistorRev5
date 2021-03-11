@@ -102,9 +102,10 @@ MonoBehaviour:
   ARMOR: 0
   SPEED: 0
   FUEL: 0
-  POWER: 0
+  POWER: 1
   FRAME: 0
   COST: 90
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 

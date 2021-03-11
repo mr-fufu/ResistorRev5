@@ -86,8 +86,44 @@ TextureImporter:
   - first:
       213: 21300054
     second: MELEE_11
+  - first:
+      213: 2946966332249498665
+    second: MELEE_0
+  - first:
+      213: -1180499870468341574
+    second: MELEE_1
+  - first:
+      213: 6961715667156417526
+    second: MELEE_2
+  - first:
+      213: -6886805853641212660
+    second: MELEE_3
+  - first:
+      213: 20827606181702358
+    second: MELEE_4
+  - first:
+      213: 460255582513284452
+    second: MELEE_5
+  - first:
+      213: 3060384785366796295
+    second: MELEE_6
+  - first:
+      213: 7434843738580884573
+    second: MELEE_7
+  - first:
+      213: 7266796702548230291
+    second: MELEE_8
+  - first:
+      213: 6813541373524226
+    second: MELEE_9
+  - first:
+      213: 438917780569311205
+    second: MELEE_10
+  - first:
+      213: 2096146136552851515
+    second: MELEE_11
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -107,6 +143,7 @@ TextureImporter:
   isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -141,6 +178,8 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -173,19 +212,19 @@ TextureImporter:
       name: MELEE_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 52
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 0
+        y: 100
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30e88a3f6bdd7d54ca1342f485d6ceec
-      internalID: 21300032
+      spriteID: 92464c6f34ab5e820800000000000000
+      internalID: 2946966332249498665
       vertices: []
       indices: 
       edges: []
@@ -194,19 +233,19 @@ TextureImporter:
       name: MELEE_1
       rect:
         serializedVersion: 2
-        x: 26
-        y: 52
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 50
+        y: 100
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dfcc5f391be11849918a2bca1052e22
-      internalID: 21300034
+      spriteID: ab007535f950e9fe0800000000000000
+      internalID: -1180499870468341574
       vertices: []
       indices: 
       edges: []
@@ -215,19 +254,19 @@ TextureImporter:
       name: MELEE_2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 52
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 100
+        y: 100
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 950c872b4e56d2e4186fb7bcecda39e8
-      internalID: 21300036
+      spriteID: 6fb3128b38bfc9060800000000000000
+      internalID: 6961715667156417526
       vertices: []
       indices: 
       edges: []
@@ -236,19 +275,19 @@ TextureImporter:
       name: MELEE_3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 35
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 150
+        y: 100
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d69a9808a1d2054e85d4158bb0fcf7a
-      internalID: 21300038
+      spriteID: c0d72a060962d60a0800000000000000
+      internalID: -6886805853641212660
       vertices: []
       indices: 
       edges: []
@@ -257,19 +296,19 @@ TextureImporter:
       name: MELEE_4
       rect:
         serializedVersion: 2
-        x: 26
-        y: 35
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 0
+        y: 50
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d8d66785b58fa541b9d1809cec1006b
-      internalID: 21300040
+      spriteID: 6da6bf3f89ef94000800000000000000
+      internalID: 20827606181702358
       vertices: []
       indices: 
       edges: []
@@ -278,19 +317,19 @@ TextureImporter:
       name: MELEE_5
       rect:
         serializedVersion: 2
-        x: 51
-        y: 35
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 50
+        y: 50
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54fa8d3405d163940999dff17ccd48e8
-      internalID: 21300042
+      spriteID: 46548958308236600800000000000000
+      internalID: 460255582513284452
       vertices: []
       indices: 
       edges: []
@@ -299,19 +338,19 @@ TextureImporter:
       name: MELEE_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 18
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 100
+        y: 50
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63977dcdb1d365142b0c1e1cb54173cc
-      internalID: 21300044
+      spriteID: 7084cc76fbba87a20800000000000000
+      internalID: 3060384785366796295
       vertices: []
       indices: 
       edges: []
@@ -320,19 +359,19 @@ TextureImporter:
       name: MELEE_7
       rect:
         serializedVersion: 2
-        x: 26
-        y: 18
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 150
+        y: 50
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46f72c6e2f7078f4db4d053e97d09bf4
-      internalID: 21300046
+      spriteID: d5c96ae1dfedd2760800000000000000
+      internalID: 7434843738580884573
       vertices: []
       indices: 
       edges: []
@@ -341,19 +380,19 @@ TextureImporter:
       name: MELEE_8
       rect:
         serializedVersion: 2
-        x: 51
-        y: 18
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 0
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1fad082c61ed424e85ccca416bb276a
-      internalID: 21300048
+      spriteID: 3900e5e8919d8d460800000000000000
+      internalID: 7266796702548230291
       vertices: []
       indices: 
       edges: []
@@ -362,19 +401,19 @@ TextureImporter:
       name: MELEE_9
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 50
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66057d7633297d4498379ef15d22a9bf
-      internalID: 21300050
+      spriteID: 2093b3931e4381000800000000000000
+      internalID: 6813541373524226
       vertices: []
       indices: 
       edges: []
@@ -383,19 +422,19 @@ TextureImporter:
       name: MELEE_10
       rect:
         serializedVersion: 2
-        x: 26
-        y: 1
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 100
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5ce675835b7cdc45a14cc70c38259ff
-      internalID: 21300052
+      spriteID: 5e7cf6c5569571600800000000000000
+      internalID: 438917780569311205
       vertices: []
       indices: 
       edges: []
@@ -404,19 +443,19 @@ TextureImporter:
       name: MELEE_11
       rect:
         serializedVersion: 2
-        x: 51
-        y: 1
-        width: 24
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0.625}
+        x: 150
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c14ea53af0165494483d7120929f1949
-      internalID: 21300054
+      spriteID: b384a8a2ec1071d10800000000000000
+      internalID: 2096146136552851515
       vertices: []
       indices: 
       edges: []

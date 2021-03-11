@@ -8139,9 +8139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbe54fdb36c45a4899b5eee335dec15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera_object: {fileID: 0}
-  stage_group: []
-  start_nixie: {fileID: 0}
+  cameraObject: {fileID: 0}
+  stageGroup: []
+  startNixie: {fileID: 0}
   Stage1: {fileID: 0}
   Stage2: {fileID: 0}
   Stage3: {fileID: 0}
@@ -8157,10 +8157,11 @@ MonoBehaviour:
   hidden_stage_3: {fileID: 0}
   hidden_stage_4: {fileID: 0}
   stage_changer: {fileID: 0}
-  start_true: 0
-  loading_screen: {fileID: 1696924137}
+  startTrue: 0
+  loadingScreen: {fileID: 0}
   loading: {fileID: 1696924138}
-  EndCard: {fileID: 676388684}
+  endCard: {fileID: 676388684}
+  waitForPlayer: {fileID: 0}
 --- !u!4 &1147159871
 Transform:
   m_ObjectHideFlags: 0
@@ -11472,19 +11473,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b340a21cd0986249aa732dfc7d00efd, type: 3}
---- !u!1 &1696924137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6876615644317337437, guid: 2b340a21cd0986249aa732dfc7d00efd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1696924136}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1696924138 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 287645823598621243, guid: 2b340a21cd0986249aa732dfc7d00efd,
     type: 3}
   m_PrefabInstance: {fileID: 1696924136}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696924137}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ce96e3692e20fd4db2248c1bedffae0, type: 3}

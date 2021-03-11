@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 170092675385542687}
   - component: {fileID: 6862264504899724771}
   - component: {fileID: 30591334854643344}
-  - component: {fileID: -614852683143663457}
+  - component: {fileID: 1524459275392897168}
   m_Layer: 15
   m_Name: L4
   m_TagString: DraggableUIPart
@@ -209,12 +209,13 @@ MonoBehaviour:
   PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 20
   SPEED: 1
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 80
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -242,11 +243,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -614852683143663457}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-614852683143663457
+--- !u!114 &1524459275392897168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,13 +256,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3032279873621747278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 11500000, guid: 0614a2afb8d896944932b73177aaaee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  fuel_used: 0
+  fuel_remaining: 0
+  fuel_instantiated: 0
+  fuel_bar: {fileID: 1675964601256096, guid: 69ef6e358812af4459b8df99ecc05830, type: 3}
 --- !u!1 &3032279873938856912
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +394,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: TORSO

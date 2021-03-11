@@ -100,12 +100,13 @@ MonoBehaviour:
   PLATE: 30
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 24
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 100
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 

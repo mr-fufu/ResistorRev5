@@ -7,11 +7,11 @@ using Photon.Pun;
 
 public class SceneManagementScript : MonoBehaviour
 {
-    public GameObject camera_object;
+    public GameObject cameraObject;
 
-    public GameObject[] stage_group;
+    public GameObject[] stageGroup;
 
-    public GameObject start_nixie;
+    public GameObject startNixie;
 
     public GameObject Stage1;
     public GameObject Stage2;
@@ -34,26 +34,31 @@ public class SceneManagementScript : MonoBehaviour
 
     public GameObject stage_changer;
 
-    public bool start_true;
+    public bool startTrue;
 
     //Only for Networked Loading
-    public GameObject loading_screen;
+    public GameObject loadingScreen;
     public LoadingFade loading;
 
-    private bool bot_adjust;
+    private bool botAdjust;
 
-    public GameObject EndCard;
+    public GameObject endCard;
+    public GameObject waitForPlayer;
 
     private void Start()
     {
-        if (start_nixie != null)
+        if (waitForPlayer != null)
         {
-            stage_group = new GameObject[4];
+            waitForPlayer.SetActive(false);
+        }
+        if (startNixie != null)
+        {
+            stageGroup = new GameObject[4];
 
-            stage_group[0] = Stage1.transform.GetChild(0).gameObject;
-            stage_group[1] = Stage2.transform.GetChild(0).gameObject;
-            stage_group[2] = Stage3.transform.GetChild(0).gameObject;
-            stage_group[3] = Stage4.transform.GetChild(0).gameObject;
+            stageGroup[0] = Stage1.transform.GetChild(0).gameObject;
+            stageGroup[1] = Stage2.transform.GetChild(0).gameObject;
+            stageGroup[2] = Stage3.transform.GetChild(0).gameObject;
+            stageGroup[3] = Stage4.transform.GetChild(0).gameObject;
 
             flash_group = new GameObject[4];
 
@@ -66,29 +71,29 @@ public class SceneManagementScript : MonoBehaviour
 
     void Update()
     {
-        if (start_nixie != null)
+        if (startNixie != null)
         {
-            if (camera_object.GetComponent<WorkshopDrag>().tutorial_complete)
+            if (cameraObject.GetComponent<WorkshopDrag>().tutorial_complete)
             {
                 if (Stage1.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
                     Stage2.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
                     Stage3.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check &&
                     Stage4.transform.GetChild(0).GetComponent<CheckCompletion>().complete_check)
                 {
-                    start_true = true;
+                    startTrue = true;
                 }
                 else
                 {
-                    start_true = false;
+                    startTrue = false;
                 }
             }
             else
             {
-                start_nixie.SetActive(true);
+                startNixie.SetActive(true);
             }
         }
 
-        if (bot_adjust)
+        if (botAdjust)
         {
             stage_changer.GetComponent<StageSelector>().change_scene = true;
 
@@ -153,22 +158,23 @@ public class SceneManagementScript : MonoBehaviour
     {
         for (int nixie_count = 0; nixie_count < 4; nixie_count++)
         {
-            if (stage_group[nixie_count].GetComponent<CheckCompletion>().complete_check != true)
+            if (stageGroup[nixie_count].GetComponent<CheckCompletion>().complete_check != true)
             {
                 flash_group[nixie_count].GetComponent<FlashScript>().flash = true;
             }
         }
 
-        if (start_true)
+        if (startTrue)
         {
-            bot_adjust = true;
+            waitForPlayer.SetActive(true);
+            botAdjust = true;
             LoadWithScreen("LobbyScene");
         }
     }
 
     public void SkipToBattle()
     {
-        bot_adjust = true;
+        botAdjust = true;
 
         //LoadWithScreen("LobbyScene");
     }
@@ -199,7 +205,7 @@ public class SceneManagementScript : MonoBehaviour
             CarryOver.GetComponent<StringCarryover>().carry_over_text = "YOU HAVE BEEN DEFEATED!";
         }
 
-        EndCard.SetActive(true);
+        endCard.SetActive(true);
 
         //DontDestroyOnLoad(CarryOver);
         //LoadWithScreen("EndScreen");
@@ -222,8 +228,8 @@ public class SceneManagementScript : MonoBehaviour
 
     private IEnumerator LoadWithoutScreen(string load_destination)
     {
-        loading_screen.SetActive(true);
-        loading = loading_screen.GetComponent<LoadingFade>();
+        loadingScreen.SetActive(true);
+        loading = loadingScreen.GetComponent<LoadingFade>();
         loading.FadeInLoadScreen();
 
         yield return new WaitUntil(() => loading.fadeInComplete == true);
@@ -232,7 +238,7 @@ public class SceneManagementScript : MonoBehaviour
 
     private IEnumerator LoadWithScreen(string load_destination)
     {
-        loading_screen.SetActive(true);
+        loadingScreen.SetActive(true);
         loading.FadeInLoadScreen();
 
         yield return new WaitUntil(() => loading.fadeInComplete == true);

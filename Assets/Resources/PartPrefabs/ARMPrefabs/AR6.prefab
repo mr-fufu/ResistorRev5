@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4458399068523716480}
   - component: {fileID: 8739836105263319164}
   - component: {fileID: 4738334024710242929}
-  - component: {fileID: -5496812431600807900}
   m_Layer: 15
   m_Name: AR6
   m_TagString: DraggableUIPart
@@ -103,12 +102,13 @@ MonoBehaviour:
   PLATE: 30
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 24
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 100
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -185,26 +185,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -5496812431600807900}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-5496812431600807900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345909576610374526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!1 &6391375847342103997
 GameObject:
   m_ObjectHideFlags: 0

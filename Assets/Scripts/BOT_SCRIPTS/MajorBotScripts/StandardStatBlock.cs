@@ -5,7 +5,8 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StandardStatBlock : MonoBehaviour {
+public class StandardStatBlock : MonoBehaviourPunCallbacks
+{
 
     // The Standard Stat Block (SSB) script is used as a container for
     // the *overall* stats of the bot. Stats of SSB are only ever transmitted (changed) down (from child to parent).
@@ -32,6 +33,9 @@ public class StandardStatBlock : MonoBehaviour {
 
     public int melee_components = 0;
 
+    private AutoMove autoMove;
+    private bool useStat;
+    private StandardStatBlock statBlock;
 
     // for overloaded setters
     private int _plate, _range, _speed, _power;
@@ -65,6 +69,12 @@ public class StandardStatBlock : MonoBehaviour {
         }
     }
 
+    [PunRPC]
+    public void SyncEngage(bool engaged)
+    {
+        engaged_check = engaged;
+    }
+
     public bool spawned;
     public bool engaged_check;
 
@@ -75,8 +85,8 @@ public class StandardStatBlock : MonoBehaviour {
     private GameObject quadruple_parent_object;
 
     // Use this for initialization
-    void Start () {
-
+    void Start()
+    {
         spawned = true;
         //fuel_remaining = 100;
 
@@ -90,69 +100,92 @@ public class StandardStatBlock : MonoBehaviour {
         // both TORSO and ARMOR components attached to LEG parts and quadruple used only if ARMOR is attached to 
         // a TORSO part.
 
-        if (attached)
+        if (!workshop_show_piece)
         {
-            if (part_type == "TORSO" || part_type == "ARMOR")
+            if (photonView.IsMine)
             {
-                double_parent_object = gameObject.transform.parent.transform.parent.gameObject;
-            }
-            if (part_type == "ARMOR")
-            {
-                if (double_parent_object.GetComponent<PartStats>().part_type == "TORSO")
+                if (part_type == "TORSO" || part_type == "ARMOR")
                 {
+                    double_parent_object = gameObject.transform.parent.transform.parent.gameObject;
+                }
+                if (part_type == "ARMOR")
+                {
+                    if (double_parent_object.GetComponent<PartStats>().part_type == "TORSO")
                     {
-                        quadruple_parent_object = double_parent_object.transform.parent.transform.parent.gameObject;
+                        {
+                            quadruple_parent_object = double_parent_object.transform.parent.transform.parent.gameObject;
+                        }
                     }
                 }
             }
         }
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
 
+        CheckAutoMove();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         // if the part is a leg, check for spawned and engaged_check from the Automove Script.
 
         if (workshop_show_piece)
         {
+            attached = false;
             UpdateStats();
         }
 
         if (PLATE <= 1 && !workshop_show_piece)
         {
+            attached = true;
             UpdateStats();
         }
-        
-        if (part_type == "LEG")
+
+        if (!workshop_show_piece)
         {
-            if (!workshop_show_piece)
+            if (photonView.IsMine)
             {
-                engaged_check = gameObject.GetComponent<AutoMove>().engaged_check;
+                if (autoMove == null && statBlock == null)
+                {
+                    CheckAutoMove();
+                }
+                else
+                {
+                    if (useStat)
+                    {
+                        engaged_check = statBlock.engaged_check;
+                    }
+                    else
+                    {
+                        engaged_check = autoMove.engaged_check;
+                    }
+                }
+
+                GetComponent<PhotonView>().RPC("SyncEngage", RpcTarget.All, engaged_check);
             }
-
-            // once spawned, set the minimum values for stats that cannot be 0
-            // i.e. bot cannot have zero health or speed (though this should be impossible
-            // as all LEG parts have a minimum of 10 plate and 1 speed. Range should be
-            // at least 1 as all ranged weapons currently have a range of minimum 1 (though
-            // this may be subject to change so additional weapons do not increase the range of
-            // a bot. Power is set to minimum 1 since otherwise lightning weapons will not
-            // function correctly. Similar to range as it may be changed in the future, though
-            // additional tesla weapons increasing lightning range and damage may be more
-            // acceptable aesthetically
-
-            // ^ moved to private setters
         }
+
+        // once spawned, set the minimum values for stats that cannot be 0
+        // i.e. bot cannot have zero health or speed (though this should be impossible
+        // as all LEG parts have a minimum of 10 plate and 1 speed. Range should be
+        // at least 1 as all ranged weapons currently have a range of minimum 1 (though
+        // this may be subject to change so additional weapons do not increase the range of
+        // a bot. Power is set to minimum 1 since otherwise lightning weapons will not
+        // function correctly. Similar to range as it may be changed in the future, though
+        // additional tesla weapons increasing lightning range and damage may be more
+        // acceptable aesthetically
+
+        // ^ moved to private setters
+
     }
 
     public void UpdateStats()
-    { 
+    {
         // Pull Stats from double or quadruple objects according to part type (specified in initialization start() of
         // this script as well. Also, for battle scene spawned bots, pull the spawned and engaged bools in adition to stats
 
         if (ENEMY == PhotonNetwork.IsMasterClient)
             return;
-        
+
         if (attached)
         {
             if (part_type == "TORSO")
@@ -169,8 +202,6 @@ public class StandardStatBlock : MonoBehaviour {
 
                 if (!workshop_show_piece)
                 {
-                    engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
-                    
                     GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.All,
                         PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                 }
@@ -191,8 +222,6 @@ public class StandardStatBlock : MonoBehaviour {
 
                     if (!workshop_show_piece)
                     {
-                        engaged_check = quadruple_parent_object.GetComponent<AutoMove>().engaged_check;
-                        
                         GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.All,
                             PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                     }
@@ -211,8 +240,6 @@ public class StandardStatBlock : MonoBehaviour {
 
                     if (!workshop_show_piece)
                     {
-                        engaged_check = double_parent_object.GetComponent<AutoMove>().engaged_check;
-                        
                         GetComponent<PhotonView>().RPC("SyncStats", RpcTarget.All,
                             PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                     }
@@ -284,6 +311,39 @@ public class StandardStatBlock : MonoBehaviour {
         else if (part_type == "LEG")
         {
             gameObject.GetComponent<StandardStatBlock>().melee_components += melee_val;
+        }
+    }
+
+    void CheckAutoMove()
+    {
+        if (!workshop_show_piece)
+        {
+            if (photonView.IsMine)
+            {
+                if (part_type == "LEG")
+                {
+                    useStat = false;
+                    autoMove = GetComponent<AutoMove>();
+                }
+                else if (part_type == "TORSO")
+                {
+                    useStat = true;
+                    statBlock = double_parent_object.GetComponent<StandardStatBlock>();
+                }
+                else if (part_type == "ARMOR")
+                {
+                    if (double_parent_object.GetComponent<PartStats>().part_type == "TORSO")
+                    {
+                        useStat = true;
+                        statBlock = quadruple_parent_object.GetComponent<StandardStatBlock>();
+                    }
+                    else if (double_parent_object.GetComponent<PartStats>().part_type == "LEG")
+                    {
+                        useStat = false;
+                        autoMove = double_parent_object.GetComponent<AutoMove>();
+                    }
+                }
+            }
         }
     }
 }

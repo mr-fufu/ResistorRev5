@@ -26,26 +26,18 @@ public class LightningRange : MonoBehaviour
         collider_filter = collider_filter.NoFilter();
 
         double_parent = transform.parent.transform.parent.gameObject;
+
+        enemy = double_parent.GetComponent<LightningAttack>().enemy_check;
+
+        total_range = ((double_parent.GetComponent<LightningAttack>().power + 1) * 26f);
+
+        GetComponent<BoxCollider2D>().size = new Vector2(total_range, 30);
+        GetComponent<BoxCollider2D>().offset = new Vector2(total_range / 2, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (double_parent.GetComponent<PartStats>().attached == true)
-        {
-            spawned = double_parent.transform.parent.transform.parent.GetComponent<StandardStatBlock>().spawned;
-
-            enemy = double_parent.transform.parent.transform.parent.GetComponent<StandardStatBlock>().ENEMY;
-        }
-
-        if (spawned)
-        {
-            total_range = ((double_parent.GetComponent<LightningAttack>().power + 1)* 26f);
-
-            GetComponent<BoxCollider2D>().size = new Vector2(total_range, 30);
-            GetComponent<BoxCollider2D>().offset = new Vector2(total_range / 2, 0);
-        }
-
         check_colliders = new Collider2D[scan_size];
 
         for (int setVar = 0; setVar < scan_size; setVar++)

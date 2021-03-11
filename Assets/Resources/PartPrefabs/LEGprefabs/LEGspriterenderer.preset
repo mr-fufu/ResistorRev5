@@ -41,6 +41,14 @@ Preset:
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_RayTracingMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayTraceProcedural
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_RenderingLayerMask
     value: 4294967295
     objectReference: {fileID: 0}
@@ -182,7 +190,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_WasSpriteAssigned
-    value: 1
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_MaskInteraction
@@ -192,3 +200,4 @@ Preset:
     propertyPath: m_SpriteSortPoint
     value: 1
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

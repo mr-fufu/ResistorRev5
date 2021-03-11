@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 61417591149183388}
   - component: {fileID: 1402435127861952801}
   - component: {fileID: 7090672154732997859}
-  - component: {fileID: 7559488811873334680}
   - component: {fileID: -3212998386952600452}
   - component: {fileID: 432177113764446406}
   m_Layer: 0
@@ -208,22 +207,6 @@ MonoBehaviour:
   impact: 0
   non_networked_destroy: 0
   enemy_check: 0
---- !u!114 &7559488811873334680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656137020809238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0eddecbc0037834199b2589ed6ac14d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preserve_color: 1
-  adjust_layer: 1
-  layer_adjust: 1
-  parent_layer_update: 1
 --- !u!114 &-3212998386952600452
 MonoBehaviour:
   m_ObjectHideFlags: 0

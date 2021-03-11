@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0567fe57a3f1a44eae4403de04f1acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 100
+  LifeTime: 20
   player: {fileID: 0}
   impact: 0
   non_networked_destroy: 0

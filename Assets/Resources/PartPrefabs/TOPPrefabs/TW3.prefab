@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 3390010291300892950}
   - component: {fileID: 6410677392671389451}
   - component: {fileID: 5650739965703001885}
-  - component: {fileID: -8367304816037564567}
   m_Layer: 15
   m_Name: TW3
   m_TagString: DraggableUIPart
@@ -139,6 +138,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 60
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -214,26 +214,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -8367304816037564567}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-8367304816037564567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3582629520864077246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!1001 &4319679211928363621
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class MeleeDamage : MonoBehaviour {
-
+public class MeleeDamage : MonoBehaviourPunCallbacks
+{
+    public string searchTag;
     public bool enemy_check;
-    public bool attached;
     public int damage_val;
+    public int damage_int_value;
 
     public GameObject sparks_object;
     public GameObject damage_values;
     public Transform impact_point;
-    private bool spawned;
     private Vector2 above_target;
 
     public bool root;
@@ -23,66 +24,52 @@ public class MeleeDamage : MonoBehaviour {
     void Start()
     {
         _meleeAttack = transform.parent.GetComponent<MeleeAttack>();
-    }
 
-    void Update() {
-        damage_val = _meleeAttack.damage_val;
+        if (photonView.IsMine)
+        {
+            if (root)
+            {
+                enemy_check = transform.parent.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+                damage_val = transform.parent.GetComponent<MeleeAttack>().damage_val * transform.parent.parent.gameObject.GetComponent<StandardStatBlock>().SPEED;
+            }
+            else if (body || leg)
+            {
+                enemy_check = transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+            }
+            else
+            {
+                enemy_check = transform.parent.parent.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
+            }
 
-        if (root)
-        {
-            attached = GetComponent<PartStats>().attached;
-            enemy_check = transform.parent.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
-            damage_val = transform.parent.GetComponent<MeleeAttack>().damage_val * transform.parent.parent.gameObject.GetComponent<StandardStatBlock>().SPEED;
-        }
-        else if (body || leg)
-        {
-            attached = transform.parent.GetComponent<PartStats>().attached;
-            enemy_check = transform.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
-        }
-        else
-        {
-            attached = transform.parent.GetComponent<PartStats>().attached;
-            enemy_check = transform.parent.parent.parent.gameObject.GetComponent<StandardStatBlock>().ENEMY;
-        }
+            damage_val = _meleeAttack.damage_val;
 
+            searchTag = enemy_check ? "BOT_Player" : "BOT_Enemy";
+        }
     }
 
     void OnTriggerEnter2D(Collider2D Target)
     {
-        if (!enemy_check && Target.gameObject.tag == "BOT_Enemy")
+        if (Target.gameObject.tag == searchTag)
         {
-            Target.gameObject.GetComponent<Plating>().DamagePlating(damage_val);
-            Instantiate(sparks_object, impact_point.position, impact_point.rotation);
-
-            above_target = new Vector2(Target.transform.position.x, Target.transform.position.y + 50);
-
-            var clone = (GameObject) Instantiate(damage_values, above_target, Quaternion.Euler(Vector3.zero));
-
-            if (damage_val > Target.GetComponent<Plating>().armor_value)
+            if (photonView.IsMine)
             {
-                clone.GetComponent<DamageValues>().damage_value = (damage_val - Target.GetComponent<Plating>().armor_value);
-            }
-            if (damage_val <= Target.GetComponent<Plating>().armor_value)
-            {
-                clone.GetComponent<DamageValues>().damage_value = 1;
-            }
-        }
-        else if (enemy_check && Target.gameObject.tag == "BOT_Player")
-        {   
-            Target.gameObject.GetComponent<Plating>().DamagePlating(damage_val);
-            Instantiate(sparks_object, impact_point.position, impact_point.rotation);
+                Target.gameObject.GetComponent<Plating>().DamagePlating(damage_val);
 
-            above_target = new Vector2(Target.transform.position.x, Target.transform.position.y + 50);
+                above_target = new Vector2(Target.transform.position.x, Target.transform.position.y + 50);
 
-            var clone = (GameObject)Instantiate(damage_values, above_target, Quaternion.Euler(Vector3.zero));
+                damage_int_value = 1;
 
-            if (damage_val > Target.GetComponent<Plating>().armor_value)
-            {
-                clone.GetComponent<DamageValues>().damage_value = (damage_val - Target.GetComponent<Plating>().armor_value);
-            }
-            if (damage_val <= Target.GetComponent<Plating>().armor_value)
-            {
-                clone.GetComponent<DamageValues>().damage_value = 1;
+                if (damage_val > Target.GetComponent<Plating>().armor_value)
+                {
+                    damage_int_value = (damage_val - Target.GetComponent<Plating>().armor_value);
+                }
+                if (damage_val <= Target.GetComponent<Plating>().armor_value)
+                {
+                    damage_int_value = 1;
+                }
+
+                BattleFactorySpawn.instance.SpawnDamagePopUpNetwork(damage_values, above_target, damage_int_value);
+                BattleFactorySpawn.instance.SpawnImpact(true, sparks_object, impact_point.position, impact_point.rotation, true, gameObject, enemy_check);
             }
         }
     }

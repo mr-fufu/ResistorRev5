@@ -19,13 +19,13 @@ public class BattleFactorySpawn : MonoBehaviour
         }
     }
 
-    public void SpawnGeneric(GameObject object_to_spawn, Vector2 spawn_location, GameObject parent_object, Quaternion object_rotation)
+    public void SpawnGeneric(GameObject objectToSpawn, Vector2 spawnLocation, GameObject parentObject, Quaternion objectRotation)
     {
         //GameObject spawned_object = Instantiate(object_to_spawn, spawn_location, object_rotation);
-        GameObject spawned_object = PhotonNetwork.Instantiate("ParticlesAndEffects/" + object_to_spawn.name, spawn_location, object_rotation);
+        GameObject spawned_object = PhotonNetwork.Instantiate("ParticlesAndEffects/" + objectToSpawn.name, spawnLocation, objectRotation);
         spawned_object.GetComponent<DestroyAfterTime>().enemy_check = !PhotonNetwork.IsMasterClient;
         spawned_object.GetComponent<PhotonView>().RPC("SyncIsEnemyForGeneric", RpcTarget.Others, !PhotonNetwork.IsMasterClient);
-        spawned_object.transform.parent = parent_object.transform;
+        spawned_object.transform.parent = parentObject.transform;
     }
 
     // Spawn Projectile and set all according parameters from the projectile attack script that launched the projectile
@@ -41,7 +41,7 @@ public class BattleFactorySpawn : MonoBehaviour
         // sets whether the projectile moves independently or is a parent of the launcher
         if (projectileAttack.projectile_parent)
         {
-            clone.transform.parent = projectile_launcher.transform;
+            clone.transform.parent = transform; //projectile_launcher.transform;
         }
 
         // sets whether the damage of the projectile is determined by the prefab or the attack script (since multiple projectile
@@ -76,7 +76,7 @@ public class BattleFactorySpawn : MonoBehaviour
             if (projectileAttack.range_stat_dependent)
             {
                 clone.GetComponent<DestroyAfterTime>().LifeTime = 
-                    projectile_launcher.transform.parent.transform.parent.gameObject.GetComponent<StandardStatBlock>().RANGE * 0.3f * Time.deltaTime * 50;
+                    projectile_launcher.transform.parent.parent.GetComponent<StandardStatBlock>().RANGE * 0.3f * Time.deltaTime * 50;
             }
             else
             {
@@ -91,102 +91,97 @@ public class BattleFactorySpawn : MonoBehaviour
     // Projectile handles most attacks but tesla attacks were a fair bit more complicated and thus have their own spawn function.
     // Lightning consists of a unique start segment (with unique animation) a looping middle section (of variable length) and an end section (unique)
 
-    public void SpawnLightning(GameObject lightning_object, GameObject launch_point, int lightning_damage, bool enemy_check, int power)
+    //----------------------------------------------------------------------------------
+
+    public void SpawnLightning(GameObject lightningObject, GameObject launchPoint, int lightningDamage, bool enemyCheck, int power)
     {
         // spawns the lightning start object and sets damage, enemy and collider size appropriately.
-        //var lightning_start_segment = (GameObject)Instantiate(lightning_object, launch_point.transform.position, launch_point.transform.rotation);
-        GameObject lightning_start_segment = PhotonNetwork.Instantiate("ParticlesAndEffects/" + lightning_object.name, 
-            launch_point.transform.position, launch_point.transform.rotation);
+        GameObject lightning_start_segment = PhotonNetwork.Instantiate("ParticlesAndEffects/" + lightningObject.name, 
+            launchPoint.transform.position, launchPoint.transform.rotation);
 
-        
-        var startLightningDamage = lightning_start_segment.GetComponent<LightningDamage>();
-        
-        startLightningDamage.damage_val = lightning_damage;
-        startLightningDamage.enemy_check = enemy_check;
-        startLightningDamage.lightning_start = true;
-        lightning_start_segment.GetComponent<BoxCollider2D>().size = new Vector2((power + 2) * 26, 60);
-        lightning_start_segment.GetComponent<BoxCollider2D>().offset = new Vector2(13 + 13 * (power), 10);
+        var lightningView = lightning_start_segment.GetPhotonView();
+
+        lightningView.GetComponent<PhotonView>().RPC("SyncLightning", RpcTarget.All, enemyCheck, true, false, false, false, lightningDamage, power);
 
         // using the enemy check, move the launch point forwards (to the right for non_enemy and to the left for enemy)
-        lightning_dist = enemy_check ? launch_point.transform.position.x - 26 : launch_point.transform.position.x + 26;
+        lightning_dist = enemyCheck ? launchPoint.transform.position.x - 26 : launchPoint.transform.position.x + 26;
+
+        //----------------------------------------------------------------------------------
 
         // depending on the lightning power, spawn a number of middle lightning segments moving down further each time.
         for (int lightning_power = 0; lightning_power < power; lightning_power++)
         {
-            lightningPoint = new Vector3(lightning_dist, launch_point.transform.position.y, launch_point.transform.position.z);
+            lightningPoint = new Vector3(lightning_dist, launchPoint.transform.position.y, launchPoint.transform.position.z);
             //var lightning_middle_segment = (GameObject)Instantiate(lightning_object, lightning_point, launch_point.transform.rotation);
-            GameObject lightning_middle_segment = PhotonNetwork.Instantiate("ParticlesAndEffects/" + lightning_object.name, 
-                lightningPoint, launch_point.transform.rotation);
-            
-            var midLightningDamage = lightning_middle_segment.GetComponent<LightningDamage>();
-            
-            midLightningDamage.damage_val = lightning_damage;
-            midLightningDamage.enemy_check = enemy_check;
+            GameObject lightning_middle_segment = PhotonNetwork.Instantiate("ParticlesAndEffects/" + lightningObject.name, 
+                lightningPoint, launchPoint.transform.rotation);
 
-            lightning_middle_segment.GetComponent<Collider2D>().enabled = false;
+            lightningView = lightning_middle_segment.GetPhotonView();
 
-            lightning_dist = enemy_check ? launch_point.transform.position.x - 26 : launch_point.transform.position.x + 26;
+            lightningView.GetComponent<PhotonView>().RPC("SyncLightning", RpcTarget.All, enemyCheck, false, alternator, !alternator, false, lightningDamage, power);
 
-            // use an alternator so odd and even lightning middle segments are different visually
-            if (alternator == false)
-            {
-                midLightningDamage.lightning_middle1 = true;
-                alternator = true;
-            }
-            else
-            {
-                midLightningDamage.lightning_middle2 = true;
-                lightning_middle_segment.GetComponent<Collider2D>().enabled = false;
-                alternator = false;
-            }
+            lightning_dist = enemyCheck ? launchPoint.transform.position.x - 26 : launchPoint.transform.position.x + 26;
+
+            alternator = !alternator;
         }
 
+        //----------------------------------------------------------------------------------
+
         // spawn lightning end section
-        lightningPoint = new Vector3(lightning_dist, launch_point.transform.position.y, launch_point.transform.position.z);
+        lightningPoint = new Vector3(lightning_dist, launchPoint.transform.position.y, launchPoint.transform.position.z);
 
         //var lightning_end_segment = (GameObject)Instantiate(lightning_object, lightning_point, launch_point.transform.rotation);
-        GameObject lightning_end_segment = PhotonNetwork.Instantiate("ParticlesAndEffects/" + lightning_object.name, 
-            lightningPoint, launch_point.transform.rotation);
+        GameObject lightning_end_segment = PhotonNetwork.Instantiate("ParticlesAndEffects/" + lightningObject.name, 
+            lightningPoint, launchPoint.transform.rotation);
 
-        var endLightningDamage = lightning_end_segment.GetComponent<LightningDamage>();
-        
-        endLightningDamage.damage_val = lightning_damage;
-        endLightningDamage.enemy_check = enemy_check;
-        endLightningDamage.lightning_end = true;
+        lightningView = lightning_end_segment.GetPhotonView();
 
-        lightning_end_segment.GetComponent<Collider2D>().enabled = false;
+        lightningView.GetComponent<PhotonView>().RPC("SyncLightning", RpcTarget.All, enemyCheck, false, false, false, true, lightningDamage, power);
     }
+
+    //----------------------------------------------------------------------------------
 
     // Whenever damage is dealt, a small graphic appears with the amount of damage dealt
     public void SpawnDamagePopUp(
-        GameObject damage_object,
-        Vector2 damage_target,
-        int damage_value
+        GameObject damageObject,
+        Vector2 damageTarget,
+        int damageValue
         )
     {
-        GameObject damageIndicator = Instantiate(damage_object, damage_target, Quaternion.Euler(Vector3.zero));
-        damageIndicator.GetComponent<DamageValues>().damage_value = damage_value;
+        GameObject damageIndicator = Instantiate(damageObject, damageTarget, Quaternion.Euler(Vector3.zero));
+        damageIndicator.GetComponent<DamageValues>().damage_value = damageValue;
+    }
+
+    public void SpawnDamagePopUpNetwork(
+    GameObject damageObject,
+    Vector2 damageTarget,
+    int damageValue
+    )
+    {
+        Vector3 newTarget = new Vector3(damageTarget.x, damageTarget.y, 0);
+        GameObject damageIndicator = PhotonNetwork.Instantiate("ParticlesAndEffects/" + damageObject.name, newTarget, Quaternion.Euler(Vector3.zero));
+        damageIndicator.GetComponent<PhotonView>().RPC("SyncDamageValue", RpcTarget.All, damageValue);
     }
 
     // spawn impact objects. If the projectile does not pierce then destroy the projectile that caused the impact
     public void SpawnImpact(
-        bool use_impact,
-        GameObject impact_object,
-        Vector2 impact_position,
-        Quaternion impact_rotation,
+        bool useImpact,
+        GameObject impactObject,
+        Vector2 impactPosition,
+        Quaternion impactRotation,
         bool piercing,
         GameObject projectile,
-        bool enemy_check)
+        bool enemyCheck)
     {
 
-        if (use_impact)
+        if (useImpact)
         {
-            GameObject impact = Instantiate(impact_object, impact_position, impact_rotation);
+            GameObject impact = Instantiate(impactObject, impactPosition, impactRotation);
             //PhotonNetwork.Instantiate("ParticlesAndEffects/" + impact_object.name, 
             //    impact_position, impact_rotation);
         }
         
-        if (!piercing && enemy_check != PhotonNetwork.IsMasterClient)
+        if (!piercing && enemyCheck != PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.Destroy(projectile);
         }

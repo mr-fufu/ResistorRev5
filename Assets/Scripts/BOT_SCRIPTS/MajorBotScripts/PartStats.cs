@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class PartStats : MonoBehaviour
+public class PartStats : MonoBehaviourPunCallbacks
 {
     // Part stats hold all of the associated stats of a bot part. Part stats scripts
     // are only ever attached to bot parts and bot part slots. Both the showcase and actual spawned game
@@ -65,6 +65,15 @@ public class PartStats : MonoBehaviour
 
     public int list_index;
 
+    private Vector3 hold_position;
+    private PhotonView currentPhotonView;
+
+    [PunRPC]
+    public void SyncPosition(float x, float y, float z)
+    {
+        transform.position = new Vector3(x, y, z);
+    }
+
     [PunRPC]
     public void SyncBotColor(float r, float g, float b, float a)
     {
@@ -124,6 +133,26 @@ public class PartStats : MonoBehaviour
             {
                 Debug.Log(gameObject.name);
                 Debug.Log("!!!INVALID PART TYPE!!!");
+            }
+        }
+
+        currentPhotonView = GetComponent<PhotonView>();
+    }
+
+    void Update()
+    {
+        if (!slot_component)
+        {
+            if (currentPhotonView != null)
+            {
+                if (currentPhotonView.IsMine)
+                {
+                    if (hold_position.x != transform.position.x || hold_position.y != transform.position.y || hold_position.z != transform.position.z)
+                    {
+                        hold_position = transform.position;
+                        currentPhotonView.RPC("SyncPosition", RpcTarget.Others, hold_position.x, hold_position.y, hold_position.z);
+                    }
+                }
             }
         }
     }

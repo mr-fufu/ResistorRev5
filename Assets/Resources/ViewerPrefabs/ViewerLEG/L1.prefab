@@ -151,6 +151,7 @@ MonoBehaviour:
   POWER: 1
   FRAME: 0
   COST: 120
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -292,6 +293,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: ARM
@@ -327,7 +329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2152602465111594494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.5, y: 13.000001, z: 0}
+  m_LocalPosition: {x: 11, y: 13.000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2152602465111594439}
@@ -431,6 +433,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: ARMOR
@@ -570,6 +573,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: TORSO

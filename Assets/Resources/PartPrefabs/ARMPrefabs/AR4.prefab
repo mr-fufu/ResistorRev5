@@ -115,7 +115,6 @@ GameObject:
   - component: {fileID: 3974925477963283844}
   - component: {fileID: 4919137805058923820}
   - component: {fileID: 4913258590730429718}
-  - component: {fileID: -2721483667581222673}
   m_Layer: 15
   m_Name: AR4
   m_TagString: DraggableUIPart
@@ -210,9 +209,9 @@ MonoBehaviour:
     type: 3}
   lightning_length: 26
   launch_point: {fileID: 803746507696310971}
+  enemy_check: 0
   power: 10
-  spawned: 0
-  attached: 0
+  logic: 0
 --- !u!114 &4919137805058923820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +233,7 @@ MonoBehaviour:
   POWER: 2
   FRAME: 0
   COST: 120
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -262,23 +262,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -2721483667581222673}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-2721483667581222673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7435111131953796056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0

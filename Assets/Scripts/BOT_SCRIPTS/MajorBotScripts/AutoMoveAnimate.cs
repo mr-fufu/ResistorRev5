@@ -30,6 +30,5 @@ public class AutoMoveAnimate : MonoBehaviour
         {
             Anim.SetBool("WalkState", false);
         }
-
     }
 }

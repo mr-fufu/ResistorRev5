@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6584662941575706549}
   - component: {fileID: 189806573534985377}
   - component: {fileID: 6584662941575706506}
-  - component: {fileID: 7717113610271188086}
   m_Layer: 15
   m_Name: H6
   m_TagString: DraggableUIPart
@@ -98,14 +97,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 20
-  LOGIC: 1
-  RANGE: 1
+  LOGIC: 2
+  RANGE: 2
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 10
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -134,23 +134,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 7717113610271188086}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &7717113610271188086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6584662941575706505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0

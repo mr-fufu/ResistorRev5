@@ -97,14 +97,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 10
-  LOGIC: 1
-  RANGE: 2
+  LOGIC: 4
+  RANGE: 4
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 60
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 

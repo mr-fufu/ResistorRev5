@@ -3,7 +3,7 @@ using System.Collections.Generic;
  using Photon.Pun;
  using UnityEngine;
 
-public class ProjectileAttack : MonoBehaviour
+public class ProjectileAttack : MonoBehaviourPunCallbacks
 {
 
     // Attached to a bot part that can fire a projectile prefab from a given launch point(s)
@@ -129,15 +129,8 @@ public class ProjectileAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if (enemy_check == PhotonNetwork.IsMasterClient)
-            return;
-
-        //rip #3
-        if (true)
+        if (photonView.IsMine)
         {
-
             // find the fuel remaining value (similar to plating) on the leg bot part of the robot and set fuel_used bool to true
             // to instantiate the fuel bar. Check the fuel remaining and set out_of_fuel bool accordingly.
             if (uses_fuel)

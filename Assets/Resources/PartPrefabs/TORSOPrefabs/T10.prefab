@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1437341546021800399}
   - component: {fileID: 6396271443648890516}
   - component: {fileID: 1437341546021800412}
-  - component: {fileID: 5347505216812658706}
   m_Layer: 15
   m_Name: T10
   m_TagString: DraggableUIPart
@@ -127,6 +126,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 100
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -178,7 +178,7 @@ MonoBehaviour:
   use_scan: 1
   logic_dependent: 1
   scanned: 0
-  range_detector: {fileID: 0}
+  range_detector: {fileID: 6255773577936238989}
   uses_flare: 1
   flare_object: {fileID: 4703073502323615457, guid: 73956829aa37a4d48ace18925b051b3a,
     type: 3}
@@ -203,26 +203,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 5347505216812658706}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5347505216812658706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437341546021800387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!1 &1982774785490887952
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +312,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: TOPLARGE
@@ -574,6 +559,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: ARM

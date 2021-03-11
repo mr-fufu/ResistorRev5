@@ -144,11 +144,12 @@ MonoBehaviour:
   LOGIC: 0
   RANGE: 0
   ARMOR: 4
-  SPEED: 3
+  SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 90
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -289,6 +290,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: TORSO

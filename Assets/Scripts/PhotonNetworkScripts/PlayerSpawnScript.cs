@@ -198,7 +198,13 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
                 projectileAttack.enemy_check = !PhotonNetwork.IsMasterClient;
                 part_clone.GetComponent<PhotonView>().RPC("SyncIsEnemyForProjectiles", RpcTarget.All, !PhotonNetwork.IsMasterClient);
             }
-            
+
+            var lightningAttack = part_clone.GetComponent<LightningAttack>();
+            if (lightningAttack != null)
+            {
+                part_clone.GetComponent<PhotonView>().RPC("SyncLightningAttack", RpcTarget.All, !PhotonNetwork.IsMasterClient);
+            }
+
             part_clone.gameObject.tag = bot_tag;
 
             if (parent_count_list[index2] == 1)

@@ -106,6 +106,7 @@ MonoBehaviour:
   POWER: 1
   FRAME: 0
   COST: 50
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 

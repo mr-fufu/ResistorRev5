@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 3377035720667804570}
   - component: {fileID: 5717548524794818850}
   - component: {fileID: -8553279529107831864}
-  - component: {fileID: -8704852655308103813}
   m_Layer: 15
   m_Name: L6
   m_TagString: DraggableUIPart
@@ -210,7 +209,7 @@ MonoBehaviour:
   PLATE: 100
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 8
   SPEED: 3
   FUEL: 0
   POWER: 0
@@ -260,26 +259,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -8704852655308103813}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-8704852655308103813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115866745728014881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &7115866747503328153
 GameObject:
   m_ObjectHideFlags: 0

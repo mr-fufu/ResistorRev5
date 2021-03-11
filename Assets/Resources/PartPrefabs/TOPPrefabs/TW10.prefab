@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7701343093675905205}
   - component: {fileID: 705940817967213743}
   - component: {fileID: -5328190068011360837}
-  - component: {fileID: 2372282446282845301}
   m_Layer: 15
   m_Name: TW10
   m_TagString: DraggableUIPart
@@ -100,12 +99,13 @@ MonoBehaviour:
   PLATE: 80
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 12
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 60
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -133,23 +133,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 2372282446282845301}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2372282446282845301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7701343093675905209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0

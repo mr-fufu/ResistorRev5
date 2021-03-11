@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1906127244771686565}
   - component: {fileID: 1487463482839107908}
   - component: {fileID: 8929837691408546157}
-  - component: {fileID: 3757018458850451510}
   - component: {fileID: 7810071113687951676}
   m_Layer: 15
   m_Name: ARML1
@@ -141,12 +140,13 @@ MonoBehaviour:
   PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 2
+  ARMOR: 4
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 80
+  ENEMY: 0
   melee_component: 1
   slot_component: 0
   slot_type: 
@@ -174,27 +174,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 3757018458850451510}
+  - {fileID: 0}
   - {fileID: 7810071113687951676}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3757018458850451510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268223666398552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &7810071113687951676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729357762870880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -4.5, z: 0}
+  m_LocalPosition: {x: 9.5, y: -7.3125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4177753998684288}
@@ -394,7 +378,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5, y: -1}
+  m_Offset: {x: 6.5, y: -1.75}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -405,7 +389,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 7}
+  m_Size: {x: 12, y: 11.5}
   m_EdgeRadius: 0
 --- !u!95 &95448475016897816
 Animator:
@@ -438,9 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80b005df7f286843a14727ddb365209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  searchTag: 
   enemy_check: 0
-  attached: 0
   damage_val: 25
+  damage_int_value: 0
   sparks_object: {fileID: 1256788592060736, guid: 8caca961ef1473242a62e19b5c4c96fa,
     type: 3}
   damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,

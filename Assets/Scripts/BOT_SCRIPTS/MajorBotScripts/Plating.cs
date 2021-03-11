@@ -29,22 +29,11 @@ public class Plating : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        // instantiate health bar object (UI display for bot plating/health) as a child
-        // of current gameobject.
-        /*
-         * if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
-        {
-            platingBar = PhotonNetwork.Instantiate("ParticlesAndEffects/" + platingBarPrefab.name, gameObject.transform.position, gameObject.transform.rotation);
-            platingBar.transform.parent = gameObject.transform;
-        }
-        */
-
         platingBar = (GameObject)Instantiate(platingBarPrefab, gameObject.transform);
     }
 
     public void InitializePlating(int plate, int armor)
     {
-        Debug.Log("Initializing Plating");
         max_plating = plate;
         current_plating = plate;
         armor_value = armor;
@@ -62,16 +51,14 @@ public class Plating : MonoBehaviourPunCallbacks
         if (current_plating <= 0)
         {
             destruction_trigger = true;
-            if (GetComponent<AutoMove>()?.enemy_check != PhotonNetwork.IsMasterClient)
+            if (photonView.IsMine)
             {
-                Debug.Log("[Plating Script] Plating Bar non-network destroyed : " + photonView.IsMine);
                 Destroy(platingBar);
                 GetComponent<PartStats>().deconstruct();
             }
             else
             {
-                Debug.Log("[Plating Script] Bot non-network destroyed : " + photonView.IsMine);
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
 
@@ -87,21 +74,33 @@ public class Plating : MonoBehaviourPunCallbacks
         // value (passed by the projectile script) by the ARMOR stat up to a minimum of 1 incoming
         // damage. Then reduce the current plating by the remaining damage.
 
-        if (GetComponent<StandardStatBlock>().ENEMY != PhotonNetwork.IsMasterClient)
+        if (DamageInflicted > 1 && DamageInflicted > armor_value)
         {
-            if (DamageInflicted > 1 && DamageInflicted > armor_value)
-            {
-                current_plating -= (DamageInflicted - armor_value);
-            }
-            else
-            {
-                current_plating -= 1;
-            }
-
-            photonView.RPC("SyncPlating", RpcTarget.Others, current_plating);
+            current_plating -= (DamageInflicted - armor_value);
+        }
+        else
+        {
+            current_plating -= 1;
         }
 
-        //Debug.LogError("new:" + current_plating );
+        photonView.RPC("SyncPlating", RpcTarget.Others, current_plating);
+    }
+
+    public void DamagePlatingLightning(int DamageInflicted)
+    {
+        // Simmilarly, damage is also handled only by the server. Reduce the incoming damage
+        // value (passed by the projectile script) by the ARMOR stat up to a minimum of 1 incoming
+        // damage. Then reduce the current plating by the remaining damage.
+
+        var damage = 1;
+        if (DamageInflicted > 1 && DamageInflicted > armor_value)
+        {
+            damage = (DamageInflicted - armor_value);
+        }
+
+        current_plating -= damage;
+
+        photonView.RPC("SyncPlating", RpcTarget.Others, current_plating);
     }
 
     [PunRPC]

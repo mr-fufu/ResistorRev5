@@ -150,6 +150,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 75
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -291,6 +292,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: TORSO
@@ -430,6 +432,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 0
+  ENEMY: 0
   melee_component: 0
   slot_component: 1
   slot_type: ARM

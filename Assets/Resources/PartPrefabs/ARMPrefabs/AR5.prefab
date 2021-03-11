@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 1000015989010972656}
   - component: {fileID: 1358739396815413168}
   - component: {fileID: 8756311676507891957}
-  - component: {fileID: 5732596666800241172}
   m_Layer: 15
   m_Name: AR5
   m_TagString: DraggableUIPart
@@ -140,6 +139,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 100
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -175,7 +175,7 @@ MonoBehaviour:
   attached: 0
   variable_attack_speed: 1
   variable_range: 1
-  variable_range_value: 0
+  variable_range_value: 1
   range_stat_dependent: 1
   variable_speed: 0
   variable_speed_value: 0
@@ -215,27 +215,10 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 5732596666800241172}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5732596666800241172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6090943864897805111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!1001 &2464316446108127928
 PrefabInstance:
   m_ObjectHideFlags: 0

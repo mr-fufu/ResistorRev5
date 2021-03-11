@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3552675128143873979}
   - component: {fileID: 5936035571007110049}
   - component: {fileID: 1033719503477751971}
-  - component: {fileID: 6301995244596715734}
   m_Layer: 15
   m_Name: TW2
   m_TagString: DraggableUIPart
@@ -98,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 5
-  LOGIC: 1
+  LOGIC: 2
   RANGE: 0
   ARMOR: 0
   SPEED: 0
@@ -106,6 +105,7 @@ MonoBehaviour:
   POWER: 0
   FRAME: 0
   COST: 20
+  ENEMY: 0
   melee_component: 0
   slot_component: 0
   slot_type: 
@@ -133,23 +133,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 6301995244596715734}
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &6301995244596715734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3552675128143873975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
