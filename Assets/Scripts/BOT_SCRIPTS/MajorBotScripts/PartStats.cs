@@ -52,7 +52,7 @@ public class PartStats : MonoBehaviourPunCallbacks
 
     public bool slot_component;
 
-    public string slot_type;
+    public string slotType;
 
     public string part_type;
 
@@ -114,14 +114,14 @@ public class PartStats : MonoBehaviourPunCallbacks
         }
         else if (!slot_component)
         {
-            slot_type = "NOT A SLOT";
+            slotType = "NOT A SLOT";
         }
 
         // checks for validity and correct spelling of slot and part types
 
         if (slot_component)
         {
-            if (slot_type != "LEG" && slot_type != "HEAD" && slot_type != "ARM" && slot_type != "TOPLARGE" && slot_type != "ARMOR" && slot_type != "TORSO")
+            if (slotType != "LEG" && slotType != "HEAD" && slotType != "ARM" && slotType != "TOPLARGE" && slotType != "ARMOR" && slotType != "TORSO")
             {
                 Debug.Log(gameObject.transform.parent.gameObject.name);
                 Debug.Log("!!!INVALID SLOT TYPE!!!");

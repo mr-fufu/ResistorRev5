@@ -134,7 +134,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: ARM
+  slotType: ARM
   part_type: 
   attached: 0
   part_name: 
@@ -274,7 +274,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: ARM
+  slotType: ARM
   part_type: 
   attached: 0
   part_name: 
@@ -414,7 +414,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: ARMOR
+  slotType: ARMOR
   part_type: 
   attached: 0
   part_name: 
@@ -554,7 +554,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: ARMOR
+  slotType: ARMOR
   part_type: 
   attached: 0
   part_name: 
@@ -694,7 +694,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: TORSO
+  slotType: TORSO
   part_type: 
   attached: 0
   part_name: 
@@ -856,7 +856,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: LEG
   attached: 0
   part_name: M.I.C. UNIT-05 BOXCAR

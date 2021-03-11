@@ -153,7 +153,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: LEG
   attached: 0
   part_name: Streamline Glider
@@ -295,7 +295,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: TORSO
+  slotType: TORSO
   part_type: 
   attached: 0
   part_name: 
@@ -435,7 +435,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: ARM
+  slotType: ARM
   part_type: NOT A PART
   attached: 0
   part_name: 

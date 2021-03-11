@@ -134,8 +134,8 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: TORSO
-  part_type: 
+  slotType: TORSO
+  part_type: NOT A PART
   attached: 0
   part_name: 
   part_description: 
@@ -293,7 +293,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: LEG
   attached: 0
   part_name: "ThinkSmart\xAE Stratosphere"
@@ -434,7 +434,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: ARM
+  slotType: ARM
   part_type: NOT A PART
   attached: 0
   part_name: 

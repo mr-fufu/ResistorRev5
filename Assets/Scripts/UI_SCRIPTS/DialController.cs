@@ -17,7 +17,6 @@ public class DialController : MonoBehaviour {
     public GameObject armor_viewer;
 
     private GameObject[] part_viewer;
-    private bool viewer_change;
 
     public Scrollbar scroll;
 
@@ -37,21 +36,15 @@ public class DialController : MonoBehaviour {
 
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            IndexIncrease();
+        }
     }
 
-    void OnMouseDown () {
-        if (camera_object.GetComponent<WorkshopDrag>().tutorial_complete)
-        {
-            dial_state++;
-
-            if (dial_state >= max_dial_states)
-            {
-                dial_state = 0;
-            }
-
-            ChangeViewer();
-        }
+    void OnMouseDown()
+    {
+        IndexIncrease();
     }
 
     public void ChangeViewer()
@@ -66,5 +59,20 @@ public class DialController : MonoBehaviour {
         part_viewer[dial_state].SetActive(true);
 
         scroll.value = part_viewer[dial_state].GetComponentInChildren<CustomScroll>().scroll_holdover;
+    }
+
+    public void IndexIncrease()
+    {
+        if (camera_object.GetComponent<WorkshopDrag>().tutorial_complete)
+        {
+            dial_state++;
+
+            if (dial_state >= max_dial_states)
+            {
+                dial_state = 0;
+            }
+        }
+
+        ChangeViewer();
     }
 }
