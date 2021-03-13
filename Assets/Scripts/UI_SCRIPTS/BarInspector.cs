@@ -1,31 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BarInspector : MonoBehaviour
 {
-    public GameObject spawn_controller;
+    public GameObject spawnController;
     public GameObject inspector;
-    public GameObject display_point;
-    public GameObject credit_value;
+    public GameObject displayPoint;
+
+    public GameObject inspectArrow;
+
+    public List<SpriteRenderer> statSymbols;
+    public List<Text> statValue;
+    public List<float> maxStats;
+
+    public Gradient valueColor;
 
     public GameObject bar_box_1;
     public GameObject bar_box_2;
     public GameObject bar_box_3;
     public GameObject bar_box_4;
 
-    private GameObject[] bot_loadout;
-    private GameObject[] bar_box;
+    private GameObject[] botLoadout;
+    private GameObject[] barBox;
+
+    private List<int> botStats;
 
     void Start()
     {
-        bot_loadout = new GameObject[4];
-        bar_box = new GameObject[4];
+        botLoadout = new GameObject[4];
+        barBox = new GameObject[4];
 
-        bar_box[0] = bar_box_1;
-        bar_box[1] = bar_box_2;
-        bar_box[2] = bar_box_3;
-        bar_box[3] = bar_box_4;
+        barBox[0] = bar_box_1;
+        barBox[1] = bar_box_2;
+        barBox[2] = bar_box_3;
+        barBox[3] = bar_box_4;
     }
 
     void Update()
@@ -50,16 +60,16 @@ public class BarInspector : MonoBehaviour
         // update bot_loadouts
         for (int i = 1; i < 5; i++)
         {
-            var curSpawnBot = spawn_controller.GetComponent<SpawnController>().spawnBots[i-1];
+            var curSpawnBot = spawnController.GetComponent<SpawnController>().spawnBots[i-1];
             if (curSpawnBot != null)
             {
                 if (curSpawnBot.transform.GetChild(0).childCount != 0)
                 {
-                    bot_loadout[i - 1] = curSpawnBot.transform.GetChild(0).transform.GetChild(0).gameObject;
+                    botLoadout[i - 1] = curSpawnBot.transform.GetChild(0).transform.GetChild(0).gameObject;
                 }
                 else
                 {
-                    bot_loadout[i - 1] = null;
+                    botLoadout[i - 1] = null;
                 }
             }
         }
@@ -70,32 +80,40 @@ public class BarInspector : MonoBehaviour
         {
             for (int check_no = 0; check_no < 4; check_no++)
             {
-                if (ray_hit.collider.gameObject == bar_box[check_no])
+                if (ray_hit.collider.gameObject == barBox[check_no])
                 {
-                    bar_box[check_no].GetComponent<BarSelect>().moused_over = true;
+                    barBox[check_no].GetComponent<BarSelect>().moused_over = true;
 
-                    if (bot_loadout[check_no] != null)
+                    if (botLoadout[check_no] != null)
                     {
                         inspector.SetActive(true);
-                        inspector.transform.position = new Vector2(bar_box[check_no].transform.position.x, inspector.transform.position.y);
+                        inspectArrow.transform.position = new Vector2(barBox[check_no].transform.position.x, inspectArrow.transform.position.y);
 
-                        bot_loadout[check_no].transform.position = display_point.transform.position;
-                        bot_loadout[check_no].transform.localScale = display_point.transform.localScale;
+                        botLoadout[check_no].transform.position = displayPoint.transform.position;
+                        botLoadout[check_no].transform.localScale = displayPoint.transform.localScale;
 
-                        credit_value.GetComponent<UnityEngine.UI.Text>().text = "" + bot_loadout[check_no].GetComponent<StandardStatBlock>().COST;
+                        botStats = botLoadout[check_no].GetComponent<StandardStatBlock>().GetBotStats();
+
+                        for (int i = 0; i< 8; i++)
+                        {
+                            statValue[i].text = ("" + botStats[i]);
+
+                            statValue[i].color = valueColor.Evaluate(botStats[i] / maxStats[i]);
+                            statSymbols[i].color = valueColor.Evaluate(botStats[i] / maxStats[i]);
+                        }
                     }
                 }
                 else
                 {
-                    bar_box[check_no].GetComponent<BarSelect>().moused_over = false;
+                    barBox[check_no].GetComponent<BarSelect>().moused_over = false;
 
-                    if (bot_loadout[check_no] != null)
+                    if (botLoadout[check_no] != null)
                     {
-                        bot_loadout[check_no].transform.localPosition = new Vector2(0, 0);
+                        botLoadout[check_no].transform.localPosition = new Vector2(0, 0);
                     }
                 }
 
-                if (ray_hit.collider.gameObject != bar_box[0] && ray_hit.collider.gameObject != bar_box[1] && ray_hit.collider.gameObject != bar_box[2] && ray_hit.collider.gameObject != bar_box[3])
+                if (ray_hit.collider.gameObject != barBox[0] && ray_hit.collider.gameObject != barBox[1] && ray_hit.collider.gameObject != barBox[2] && ray_hit.collider.gameObject != barBox[3])
                 {
 
                 }
@@ -106,11 +124,11 @@ public class BarInspector : MonoBehaviour
             inspector.SetActive(false);
             for (int box_no = 0; box_no < 4; box_no++)
             {
-                bar_box[box_no].GetComponent<BarSelect>().moused_over = false;
+                barBox[box_no].GetComponent<BarSelect>().moused_over = false;
 
-                if (bot_loadout[box_no] != null)
+                if (botLoadout[box_no] != null)
                 {
-                    bot_loadout[box_no].transform.localPosition = new Vector2(0, 0);
+                    botLoadout[box_no].transform.localPosition = new Vector2(0, 0);
                 }
             }
         }

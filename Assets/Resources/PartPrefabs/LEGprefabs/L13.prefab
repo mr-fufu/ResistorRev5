@@ -75,9 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80b005df7f286843a14727ddb365209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  searchTag: 
   enemy_check: 0
-  attached: 0
   damage_val: 5
+  damage_int_value: 0
   sparks_object: {fileID: 1256788592060736, guid: 8caca961ef1473242a62e19b5c4c96fa,
     type: 3}
   damage_values: {fileID: 1350462584761378, guid: aca8ac788396672498f5b4f6377e957b,
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 20, y: 20}
+  m_Offset: {x: 25, y: 20}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -110,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 40}
+  m_Size: {x: 60, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &8955699353187457322
 GameObject:
@@ -256,7 +257,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10, y: 25}
+  m_Offset: {x: 15, y: 25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -267,7 +268,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 70}
+  m_Size: {x: 70, y: 70}
   m_EdgeRadius: 0
 --- !u!114 &8955699353187457300
 MonoBehaviour:
@@ -293,7 +294,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: LEG
   attached: 0
   part_name: Tornado PathMaker
@@ -410,8 +411,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: TORSO
+  slotType: 
   part_type: 
   attached: 0
   part_name: 

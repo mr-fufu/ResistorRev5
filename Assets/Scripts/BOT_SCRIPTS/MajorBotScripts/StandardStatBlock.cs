@@ -346,4 +346,20 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
             }
         }
     }
+
+    public List<int> GetBotStats()
+    {
+        List<int> returnStats = new List<int>();
+
+        returnStats.Add(PLATE);
+        returnStats.Add(RANGE);
+        returnStats.Add(ARMOR);
+        returnStats.Add(SPEED);
+        returnStats.Add(FUEL);
+        returnStats.Add(POWER);
+        returnStats.Add(LOGIC);
+        returnStats.Add(COST);
+
+        return returnStats;
+    }
 }

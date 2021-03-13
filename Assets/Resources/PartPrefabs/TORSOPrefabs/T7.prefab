@@ -125,13 +125,12 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: TORSO
   attached: 0
   part_name: InvaderWare Scout
   part_description: 
   list_index: 0
-  hold_position: {x: 0, y: 0, z: 0}
 --- !u!114 &1098155295848726093
 MonoBehaviour:
   m_ObjectHideFlags: 0

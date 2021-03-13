@@ -127,15 +127,23 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         // to allow the bot to move in closer.
         bot_clone.GetComponent<Collider2D>().enabled = true;
 
-        if (bot_clone.GetComponent<StandardStatBlock>().melee_components > 0)
+        if (bot_clone.GetComponent<AutoMove>().walker_check)
         {
-            bot_clone.GetComponent<Collider2D>().offset = new Vector2(0, 25);
-            bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(50, 70);
+            bot_clone.GetComponent<Collider2D>().offset = new Vector2(15, 25);
+            bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(70, 70);
         }
         else
         {
-            bot_clone.GetComponent<Collider2D>().offset = new Vector2(10, 25);
-            bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(70, 70);
+            if (bot_clone.GetComponent<StandardStatBlock>().melee_components > 0)
+            {
+                bot_clone.GetComponent<Collider2D>().offset = new Vector2(0, 25);
+                bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(50, 70);
+            }
+            else
+            {
+                bot_clone.GetComponent<Collider2D>().offset = new Vector2(10, 25);
+                bot_clone.GetComponent<BoxCollider2D>().size = new Vector2(70, 70);
+            }
         }
 
         //--------------------------------------------------------------------------

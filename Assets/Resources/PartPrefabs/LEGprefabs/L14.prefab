@@ -216,7 +216,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10, y: 25}
+  m_Offset: {x: 15, y: 25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -227,7 +227,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 70}
+  m_Size: {x: 70, y: 70}
   m_EdgeRadius: 0
 --- !u!114 &7355423234148358083
 MonoBehaviour:
@@ -253,7 +253,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: LEG
   attached: 0
   part_name: InvaderWare Martian
@@ -293,8 +293,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -432,7 +431,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 1
-  slot_type: TORSO
+  slotType: 
   part_type: 
   attached: 0
   part_name: InvaderWare Martian

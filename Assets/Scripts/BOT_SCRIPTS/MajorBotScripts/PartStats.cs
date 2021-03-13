@@ -146,7 +146,7 @@ public class PartStats : MonoBehaviourPunCallbacks
             if (currentPhotonView != null)
             {
                 if (currentPhotonView.IsMine)
-                {
+                { 
                     if (hold_position.x != transform.position.x || hold_position.y != transform.position.y || hold_position.z != transform.position.z)
                     {
                         hold_position = transform.position;

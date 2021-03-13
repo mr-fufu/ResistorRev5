@@ -417,6 +417,7 @@ public class WorkshopDrag : MonoBehaviour {
 
                         slot_component.GetComponent<PartStats>().attached = true;
                         slot_component.gameObject.GetComponent<SpriteRenderer>().sortingOrder = originalSortOrder;
+                        slot_component.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Inspector";
 
                         fillChildSlots(selectedStage);
 
@@ -537,7 +538,7 @@ public class WorkshopDrag : MonoBehaviour {
                 else
                 {
                     return null;
-                }
+                } 
             }
             else
             {
@@ -589,8 +590,6 @@ public class WorkshopDrag : MonoBehaviour {
         {
             if (partStats.slot_component && partStats.slotType == findType)
             {
-                Debug.Log("found " + searchObject);
-
                 if (!returnChild.Contains(searchObject))
                 {
                     returnChild.Add(searchObject);
@@ -600,8 +599,6 @@ public class WorkshopDrag : MonoBehaviour {
             {
                 if (searchObject.GetChild(0).childCount > 0)
                 {
-                    Debug.Log("searching through " + searchObject.GetChild(0));
-
                     for (int i = 0; i < searchObject.GetChild(0).childCount; i++)
                     {
                         List<Transform> searchChild = SearchStage(findType, searchObject.GetChild(0).GetChild(i));
