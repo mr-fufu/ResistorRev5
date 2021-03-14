@@ -217,7 +217,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: TOPLARGE
   attached: 0
   part_name: InvaderWare Leviathan
@@ -237,8 +237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   double_attack: 0
   multi_attack: 0
-  attack_speed: 0.4
-  variable_attack_speed_modifier: 0.05
+  attack_speed: 0.25
+  variable_attack_speed_modifier: 0
   projectile: {fileID: 1656137020809238, guid: 420151b06de819049928079d81745dbc, type: 3}
   enemy_check: 0
   launch_point: {fileID: 941294171943046039}
@@ -289,8 +289,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

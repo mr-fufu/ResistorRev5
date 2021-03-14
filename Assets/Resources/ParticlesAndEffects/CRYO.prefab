@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4192024644656430}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ImpactPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338350389746168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4087004310220208}
@@ -44,11 +44,11 @@ GameObject:
   - component: {fileID: 61417591149183388}
   - component: {fileID: 1402435127861952801}
   - component: {fileID: 7090672154732997859}
-  - component: {fileID: 7559488811873334680}
-  - component: {fileID: 3672627613250513959}
-  - component: {fileID: -1737125800047622986}
-  m_Layer: 0
-  m_Name: RedLaser
+  - component: {fileID: 8616216343191880091}
+  - component: {fileID: 1940149696031319176}
+  - component: {fileID: -5542169798157369815}
+  m_Layer: 18
+  m_Name: CRYO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,10 +62,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656137020809238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalPosition: {x: -24.174772, y: 20.564007, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4192024644656430}
+  - {fileID: 3591398823699119765}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,13 +109,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
   m_SortingLayer: 8
-  m_SortingOrder: 100
-  m_Sprite: {fileID: 21300006, guid: 4868293272afe454cbf8c6e1b79e2c22, type: 3}
-  m_Color: {r: 1, g: 0.09990564, b: 0.042452812, a: 0.43137255}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300036, guid: e8c481c58ff403647990b12d35fdd4fb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 500, y: 70}
+  m_Size: {x: 20, y: 12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -132,9 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c33ff065cedf904aa1d9bad79cf9562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile_speed: 0
+  projectile_speed: 4
   enemy_check: 0
-  damage_val: 8
+  damage_val: 1
   random_impact: 0
   random_chance: 0
   use_impact: 0
@@ -145,7 +146,7 @@ MonoBehaviour:
   y_velocity: 0
   piercing: 1
   damage_int_value: 0
-  ground_y_position: 0
+  ground_y_position: 45
 --- !u!61 &61417591149183388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,18 +160,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 250, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 500, y: 70}
-    newSize: {x: 500, y: 70}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 16}
+    newSize: {x: 20, y: 12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 500, y: 80}
+  m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
 --- !u!95 &1402435127861952801
 Animator:
@@ -182,7 +183,7 @@ Animator:
   m_GameObject: {fileID: 1656137020809238}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ff39a5c52dd35945ad7a5a25994c959, type: 2}
+  m_Controller: {fileID: 9100000, guid: b00fbfb2c43848440b16836368a54b46, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -203,12 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0567fe57a3f1a44eae4403de04f1acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeTime: 30
+  LifeTime: 50
   player: {fileID: 0}
   impact: 0
   non_networked_destroy: 0
   enemy_check: 0
---- !u!114 &7559488811873334680
+--- !u!114 &8616216343191880091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,7 +225,7 @@ MonoBehaviour:
   adjust_layer: 1
   layer_adjust: 1
   parent_layer_update: 1
---- !u!114 &3672627613250513959
+--- !u!114 &1940149696031319176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,11 +244,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -1737125800047622986}
+  - {fileID: -5542169798157369815}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-1737125800047622986
+--- !u!114 &-5542169798157369815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,3 +264,95 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 0
+--- !u!1 &285722523441083147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3591398823699119765}
+  - component: {fileID: 478447877559726843}
+  m_Layer: 18
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3591398823699119765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285722523441083147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4087004310220208}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &478447877559726843
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285722523441083147}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 0.16794233, g: 0.95471925, b: 0.9622642, a: 1}
+  m_Intensity: 20
+  m_Range: 15
+  m_SpotAngle: 90
+  m_InnerSpotAngle: 71.41338
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 294400
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0

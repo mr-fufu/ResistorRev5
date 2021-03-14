@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098763869092253571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalPosition: {x: 23.5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8867399162780021119}
@@ -182,7 +182,7 @@ SpriteRenderer:
   m_SortingLayerID: 1012360337
   m_SortingLayer: 8
   m_SortingOrder: 5
-  m_Sprite: {fileID: -3495227424394018220, guid: cb003cfd71ec9b8488aefb2a8947c6b1,
+  m_Sprite: {fileID: 7126017264643267911, guid: cb003cfd71ec9b8488aefb2a8947c6b1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: ARMOR
   attached: 0
   part_name: InvaderWare Jabberwocky
@@ -238,9 +238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   double_attack: 0
   multi_attack: 1
-  attack_speed: 3
+  attack_speed: 1
   variable_attack_speed_modifier: 0.5
-  projectile: {fileID: 1656137020809238, guid: abb31869d82aa784a832f6142f88125b, type: 3}
+  projectile: {fileID: 1656137020809238, guid: fe6c697a9edd8864bb8c87d8dd60d4c5, type: 3}
   enemy_check: 0
   launch_point: {fileID: 8029459053324295613}
   launch_point_2: {fileID: 8029459053324295613}
@@ -253,8 +253,8 @@ MonoBehaviour:
   variable_range: 0
   variable_range_value: 0
   range_stat_dependent: 0
-  variable_speed: 1
-  variable_speed_value: 4
+  variable_speed: 0
+  variable_speed_value: 0
   variable_y: 1
   variable_y_value: 1
   variable_damage: 1
@@ -290,8 +290,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

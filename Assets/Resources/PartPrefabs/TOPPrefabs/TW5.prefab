@@ -186,7 +186,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: TOPLARGE
   attached: 0
   part_name: "IndustrialGrade\u2122 Incinerator"
@@ -258,8 +258,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

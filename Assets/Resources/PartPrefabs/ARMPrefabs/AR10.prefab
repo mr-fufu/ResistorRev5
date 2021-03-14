@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   double_attack: 1
   multi_attack: 0
-  attack_speed: 2
+  attack_speed: 1
   variable_attack_speed_modifier: 0.25
   projectile: {fileID: 1656137020809238, guid: cfc9a56ab987e3c4a8e762dba5ca7b55, type: 3}
   enemy_check: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: ARM
   attached: 0
   part_name: M.I.C. UNIT-10 DOUBLEBARREL
@@ -185,8 +185,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

@@ -133,7 +133,7 @@ MonoBehaviour:
   double_attack: 0
   multi_attack: 0
   attack_speed: 1
-  variable_attack_speed_modifier: 0.25
+  variable_attack_speed_modifier: 0
   projectile: {fileID: 1656137020809238, guid: 0dc1f1edf36cae5418c476092040f041, type: 3}
   enemy_check: 0
   launch_point: {fileID: 5451448793968548915}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 551875605769240076}
   - component: {fileID: 7156329234004690365}
   m_Layer: 15
-  m_Name: ARML4
+  m_Name: AR18
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 1
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: ARM
   attached: 0
   part_name: ZenTech Arm of Northern Slopes

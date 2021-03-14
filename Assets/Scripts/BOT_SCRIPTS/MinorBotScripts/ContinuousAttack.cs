@@ -17,7 +17,7 @@ public class ContinuousAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EngagedCheck = GetComponent<MeleeAttack>().EngagedCheck;
+        EngagedCheck = GetComponent<MeleeAttack>().engagedCheck;
 
         if (EngagedCheck)
         {

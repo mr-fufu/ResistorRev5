@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 public class ProjectileAttack : MonoBehaviourPunCallbacks
 {
-
     // Attached to a bot part that can fire a projectile prefab from a given launch point(s)
 
     // double and multi-attack public bools, checked true for certain parts. Double attack requires
     // 2 launch points (launch_point and launch_point_2) and multi-attack requires all 4 launch-points.
     // attacks will alternate between launch points sequentially. Launch number set appropriately
+    
     public bool double_attack;
     public bool multi_attack;
 

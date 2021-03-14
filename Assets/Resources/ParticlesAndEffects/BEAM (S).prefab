@@ -45,10 +45,10 @@ GameObject:
   - component: {fileID: 1402435127861952801}
   - component: {fileID: 7090672154732997859}
   - component: {fileID: 7559488811873334680}
-  - component: {fileID: 3672627613250513959}
-  - component: {fileID: -1737125800047622986}
+  - component: {fileID: -8613780675096266369}
+  - component: {fileID: 5361674451535485452}
   m_Layer: 0
-  m_Name: RedLaser
+  m_Name: BEAM (S)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayer: 8
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300006, guid: 4868293272afe454cbf8c6e1b79e2c22, type: 3}
-  m_Color: {r: 1, g: 0.09990564, b: 0.042452812, a: 0.43137255}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   y_velocity: 0
   piercing: 1
   damage_int_value: 0
-  ground_y_position: 0
+  ground_y_position: -25
 --- !u!61 &61417591149183388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   adjust_layer: 1
   layer_adjust: 1
   parent_layer_update: 1
---- !u!114 &3672627613250513959
+--- !u!114 &-8613780675096266369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,11 +243,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: -1737125800047622986}
+  - {fileID: 5361674451535485452}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-1737125800047622986
+--- !u!114 &5361674451535485452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,5 +261,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
+  m_SynchronizeScale: 1
   m_UseLocal: 0

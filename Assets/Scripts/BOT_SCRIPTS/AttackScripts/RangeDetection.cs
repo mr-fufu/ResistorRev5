@@ -19,123 +19,121 @@ public class RangeDetection : MonoBehaviour
     private int range_value;
     private int speed_value;
 
-    private int empty_count;
+    private int emptyCount;
 
-    private GameObject double_parent;
-    private GameObject quadruple_parent;
-    private bool spawned;
-    private ProjectileAttack weapon_attack;
-    private bool enemy_check;
-    private string check_tag;
+    private GameObject doubleParent;
+    private GameObject quadrupleParent;
+    private ProjectileAttack weaponAttack;
+    private Projectile projectile;
+    private bool enemy;
+    private string checkTag;
 
     // Start is called before the first frame update
     void Start()
     {
         collider_filter = collider_filter.NoFilter();
-        double_parent = transform.parent.transform.parent.gameObject;
-        weapon_attack = double_parent.GetComponent<ProjectileAttack>();
+        doubleParent = transform.parent.transform.parent.gameObject;
+        weaponAttack = doubleParent.GetComponent<ProjectileAttack>();
+        projectile = weaponAttack.projectile.GetComponent<Projectile>();
+        quadrupleParent = doubleParent.transform.parent.transform.parent.gameObject;
+        enemy = quadrupleParent.GetComponent<StandardStatBlock>().ENEMY;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (double_parent.GetComponent<PartStats>().attached == true)
+        if (!enemy)
         {
-            quadruple_parent = double_parent.transform.parent.transform.parent.gameObject;
-            spawned = quadruple_parent.GetComponent<StandardStatBlock>().spawned;
-            enemy_check = quadruple_parent.GetComponent<StandardStatBlock>().ENEMY;
+            checkTag = "BOT_Enemy";
+        }
+        else if (enemy)
+        {
+            checkTag = "BOT_Player";
+        }
 
-            if (!enemy_check)
+        if (!fixed_range)
+        {
+            if (!weaponAttack.variable_speed)
             {
-                check_tag = "BOT_Enemy";
+                if (projectile.projectile_speed > 0) {
+                    speed_value = projectile.projectile_speed;
+                }
+                else
+                {
+                    speed_value = 1;
+                }
             }
-            else if (enemy_check)
+            else
             {
-                check_tag = "BOT_Player";
+                speed_value = weaponAttack.variable_speed_value;
+            }
+
+            if (weaponAttack.variable_range && weaponAttack.range_stat_dependent)
+            {
+                range_value = quadrupleParent.GetComponent<StandardStatBlock>().RANGE;
+            }
+            else if (weaponAttack.variable_range && !weaponAttack.range_stat_dependent)
+            {
+                range_value = weaponAttack.variable_range_value;
+            }
+            else if (range_overide)
+            {
+                range_value = range_overide_value;
+            }
+            else
+            {
+                range_value = 1;
+            }
+
+            total_range = (speed_value * 1.8f) * (range_value * 1.8f);
+
+            if (total_range > 500)
+            {
+                total_range = 500;
+            }
+
+            if (scan_overide)
+            {
+                total_range = scan_overide_value;
+            }
+
+            GetComponent<BoxCollider2D>().size = new Vector2(total_range, 30);
+            GetComponent<BoxCollider2D>().offset = new Vector2(total_range / 2, 0);
+        }
+
+        check_colliders = new Collider2D[scan_size];
+
+        for (int setVar = 0; setVar < scan_size; setVar++)
+        {
+            check_colliders[setVar] = null;
+        }
+
+        emptyCount = 0;
+
+        gameObject.GetComponent<Collider2D>().OverlapCollider(collider_filter, check_colliders);
+
+        for (int checkVar = 0; checkVar < scan_size; checkVar++)
+        {
+            if (check_colliders[checkVar] != null)
+            {
+                if (check_colliders[checkVar].gameObject.tag == checkTag)
+                {
+                    scanned = true;
+                }
+                else
+                {
+                    emptyCount++;
+                }
+            }
+            else
+            {
+                emptyCount++;
             }
         }
 
-        if (spawned)
+        if (emptyCount == scan_size)
         {
-
-            if (!fixed_range)
-            {
-                if (!weapon_attack.variable_speed)
-                {
-                    speed_value = double_parent.GetComponent<ProjectileAttack>().projectile.GetComponent<Projectile>().projectile_speed;
-                }
-                else
-                {
-                    speed_value = weapon_attack.variable_speed_value;
-                }
-
-                if (weapon_attack.variable_range && weapon_attack.range_stat_dependent)
-                {
-                    range_value = quadruple_parent.GetComponent<StandardStatBlock>().RANGE;
-                }
-                else if (weapon_attack.variable_range && !weapon_attack.range_stat_dependent)
-                {
-                    range_value = weapon_attack.variable_range_value;
-                }
-                else if (range_overide)
-                {
-                    range_value = range_overide_value;
-                }
-                else
-                {
-                    range_value = 1;
-                }
-
-                total_range = (speed_value * 1.8f) * (range_value * 1.8f);
-
-                if (total_range > 500)
-                {
-                    total_range = 500;
-                }
-
-                if (scan_overide)
-                {
-                    total_range = scan_overide_value;
-                }
-
-                GetComponent<BoxCollider2D>().size = new Vector2(total_range, 30);
-                GetComponent<BoxCollider2D>().offset = new Vector2(total_range / 2, 0);
-            }
-
-            check_colliders = new Collider2D[scan_size];
-
-            for (int setVar = 0; setVar < scan_size; setVar++)
-            {
-                check_colliders[setVar] = null;
-            }
-
-            empty_count = 0;
-
-            gameObject.GetComponent<Collider2D>().OverlapCollider(collider_filter, check_colliders);
-
-            for (int checkVar = 0; checkVar < scan_size; checkVar++)
-            {
-                if (check_colliders[checkVar] != null)
-                {
-                    if (check_colliders[checkVar].gameObject.tag == check_tag)
-                    {
-                        scanned = true;
-                    }
-                    else
-                    {
-                        empty_count++;
-                    }
-                }
-                else
-                {
-                    empty_count++;
-                }
-            }
-
-            if (empty_count == scan_size)
-            {
-                scanned = false;
-            }
-        }   
+            scanned = false;
+        }
     }
 }

@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class MeleeAttack : MonoBehaviour
+public class MeleeAttack : MonoBehaviourPunCallbacks
 {
     public bool spawned;
     public int damage_val;
     public float attack_speed;
-    public bool EngagedCheck;
+    public bool engagedCheck;
     public bool attached;
 
     private Animator anim;
+
+    [PunRPC]
+    public void SyncEngagement(bool engaged)
+    {
+        engagedCheck = engaged;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,18 +30,21 @@ public class MeleeAttack : MonoBehaviour
     {
         anim.speed = attack_speed;
 
-        attached = GetComponent<PartStats>().attached;
-
-        if (GetComponent<PartStats>().part_type != "LEG")
+        if (photonView.IsMine)
         {
-            EngagedCheck = transform.parent.parent.GetComponent<StandardStatBlock>().engaged_check;
-        }
-        else
-        {
-            EngagedCheck = GetComponent<StandardStatBlock>().engaged_check;
+            if (GetComponent<PartStats>().part_type != "LEG")
+            {
+                engagedCheck = transform.parent.parent.GetComponent<StandardStatBlock>().engaged_check;
+            }
+            else
+            {
+                engagedCheck = GetComponent<StandardStatBlock>().engaged_check;
+            }
+
+            photonView.RPC("SyncEngagement", RpcTarget.Others, engagedCheck);
         }
 
-        if (EngagedCheck)
+        if (engagedCheck)
         {
             anim.SetBool("Engagement", true);
         }

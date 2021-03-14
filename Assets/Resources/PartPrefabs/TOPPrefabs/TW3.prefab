@@ -141,7 +141,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: TOPLARGE
   attached: 0
   part_name: "ThinkSmart\xAE Snowstorm"
@@ -176,8 +176,8 @@ MonoBehaviour:
   variable_range: 0
   variable_range_value: 0
   range_stat_dependent: 0
-  variable_speed: 0
-  variable_speed_value: 0
+  variable_speed: 1
+  variable_speed_value: 3
   variable_y: 1
   variable_y_value: 2
   variable_damage: 1
@@ -213,8 +213,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
