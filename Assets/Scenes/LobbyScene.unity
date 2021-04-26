@@ -1345,6 +1345,1520 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743394382}
   m_CullTransparentMesh: 0
+--- !u!1 &867123559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867123561}
+  - component: {fileID: 867123560}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &867123560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867123559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e3d653b14312f469479815b49da7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts:
+  - name: Mastodon Missile Launcher
+    manufacturer: BeastBots
+    description: SHAKE THE EARTH! No machine of metal could ever stop you!
+    type: ARM
+    id: AR01
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 150
+  - name: "ThinkSmart\uFFFD Blizzard"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Net positive in function and purpose. TSmart\uFFFD Blizzard: Think
+      Positive"
+    type: ARM
+    id: AR02
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 150
+  - name: "IndustrialGrade\uFFFD Eviscerator"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "The IndustrialGrade\uFFFD eviscerator melts steel and burns circuits
+      by spraying fuel burning at temperatures over 5000K.\uFFFDWARNING: Reserve
+      fuel canisters may combust spontaneously."
+    type: ARM
+    id: AR03
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 2
+    power: 0
+    slots: 0
+    cost: 150
+  - name: Crusader Excalibur
+    manufacturer: Crusader
+    description: Wield the blade of Righteousness upon the Non-Believers! Unleash
+      Wrath and absolve them of their Wicked Ways!
+    type: ARM
+    id: AR04
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 15
+    speed: 0
+    fuel: 0
+    power: 2
+    slots: 0
+    cost: 150
+  - name: M.I.C. UNIT-09 CHAINGUN
+    manufacturer: M.I.C.
+    description: 'MANDATE: Not enough Bullets. RESULT: More Bullets.'
+    type: ARM
+    id: AR05
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 150
+  - name: ZenTech Enlightenment
+    manufacturer: ZenTech
+    description: To strike out in anger is to strike oneself.
+    type: ARM
+    id: AR06
+    plate: 90
+    logic: 0
+    range: 0
+    armor: 50
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 150
+  - name: Streamline TurboJet
+    manufacturer: Streamline
+    description: Superheated thermal exhaust boosts your bot to unprecedented speeds.
+      High speed, low drag - feel the Streamline.
+    type: ARM
+    id: AR07
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 6
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 50
+  - name: SwordCoast Broadsider
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Hunger not for your victory, but for your enemy's defeat. Run the
+      seas red with their blood.
+    type: ARM
+    id: AR08
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 150
+  - name: "ThinkSmart\uFFFD Ambidex"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "For when the future is the past. Our hands hold the key, and the
+      key is a gun.TSmart\uFFFD Ambidex: Think Unlocked"
+    type: ARM
+    id: AR09
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 120
+  - name: M.I.C. UNIT-10 DOUBLEBARREL
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Rockets. RESULT : More Rockets.'
+    type: ARM
+    id: AR10
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 175
+  - name: Hornet Missile Launcher
+    manufacturer: BeastBots
+    description: Death by a thousand high velocity impact explosives.
+    type: ARM
+    id: AR11
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 200
+  - name: Taraskian Ultimatum
+    manufacturer: BeastBots
+    description: Game Over
+    type: ARM
+    id: AR12
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 230
+  - name: InvaderWare Cerebellum
+    manufacturer: InvaderWare
+    description: Be one with Invader
+    type: ARM
+    id: AR13
+    plate: 30
+    logic: 8
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 55
+  - name: "ThinkSmart\uFFFD Ambition"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Embracing the possibilities laid out before you, leaving the fruit
+      tree bare as it disappears in the distance behind you. ThinkSmart\uFFFD Ambidex:
+      Think Fruit"
+    type: ARM
+    id: AR14
+    plate: 10
+    logic: 1
+    range: 1
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 300
+  - name: ZenTech Arm of The Southern Cliffs
+    manufacturer: ZenTech
+    description: Fall and Break
+    type: ARM
+    id: AR15
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 15
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 135
+  - name: ZenTech Arm of The Eastern Shores
+    manufacturer: ZenTech
+    description: Torn by Tides
+    type: ARM
+    id: AR16
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 135
+  - name: ZenTech Arm of The Western Plains
+    manufacturer: ZenTech
+    description: Ceaseless, Undending
+    type: ARM
+    id: AR17
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 5
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 135
+  - name: ZenTech Arm of The Northern Slopes
+    manufacturer: ZenTech
+    description: Furious Might
+    type: ARM
+    id: AR18
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 20
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 135
+  - name: HobbyBot External Processor
+    manufacturer: HobbyBot
+    description: No point in lying, we forgot to put armor on this one
+    type: HEAD
+    id: H002
+    plate: 0
+    logic: 2
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 10
+  - name: M.I.C. UNIT-07 BUNKER
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Bunker. RESULT : More Bunker.'
+    type: HEAD
+    id: H01
+    plate: 80
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 40
+  - name: Crusader Cross Guard
+    manufacturer: Crusader
+    description: Brace hardened Steel against the Devious Enemy! Be Blind to their
+      Foul Tricks!
+    type: HEAD
+    id: H03
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 15
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 50
+  - name: Streamline Glide Fin
+    manufacturer: Streamline
+    description: Once you attach the Glide Fin, your bot will cut through the air
+      like a shark through the water. High speed, low drag - Feel the Streamline.
+    type: HEAD
+    id: H04
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 30
+  - name: M.I.C. UNIT-01 GUNFACE
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Gun. RESULT : More Gun.'
+    type: HEAD
+    id: H05
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 65
+  - name: HobbyBot Scanner
+    manufacturer: HobbyBot
+    description: Be careful not to use this component in an area with a lot of signal
+      traffic as it may short circuit. Also may catch fire
+    type: HEAD
+    id: H06
+    plate: 20
+    logic: 2
+    range: 2
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 30
+  - name: Cyclops Long Range Scanner
+    manufacturer: BeastBots
+    description: A high range digital radar sensor that improves robot aiming ability
+      and increases weapon range by mapping target location for increased accuracy.
+    type: HEAD
+    id: H07
+    plate: 20
+    logic: 2
+    range: 4
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 40
+  - name: HobbyBot Blockhead
+    manufacturer: HobbyBot
+    description: This head is better than no head. Just barely
+    type: HEAD
+    id: H08
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 10
+  - name: Sabertooth missile Launcher
+    manufacturer: BeastBots
+    description: Feel the POWER! POW! Slam your opponent with a sabertooth missile
+      and break em! AWOOOOOO!
+    type: HEAD
+    id: H09
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 125
+  - name: Crusader Power Tripper
+    manufacturer: Crusader
+    description: Eviscerate those who do not Heed the Wise! Let True Power com forth
+      and Smite the Heretics!
+    type: HEAD
+    id: H10
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 2
+    slots: 0
+    cost: 40
+  - name: "ThinkSmart\uFFFD Eyedar"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Long term plans and critical strategic analysis made manifest.
+      ThinkSmart\uFFFD Eyedar: Think Sight."
+    type: HEAD
+    id: H11
+    plate: 20
+    logic: 4
+    range: 4
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 90
+  - name: ZenTech Clairvoyance
+    manufacturer: ZenTech
+    description: To see with the eye is to be deceived by that which now is. To see
+      with the mind is to see that which can be.
+    type: HEAD
+    id: H12
+    plate: 40
+    logic: 0
+    range: 2
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 50
+  - name: "ThinkSmart\uFFFD Solarium"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Adapting to a changing environment and embracing the future. ThinkSmart\uFFFD
+      Solarium: Think Sun"
+    type: HEAD
+    id: H13
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 2
+    power: 2
+    slots: 0
+    cost: 100
+  - name: "IndustrialGrade\uFFFD Vent Head"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "IndustrialGrade\uFFFD is powered entirely by naturally occurring
+      resources and vents exhaust back to the source. WARNING: Byproducts may cause
+      genetic tissue degredation in amphibians."
+    type: HEAD
+    id: H14
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 2
+    power: 2
+    slots: 0
+    cost: 70
+  - name: "IndustrialGrade\uFFFD Welding Mask"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "At IndustrialGrade\uFFFD, safety is our number four concern. WARNING:
+      In case of malfunction, avert gaze to avoid permanent blindness."
+    type: HEAD
+    id: H15
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 20
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 50
+  - name: InvaderWare Contact
+    manufacturer: InvaderWare
+    description: We have forseen this already
+    type: HEAD
+    id: H16
+    plate: 20
+    logic: 6
+    range: 1
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 45
+  - name: "IndustrialGrade\uFFFD Colossus"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "IndustrialGrade\uFFFD is proud to present the Colossus, an 18-cylinder
+      excavator engine that runs on low-grade crude petroleum. WARNING: May flood
+      immediate area with carbon monoxide."
+    type: LEG
+    id: L01
+    plate: 110
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 1
+    fuel: 1
+    power: 1
+    slots: 3
+    cost: 100
+  - name: M.I.C. UNIT-03 TANK
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Treads. RESULT : More Treads.'
+    type: LEG
+    id: L02
+    plate: 120
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 90
+  - name: "ThinkSmart\uFFFD Uni Wheel"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Challenge the Status Quo. Challenge how we move in the new age.TSmart\uFFFD
+      Uni Wheel : Think Cyclical"
+    type: LEG
+    id: L03
+    plate: 50
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 80
+  - name: 'Crusader Iron Steed '
+    manufacturer: Crusader
+    description: Push through Doubt as you would an Enemy! Yield not to the Sword
+      nor Blasphemy!
+    type: LEG
+    id: L04
+    plate: 50
+    logic: 0
+    range: 0
+    armor: 15
+    speed: 1
+    fuel: 0
+    power: 3
+    slots: 1
+    cost: 110
+  - name: InvaderWare Martian
+    manufacturer: InvaderWare
+    description: Fast and light
+    type: LEG
+    id: L05
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 30
+  - name: ZenTech Levitator
+    manufacturer: ZenTech
+    description: Detach yourself from the world and the earth beneath you shall no
+      longer hold you as it does now.
+    type: LEG
+    id: L06
+    plate: 100
+    logic: 0
+    range: 0
+    armor: 15
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 90
+  - name: "ThinkSmart\uFFFD Stratosphere"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Keep up with the transformation of mobility. Synergy between you
+      and your destination. TSmart\uFFFD Stratosphere: Think Upwards"
+    type: LEG
+    id: L07
+    plate: 90
+    logic: 2
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 110
+  - name: Streamline Racer
+    manufacturer: Streamline
+    description: Lightweight, and balanced, the Streamline Racer provides your bot
+      with both speed and grace. High speed, low drag - feel the Streamline.
+    type: LEG
+    id: L08
+    plate: 80
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 3
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 60
+  - name: Streamline Glider
+    manufacturer: Streamline
+    description: Combining propulsion engines with a low-friction ultrasmooth bearing,
+      nothing is faster than a Streamline Glider. High speed, low drag - feel the
+      Streamline.
+    type: LEG
+    id: L09
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 4
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 40
+  - name: ZenTech Meditator
+    manufacturer: ZenTech
+    description: May peace find you as it does those who would wish you harm
+    type: LEG
+    id: L10
+    plate: 50
+    logic: 0
+    range: 0
+    armor: 20
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 80
+  - name: HobbyBot Mower Engine
+    manufacturer: HobbyBot
+    description: "Strapped for cash but need that bot to move? This baby may sacrifice,
+      power, stability and durability but it\uFFFDll definitely move. Kinda"
+    type: LEG
+    id: L11
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 20
+  - name: M.I.C. UNIT-05 BOXCAR
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Slots. RESULT : More Slots.'
+    type: LEG
+    id: L12
+    plate: 260
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 5
+    cost: 180
+  - name: Tornado PathMaker
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Crush all that you see. Destroy all that dare cross your path. Let
+      harm befall your enemies.
+    type: LEG
+    id: L13
+    plate: 50
+    logic: 0
+    range: 0
+    armor: 5
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 160
+  - name: InvaderWare Plutonian
+    manufacturer: InvaderWare
+    description: The War of the Worlds to end all Wars
+    type: LEG
+    id: L14
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 30
+  - name: Compact Plasteel Armor
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Armor made of Plasteel.
+    type: ARMOR
+    id: MR01
+    plate: 120
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 80
+  - name: Crusader Aegis
+    manufacturer: Crusader
+    description: Iron is but the Manifest of your Will! Let the Heathens shatter
+      like waves against the Unyielding light!
+    type: ARMOR
+    id: MR02
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 15
+    speed: 0
+    fuel: 0
+    power: 2
+    slots: 0
+    cost: 70
+  - name: Hydra Head Slot
+    manufacturer: BeastBots
+    description: Two heads are better than one! The Hydra Head Attachment will allow
+      you to add a second head so you can outthink your opponents.
+    type: ARMOR
+    id: MR03
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 10
+  - name: "IndustrialGrade\uFFFD Heat Transfer Vent"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "The high grade IndustrialGrade\uFFFD paladium provides efficient
+      insulation against high temperatures. WARNING : Inhaling hot paladium fumes
+      may cause blindness."
+    type: ARMOR
+    id: MR04
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 2
+    power: 0
+    slots: 0
+    cost: 30
+  - name: HobbyBot External Circuitry
+    manufacturer: HobbyBot
+    description: Why hide underneath all that armor? Show everybody your hard work
+      and hand-soldered circuits
+    type: ARMOR
+    id: MR05
+    plate: 20
+    logic: 2
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 20
+  - name: M.I.C. UNIT-02 CORE
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Barrels. RESULT : MoreBarrels.'
+    type: ARMOR
+    id: MR06
+    plate: 10
+    logic: 0
+    range: 1
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 70
+  - name: "IndustrialGrade\uFFFD Volatile Ignition"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "A steady, regulated stream of IndustrialGrade\uFFFD combustible
+      gas that melts through steel. WARNING: Inlet valve may not close during meltdown."
+    type: ARMOR
+    id: MR07
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 1
+    power: 0
+    slots: 0
+    cost: 70
+  - name: Tortuga Spike Shield
+    manufacturer: BeastBots
+    description: Crash into those fools and make em hurt!
+    type: ARMOR
+    id: MR08
+    plate: 60
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 60
+  - name: InvaderWare Pulse
+    manufacturer: InvaderWare
+    description: They shall serve
+    type: ARMOR
+    id: MR09
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 250
+  - name: HobbyBot High Grade Armor
+    manufacturer: HobbyBot
+    description: Digitally laser printed with custom, precision machining and nope
+      that's just a trash can lid
+    type: ARMOR
+    id: MR10
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 5
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 15
+  - name: Compact Teutonium Plate
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Reliable.
+    type: ARMOR
+    id: MR11
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 30
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 75
+  - name: Compact Chest Drill
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Unleash the fighting spirit.
+    type: ARMOR
+    id: MR12
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 140
+  - name: InvaderWare Fusion
+    manufacturer: InvaderWare
+    description: We bring them peace
+    type: ARMOR
+    id: MR13
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 210
+  - name: HobbyBot Vent Cover
+    manufacturer: HobbyBot
+    description: It may not stop bullets all that well but it should stop dust from
+      getting into the fans
+    type: ARMOR
+    id: MR14
+    plate: 0
+    logic: 0
+    range: 0
+    armor: 5
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 15
+  - name: Crusader Justice
+    manufacturer: Crusader
+    description: Let the Righteous Spirit embrace your Being! Channel Divine Judgement
+      upon the Earth!
+    type: ARMOR
+    id: MR15
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 1
+    slots: 0
+    cost: 60
+  - name: Streamline Inlet
+    manufacturer: Streamline
+    description: Ram air through your compressors at high speeds for optimal results.
+      High speed, low drag - feel the Streamline.
+    type: ARMOR
+    id: MR16
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 3
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 20
+  - name: Compact Regulation Frame
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Adheres to regulations.
+    type: TORSO
+    id: T01
+    plate: 70
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 1
+    power: 0
+    slots: 3
+    cost: 80
+  - name: SwordCoast Swashbuckler
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Ruinous as the waves, quick as the furious tempest. Rain and thunder
+      at your heels, the sea claims all.
+    type: TORSO
+    id: T02
+    plate: 130
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 3
+    cost: 80
+  - name: "ThinkSmart\uFFFD Lightweight Core"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Reduce overhead while getting results.ThinkSmart\uFFFD Lightweight:
+      Think Light"
+    type: TORSO
+    id: T03
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 5
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 2
+    cost: 70
+  - name: Streamline Shocktube
+    manufacturer: Streamline
+    description: The Streamline Shocktube gives your bot that extra bit of speed
+      while still allowing you to attach standard bot components. High speed, low
+      drag - feel the Streamline.
+    type: TORSO
+    id: T04
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 3
+    cost: 40
+  - name: "IndustrialGrade\uFFFD Hercules"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "IndustrialGrade\uFFFD parts are maticulously machined and both
+      heat and chemically treated to resist wear. WARNING: touching treated surfaces
+      with bare skin may cause nerve damage."
+    type: TORSO
+    id: T05
+    plate: 100
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 2
+    power: 2
+    slots: 4
+    cost: 120
+  - name: ZenTech Center
+    manufacturer: ZenTech
+    description: Be silent and centered. Find the locus of your own being and let
+      the rest come to you.
+    type: TORSO
+    id: T06
+    plate: 70
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 60
+  - name: HobbyBot Drone
+    manufacturer: HobbyBot
+    description: Everything a bot needs to technically qualify as functional. Except
+      weapons
+    type: TORSO
+    id: T07
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 20
+  - name: InvaderWare Supernova
+    manufacturer: InvaderWare
+    description: Adjusting for refraction index. Calculating light trajectory
+    type: TORSO
+    id: T08
+    plate: 60
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 250
+  - name: Compact Soldroid
+    manufacturer: Compact + SwordCoast + Tornado
+    description: All round balanced bot frame. Includes a wireless scanner.
+    type: TORSO
+    id: T09
+    plate: 50
+    logic: 1
+    range: 1
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 3
+    cost: 50
+  - name: M.I.C. UNIT-08 TROOPER
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Weapons. RESULT : More Weapons.'
+    type: TORSO
+    id: T10
+    plate: 80
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 2
+    cost: 100
+  - name: "ThinkSmart\uFFFD Polymer Core"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Affordable quality and attention to detail, painted in a smooth
+      and sleek polymer surface finish. ThinkSmart\uFFFD Lite Core: Think Quality"
+    type: TORSO
+    id: T11
+    plate: 30
+    logic: 0
+    range: 0
+    armor: 5
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 2
+    cost: 80
+  - name: M.I.C. UNIT-04 DOMINION
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not enough Tower. RESULT : More Tower.'
+    type: TORSO
+    id: T12
+    plate: 240
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 4
+    cost: 140
+  - name: InvaderWare Mastermind
+    manufacturer: InvaderWare
+    description: The mind is a terrible thing to waste
+    type: TORSO
+    id: T13
+    plate: 60
+    logic: 6
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 2
+    cost: 70
+  - name: "IndustrialGrade\uFFFD PureO2"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "At IndustrialGrade\uFFFD, our passion for quality fuel is reflected
+      by our unadulterated abundance. WARNING: Increasing oxygen supply during combustion
+      may result in minor catastrophic failure."
+    type: TORSO
+    id: T14
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 4
+    power: 0
+    slots: 2
+    cost: 80
+  - name: Crusader Templar
+    manufacturer: Crusader
+    description: The  Faithful Heart stands mightier than the Sharpest Arrow! Sheets
+      of Wrought Iron join in Harmonious DefianceQ
+    type: TORSO
+    id: T15
+    plate: 160
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 4
+    slots: 2
+    cost: 150
+  - name: HobbyBot Tin Can
+    manufacturer: HobbyBot
+    description: A sheet of the finest trash can steel protects your vulnerable internal
+      circuits
+    type: TORSO
+    id: T16
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 5
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 2
+    cost: 25
+  - name: Tornado WakeFinder
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Shred their circuits, tear through their armor. Eliminate all resistance.
+    type: TORSO
+    id: T17
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 1
+    cost: 135
+  - name: Crusader Covenant
+    manufacturer: Crusader
+    description: Divine is the Oath, Sacred is the Vow! Let Nothing shake your Resolve!
+    type: TORSO
+    id: T18
+    plate: 50
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 4
+    slots: 3
+    cost: 100
+  - name: Cobra Missile Launcher
+    manufacturer: BeastBots
+    description: The cobra missile strikes faster than the eye can see. Be wary or
+      suffer its deadly bite.
+    type: MOD
+    id: TW01
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 90
+  - name: HobbyBot Top-mounted Processor
+    manufacturer: HobbyBot
+    description: Save precious space and expensive plating by putting critical processing
+      units on the outside of your bot
+    type: MOD
+    id: TW02
+    plate: 20
+    logic: 2
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 20
+  - name: "ThinkSmart\uFFFD Snowstorm"
+    manufacturer: "ThinkSmart\uFFFD"
+    description: "Review logistical constructions and analyze the structural foundations
+      by which you achieve your goals. The ThinkSmart\uFFFD\uFFFD Snowstorm: Think
+      Pristine"
+    type: MOD
+    id: TW03
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 95
+  - name: Streamline RamJet
+    manufacturer: Streamline
+    description: "High compression ratios and superheated jets sacrifice everything\uFFFD
+      for speed. High speed, low drag - feel the Streamline."
+    type: MOD
+    id: TW04
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 20
+  - name: "IndustrialGrade\uFFFD Incinerator"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "A master of thermal manipulation, the IndustrialGrade\uFFFD Incinerator
+      leaves nothing behind but ash. WARNING: Inhaling icinerated ash may cause severe
+      lung irritation."
+    type: MOD
+    id: TW05
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 80
+  - name: M.I.C. UNIT-06 RPG
+    manufacturer: M.I.C.
+    description: 'MANDATE : Not Enough Damage. RESULT : More Damage.'
+    type: MOD
+    id: TW06
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 120
+  - name: InvaderWare ThinkTank
+    manufacturer: InvaderWare
+    description: Enter the think tank
+    type: MOD
+    id: TW07
+    plate: 20
+    logic: 4
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 30
+  - name: SwordCoast Periscope
+    manufacturer: Compact + SwordCoast + Tornado
+    description: Seek them out. Hunt them down. Sink them.
+    type: MOD
+    id: TW08
+    plate: 10
+    logic: 0
+    range: 4
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 25
+  - name: Crusader Reliquary
+    manufacturer: Crusader
+    description: Wear the Symbol of your Devotion! Let it strike Fear into the Hearts
+      of the Unworthy!
+    type: MOD
+    id: TW09
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 10
+    speed: 0
+    fuel: 0
+    power: 1
+    slots: 0
+    cost: 45
+  - name: Tortuga Composite Shielding
+    manufacturer: BeastBots
+    description: Hunker down. Protect yourself.
+    type: MOD
+    id: TW10
+    plate: 80
+    logic: 0
+    range: 0
+    armor: 15
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 70
+  - name: Wasp Missile launcher
+    manufacturer: BeastBots
+    description: "Persevere by sheer strength in numbers! Unleash the swarm and sting
+      \uFFFDem!"
+    type: MOD
+    id: TW11
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 140
+  - name: InvaderWare Collapse
+    manufacturer: InvaderWare
+    description: They will listen
+    type: MOD
+    id: TW12
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 250
+  - name: Streamline Intake
+    manufacturer: Streamline
+    description: Increased intake cross sectional area to increase the efficiency
+      of your engines. High speed, low drag - feel the Streamline.
+    type: MOD
+    id: TW13
+    plate: 10
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 15
+  - name: Crusader Lance
+    manufacturer: Crusader
+    description: Pierce your Opponents and Absolve them! Repent, those who Oppose
+      the Truth!
+    type: MOD
+    id: TW14
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 0
+    power: 1
+    slots: 0
+    cost: 60
+  - name: "IndustrialGrade\uFFFD Thermal Generator"
+    manufacturer: "IndustrialGrade\uFFFD"
+    description: "IndustrialGrade\uFFFD heats vaporized petroleum to over 2000K to
+      directly heat battery elements. WARNING: Escaping petroleum vapors may temporarily
+      melt flesh."
+    type: MOD
+    id: TW15
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 0
+    fuel: 4
+    power: 0
+    slots: 0
+    cost: 50
+  - name: ZenTech Meditator
+    manufacturer: ZenTech
+    description: Be within to resist without.
+    type: MOD
+    id: TW16
+    plate: 40
+    logic: 0
+    range: 0
+    armor: 20
+    speed: 0
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 60
+  - name: StreamLine Ranger
+    manufacturer: Streamline
+    description: Mapping the environment and all obstacles to calculate the most
+      efficient route. High speed, low drag - feel the Streamline.
+    type: MOD
+    id: TW17
+    plate: 40
+    logic: 2
+    range: 2
+    armor: 0
+    speed: 1
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 45
+  - name: Streamline Thurst Vector
+    manufacturer: Streamline
+    description: Zero to sixty, stop on a dime. Be exactly where you want to be,
+      go exactly where you want to go. High speed, low drag - feel the Streamline.
+    type: MOD
+    id: TW18
+    plate: 20
+    logic: 0
+    range: 0
+    armor: 0
+    speed: 2
+    fuel: 0
+    power: 0
+    slots: 0
+    cost: 20
+--- !u!4 &867123561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867123559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.10812, y: 55.129726, z: -6.1272297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &868747282
 GameObject:
   m_ObjectHideFlags: 0
