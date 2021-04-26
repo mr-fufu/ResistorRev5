@@ -48,7 +48,7 @@ public class CheckCompletion : MonoBehaviour
 
         if (check_object.GetComponent<PartStats>() != null)
         {
-            if (check_object.GetComponent<PartStats>().slot_component)
+            if (check_object.GetComponent<PartStats>().slotComponent)
             {
                 int child_count = check_object.transform.childCount;
                 int child_incomplete = 0;
@@ -63,7 +63,7 @@ public class CheckCompletion : MonoBehaviour
                         {
                             if (check_object.transform.GetChild(check_var).GetChild(part_var).GetComponent<PartStats>() != null)
                             {
-                                if (check_object.transform.GetChild(check_var).GetChild(part_var).GetComponent<PartStats>().slot_component)
+                                if (check_object.transform.GetChild(check_var).GetChild(part_var).GetComponent<PartStats>().slotComponent)
                                 {
                                     check_complete(check_object.transform.GetChild(check_var).GetChild(part_var).gameObject);
                                 }

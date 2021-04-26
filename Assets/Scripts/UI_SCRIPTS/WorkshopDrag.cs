@@ -78,7 +78,7 @@ public class WorkshopDrag : MonoBehaviour {
     public GameObject torsoSlotObject;
     public GameObject armSlotObject;
     public GameObject legSlotObject;
-    public GameObject topSlotObject;
+    public GameObject modSlotObject;
     public GameObject armorSlotObject;
 
     public GameObject scrollBar;
@@ -269,7 +269,7 @@ public class WorkshopDrag : MonoBehaviour {
                         // set dragging to true and record the selected object's part type
                         dragging = true;
 
-                        selectedPartType = selectedObject.gameObject.GetComponent<PartStats>().part_type;
+                        selectedPartType = selectedObject.gameObject.GetComponent<PartStats>().partType;
 
                         // record the original position and scale
                         originalPosition = selectedObject.position;
@@ -332,7 +332,7 @@ public class WorkshopDrag : MonoBehaviour {
                 }
                 else
                 {
-                    placement = FindStageObjects(selectedObject.GetComponent<PartStats>().part_type);
+                    placement = FindStageObjects(selectedObject.GetComponent<PartStats>().partType);
                 }
                 // if there is a slot underneath the mouse
                 if (placement != null)
@@ -367,29 +367,29 @@ public class WorkshopDrag : MonoBehaviour {
                         childCount3 = 0;
                         childCount4 = 0;
 
-                        if (slot_component.GetComponent<PartStats>().part_type == "LEG")
+                        if (slot_component.GetComponent<PartStats>().partType == "LEG")
                         {
                             parent_count = 0;
                         }
-                        else if (slot_component.transform.parent.parent.GetComponent<PartStats>().part_type == "LEG")
+                        else if (slot_component.transform.parent.parent.GetComponent<PartStats>().partType == "LEG")
                         {
                             parent_count = 1;
                             childCount1 = slot_component.transform.parent.GetSiblingIndex();
                         }
-                        else if (slot_component.transform.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
+                        else if (slot_component.transform.parent.parent.parent.parent.GetComponent<PartStats>().partType == "LEG")
                         {
                             parent_count = 2;
                             childCount1 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
                             childCount2 = slot_component.transform.parent.GetSiblingIndex();
                         }
-                        else if (slot_component.transform.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
+                        else if (slot_component.transform.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().partType == "LEG")
                         {
                             parent_count = 3;
                             childCount1 = slot_component.transform.parent.parent.parent.parent.parent.GetSiblingIndex();
                             childCount2 = slot_component.transform.parent.parent.parent.GetSiblingIndex();
                             childCount3 = slot_component.transform.parent.GetSiblingIndex();
                         }
-                        else if (slot_component.transform.parent.parent.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().part_type == "LEG")
+                        else if (slot_component.transform.parent.parent.parent.parent.parent.parent.parent.parent.GetComponent<PartStats>().partType == "LEG")
                         {
                             parent_count = 4;
                             childCount1 = slot_component.transform.parent.parent.parent.parent.parent.parent.parent.GetSiblingIndex();
@@ -398,7 +398,7 @@ public class WorkshopDrag : MonoBehaviour {
                             childCount4 = slot_component.transform.parent.GetSiblingIndex();
                         }
 
-                        selectedStage.GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
+                        selectedStage.GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().partName, slot_component.GetComponent<PartStats>().partType, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
 
                         // optional replace new instantiated component with component type name
                         // may be useful if locational damage is implemented
@@ -406,11 +406,11 @@ public class WorkshopDrag : MonoBehaviour {
 
                         slot_component.GetComponent<PartStats>().add_stats();
 
-                        slot_component.GetComponent<PartStats>().list_index = (selectedStage.GetComponent<SpawnList>().name_list.Length - 1);
+                        slot_component.GetComponent<PartStats>().listIndex = (selectedStage.GetComponent<SpawnList>().name_list.Length - 1);
 
                         slot_component.transform.localScale = placement.transform.localScale;
 
-                        if (slot_component.GetComponent<PartStats>().part_type == "ARM")
+                        if (slot_component.GetComponent<PartStats>().partType == "ARM")
                         {
                             slot_component.transform.position = new Vector3(slot_component.transform.position.x, slot_component.transform.position.y, -slot_component.transform.position.y * 0.1f - 20);
                         }
@@ -475,8 +475,8 @@ public class WorkshopDrag : MonoBehaviour {
                 var slot_component = Instantiate(L3Object.gameObject, Vector3.zero, Quaternion.identity);
                 var slot_component2 = Instantiate(T7Object.gameObject, Vector3.zero, Quaternion.identity);
 
-                stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().part_name, slot_component.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
-                stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().part_name, slot_component2.GetComponent<PartStats>().part_type, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component2);
+                stages[i].GetComponent<SpawnList>().AddIndex(slot_component.GetComponent<PartStats>().partName, slot_component.GetComponent<PartStats>().partType, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component);
+                stages[i].GetComponent<SpawnList>().AddIndex(slot_component2.GetComponent<PartStats>().partName, slot_component2.GetComponent<PartStats>().partType, childCount1, childCount2, childCount3, childCount4, parent_count, slot_component2);
 
                 slot_component.transform.SetParent(stages[i].transform);
                 slot_component2.transform.SetParent(stages[i].transform);
@@ -493,10 +493,10 @@ public class WorkshopDrag : MonoBehaviour {
         {
             if (slot_containment.GetComponent<PartStats>() != null)
             {
-                if (slot_containment.GetComponent<PartStats>().part_type != "LEG")
+                if (slot_containment.GetComponent<PartStats>().partType != "LEG")
                 {
                     slot_containment.gameObject.GetComponent<PartStats>().remove_stats();
-                    selectedStage.GetComponent<SpawnList>().RemoveIndex(slot_containment.gameObject.GetComponent<PartStats>().list_index);
+                    selectedStage.GetComponent<SpawnList>().RemoveIndex(slot_containment.gameObject.GetComponent<PartStats>().listIndex);
                     remove_children(slot_containment.gameObject);
                 }
                 else
@@ -588,7 +588,7 @@ public class WorkshopDrag : MonoBehaviour {
         var partStats = searchObject.GetComponent<PartStats>();
         if (partStats != null)
         {
-            if (partStats.slot_component && partStats.slotType == findType)
+            if (partStats.slotComponent && partStats.slotType == findType)
             {
                 if (!returnChild.Contains(searchObject))
                 {
@@ -631,7 +631,7 @@ public class WorkshopDrag : MonoBehaviour {
             {
                 if (remove_object.transform.GetChild(var).GetComponent<PartStats>() != null)
                 {
-                    if (remove_object.transform.GetChild(var).GetComponent<PartStats>().slot_component)
+                    if (remove_object.transform.GetChild(var).GetComponent<PartStats>().slotComponent)
                     {
                         if (remove_object.transform.GetChild(var).childCount != 0)
                         {
@@ -643,7 +643,7 @@ public class WorkshopDrag : MonoBehaviour {
 
                                     remove_children(remove_object.transform.GetChild(var).GetChild(0).gameObject);
 
-                                    selectedStage.GetComponent<SpawnList>().RemoveIndex(remove_object.transform.GetChild(var).GetChild(0).GetComponent<PartStats>().list_index);
+                                    selectedStage.GetComponent<SpawnList>().RemoveIndex(remove_object.transform.GetChild(var).GetChild(0).GetComponent<PartStats>().listIndex);
 
                                     partCount = remove_object.transform.childCount;
                                 }
@@ -651,7 +651,7 @@ public class WorkshopDrag : MonoBehaviour {
                                 {
                                     remove_object.transform.GetChild(var).GetChild(0).gameObject.GetComponent<PartStats>().remove_stats();
 
-                                    selectedStage.GetComponent<SpawnList>().RemoveIndex(remove_object.transform.GetChild(var).GetChild(0).GetComponent<PartStats>().list_index);
+                                    selectedStage.GetComponent<SpawnList>().RemoveIndex(remove_object.transform.GetChild(var).GetChild(0).GetComponent<PartStats>().listIndex);
                                 }
                             }
                         }
@@ -671,7 +671,7 @@ public class WorkshopDrag : MonoBehaviour {
             {
                 if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>() != null)
                 {
-                    if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slot_component)
+                    if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotComponent)
                     {
                         if (part_to_fill.transform.GetChild(var).childCount != 0)
                         {
@@ -734,15 +734,15 @@ public class WorkshopDrag : MonoBehaviour {
                                 armor_slot.transform.localScale = new Vector3(1.3f, 1.3f, 1);
                                 armor_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
-                            if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "TOPLARGE")
+                            if (part_to_fill.transform.GetChild(var).GetComponent<PartStats>().slotType == "MOD")
                             {
-                                var top_slot = Instantiate(topSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
+                                var mod_slot = Instantiate(modSlotObject, part_to_fill.transform.GetChild(var).position, part_to_fill.transform.GetChild(var).rotation);
                                 tempPosition = part_to_fill.transform.GetChild(var).position;
                                 tempPosition.y += 15;
                                 tempPosition.z -= 100;
-                                top_slot.transform.position = tempPosition;
-                                top_slot.transform.localScale = new Vector3(1.3f, 1.3f, 1);
-                                top_slot.transform.parent = part_to_fill.transform.GetChild(var);
+                                mod_slot.transform.position = tempPosition;
+                                mod_slot.transform.localScale = new Vector3(1.3f, 1.3f, 1);
+                                mod_slot.transform.parent = part_to_fill.transform.GetChild(var);
                             }
                         }
                     }

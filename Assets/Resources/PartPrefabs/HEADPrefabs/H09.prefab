@@ -172,7 +172,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: HEAD
   attached: 0
   part_name: Sabertooth missile Launcher
@@ -202,16 +202,14 @@ MonoBehaviour:
   launch_point_3: {fileID: 0}
   launch_point_4: {fileID: 0}
   launch_points: []
-  spawned: 0
-  attached: 0
   variable_attack_speed: 1
   variable_range: 1
   variable_range_value: 0
   range_stat_dependent: 1
   variable_speed: 0
   variable_speed_value: 0
-  variable_y: 1
-  variable_y_value: 1
+  variable_y: 0
+  variable_y_value: 0
   variable_damage: 0
   variable_damage_value: 0
   projectile_parent: 0
@@ -246,8 +244,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

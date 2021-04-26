@@ -45,28 +45,26 @@ public class PartStats : MonoBehaviourPunCallbacks
     // a melee part is currently attached (usually an arm). The bool causes the LEG part's
     // collider to be slightly smaller and allows the bot to get slightly closer to the enemy bot
 
-    public bool melee_component;
+    public bool meleeComponent;
 
     // (IMPORTANT) the go to check for whether a part is a slot or a part. Slot components use
     // a slot_type similar to the part_type
 
-    public bool slot_component;
+    public bool slotComponent;
 
     public string slotType;
 
-    public string part_type;
+    public string partType;
 
-    public bool attached;
+    public string partName;
+    public string partDescription;
 
-    public string part_name;
-    public string part_description;
-
-    private GameObject target_location;
-
-    public int list_index;
-
+    private GameObject targetLocation;
     private Vector3 hold_position;
     private PhotonView currentPhotonView;
+
+    [System.NonSerialized] public bool attached;
+    [System.NonSerialized] public int listIndex;
 
     [PunRPC]
     public void SyncPosition(float x, float y, float z)
@@ -99,7 +97,7 @@ public class PartStats : MonoBehaviourPunCallbacks
     // ARM
     // ARMOR 
     // TORSO
-    // TOPLARGE
+    // TOPLARGE - CHANGED TO MOD
     // TOPSMALL - NO LONGER USED
 
     // Start is called before the first frame update
@@ -108,28 +106,28 @@ public class PartStats : MonoBehaviourPunCallbacks
         // sets part and slot types accordingly if the gameobject is not a part or not a slot
         // respectively
 
-        if (slot_component)
+        if (slotComponent)
         {
-            part_type = "NOT A PART";
+            partType = "NOT A PART";
         }
-        else if (!slot_component)
+        else if (!slotComponent)
         {
             slotType = "NOT A SLOT";
         }
 
         // checks for validity and correct spelling of slot and part types
 
-        if (slot_component)
+        if (slotComponent)
         {
-            if (slotType != "LEG" && slotType != "HEAD" && slotType != "ARM" && slotType != "TOPLARGE" && slotType != "ARMOR" && slotType != "TORSO")
+            if (slotType != "LEG" && slotType != "HEAD" && slotType != "ARM" && slotType != "MOD" && slotType != "ARMOR" && slotType != "TORSO")
             {
                 Debug.Log(gameObject.transform.parent.gameObject.name);
                 Debug.Log("!!!INVALID SLOT TYPE!!!");
             }
         }
-        else if (!slot_component)
+        else if (!slotComponent)
         {
-            if (part_type != "LEG" && part_type != "HEAD" && part_type != "ARM" && part_type != "TOPLARGE" && part_type != "ARMOR" && part_type != "TORSO")
+            if (partType != "LEG" && partType != "HEAD" && partType != "ARM" && partType != "MOD" && partType != "ARMOR" && partType != "TORSO")
             {
                 Debug.Log(gameObject.name);
                 Debug.Log("!!!INVALID PART TYPE!!!");
@@ -141,7 +139,7 @@ public class PartStats : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (!slot_component)
+        if (!slotComponent)
         {
             if (currentPhotonView != null)
             {
@@ -164,19 +162,19 @@ public class PartStats : MonoBehaviourPunCallbacks
 
     public void add_stats()
     {
-        if (part_type != "LEG")
+        if (partType != "LEG")
         {
-            target_location = gameObject.transform.parent.transform.parent.gameObject;
+            targetLocation = gameObject.transform.parent.transform.parent.gameObject;
         }
-        else if (part_type == "LEG")
+        else if (partType == "LEG")
         {
-            target_location = gameObject;
+            targetLocation = gameObject;
         }
-        target_location.GetComponent<StandardStatBlock>().transmitStats(PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
+        targetLocation.GetComponent<StandardStatBlock>().transmitStats(PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
 
-        if (melee_component)
+        if (meleeComponent)
         {
-            target_location.GetComponent<StandardStatBlock>().transmit_melee(1);
+            targetLocation.GetComponent<StandardStatBlock>().transmit_melee(1);
         }
     }
 
@@ -184,16 +182,16 @@ public class PartStats : MonoBehaviourPunCallbacks
 
     public void remove_stats()
     {
-        if (part_type != "LEG")
+        if (partType != "LEG")
         {
-            target_location = gameObject.transform.parent.transform.parent.gameObject;           
+            targetLocation = gameObject.transform.parent.transform.parent.gameObject;           
         }
 
-        target_location.GetComponent<StandardStatBlock>().transmitStats(-PLATE, -LOGIC, -RANGE, -ARMOR, -SPEED, -FUEL, -POWER, -COST);
+        targetLocation.GetComponent<StandardStatBlock>().transmitStats(-PLATE, -LOGIC, -RANGE, -ARMOR, -SPEED, -FUEL, -POWER, -COST);
 
-        if (melee_component)
+        if (meleeComponent)
         {
-            target_location.GetComponent<StandardStatBlock>().transmit_melee(-1);
+            targetLocation.GetComponent<StandardStatBlock>().transmit_melee(-1);
         }
     }
 

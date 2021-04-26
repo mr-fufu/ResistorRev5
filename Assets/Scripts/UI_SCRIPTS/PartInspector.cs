@@ -148,8 +148,8 @@ public class PartInspector : MonoBehaviour
                     LOGIC = ray_hit.collider.gameObject.GetComponent<PartStats>().LOGIC;
                     COST = ray_hit.collider.gameObject.GetComponent<PartStats>().COST;
 
-                    displayed_name = ray_hit.collider.gameObject.GetComponent<PartStats>().part_name;
-                    displayed_description = ray_hit.collider.gameObject.GetComponent<PartStats>().part_description;
+                    displayed_name = ray_hit.collider.gameObject.GetComponent<PartStats>().partName;
+                    displayed_description = ray_hit.collider.gameObject.GetComponent<PartStats>().partDescription;
 
                     select_frame.SetActive(true);
                     select_frame.transform.position = new Vector2(ray_hit.collider.gameObject.transform.parent.transform.position.x - 1, ray_hit.collider.gameObject.transform.parent.transform.position.y - 2);
@@ -169,8 +169,8 @@ public class PartInspector : MonoBehaviour
                 LOGIC = selected_object.GetComponent<PartStats>().LOGIC;
                 COST = selected_object.GetComponent<PartStats>().COST;
 
-                displayed_name = selected_object.GetComponent<PartStats>().part_name;
-                displayed_description = selected_object.GetComponent<PartStats>().part_description;
+                displayed_name = selected_object.GetComponent<PartStats>().partName;
+                displayed_description = selected_object.GetComponent<PartStats>().partDescription;
 
                 select_frame.SetActive(true);
                 select_frame.transform.position = new Vector2(selected_object.transform.parent.transform.position.x - 1, selected_object.transform.parent.transform.position.y - 2);

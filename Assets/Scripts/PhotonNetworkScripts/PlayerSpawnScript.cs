@@ -164,7 +164,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             bot_clone.GetComponent<PhotonView>().RPC("SyncBotColor", RpcTarget.All, bot_color.x, bot_color.y, bot_color.z, bot_color.w);
         }
         
-        if (bot_clone.GetComponent<PartStats>().part_type == "ARM")
+        if (bot_clone.GetComponent<PartStats>().partType == "ARM")
         {
             bot_clone.transform.position = new Vector3(bot_clone.transform.position.x, bot_clone.transform.position.y, -bot_clone.transform.position.y * 0.1f - 10);
         }
@@ -187,11 +187,11 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
             // Photon networking requires the folder path under Assets/Resources when instantiating
             var partPrefab = part_library[part_type_index].part_library[search_library(name_list[index2], part_type_index)];
-            var partType = partPrefab.GetComponent<PartStats>().part_type;
+            var partType = partPrefab.GetComponent<PartStats>().partType;
 
             if(partType.Equals("TOPLARGE"))
             {
-                partType = "TOP";
+                partType = "MOD";
             }
             
             string path = "PartPrefabs/" + partType + "Prefabs/" + partPrefab.name;
@@ -203,7 +203,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             var projectileAttack = part_clone.GetComponent<ProjectileAttack>();
             if (projectileAttack != null)
             {
-                projectileAttack.enemy_check = !PhotonNetwork.IsMasterClient;
+                projectileAttack.enemyCheck = !PhotonNetwork.IsMasterClient;
                 part_clone.GetComponent<PhotonView>().RPC("SyncIsEnemyForProjectiles", RpcTarget.All, !PhotonNetwork.IsMasterClient);
             }
 
@@ -242,7 +242,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
             ChangeChildren(part_clone, bot_color, lane_name);
             part_clone.GetComponent<PartStats>().add_stats();
 
-            if (part_clone.GetComponent<PartStats>().part_type == "ARM")
+            if (part_clone.GetComponent<PartStats>().partType == "ARM")
             {
                 part_clone.transform.position = new Vector3(part_clone.transform.position.x, part_clone.transform.position.y, -part_clone.transform.position.y * 0.1f - 10);
                 part_clone.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 8;
@@ -278,7 +278,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
                 if (selectObjChild.GetComponent<PartStats>() != null)
                 {
-                    if (selectObjChild.GetComponent<PartStats>().slot_component)
+                    if (selectObjChild.GetComponent<PartStats>().slotComponent)
                     {
                         if (selectObjChild.childCount != 0)
                         {
@@ -333,7 +333,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
         for (int search_index = 0; search_index < part_library[part_type].part_library.Length; search_index++)
         {
-            if (part_library[part_type].part_library[search_index].GetComponent<PartStats>().part_name == part_name)
+            if (part_library[part_type].part_library[search_index].GetComponent<PartStats>().partName == part_name)
             {
                 return search_index;
             }
@@ -365,7 +365,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
         {
             return 3;
         }
-        else if (part_type == "TOPLARGE")
+        else if (part_type == "MOD")
         {
             return 4;
         }

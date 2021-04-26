@@ -32,7 +32,7 @@ public class MeleeAttack : MonoBehaviourPunCallbacks
 
         if (photonView.IsMine)
         {
-            if (GetComponent<PartStats>().part_type != "LEG")
+            if (GetComponent<PartStats>().partType != "LEG")
             {
                 engagedCheck = transform.parent.parent.GetComponent<StandardStatBlock>().engaged_check;
             }

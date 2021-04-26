@@ -92,7 +92,7 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
 
         // get part_type and attached from attached PartStats script
 
-        part_type = gameObject.GetComponent<PartStats>().part_type;
+        part_type = gameObject.GetComponent<PartStats>().partType;
 
         attached = gameObject.GetComponent<PartStats>().attached;
 
@@ -110,7 +110,7 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
                 }
                 if (part_type == "ARMOR")
                 {
-                    if (double_parent_object.GetComponent<PartStats>().part_type == "TORSO")
+                    if (double_parent_object.GetComponent<PartStats>().partType == "TORSO")
                     {
                         {
                             quadruple_parent_object = double_parent_object.transform.parent.transform.parent.gameObject;
@@ -208,7 +208,7 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
             }
             else if (part_type == "ARMOR")
             {
-                if (double_parent_object.GetComponent<PartStats>().part_type == "TORSO")
+                if (double_parent_object.GetComponent<PartStats>().partType == "TORSO")
                 {
                     var quadStatBlock = quadruple_parent_object.GetComponent<StandardStatBlock>();
                     PLATE = quadStatBlock.PLATE;
@@ -226,7 +226,7 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
                             PLATE, LOGIC, RANGE, ARMOR, SPEED, FUEL, POWER, COST);
                     }
                 }
-                else if (double_parent_object.GetComponent<PartStats>().part_type == "LEG")
+                else if (double_parent_object.GetComponent<PartStats>().partType == "LEG")
                 {
                     var doubleStatBlock = double_parent_object.GetComponent<StandardStatBlock>();
                     PLATE = doubleStatBlock.PLATE;
@@ -257,7 +257,7 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
         int newSpeed, int newFuel, int newPower, int newCost)
     {
 
-        part_type = gameObject.GetComponent<PartStats>().part_type;
+        part_type = gameObject.GetComponent<PartStats>().partType;
 
         if (part_type == "TORSO")
         {
@@ -298,7 +298,7 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
     
     public void transmit_melee(int melee_val)
     {
-        part_type = gameObject.GetComponent<PartStats>().part_type;
+        part_type = gameObject.GetComponent<PartStats>().partType;
 
         if (part_type == "TORSO")
         {
@@ -332,12 +332,12 @@ public class StandardStatBlock : MonoBehaviourPunCallbacks
                 }
                 else if (part_type == "ARMOR")
                 {
-                    if (double_parent_object.GetComponent<PartStats>().part_type == "TORSO")
+                    if (double_parent_object.GetComponent<PartStats>().partType == "TORSO")
                     {
                         useStat = true;
                         statBlock = quadruple_parent_object.GetComponent<StandardStatBlock>();
                     }
-                    else if (double_parent_object.GetComponent<PartStats>().part_type == "LEG")
+                    else if (double_parent_object.GetComponent<PartStats>().partType == "LEG")
                     {
                         useStat = false;
                         autoMove = double_parent_object.GetComponent<AutoMove>();

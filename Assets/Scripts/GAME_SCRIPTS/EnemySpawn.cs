@@ -127,7 +127,7 @@ public class EnemySpawn : MonoBehaviour
 
                 if (selected_object.transform.GetChild(var).GetComponent<PartStats>() != null)
                 {
-                    if (selected_object.transform.GetChild(var).GetComponent<PartStats>().slot_component)
+                    if (selected_object.transform.GetChild(var).GetComponent<PartStats>().slotComponent)
                     {
                         if (selected_object.transform.GetChild(var).childCount != 0)
                         {

@@ -11,115 +11,82 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
     // 2 launch points (launch_point and launch_point_2) and multi-attack requires all 4 launch-points.
     // attacks will alternate between launch points sequentially. Launch number set appropriately
     
-    public bool double_attack;
-    public bool multi_attack;
+    public bool doubleAttack;
+    public bool multiAttack;
 
-    private int launch_number;
+    private int launchNumber;
 
-    public float attack_speed;
-    public float variable_attack_speed_modifier;
+    public float attackSpeed;
+    public bool variableAttackSpeed;
+    public float variableAttackSpeedValue;
+
     public GameObject projectile;
     private float reloadtime = 100;
-    public bool enemy_check;
+
+    public List<Transform> launchPoints;
+
+    public bool variableRange;
+    public bool variableRangeUsesStat;
+    public int variableRangeValue;
+
+    public bool variableSpeed;
+    public int variableSpeedValue;
+
+    public bool variableHeight;
+    public float variableHeightValue;
+
+    public bool variableDamage;
+    public int variableDamageValue;
+
+    public bool attackOver;
+
+    private bool outOfFuel;
+    public bool usesFuel;
+    private int fuelRemaining;
+
+    public bool useScan;
+    public bool logicScan;
+    private bool scanned;
+
+    public GameObject rangeDetector;
+    public GameObject flareObject;
+    
+    private Vector2 launchLocation;
+    private int index;
+
+    [System.NonSerialized] public bool enemyCheck;
+    [System.NonSerialized] public bool projectileParent;
+    [System.NonSerialized] public GameObject leg_component;
 
     [PunRPC]
     public void SyncIsEnemyForProjectiles(bool isEnemy)
     {
-        enemy_check = isEnemy;
+        enemyCheck = isEnemy;
     }
 
-    public Transform launch_point;
-    public Transform launch_point_2;
-    public Transform launch_point_3;
-    public Transform launch_point_4;
-
-    public Transform[] launch_points;
-
-    public bool spawned;
-    public bool attached;
-
-    public bool variable_attack_speed;
-
-    public bool variable_range;
-    public int variable_range_value;
-    public bool range_stat_dependent;
-
-    public bool variable_speed;
-    public int variable_speed_value;
-
-    public bool variable_y;
-    public float variable_y_value;
-
-    public bool variable_damage;
-    public int variable_damage_value;
-
-    public bool projectile_parent;
-    public bool attack_over;
-
-    public bool out_of_fuel;
-    public bool uses_fuel;
-    public int fuel_use;
-    private int fuel_remaining;
-
-    public bool use_scan;
-    public bool logic_dependent;
-    public bool scanned;
-    public GameObject range_detector;
-
-    public bool uses_flare;
-    public GameObject flare_object;
-
-    private Vector2 launch_location;
-
-    private int index;
-
-    public GameObject player;
-
-    public GameObject leg_component;
 
     void Start()
     {
-        spawned = true;
         // set the launch_points array to include the appropriate launch points
         // Also set the launch number to the correct value
-        if (double_attack)
+        if (doubleAttack)
         {
-            launch_number = 2;
-
-            launch_points = new Transform[2];
-
-            launch_points[0] = launch_point;
-            launch_points[1] = launch_point_2;
+            launchNumber = 2;
         }
-        else if (multi_attack)
+        else if (multiAttack)
         {
-            launch_number = 4;
-
-            launch_points = new Transform[4];
-
-            launch_points[0] = launch_point;
-            launch_points[1] = launch_point_2;
-            launch_points[2] = launch_point_3;
-            launch_points[3] = launch_point_4;
+            launchNumber = 4;
         }
         else
         {
-            launch_number = 1;
-
-            launch_points = new Transform[1];
-
-            launch_points[0] = launch_point;
+            launchNumber = 1;
         }
 
-        // check whether the bot part the projectile attack script is attached to has been attached to 
-        // another bot part
-        attached = gameObject.GetComponent<PartStats>().attached;
-
         // check whether the range is dependent on and affected by the RANGE stat of the bot
-        if (range_stat_dependent)
+        if (variableRangeUsesStat)
         {
-            variable_range = true;
-            variable_range_value = 0;
+            variableRange = true;
+            variableRangeValue = 0;
         }
 
         // find leg object function to search for the leg part of the bot
@@ -133,36 +100,36 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
         {
             // find the fuel remaining value (similar to plating) on the leg bot part of the robot and set fuel_used bool to true
             // to instantiate the fuel bar. Check the fuel remaining and set out_of_fuel bool accordingly.
-            if (uses_fuel)
+            if (usesFuel)
             {
                 leg_component.GetComponent<Fueling>().fuel_used = true;
 
-                fuel_remaining = leg_component.GetComponent<Fueling>().fuel_remaining;
+                fuelRemaining = leg_component.GetComponent<Fueling>().fuel_remaining;
 
-                if (fuel_remaining < 1)
+                if (fuelRemaining < 1)
                 {
-                    out_of_fuel = true;
+                    outOfFuel = true;
                 }
                 else
                 {
-                    out_of_fuel = false;
+                    outOfFuel = false;
                 }
             }
 
             // if the robot constantly fires without needing to have a target in range then set scanned to always be true. Otherwise,
             // if the robot has a LOGIC of at least 1 then the robot will only fire when a target is in range.
 
-            if (!use_scan)
+            if (!useScan)
             {
                 scanned = true;
             }
-            else if (logic_dependent)
+            else if (logicScan)
             {
                 if (transform.parent.transform.parent.GetComponent<StandardStatBlock>().LOGIC > 0)
                 {
                     // if the weapon can use scan and the overall LOGIC of the bot is at least 1 then only fire if the
                     // range detector detects an opposing bot
-                    scanned = range_detector.GetComponent<RangeDetection>().scanned;
+                    scanned = rangeDetector.GetComponent<RangeDetection>().scanned;
                 }
                 else
                 {
@@ -173,7 +140,7 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
             else
             {
                 // otherwise, if the weapon uses scan but is not logic dependent then always use the range detector
-                scanned = range_detector.GetComponent<RangeDetection>().scanned;
+                scanned = rangeDetector.GetComponent<RangeDetection>().scanned;
             }
 
             // check to see whether the bot is an ENEMY (belongs to player 2 or the player on the right side of the screen)
@@ -185,20 +152,20 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
             if (scanned)
             {
                 // if the weapon is not out of fuel (stops fire if fuel is out)
-                if (!out_of_fuel)
+                if (!outOfFuel)
                 {
                     // if the attack speed is not constant then check the SSB for LOGIC and use that to set reloadtime. Otherwise, reloadtime is 
                     // affected only by the attack_speed (a public int set by the prefab as a stat inherent to the weapon)
-                    if (variable_attack_speed)
+                    if (variableAttackSpeed)
                     {
                         reloadtime -=
-                            (attack_speed * 0.5f +
+                            (attackSpeed * 0.5f +
                              transform.parent.transform.parent.GetComponent<StandardStatBlock>().LOGIC *
-                             variable_attack_speed_modifier) * Time.deltaTime * 50;
+                             variableAttackSpeedValue) * Time.deltaTime * 50;
                     }
                     else
                     {
-                        reloadtime -= attack_speed * 0.5f * Time.deltaTime * 50;
+                        reloadtime -= attackSpeed * 0.5f * Time.deltaTime * 50;
                     }
 
                     // if the reloadtime reaches 0 or less then fire the weapon and reset reloadtime
@@ -206,30 +173,30 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
                     {
                         // launch location is set to launch point of index. cycles through the launch points for double and multi attack, otherwise
                         // always set to the same launch point and launch_points is an array of size 1 only
-                        launch_location = launch_points[index].position;
+                        launchLocation = launchPoints[index].position;
 
 
                         //TODO SAM : handle random across server, seed it?
 
                         // variable y is a public bool set by the prefab as an inherent weapon stat that modifies the height between shots
                         // by a small random amount based on the variable y value mostly for aesthetic value for certain wapons (i.e. minigun)
-                        if (variable_y)
+                        if (variableHeight)
                         {
-                            launch_location[1] += Random.Range(-variable_y_value, variable_y_value);
+                            launchLocation[1] += Random.Range(-variableHeightValue, variableHeightValue);
                         }
 
                         // if the weapon uses fuel then transmit the fuel used by the projectile to the leg component Fueling script (similar to plating)
-                        if (uses_fuel)
+                        if (usesFuel)
                         {
-                            leg_component.GetComponent<Fueling>().transmit_fuel(-fuel_use);
+                            leg_component.GetComponent<Fueling>().transmit_fuel(-1);
                         }
 
-                        BattleFactorySpawn.instance.SpawnProjectile(projectile, launch_location, gameObject);
+                        BattleFactorySpawn.instance.SpawnProjectile(projectile, launchLocation, gameObject);
 
                         // spawns a flare (muzzle flare) gameobject at the point of launch (usually static and destroys itself after animation plays)
-                        if (uses_flare)
+                        if (flareObject != null)
                         {
-                            BattleFactorySpawn.instance.SpawnGeneric(flare_object, launch_location, gameObject,
+                            BattleFactorySpawn.instance.SpawnGeneric(flareObject, launchLocation, gameObject,
                                 gameObject.transform.rotation);
                         }
 
@@ -243,15 +210,15 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
                         // each shot results in a reload time of 100 for single and multi attack reloads after 5 seconds except when it reaches the
                         // maximum number of shots fired for a long reload. Multi attack functions as firing 4 shots in quick succession followed by a 
                         // long reload (mostly for aesthetic purposes)
-                        if (index == launch_number)
+                        if (index == launchNumber)
                         {
                             index = 0;
 
-                            if (double_attack)
+                            if (doubleAttack)
                             {
                                 reloadtime = 50;
                             }
-                            else if (multi_attack)
+                            else if (multiAttack)
                             {
                                 reloadtime = 80;
                             }
@@ -260,11 +227,11 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
                                 reloadtime = 100;
                             }
                         }
-                        else if (double_attack)
+                        else if (doubleAttack)
                         {
                             reloadtime = 50;
                         }
-                        else if (multi_attack)
+                        else if (multiAttack)
                         {
                             reloadtime = 5;
                         }
@@ -282,7 +249,7 @@ public class ProjectileAttack : MonoBehaviourPunCallbacks
     {
         if (find_object.GetComponent<PartStats>() != null)
         {
-            if (find_object.GetComponent<PartStats>().part_type == "LEG")
+            if (find_object.GetComponent<PartStats>().partType == "LEG")
             {
                 leg_component = find_object;
             }

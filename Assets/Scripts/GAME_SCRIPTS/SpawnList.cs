@@ -183,7 +183,7 @@ public class SpawnList : MonoBehaviour
             parent_count_add[index2 - 1] = parent_count_list[index2];
             part_object_add[index2 - 1] = part_object_list[index2];
 
-            part_object_add[index2 - 1].GetComponent<PartStats>().list_index -= 1;
+            part_object_add[index2 - 1].GetComponent<PartStats>().listIndex -= 1;
         }
 
         // set the current arrays to the add arrays

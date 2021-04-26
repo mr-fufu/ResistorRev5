@@ -15,13 +15,13 @@ public class ScoringBlock : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D cross_robot)
     {
-        if (!enemy_check && cross_robot.CompareTag("BOT_Enemy") && cross_robot.gameObject.GetComponent<PartStats>().part_type == "LEG")
+        if (!enemy_check && cross_robot.CompareTag("BOT_Enemy") && cross_robot.gameObject.GetComponent<PartStats>().partType == "LEG")
         {
             cross_robot.GetComponent<Plating>().DamagePlating(9999);
 
             scoreCounterPhoton.RPC("SyncScore", RpcTarget.All, true);
         }
-        else if (enemy_check && cross_robot.CompareTag("BOT_Player") && cross_robot.gameObject.GetComponent<PartStats>().part_type == "LEG")
+        else if (enemy_check && cross_robot.CompareTag("BOT_Player") && cross_robot.gameObject.GetComponent<PartStats>().partType == "LEG")
         {
             cross_robot.GetComponent<Plating>().DamagePlating(9999);
 

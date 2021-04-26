@@ -39,48 +39,48 @@ public class BattleFactorySpawn : MonoBehaviour
             launch_location, projectileAttack.transform.rotation);
 
         // sets whether the projectile moves independently or is a parent of the launcher
-        if (projectileAttack.projectile_parent)
+        if (projectileAttack.projectileParent)
         {
             clone.transform.parent = transform; //projectile_launcher.transform;
         }
 
         // sets whether the damage of the projectile is determined by the prefab or the attack script (since multiple projectile
         // attacks may use the same projectile)
-        if (projectileAttack.variable_damage)
+        if (projectileAttack.variableDamage)
         {
-            clone.GetComponent<Projectile>().damage_val = projectileAttack.variable_damage_value;
+            clone.GetComponent<Projectile>().damage_val = projectileAttack.variableDamageValue;
         }
 
         // sets whether the speed of the projectile is determined by the prefab or the attack script (similar to variable_damage)
-        if (projectileAttack.variable_speed)
+        if (projectileAttack.variableSpeed)
         {
-            clone.GetComponent<Projectile>().projectile_speed = projectileAttack.variable_speed_value;
+            clone.GetComponent<Projectile>().projectile_speed = projectileAttack.variableSpeedValue;
         }
 
         // sets which player the projectile belongs to (ENEMY on the right side of screen, Non-ENEMY on the left)
-        clone.GetComponent<Projectile>().enemy_check = projectileAttack.enemy_check;
-        clone.GetComponent<PhotonView>().RPC("SyncIsEnemyForProjectilesAgain", RpcTarget.All, projectileAttack.enemy_check);
+        clone.GetComponent<Projectile>().enemy_check = projectileAttack.enemyCheck;
+        clone.GetComponent<PhotonView>().RPC("SyncIsEnemyForProjectilesAgain", RpcTarget.All, projectileAttack.enemyCheck);
 
         // sets the projectile to be on the same layer as the launcher (for lane sort purposes)
         clone.GetComponent<SpriteRenderer>().sortingLayerName = projectile_launcher.GetComponent<SpriteRenderer>().sortingLayerName;
 
         // sets whether the projectile appears over top of bots
-        if (projectileAttack.attack_over)
+        if (projectileAttack.attackOver)
         {
             clone.GetComponent<SpriteRenderer>().sortingOrder = (projectile_launcher.GetComponent<SpriteRenderer>().sortingOrder + 10);
         }
 
         // sets whether the projectile has a variable range (lifespan)
-        if (projectileAttack.variable_range == true )
+        if (projectileAttack.variableRange == true )
         {
-            if (projectileAttack.range_stat_dependent)
+            if (projectileAttack.variableRangeUsesStat)
             {
                 clone.GetComponent<DestroyAfterTime>().LifeTime = 
                     projectile_launcher.transform.parent.parent.GetComponent<StandardStatBlock>().RANGE * 0.3f * Time.deltaTime * 50;
             }
             else
             {
-                clone.GetComponent<DestroyAfterTime>().LifeTime = projectileAttack.variable_range_value * 0.3f * Time.deltaTime * 50;
+                clone.GetComponent<DestroyAfterTime>().LifeTime = projectileAttack.variableRangeValue * 0.3f * Time.deltaTime * 50;
             }
         }
 

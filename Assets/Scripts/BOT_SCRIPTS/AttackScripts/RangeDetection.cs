@@ -53,7 +53,7 @@ public class RangeDetection : MonoBehaviour
 
         if (!fixed_range)
         {
-            if (!weaponAttack.variable_speed)
+            if (!weaponAttack.variableSpeed)
             {
                 if (projectile.projectile_speed > 0) {
                     speed_value = projectile.projectile_speed;
@@ -65,16 +65,16 @@ public class RangeDetection : MonoBehaviour
             }
             else
             {
-                speed_value = weaponAttack.variable_speed_value;
+                speed_value = weaponAttack.variableSpeedValue;
             }
 
-            if (weaponAttack.variable_range && weaponAttack.range_stat_dependent)
+            if (weaponAttack.variableRange && weaponAttack.variableRangeUsesStat)
             {
                 range_value = quadrupleParent.GetComponent<StandardStatBlock>().RANGE;
             }
-            else if (weaponAttack.variable_range && !weaponAttack.range_stat_dependent)
+            else if (weaponAttack.variableRange && !weaponAttack.variableRangeUsesStat)
             {
-                range_value = weaponAttack.variable_range_value;
+                range_value = weaponAttack.variableRangeValue;
             }
             else if (range_overide)
             {

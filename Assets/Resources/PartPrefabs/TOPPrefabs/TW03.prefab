@@ -183,7 +183,7 @@ MonoBehaviour:
   variable_damage: 1
   variable_damage_value: 1
   projectile_parent: 1
-  attack_over: 0
+  attack_over: 1
   out_of_fuel: 0
   uses_fuel: 0
   fuel_use: 0

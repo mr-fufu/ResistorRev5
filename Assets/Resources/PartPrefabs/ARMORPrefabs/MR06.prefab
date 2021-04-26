@@ -111,7 +111,7 @@ MonoBehaviour:
   ENEMY: 0
   melee_component: 0
   slot_component: 0
-  slot_type: 
+  slotType: 
   part_type: ARMOR
   attached: 0
   part_name: M.I.C. UNIT-02 CORE
@@ -140,8 +140,6 @@ MonoBehaviour:
   launch_point_3: {fileID: 0}
   launch_point_4: {fileID: 0}
   launch_points: []
-  spawned: 0
-  attached: 0
   variable_attack_speed: 1
   variable_range: 1
   variable_range_value: 0
@@ -149,7 +147,7 @@ MonoBehaviour:
   variable_speed: 0
   variable_speed_value: 0
   variable_y: 1
-  variable_y_value: 1
+  variable_y_value: 0.5
   variable_damage: 1
   variable_damage_value: 1
   projectile_parent: 0
@@ -184,8 +182,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
