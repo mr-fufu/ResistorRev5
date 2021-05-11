@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5465952152608701654}
   - component: {fileID: 5712931660790977816}
   m_Layer: 15
-  m_Name: TW5
+  m_Name: TW05
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,14 +184,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 40
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: "IndustrialGrade\u2122 Incinerator"
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &5465952152608701654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,42 +202,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efebb4027ad14c447b0da3e3cfdae77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  double_attack: 0
-  multi_attack: 0
-  attack_speed: 15
-  variable_attack_speed_modifier: 0
+  doubleAttack: 0
+  multiAttack: 0
+  attackSpeed: 0
+  variableAttackSpeed: 0
+  variableAttackSpeedValue: 0
   projectile: {fileID: 1656137020809238, guid: 56c8ff4ea85987346a7e5723214ba81d, type: 3}
-  enemy_check: 0
-  launch_point: {fileID: 5901600232676913439}
-  launch_point_2: {fileID: 0}
-  launch_point_3: {fileID: 0}
-  launch_point_4: {fileID: 0}
-  launch_points: []
-  spawned: 0
-  attached: 0
-  variable_attack_speed: 0
-  variable_range: 0
-  variable_range_value: 0
-  range_stat_dependent: 0
-  variable_speed: 1
-  variable_speed_value: 3
-  variable_y: 1
-  variable_y_value: 0.5
-  variable_damage: 0
-  variable_damage_value: 0
-  projectile_parent: 1
-  attack_over: 1
-  out_of_fuel: 0
-  uses_fuel: 1
-  fuel_use: 1
-  use_scan: 1
-  logic_dependent: 1
-  scanned: 0
-  range_detector: {fileID: 869947024789256954}
-  uses_flare: 0
-  flare_object: {fileID: 0}
-  player: {fileID: 0}
-  leg_component: {fileID: 0}
+  launchPoints: []
+  variableRange: 0
+  variableRangeUsesStat: 0
+  variableRangeValue: 0
+  variableSpeed: 0
+  variableSpeedValue: 0
+  variableHeight: 0
+  variableHeightValue: 0
+  variableDamage: 0
+  variableDamageValue: 0
+  attackOver: 0
+  usesFuel: 0
+  useScan: 0
+  logicScan: 0
+  rangeDetector: {fileID: 0}
+  flareObject: {fileID: 0}
 --- !u!114 &5712931660790977816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +243,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 0
+  viewIdField: 100
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &9221763649296288663

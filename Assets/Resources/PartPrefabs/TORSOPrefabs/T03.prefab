@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &8673471151995956672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246,14 +244,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &8673471152585177840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -294,7 +290,7 @@ GameObject:
   - component: {fileID: 3632161113848362052}
   - component: {fileID: 8673471153795948533}
   m_Layer: 15
-  m_Name: T3
+  m_Name: T03
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,14 +401,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 40
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TORSO
-  attached: 0
-  part_name: "ThinkSmart\xAE Lightweight Core"
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &8673471153795948533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +427,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 24
   InstantiationId: 0
   isRuntimeInstantiated: 0

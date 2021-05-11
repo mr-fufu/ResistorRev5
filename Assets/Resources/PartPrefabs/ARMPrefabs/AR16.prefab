@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4464987869062627779}
   - component: {fileID: 1947266365233948875}
   m_Layer: 15
-  m_Name: ARML2
+  m_Name: AR16
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   spawned: 0
   damage_val: 10
   attack_speed: 2
-  EngagedCheck: 0
+  engagedCheck: 0
   attached: 0
 --- !u!114 &3500394985299476525
 MonoBehaviour:
@@ -148,14 +148,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 60
   ENEMY: 0
-  melee_component: 1
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: ZenTech Arm of Eastern Shores
-  part_description: Torn against Tides
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &8650362783883595973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +189,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   - {fileID: 1947266365233948875}
-  viewIdField: 0
+  viewIdField: 49
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1947266365233948875

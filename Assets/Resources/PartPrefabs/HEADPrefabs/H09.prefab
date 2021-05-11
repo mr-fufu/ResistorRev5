@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 9152154913124642725}
   - component: {fileID: 6035278309774994259}
   m_Layer: 15
-  m_Name: H9
+  m_Name: H09
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,15 +170,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: HEAD
-  attached: 0
-  part_name: Sabertooth missile Launcher
-  part_description: Feel the POWER! POW! Slam your opponent with a sabertooth missile
-    and break em! AWOOOOOO!
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &9152154913124642725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,41 +188,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efebb4027ad14c447b0da3e3cfdae77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  double_attack: 1
-  multi_attack: 0
-  attack_speed: 1
-  variable_attack_speed_modifier: 1
+  doubleAttack: 0
+  multiAttack: 0
+  attackSpeed: 0
+  variableAttackSpeed: 0
+  variableAttackSpeedValue: 0
   projectile: {fileID: 1656137020809238, guid: cfc9a56ab987e3c4a8e762dba5ca7b55, type: 3}
-  enemy_check: 0
-  launch_point: {fileID: 7384485431544124343}
-  launch_point_2: {fileID: 6185488221182910614}
-  launch_point_3: {fileID: 0}
-  launch_point_4: {fileID: 0}
-  launch_points: []
-  variable_attack_speed: 1
-  variable_range: 1
-  variable_range_value: 0
-  range_stat_dependent: 1
-  variable_speed: 0
-  variable_speed_value: 0
-  variable_y: 0
-  variable_y_value: 0
-  variable_damage: 0
-  variable_damage_value: 0
-  projectile_parent: 0
-  attack_over: 0
-  out_of_fuel: 0
-  uses_fuel: 0
-  fuel_use: 0
-  use_scan: 1
-  logic_dependent: 1
-  scanned: 0
-  range_detector: {fileID: 7129288713390090201}
-  uses_flare: 1
-  flare_object: {fileID: 470578486907032013, guid: 1984f011107e84c4da168105bc772bba,
-    type: 3}
-  player: {fileID: 0}
-  leg_component: {fileID: 0}
+  launchPoints: []
+  variableRange: 0
+  variableRangeUsesStat: 0
+  variableRangeValue: 0
+  variableSpeed: 0
+  variableSpeedValue: 0
+  variableHeight: 0
+  variableHeightValue: 0
+  variableDamage: 0
+  variableDamageValue: 0
+  attackOver: 0
+  usesFuel: 0
+  useScan: 0
+  logicScan: 0
+  rangeDetector: {fileID: 0}
+  flareObject: {fileID: 0}
 --- !u!114 &6035278309774994259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +229,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 0
+  viewIdField: 102
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1001 &5729663795041136881
@@ -317,12 +301,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7db5d4ddfa4bca147ae1a9ba300956ae, type: 3}
---- !u!1 &7129288713390090201 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3275111517879965480, guid: 7db5d4ddfa4bca147ae1a9ba300956ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 5729663795041136881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &894371249310051170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4893912189039369107, guid: 7db5d4ddfa4bca147ae1a9ba300956ae,

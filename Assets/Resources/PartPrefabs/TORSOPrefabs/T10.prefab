@@ -127,14 +127,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 100
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TORSO
-  attached: 0
-  part_name: M.I.C. UNIT-08 TROOPER
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &6396271443648890516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,43 +145,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efebb4027ad14c447b0da3e3cfdae77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  double_attack: 0
-  multi_attack: 0
-  attack_speed: 1
-  variable_attack_speed_modifier: 1
+  doubleAttack: 0
+  multiAttack: 0
+  attackSpeed: 0
+  variableAttackSpeed: 0
+  variableAttackSpeedValue: 0
   projectile: {fileID: 1656137020809238, guid: 6fe590a654d086346a9266d1ddb175ec, type: 3}
-  enemy_check: 0
-  launch_point: {fileID: 3895421113480909436}
-  launch_point_2: {fileID: 0}
-  launch_point_3: {fileID: 0}
-  launch_point_4: {fileID: 0}
-  launch_points: []
-  spawned: 0
-  attached: 0
-  variable_attack_speed: 1
-  variable_range: 1
-  variable_range_value: 0
-  range_stat_dependent: 1
-  variable_speed: 0
-  variable_speed_value: 0
-  variable_y: 0
-  variable_y_value: 0
-  variable_damage: 0
-  variable_damage_value: 0
-  projectile_parent: 0
-  attack_over: 0
-  out_of_fuel: 0
-  uses_fuel: 0
-  fuel_use: 0
-  use_scan: 1
-  logic_dependent: 1
-  scanned: 0
-  range_detector: {fileID: 6255773577936238989}
-  uses_flare: 1
-  flare_object: {fileID: 4703073502323615457, guid: 73956829aa37a4d48ace18925b051b3a,
-    type: 3}
-  player: {fileID: 0}
-  leg_component: {fileID: 0}
+  launchPoints: []
+  variableRange: 0
+  variableRangeUsesStat: 0
+  variableRangeValue: 0
+  variableSpeed: 0
+  variableSpeedValue: 0
+  variableHeight: 0
+  variableHeightValue: 0
+  variableDamage: 0
+  variableDamageValue: 0
+  attackOver: 0
+  usesFuel: 0
+  useScan: 0
+  logicScan: 0
+  rangeDetector: {fileID: 0}
+  flareObject: {fileID: 0}
 --- !u!114 &1437341546021800412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +187,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 28
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &1982774785490887952
@@ -313,14 +296,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: TOPLARGE
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &9194243987285658429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -560,14 +541,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &1901685119456755032
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6822604181810888249}
   - component: {fileID: 2662374228148505758}
   m_Layer: 15
-  m_Name: T4
+  m_Name: T04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,14 +128,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 60
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TORSO
-  attached: 0
-  part_name: Streamline Shocktube
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!95 &6822604181810888249
 Animator:
   serializedVersion: 3
@@ -175,7 +173,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 7
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2662374228628709360
@@ -284,14 +282,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2662374228628709366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,14 +420,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2662374228891610669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -564,14 +558,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: TOPLARGE
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &6647769144218338644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -656,7 +648,7 @@ PrefabInstance:
     - target: {fileID: 8850747076596874358, guid: 46bf4c64c06fd1b4d94319c90af50b77,
         type: 3}
       propertyPath: viewIdField
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}

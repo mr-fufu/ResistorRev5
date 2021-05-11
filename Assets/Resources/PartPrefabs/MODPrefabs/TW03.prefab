@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6410677392671389451}
   - component: {fileID: 5650739965703001885}
   m_Layer: 15
-  m_Name: TW3
+  m_Name: TW03
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,14 +139,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 60
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: "ThinkSmart\xAE Snowstorm"
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &6410677392671389451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,42 +157,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efebb4027ad14c447b0da3e3cfdae77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  double_attack: 0
-  multi_attack: 0
-  attack_speed: 10
-  variable_attack_speed_modifier: 2
+  doubleAttack: 0
+  multiAttack: 0
+  attackSpeed: 0
+  variableAttackSpeed: 0
+  variableAttackSpeedValue: 0
   projectile: {fileID: 1656137020809238, guid: c0ce94d6e558bb847a143a4fc9391492, type: 3}
-  enemy_check: 0
-  launch_point: {fileID: 2820955849971087033}
-  launch_point_2: {fileID: 0}
-  launch_point_3: {fileID: 0}
-  launch_point_4: {fileID: 0}
-  launch_points: []
-  spawned: 0
-  attached: 0
-  variable_attack_speed: 1
-  variable_range: 0
-  variable_range_value: 0
-  range_stat_dependent: 0
-  variable_speed: 1
-  variable_speed_value: 3
-  variable_y: 1
-  variable_y_value: 2
-  variable_damage: 1
-  variable_damage_value: 1
-  projectile_parent: 1
-  attack_over: 1
-  out_of_fuel: 0
-  uses_fuel: 0
-  fuel_use: 0
-  use_scan: 1
-  logic_dependent: 1
-  scanned: 0
-  range_detector: {fileID: 1621610094077130061}
-  uses_flare: 0
-  flare_object: {fileID: 0}
-  player: {fileID: 0}
-  leg_component: {fileID: 0}
+  launchPoints: []
+  variableRange: 0
+  variableRangeUsesStat: 0
+  variableRangeValue: 0
+  variableSpeed: 0
+  variableSpeedValue: 0
+  variableHeight: 0
+  variableHeightValue: 0
+  variableDamage: 0
+  variableDamageValue: 0
+  attackOver: 0
+  usesFuel: 0
+  useScan: 0
+  logicScan: 0
+  rangeDetector: {fileID: 0}
+  flareObject: {fileID: 0}
 --- !u!114 &5650739965703001885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +198,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 0
+  viewIdField: 101
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1001 &4319679211928363621
@@ -291,12 +275,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7db5d4ddfa4bca147ae1a9ba300956ae, type: 3}
---- !u!1 &1621610094077130061 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3275111517879965480, guid: 7db5d4ddfa4bca147ae1a9ba300956ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 4319679211928363621}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8653735333659441654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4893912189039369107, guid: 7db5d4ddfa4bca147ae1a9ba300956ae,

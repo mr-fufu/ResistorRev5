@@ -107,14 +107,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 20
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Streamline Inlet
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &5865463889240637838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 79
   InstantiationId: 0
   isRuntimeInstantiated: 0

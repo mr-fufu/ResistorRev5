@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &6087352671582143021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -267,14 +265,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 140
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: M.I.C. UNIT-04 DOMINION
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &5988906474349626008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +291,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 51
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &6153233049273815008
@@ -404,14 +400,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &903974588109244808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -544,14 +538,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &3397399279268218204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -684,14 +676,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &6687090214207528091
 BoxCollider2D:
   m_ObjectHideFlags: 0

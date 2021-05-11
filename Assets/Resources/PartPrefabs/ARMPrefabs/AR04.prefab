@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4919137805058923820}
   - component: {fileID: 4913258590730429718}
   m_Layer: 15
-  m_Name: AR4
+  m_Name: AR04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,15 +234,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 120
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: ARM
-  attached: 0
-  part_name: Crusader Excalibur
-  part_description: Wield the blade of righteous destiny upon the non-believers.
-    Unleash thy Wrath with the Excalibur and absolve them of their wicked ways.
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &4913258590730429718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +260,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 58
   InstantiationId: 0
   isRuntimeInstantiated: 0

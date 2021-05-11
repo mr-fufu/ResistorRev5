@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -3504217347010062372}
   - component: {fileID: 2669356098277455355}
   m_Layer: 15
-  m_Name: L2
+  m_Name: L02
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,14 +216,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: LEG
-  attached: 0
-  part_name: M.I.C. UNIT-03 TANK
-  part_description: "Purpose: Wheels break. Solution: Don\u2019t use wheels."
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &-3504217347010062372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +242,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 75
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &2669356098277455355
@@ -395,11 +393,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 

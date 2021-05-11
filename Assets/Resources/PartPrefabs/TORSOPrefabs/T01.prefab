@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &846232589596946726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 7203456778505809827}
   - component: {fileID: 846232590217650536}
   m_Layer: 15
-  m_Name: T1
+  m_Name: T01
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,14 +264,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 60
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TORSO
-  attached: 0
-  part_name: Compact Regulation Frame
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &846232590217650536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +290,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 73
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &846232590622802219
@@ -403,14 +399,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &846232590622802217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -543,14 +537,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &846232591056746105
 BoxCollider2D:
   m_ObjectHideFlags: 0

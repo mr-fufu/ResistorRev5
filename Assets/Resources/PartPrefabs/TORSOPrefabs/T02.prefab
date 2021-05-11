@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 729177080189548688}
   - component: {fileID: 3682294905638728483}
   m_Layer: 15
-  m_Name: T2
+  m_Name: T02
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,14 +126,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: SwordCoast Swashbuckler
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &3682294905638728483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3682294906008863987
@@ -263,14 +261,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &3682294906008863997
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -403,14 +399,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &3682294906542829759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -543,14 +537,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &3682294906765861439
 BoxCollider2D:
   m_ObjectHideFlags: 0

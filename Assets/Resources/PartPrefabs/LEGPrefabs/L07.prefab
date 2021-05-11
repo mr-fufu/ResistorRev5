@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 7580972672532636060}
   - component: {fileID: 857428104678710606}
   m_Layer: 15
-  m_Name: L7
+  m_Name: L07
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,15 +177,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 140
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: "ThinkSmart\xAE Stratosphere"
-  part_description: "Seven billion people. A species. What do we all have in common?
-    We walk. But no more. ThinkSmart\xAE Stratosphere: the stratosphere is the limit."
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &2450287840738400501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +259,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 16
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &4138814368880257935
@@ -397,14 +394,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &8649909273129397764
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,11 +532,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

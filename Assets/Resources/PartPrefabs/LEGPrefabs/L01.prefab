@@ -132,14 +132,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &6794114465400833125
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,14 +270,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &6794114465533875690
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,14 +408,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &6794114465872374590
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +433,7 @@ GameObject:
   - component: {fileID: 5071221480550992078}
   - component: {fileID: 6189396873951872844}
   m_Layer: 15
-  m_Name: L1
+  m_Name: L01
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,14 +611,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 120
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: LEG
-  attached: 0
-  part_name: "IndustrialGrade\u2122 Colossus"
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!50 &6910714187324274763
 Rigidbody2D:
   serializedVersion: 4
@@ -682,6 +674,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 26
   InstantiationId: 0
   isRuntimeInstantiated: 0

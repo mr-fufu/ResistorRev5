@@ -123,7 +123,7 @@ MonoBehaviour:
   spawned: 0
   damage_val: 35
   attack_speed: 0.5
-  EngagedCheck: 0
+  engagedCheck: 0
   attached: 0
 --- !u!114 &3910275740386208554
 MonoBehaviour:
@@ -147,14 +147,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 120
   ENEMY: 0
-  melee_component: 1
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: ARM
-  attached: 0
-  part_name: ZenTech Arm of Northern Slopes
-  part_description: Furious Might
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &551875605769240076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +174,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   - {fileID: 7156329234004690365}
-  viewIdField: 0
+  viewIdField: 74
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &7156329234004690365

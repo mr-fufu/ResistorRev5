@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 292685683766292574}
   - component: {fileID: 7143339520538768899}
   m_Layer: 15
-  m_Name: MR2
+  m_Name: MR02
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,15 +107,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 60
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Crusader Aegis
-  part_description: Iron is the fortitude of your will! Let the heathen arrows shatter
-    like waves against the shore!
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &7143339520538768899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 71
   InstantiationId: 0
   isRuntimeInstantiated: 0

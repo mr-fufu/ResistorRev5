@@ -132,14 +132,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &722468824514996468
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 7779365556231055502}
   - component: {fileID: 722468824514996467}
   m_Layer: 15
-  m_Name: T6
+  m_Name: T06
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,14 +262,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 50
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: ZenTech Center
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &722468824514996467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +288,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 34
   InstantiationId: 0
   isRuntimeInstantiated: 0

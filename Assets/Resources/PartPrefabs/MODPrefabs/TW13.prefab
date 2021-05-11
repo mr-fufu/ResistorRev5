@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 50
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Streamline Intake
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &4095539032927624026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +132,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 81
   InstantiationId: 0
   isRuntimeInstantiated: 0

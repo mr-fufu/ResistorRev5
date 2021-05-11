@@ -17,7 +17,7 @@ ZenTech Arm of The Southern Cliffs,ZenTech,Fall and Break,ARM,AR15,30,0,0,15,0,0
 ZenTech Arm of The Eastern Shores,ZenTech,Torn by Tides,ARM,AR16,20,0,0,10,0,0,0,0,135,MELEE,MELEE,FALSE,12,1,1,FALSE,0,2,MELEE,MELEE,MELEE,MELEE,MELEE,0,105,30,0,0,8,0,0,0,0,60,0
 ZenTech Arm of The Western Plains,ZenTech,"Ceaseless, Undending",ARM,AR17,10,0,0,5,0,0,0,0,135,MELEE,MELEE,FALSE,5,1,1,FALSE,0,5.5,MELEE,MELEE,MELEE,MELEE,MELEE,0,120,40,0,0,12,0,0,0,0,50,0
 ZenTech Arm of The Northern Slopes,ZenTech,Furious Might,ARM,AR18,40,0,0,20,0,0,0,0,135,MELEE,MELEE,FALSE,35,1,1,FALSE,0,0.5,MELEE,MELEE,MELEE,MELEE,MELEE,0,75,10,0,0,2,0,0,0,0,120,0
-HobbyBot External Processor,HobbyBot,"No point in lying, we forgot to put armor on this one",HEAD,H002,0,2,0,0,0,0,0,0,10,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,30,4,0,0,0,0,0,0,15,0
+HobbyBot External Processor,HobbyBot,"No point in lying, we forgot to put armor on this one",HEAD,H02,0,2,0,0,0,0,0,0,10,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,30,4,0,0,0,0,0,0,15,0
 M.I.C. UNIT-07 BUNKER,M.I.C.,MANDATE : Not enough Bunker. RESULT : More Bunker.,HEAD,H01,80,0,0,0,0,0,0,0,40,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,80,0,0,0,0,0,0,0,40,0
 Crusader Cross Guard,Crusader,Brace hardened Steel against the Devious Enemy! Be Blind to their Foul Tricks!,HEAD,H03,40,0,0,15,0,0,0,0,50,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,60,0,0,12,0,0,0,0,50,0
 Streamline Glide Fin,Streamline,"Once you attach the Glide Fin, your bot will cut through the air like a shark through the water. High speed, low drag - Feel the Streamline.",HEAD,H04,40,0,0,0,2,0,0,0,30,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,25,0,0,0,1,0,0,0,30,0

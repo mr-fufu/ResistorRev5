@@ -107,14 +107,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 100
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Teutonium Plate
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &1887923486438529697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 78
   InstantiationId: 0
   isRuntimeInstantiated: 0

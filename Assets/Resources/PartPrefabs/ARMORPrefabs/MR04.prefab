@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4900848960031322748}
   - component: {fileID: 496930663104286214}
   m_Layer: 15
-  m_Name: MR4
+  m_Name: MR04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,16 +107,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 50
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: "IndustrialGrade\u2122 Heat Transfer Vent"
-  part_description: 'The high grade paladium used in our components raises the efficiency
-    of your bot while generating power. WARNING : Inhaling hot paladium fumes may
-    cause blindness'
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &496930663104286214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 93
   InstantiationId: 0
   isRuntimeInstantiated: 0

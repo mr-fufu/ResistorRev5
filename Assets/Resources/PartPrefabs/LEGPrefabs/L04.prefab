@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 30591334854643344}
   - component: {fileID: 1524459275392897168}
   m_Layer: 15
-  m_Name: L4
+  m_Name: L04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,14 +216,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: LEG
-  attached: 0
-  part_name: 'Crusader Iron Steed '
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &30591334854643344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +242,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 42
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1524459275392897168
@@ -395,11 +393,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 

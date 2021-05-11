@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &7443476383300849596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246,14 +244,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &9009768257094945023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -386,14 +382,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &7243307933484489120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -546,14 +540,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: Crusader Covenant
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &4254952916036373716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +566,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 41
   InstantiationId: 0
   isRuntimeInstantiated: 0

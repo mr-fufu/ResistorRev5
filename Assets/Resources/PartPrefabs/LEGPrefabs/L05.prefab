@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 8287245881946063049}
   - component: {fileID: -5258602191128849434}
   m_Layer: 15
-  m_Name: L5
+  m_Name: L05
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,14 +251,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 40
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: InvaderWare Arachnid
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &8287245881946063049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +293,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 33
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &5951888037167295041
@@ -430,11 +428,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &3609166389430458933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 2782321128433428675}
   - component: {fileID: 3609166389687808520}
   m_Layer: 15
-  m_Name: T5
+  m_Name: T05
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,16 +266,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 120
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TORSO
-  attached: 0
-  part_name: "IndustrialGrade\u2122 Hercules"
-  part_description: "IndustrialGrade\u2122 parts are immensely powerful and nothing
-    can power IndustrialGrade\u2122 bot components the way the IndustrialGrade\u2122
-    Hercules does -  with the reliability of solid fuel."
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &3609166389687808520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +292,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 15
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3609166389719829197
@@ -407,14 +401,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: TOPLARGE
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &6063661598263769800
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -547,14 +539,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &3609166390000481953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -687,14 +677,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slot_type: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &3609166391380730306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -788,7 +776,7 @@ PrefabInstance:
     - target: {fileID: 1904675341573056223, guid: 8160529b179d2e242b60de0fca703600,
         type: 3}
       propertyPath: viewIdField
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8160529b179d2e242b60de0fca703600, type: 3}

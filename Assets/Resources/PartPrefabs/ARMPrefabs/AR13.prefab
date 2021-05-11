@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4983609720974700254}
   - component: {fileID: 2548659416440649948}
   m_Layer: 15
-  m_Name: AR14
+  m_Name: AR13
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,14 +107,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 45
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: ARM
-  attached: 0
-  part_name: InvaderWare Cranium
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!114 &2548659416440649948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
+  viewIdField: 85
   InstantiationId: 0
   isRuntimeInstantiated: 0
