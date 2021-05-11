@@ -137,22 +137,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 10
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 2
+  ARMOR: 20
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 120
+  COST: 135
   ENEMY: 0
-  meleeComponent: 0
+  meleeComponent: 1
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: ZenTech Arm of The Northern Slopes
+  partDescription: Furious Might
 --- !u!114 &551875605769240076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   - {fileID: 7156329234004690365}
-  viewIdField: 74
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &7156329234004690365

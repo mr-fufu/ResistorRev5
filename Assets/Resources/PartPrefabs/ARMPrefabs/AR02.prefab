@@ -107,14 +107,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 140
+  COST: 150
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: "ThinkSmart\uFFFD Blizzard"
+  partDescription: "Net positive in function and purpose. TSmart\uFFFD Blizzard:
+    Think Positive"
 --- !u!114 &2698624021978272416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +170,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 70
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3451256785650511128

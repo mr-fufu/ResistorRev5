@@ -121,7 +121,7 @@ public class PartStats : MonoBehaviourPunCallbacks
         {
             if (slotType != "LEG" && slotType != "HEAD" && slotType != "ARM" && slotType != "MOD" && slotType != "ARMOR" && slotType != "TORSO")
             {
-                Debug.Log(gameObject.transform.parent.gameObject.name);
+                Debug.Log(gameObject.transform.parent.gameObject.name + " " + slotType);
                 Debug.Log("!!!INVALID SLOT TYPE!!!");
             }
         }

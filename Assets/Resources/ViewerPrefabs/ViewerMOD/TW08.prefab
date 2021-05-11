@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7303609399596504895}
   - component: {fileID: 8752205297664206519}
   m_Layer: 15
-  m_Name: TW8
+  m_Name: TW08
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,22 +98,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PLATE: 10
   LOGIC: 0
-  RANGE: 2
+  RANGE: 4
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 45
+  COST: 25
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: SwordCoast Periscope
-  part_description: Seek them out. Hunt them down.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: SwordCoast Periscope
+  partDescription: Seek them out. Hunt them down. Sink them.
 --- !u!61 &8752205297664206519
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -107,8 +107,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -245,8 +245,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: HEAD
   partType: 
   partName: 
   partDescription: 
@@ -394,19 +394,20 @@ MonoBehaviour:
   PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 5
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 70
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: "ThinkSmart\uFFFD Lightweight Core"
+  partDescription: "Reduce overhead while getting results.ThinkSmart\uFFFD Lightweight:
+    Think Light"
 --- !u!114 &8673471153795948533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +428,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 24
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

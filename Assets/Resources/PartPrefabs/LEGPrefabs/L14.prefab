@@ -249,14 +249,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 30
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: LEG
+  partName: InvaderWare Plutonian
+  partDescription: The War of the Worlds to end all Wars
 --- !u!114 &4554079658039406200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 63
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &1622940407921588009
@@ -428,8 +428,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TORSO
   partType: 
   partName: 
   partDescription: 

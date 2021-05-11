@@ -137,14 +137,16 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 95
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: MOD
+  partName: "ThinkSmart\uFFFD Snowstorm"
+  partDescription: "Review logistical constructions and analyze the structural foundations
+    by which you achieve your goals. The ThinkSmart\uFFFD\uFFFD Snowstorm: Think
+    Pristine"
 --- !u!114 &6410677392671389451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +200,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 101
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1001 &4319679211928363621

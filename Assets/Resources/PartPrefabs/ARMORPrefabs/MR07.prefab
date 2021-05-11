@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -107,14 +107,15 @@ MonoBehaviour:
   FUEL: 1
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 70
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARMOR
+  partName: "IndustrialGrade\uFFFD Volatile Ignition"
+  partDescription: "A steady, regulated stream of IndustrialGrade\uFFFD combustible
+    gas that melts through steel. WARNING: Inlet valve may not close during meltdown."
 --- !u!114 &532265526499911133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 82
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7314249878820630988

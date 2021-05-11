@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 50
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -125,14 +125,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 135
   ENEMY: 0
-  meleeComponent: 0
+  meleeComponent: 1
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: Tornado WakeFinder
+  partDescription: Shred their circuits, tear through their armor. Eliminate all
+    resistance.
 --- !u!95 &684004513127803938
 Animator:
   serializedVersion: 3
@@ -188,7 +189,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 27
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2996693506203190480
@@ -411,8 +412,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: HEAD
   partType: 
   partName: 
   partDescription: 

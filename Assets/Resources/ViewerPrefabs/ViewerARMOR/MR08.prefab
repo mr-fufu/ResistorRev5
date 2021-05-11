@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9088248003219869216}
   - component: {fileID: 9088248003219869217}
   m_Layer: 15
-  m_Name: MR8
+  m_Name: MR08
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,24 +97,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 15
+  PLATE: 60
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 120
+  COST: 60
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: ARMOR
-  attached: 0
-  part_name: InvaderWare Jabberwocky
-  part_description: The Jaws that Bite and Claws that Catch!
-  list_index: 0
+  partType: ARMOR
+  partName: Tortuga Spike Shield
+  partDescription: Crash into those fools and make em hurt!
 --- !u!61 &9088248003219869217
 BoxCollider2D:
   m_ObjectHideFlags: 0

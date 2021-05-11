@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 7480885482001340921}
   - component: {fileID: 5576438605451705320}
   m_Layer: 15
-  m_Name: ARML3
+  m_Name: AR17
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,24 +228,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 10
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 5
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 135
   ENEMY: 0
-  melee_component: 1
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: ZenTech Arm of Western Plains
-  part_description: Ceaseless, Undending
-  list_index: 0
+  meleeComponent: 1
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: ZenTech Arm of The Western Plains
+  partDescription: Ceaseless, Undending
 --- !u!61 &5576438605451705320
 BoxCollider2D:
   m_ObjectHideFlags: 0

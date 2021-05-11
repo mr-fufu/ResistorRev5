@@ -96,22 +96,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 0
   LOGIC: 2
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 15
+  COST: 10
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: HobbyBot External Processor
+  partDescription: No point in lying, we forgot to put armor on this one
 --- !u!114 &9054721637440578339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +132,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 88
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

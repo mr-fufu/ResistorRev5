@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &1401697590541956296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 3846876680296733355}
   - component: {fileID: 3014014236128224611}
   m_Layer: 15
-  m_Name: T9
+  m_Name: T09
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,16 +262,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 50
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: Compact Soldroid
-  part_description: All round balanced bot frame. Includes a wireless scanner.
-  list_index: 0
+  partType: TORSO
+  partName: Compact Soldroid
+  partDescription: All round balanced bot frame. Includes a wireless scanner.
 --- !u!61 &3014014236128224611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -287,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -298,7 +294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0
 --- !u!1 &4997480692603543555
 GameObject:
@@ -406,14 +402,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &1159906420262079585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -546,14 +540,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &720563165176548396
 BoxCollider2D:
   m_ObjectHideFlags: 0

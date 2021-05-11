@@ -126,14 +126,16 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 40
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: Streamline Shocktube
+  partDescription: The Streamline Shocktube gives your bot that extra bit of speed
+    while still allowing you to attach standard bot components. High speed, low drag
+    - feel the Streamline.
 --- !u!95 &6822604181810888249
 Animator:
   serializedVersion: 3
@@ -173,7 +175,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 7
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2662374228628709360
@@ -283,8 +285,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: HEAD
   partType: 
   partName: 
   partDescription: 
@@ -421,8 +423,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -559,8 +561,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TOPLARGE
   partType: 
   partName: 
   partDescription: 
@@ -648,7 +650,7 @@ PrefabInstance:
     - target: {fileID: 8850747076596874358, guid: 46bf4c64c06fd1b4d94319c90af50b77,
         type: 3}
       propertyPath: viewIdField
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}

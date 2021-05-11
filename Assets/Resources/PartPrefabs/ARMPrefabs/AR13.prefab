@@ -98,21 +98,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 30
-  LOGIC: 4
+  LOGIC: 8
   RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 45
+  COST: 55
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: InvaderWare Cerebellum
+  partDescription: Be one with Invader
 --- !u!114 &2548659416440649948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 85
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

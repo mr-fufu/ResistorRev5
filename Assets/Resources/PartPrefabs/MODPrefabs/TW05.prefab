@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 15
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -182,14 +182,16 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 80
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: MOD
+  partName: "IndustrialGrade\uFFFD Incinerator"
+  partDescription: "A master of thermal manipulation, the IndustrialGrade\uFFFD Incinerator
+    leaves nothing behind but ash. WARNING: Inhaling icinerated ash may cause severe
+    lung irritation."
 --- !u!114 &5465952152608701654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +245,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 100
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &9221763649296288663

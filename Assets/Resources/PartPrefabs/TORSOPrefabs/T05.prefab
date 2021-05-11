@@ -107,8 +107,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -269,9 +269,11 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: "IndustrialGrade\uFFFD Hercules"
+  partDescription: "IndustrialGrade\uFFFD parts are maticulously machined and both
+    heat and chemically treated to resist wear. WARNING: touching treated surfaces
+    with bare skin may cause nerve damage."
 --- !u!114 &3609166389687808520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +294,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 15
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3609166389719829197
@@ -402,8 +404,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TOPLARGE
   partType: 
   partName: 
   partDescription: 
@@ -540,8 +542,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: HEAD
   partType: 
   partName: 
   partDescription: 
@@ -678,8 +680,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARMOR
   partType: 
   partName: 
   partDescription: 
@@ -776,7 +778,7 @@ PrefabInstance:
     - target: {fileID: 1904675341573056223, guid: 8160529b179d2e242b60de0fca703600,
         type: 3}
       propertyPath: viewIdField
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8160529b179d2e242b60de0fca703600, type: 3}

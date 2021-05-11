@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 25
+  PLATE: 10
   LOGIC: 1
   RANGE: 1
   ARMOR: 0
@@ -341,14 +341,16 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 80
+  COST: 300
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: "ThinkSmart\uFFFD Ambition"
+  partDescription: "Embracing the possibilities laid out before you, leaving the
+    fruit tree bare as it disappears in the distance behind you. ThinkSmart\uFFFD
+    Ambidex: Think Fruit"
 --- !u!114 &3673788529907125525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +370,6 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 46
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

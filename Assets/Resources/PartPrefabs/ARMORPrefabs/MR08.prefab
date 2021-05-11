@@ -102,7 +102,7 @@ MonoBehaviour:
   PLATE: 60
   LOGIC: 0
   RANGE: 0
-  ARMOR: 8
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -112,9 +112,9 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARMOR
+  partName: Tortuga Spike Shield
+  partDescription: Crash into those fools and make em hurt!
 --- !u!114 &7740058437206373769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +184,6 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 50
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

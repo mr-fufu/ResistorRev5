@@ -164,10 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -177,9 +177,9 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: Mastodon Missile Launcher
+  partDescription: SHAKE THE EARTH! No machine of metal could ever stop you!
 --- !u!114 &5240035957143222866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 99
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1001 &815316897905538734

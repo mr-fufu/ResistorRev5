@@ -132,14 +132,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &5028341051279964285
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 5028341051279964380}
   - component: {fileID: 5028341051279965012}
   m_Layer: 15
-  m_Name: L6
+  m_Name: L06
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,19 +281,17 @@ MonoBehaviour:
   PLATE: 100
   LOGIC: 0
   RANGE: 0
-  ARMOR: 8
-  SPEED: 3
+  ARMOR: 15
+  SPEED: 1
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 80
+  COST: 90
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: ZenTech Levitator
-  part_description: Detach yourself from the world and the earth beneath you shall
+  partType: LEG
+  partName: ZenTech Levitator
+  partDescription: Detach yourself from the world and the earth beneath you shall
     no longer hold you as it does now.
-  list_index: 0

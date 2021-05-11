@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &1194941889444193798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -258,22 +256,21 @@ MonoBehaviour:
   PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 10
   SPEED: 0
-  FUEL: 5
+  FUEL: 4
   POWER: 0
   FRAME: 0
-  COST: 65
+  COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: "IndustrialGrade\u2122 PureO2"
-  part_description: "At IndustrialGrade\u2122, nothing excites us quite like an overabundance
-    of fuel. The PureO2 is an unadulterated reflection of our passion."
-  list_index: 0
+  partType: TORSO
+  partName: "IndustrialGrade\uFFFD PureO2"
+  partDescription: "At IndustrialGrade\uFFFD, our passion for quality fuel is reflected
+    by our unadulterated abundance. WARNING: Increasing oxygen supply during combustion
+    may result in minor catastrophic failure."
 --- !u!61 &1680094899544899547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -287,7 +284,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -298,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0
 --- !u!1 &6323345429175655256
 GameObject:
@@ -406,14 +403,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &1748188718834515768
 BoxCollider2D:
   m_ObjectHideFlags: 0

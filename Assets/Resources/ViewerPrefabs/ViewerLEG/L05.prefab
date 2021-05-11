@@ -132,14 +132,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &2279707204972693054
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 2279707204972693131}
   - component: {fileID: 2279707204972692782}
   m_Layer: 15
-  m_Name: L5
+  m_Name: L05
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,13 +286,11 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 30
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: InvaderWare Arachnid
-  part_description: 9 total joints. Multiple degrees of articulation. Fast and light.
-  list_index: 0
+  partType: LEG
+  partName: InvaderWare Martian
+  partDescription: Fast and light

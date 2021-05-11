@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3464952744586602130}
   - component: {fileID: 315300837206057605}
   m_Layer: 15
-  m_Name: AR6
+  m_Name: AR06
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,25 +97,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 90
   LOGIC: 0
   RANGE: 0
-  ARMOR: 24
+  ARMOR: 50
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 100
+  COST: 150
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: ZenTech Enlightenment
-  part_description: "To strike out in anger is to strike out in vulnerability. To
-    fight one\u2019s enemy is to fight oneself."
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: ZenTech Enlightenment
+  partDescription: To strike out in anger is to strike oneself.
 --- !u!61 &315300837206057605
 BoxCollider2D:
   m_ObjectHideFlags: 0

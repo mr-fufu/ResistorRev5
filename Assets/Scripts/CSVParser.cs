@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+#endif
 
 [ExecuteInEditMode]
 public class CSVParser : MonoBehaviour
@@ -13,16 +15,18 @@ public class CSVParser : MonoBehaviour
     private static string LINE_SPLIT_RE = @"\r\n|\n\r|\n|\r";
     private static char[] TRIM_CHARS = { '\"' };
 
-    // Due to "ExecuteInEditMode" above, this is called by the Editor, not on start
 #if UNITY_EDITOR
-    
+    // Due to "ExecuteInEditMode" above, this is called by the Editor, not on start
     [ContextMenu("UPDATE PREFABS FROM CSV")]
     private void Start()
     {
-        LoadStatData();
+        // doesn't work well with workshop :shrug:
+        if (EditorSceneManager.GetActiveScene().name.Equals("Parts Matrix"))
+        {
+            LoadStatData();
+        }
         UpdatePartsInScene();
     }
-
 #endif
     
     public static List<Dictionary<string, object>> Read(string file)
@@ -64,6 +68,7 @@ public class CSVParser : MonoBehaviour
         return list;
     }
 
+#if UNITY_EDITOR
     public void LoadStatData()
     {
         List<Dictionary<string, object>> data = Read("Stats");
@@ -74,6 +79,7 @@ public class CSVParser : MonoBehaviour
             string desc = data[i]["DESC"].ToString();
             string type = data[i]["TYPE"].ToString();
             string id = data[i]["ID"].ToString();
+            bool isMelee = data[i]["WEAPON TYPE"].ToString().Equals("MELEE");
 
             if(partName.Equals("PLACEHOLDER"))
                 continue;
@@ -92,9 +98,9 @@ public class CSVParser : MonoBehaviour
                 
                 GameObject prefab = GetAssociatedPrefab("PartPrefabs/" + type + "Prefabs/" + id + ".prefab");
                 GameObject viewerPrefab = GetAssociatedPrefab("ViewerPrefabs/Viewer" + type + "/" + id + ".prefab");
-                UpdatePartsObject(prefab, partName, manu, desc, type, id,
+                UpdatePartsObject(prefab, partName, manu, desc, type, id, isMelee,
                     plate, logic, range, armor, speed, fuel, power, slots, cost);
-                UpdatePartsObject(viewerPrefab, partName, manu, desc, type, id,
+                UpdatePartsObject(viewerPrefab, partName, manu, desc, type, id,isMelee, 
                     plate, logic, range, armor, speed, fuel, power, slots, cost);
             }
             catch (Exception e)
@@ -107,13 +113,14 @@ public class CSVParser : MonoBehaviour
     }
     
     private void UpdatePartsObject(GameObject gameobj, string partName, string manu, string desc, string type, string id,
-        int plate, int logic, int range,int armor, int speed, int fuel, int power, int slots, int cost)
+        bool isMelee, int plate, int logic, int range,int armor, int speed, int fuel, int power, int slots, int cost)
     {
         PartStats stats = gameobj.GetComponent<PartStats>();
 
         stats.partName = partName;
         stats.partDescription = desc;
         stats.partType = type;
+        stats.meleeComponent = isMelee;
         
         stats.PLATE = plate;
         stats.LOGIC = logic;
@@ -143,14 +150,20 @@ public class CSVParser : MonoBehaviour
 
     private void UpdatePartsInScene()
     {
-        Scene scene = EditorSceneManager.GetActiveScene();
+        var scene = EditorSceneManager.GetActiveScene();
         var rootObjects = scene.GetRootGameObjects();
         
         foreach (var obj in rootObjects)
         {
-            var partStatsList = obj.GetComponentsInChildren<PartStats>();
+            var partStatsList = obj.GetComponentsInChildren<PartStats>(true);
             foreach (var partStats in partStatsList)
             {
+                if (partStats.gameObject.name.Contains("Attachment"))
+                {
+                    partStats.slotComponent = true;
+                    partStats.slotType = partStats.name.Replace("_AttachmentSlot", "");
+                }
+                
                 if (PrefabUtility.IsPartOfPrefabThatCanBeAppliedTo(partStats.gameObject))
                 {
                     //automated action => cant undo & no confirmation pop ups
@@ -159,4 +172,5 @@ public class CSVParser : MonoBehaviour
             }
         }
     }
+#endif
 }

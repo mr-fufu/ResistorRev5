@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1542356937010151066}
   - component: {fileID: 7864154900377767850}
   m_Layer: 15
-  m_Name: TW3
+  m_Name: TW03
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,17 +104,16 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 95
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: "ThinkSmart\xAE Snowstorm"
-  part_description: "Review logistical constructions and analyze the structural foundations
-    by which you achieve your goals. The ThinkSmart\xAE\_ Snowstorm: Think Pristine"
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: "ThinkSmart\uFFFD Snowstorm"
+  partDescription: "Review logistical constructions and analyze the structural foundations
+    by which you achieve your goals. The ThinkSmart\uFFFD\uFFFD Snowstorm: Think
+    Pristine"
 --- !u!61 &7864154900377767850
 BoxCollider2D:
   m_ObjectHideFlags: 0

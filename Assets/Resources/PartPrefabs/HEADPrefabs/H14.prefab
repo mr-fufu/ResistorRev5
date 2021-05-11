@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 80
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -104,14 +104,16 @@ MonoBehaviour:
   FUEL: 2
   POWER: 2
   FRAME: 0
-  COST: 50
+  COST: 70
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: "IndustrialGrade\uFFFD Vent Head"
+  partDescription: "IndustrialGrade\uFFFD is powered entirely by naturally occurring
+    resources and vents exhaust back to the source. WARNING: Byproducts may cause
+    genetic tissue degredation in amphibians."
 --- !u!114 &3998634601412169798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +134,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 89
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7916180058419598853}
   - component: {fileID: 7916180058419598730}
   m_Layer: 15
-  m_Name: L4
+  m_Name: L04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,23 +143,20 @@ MonoBehaviour:
   PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 20
+  ARMOR: 15
   SPEED: 1
   FUEL: 0
-  POWER: 0
+  POWER: 3
   FRAME: 0
-  COST: 80
+  COST: 110
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: 'Crusader Iron Steed '
-  part_description: Push through your Doubt as you would your Enemies! The Iron Steed
-    is the solution to non-believers and will make you impervious to both high-velocity
-    missiles and blasphemy!
-  list_index: 0
+  partType: LEG
+  partName: 'Crusader Iron Steed '
+  partDescription: Push through Doubt as you would an Enemy! Yield not to the Sword
+    nor Blasphemy!
 --- !u!1 &7916180058419599065
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,11 +289,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

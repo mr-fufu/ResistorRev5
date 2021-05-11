@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 558483257854532631}
   - component: {fileID: 2499625758021314666}
   m_Layer: 15
-  m_Name: MR7
+  m_Name: MR07
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,24 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 60
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 8
+  ARMOR: 0
   SPEED: 0
-  FUEL: 0
+  FUEL: 1
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 70
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Tortuga Spike Shield
-  part_description: Crash into those fools and make em hurt!
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARMOR
+  partName: "IndustrialGrade\uFFFD Volatile Ignition"
+  partDescription: "A steady, regulated stream of IndustrialGrade\uFFFD combustible
+    gas that melts through steel. WARNING: Inlet valve may not close during meltdown."
 --- !u!61 &2499625758021314666
 BoxCollider2D:
   m_ObjectHideFlags: 0

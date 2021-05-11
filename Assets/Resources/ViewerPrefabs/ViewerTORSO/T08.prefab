@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3348221376615180013}
   - component: {fileID: 8811665052818688129}
   m_Layer: 15
-  m_Name: T8
+  m_Name: T08
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 60
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -121,16 +121,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 100
+  COST: 250
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TORSO
-  attached: 0
-  part_name: InvaderWare Supernova
-  part_description: Adjusting for refraction index. Calculating light trajectory.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: TORSO
+  partName: InvaderWare Supernova
+  partDescription: Adjusting for refraction index. Calculating light trajectory
 --- !u!61 &8811665052818688129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +142,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -155,5 +153,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0

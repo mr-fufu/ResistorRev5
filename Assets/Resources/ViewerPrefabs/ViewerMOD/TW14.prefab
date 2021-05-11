@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 25
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -104,17 +104,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 1
   FRAME: 0
-  COST: 90
+  COST: 60
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Crusader Lance
-  part_description: Pierce the very soul of your opponent and absolve them of their
-    sins. Repent, those who oppose the Lance!
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: Crusader Lance
+  partDescription: Pierce your Opponents and Absolve them! Repent, those who Oppose
+    the Truth!
 --- !u!61 &589351930235157058
 BoxCollider2D:
   m_ObjectHideFlags: 0

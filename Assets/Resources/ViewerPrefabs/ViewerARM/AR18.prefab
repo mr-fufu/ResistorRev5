@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8140440640976395225}
   - component: {fileID: 2317531413385023750}
   m_Layer: 15
-  m_Name: ARML4
+  m_Name: AR18
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,24 +98,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 10
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 2
+  ARMOR: 20
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 120
+  COST: 135
   ENEMY: 0
-  melee_component: 1
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: ZenTech Arm of Northern Slopes
-  part_description: Furious Might
-  list_index: 0
+  meleeComponent: 1
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: ZenTech Arm of The Northern Slopes
+  partDescription: Furious Might
 --- !u!61 &2317531413385023750
 BoxCollider2D:
   m_ObjectHideFlags: 0

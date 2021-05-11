@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 10
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -104,17 +104,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 140
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Wasp Missile launcher
-  part_description: "Persevere by sheer strength in numbers! Unleash the swarm and
-    sting \u2018em!"
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: Wasp Missile launcher
+  partDescription: "Persevere by sheer strength in numbers! Unleash the swarm and
+    sting \uFFFDem!"
 --- !u!61 &799124516837316135
 BoxCollider2D:
   m_ObjectHideFlags: 0

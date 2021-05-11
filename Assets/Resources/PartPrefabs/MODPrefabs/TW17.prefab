@@ -96,22 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 50
-  LOGIC: 1
-  RANGE: 1
+  PLATE: 40
+  LOGIC: 2
+  RANGE: 2
   ARMOR: 0
   SPEED: 1
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 45
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: MOD
+  partName: StreamLine Ranger
+  partDescription: Mapping the environment and all obstacles to calculate the most
+    efficient route. High speed, low drag - feel the Streamline.
 --- !u!114 &464231369334069895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 90
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

@@ -137,22 +137,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 30
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 15
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 80
+  COST: 135
   ENEMY: 0
-  meleeComponent: 0
+  meleeComponent: 1
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: ZenTech Arm of The Southern Cliffs
+  partDescription: Fall and Break
 --- !u!114 &8929837691408546157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   - {fileID: 7810071113687951676}
-  viewIdField: 22
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &7810071113687951676

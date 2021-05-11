@@ -109,9 +109,9 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: M.I.C. UNIT-07 BUNKER
+  partDescription: 'MANDATE : Not enough Bunker. RESULT : More Bunker.'
 --- !u!114 &7899494939307338421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +132,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 83
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

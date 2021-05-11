@@ -101,21 +101,19 @@ MonoBehaviour:
   RANGE: 0
   ARMOR: 0
   SPEED: 0
-  FUEL: 2
-  POWER: 2
+  FUEL: 4
+  POWER: 0
   FRAME: 0
-  COST: 70
+  COST: 50
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: "IndustrialGrade\u2122 Thermal Generator"
-  part_description: "IndustrialGrade\u2122 heats vaporized petroleum to over 2000K
-    to directly heat battery elements. Just 1% of this heat energy is enough to power
-    a bot. We capture over 2%."
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: "IndustrialGrade\uFFFD Thermal Generator"
+  partDescription: "IndustrialGrade\uFFFD heats vaporized petroleum to over 2000K
+    to directly heat battery elements. WARNING: Escaping petroleum vapors may temporarily
+    melt flesh."
 --- !u!61 &5573583761990031328
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
+  PLATE: 20
   LOGIC: 2
   RANGE: 0
   ARMOR: 0
@@ -109,9 +109,10 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: MOD
+  partName: HobbyBot Top-mounted Processor
+  partDescription: Save precious space and expensive plating by putting critical
+    processing units on the outside of your bot
 --- !u!114 &1033719503477751971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 32
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

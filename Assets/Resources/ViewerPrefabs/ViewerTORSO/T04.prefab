@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1945434219928227440}
   - component: {fileID: 5461437901072581328}
   m_Layer: 15
-  m_Name: T4
+  m_Name: T04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,22 +120,20 @@ MonoBehaviour:
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
-  SPEED: 1
+  SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 40
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: Streamline Shocktube
-  part_description: The Streamline Shocktube gives your bot that extra bit of speed
+  partType: TORSO
+  partName: Streamline Shocktube
+  partDescription: The Streamline Shocktube gives your bot that extra bit of speed
     while still allowing you to attach standard bot components. High speed, low drag
     - feel the Streamline.
-  list_index: 0
 --- !u!61 &5461437901072581328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -160,7 +158,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0
 --- !u!1 &984008188523196645
 GameObject:
@@ -268,14 +266,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &984008188523196643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -408,14 +404,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &984008188802924856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -455,7 +449,7 @@ GameObject:
   - component: {fileID: 984008188829594240}
   - component: {fileID: 8436613923687262785}
   m_Layer: 15
-  m_Name: TOPLARGE_AttachmentSlot
+  m_Name: MOD_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,14 +542,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slotType: TOPLARGE
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 1
+  slotType: MOD
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &8436613923687262785
 BoxCollider2D:
   m_ObjectHideFlags: 0

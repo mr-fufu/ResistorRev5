@@ -100,21 +100,19 @@ MonoBehaviour:
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
-  SPEED: 1
+  SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 20
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Streamline Thurst Vector
-  part_description: Zero to sixty, stop on a dime. Be exactly where you want to be,
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: Streamline Thurst Vector
+  partDescription: Zero to sixty, stop on a dime. Be exactly where you want to be,
     go exactly where you want to go. High speed, low drag - feel the Streamline.
-  list_index: 0
 --- !u!61 &5573583761990031328
 BoxCollider2D:
   m_ObjectHideFlags: 0

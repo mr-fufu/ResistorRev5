@@ -107,8 +107,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -245,8 +245,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TOPLARGE (1)
   partType: 
   partName: 
   partDescription: 
@@ -391,22 +391,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 200
+  PLATE: 160
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
-  POWER: 2
+  POWER: 4
   FRAME: 0
-  COST: 140
+  COST: 150
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: Crusader Templar
+  partDescription: The  Faithful Heart stands mightier than the Sharpest Arrow! Sheets
+    of Wrought Iron join in Harmonious DefianceQ
 --- !u!114 &5651052850505598274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +428,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 47
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

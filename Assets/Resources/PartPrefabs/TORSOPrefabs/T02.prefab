@@ -116,10 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 80
+  PLATE: 130
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -129,9 +129,10 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: SwordCoast Swashbuckler
+  partDescription: Ruinous as the waves, quick as the furious tempest. Rain and thunder
+    at your heels, the sea claims all.
 --- !u!114 &3682294905638728483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 1
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3682294906008863987
@@ -262,8 +263,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: HEAD
   partType: 
   partName: 
   partDescription: 
@@ -400,8 +401,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARMOR
   partType: 
   partName: 
   partDescription: 
@@ -538,8 +539,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TOPSMALL
   partType: 
   partName: 
   partDescription: 

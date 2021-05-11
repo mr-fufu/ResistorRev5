@@ -133,8 +133,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TORSO
   partType: 
   partName: 
   partDescription: 
@@ -271,8 +271,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: FRONT
   partType: 
   partName: 
   partDescription: 
@@ -409,8 +409,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 100
+  PLATE: 110
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -609,14 +609,16 @@ MonoBehaviour:
   FUEL: 1
   POWER: 1
   FRAME: 0
-  COST: 120
+  COST: 100
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: LEG
+  partName: "IndustrialGrade\uFFFD Colossus"
+  partDescription: "IndustrialGrade\uFFFD is proud to present the Colossus, an 18-cylinder
+    excavator engine that runs on low-grade crude petroleum. WARNING: May flood immediate
+    area with carbon monoxide."
 --- !u!50 &6910714187324274763
 Rigidbody2D:
   serializedVersion: 4
@@ -672,8 +674,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  viewIdField: 26
+  ObservedComponents: []
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

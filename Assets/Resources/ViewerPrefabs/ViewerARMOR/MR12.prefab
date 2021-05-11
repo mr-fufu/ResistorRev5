@@ -97,25 +97,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 150
+  COST: 140
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 1
+  slotComponent: 0
   slotType: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Fusion Cannon
-  part_description: Burn a hole right through their rotten core. Salt the earth beneath
-    them and spit cruelty upon their smouldering ruins.
-  list_index: 0
+  partType: ARMOR
+  partName: Compact Chest Drill
+  partDescription: Unleash the fighting spirit.
 --- !u!61 &1885644031207094385
 BoxCollider2D:
   m_ObjectHideFlags: 0

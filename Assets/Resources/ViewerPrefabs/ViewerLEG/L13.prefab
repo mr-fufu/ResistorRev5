@@ -143,22 +143,20 @@ MonoBehaviour:
   PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 5
   SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 90
+  COST: 160
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 1
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: Tornado PathMaker
-  part_description: Crush everyone in sight. Destroy all that dare cross your path.
+  partType: LEG
+  partName: Tornado PathMaker
+  partDescription: Crush all that you see. Destroy all that dare cross your path.
     Let harm befall your enemies.
-  list_index: 0
 --- !u!1 &9031706271061915711
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,11 +289,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

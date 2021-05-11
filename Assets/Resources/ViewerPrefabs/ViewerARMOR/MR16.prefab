@@ -101,21 +101,19 @@ MonoBehaviour:
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
-  SPEED: 1
+  SPEED: 3
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 20
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Streamline Inlet
-  part_description: Ram air through your compressors at high speeds for optimal results.
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARMOR
+  partName: Streamline Inlet
+  partDescription: Ram air through your compressors at high speeds for optimal results.
     High speed, low drag - feel the Streamline.
-  list_index: 0
 --- !u!61 &1187290242159401829
 BoxCollider2D:
   m_ObjectHideFlags: 0

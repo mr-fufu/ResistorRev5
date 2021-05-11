@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2143206618958441463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 663345218218620309}
   - component: {fileID: 1520583170089924255}
   m_Layer: 15
-  m_Name: T5
+  m_Name: T05
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,16 +265,14 @@ MonoBehaviour:
   FRAME: 0
   COST: 120
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: "IndustrialGrade\u2122 Hercules"
-  part_description: "IndustrialGrade\u2122 parts are immensely powerful and nothing
-    powers them the way the IndustrialGrade\u2122 Hercules does -\_ with the reliability
-    of solid fuel."
-  list_index: 0
+  partType: TORSO
+  partName: "IndustrialGrade\uFFFD Hercules"
+  partDescription: "IndustrialGrade\uFFFD parts are maticulously machined and both
+    heat and chemically treated to resist wear. WARNING: touching treated surfaces
+    with bare skin may cause nerve damage."
 --- !u!61 &1520583170089924255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -290,7 +286,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -301,7 +297,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0
 --- !u!1 &2143206619214698395
 GameObject:
@@ -316,7 +312,7 @@ GameObject:
   - component: {fileID: 2143206619214698392}
   - component: {fileID: 8903074120119953310}
   m_Layer: 15
-  m_Name: TOPLARGE_AttachmentSlot
+  m_Name: MOD_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,14 +405,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slotType: TOPLARGE
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 1
+  slotType: MOD
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &8903074120119953310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -549,14 +543,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2143206619461273443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -689,14 +681,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2143206619801959572
 BoxCollider2D:
   m_ObjectHideFlags: 0

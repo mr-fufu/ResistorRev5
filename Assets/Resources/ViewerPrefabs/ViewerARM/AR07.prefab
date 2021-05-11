@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1194620569625215938}
   - component: {fileID: 5853591630400189471}
   m_Layer: 15
-  m_Name: AR7
+  m_Name: AR07
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,21 +101,19 @@ MonoBehaviour:
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
-  SPEED: 2
+  SPEED: 6
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 80
+  COST: 50
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: Streamline TurboJet
-  part_description: Superheated thermal exhaust boosts your bot to unprecedented
-    speeds. High speed, low drag - feel the Streamline.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: Streamline TurboJet
+  partDescription: Superheated thermal exhaust boosts your bot to unprecedented speeds.
+    High speed, low drag - feel the Streamline.
 --- !u!61 &5853591630400189471
 BoxCollider2D:
   m_ObjectHideFlags: 0

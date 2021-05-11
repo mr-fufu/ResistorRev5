@@ -99,7 +99,7 @@ MonoBehaviour:
   PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -109,9 +109,9 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: HobbyBot Blockhead
+  partDescription: This head is better than no head. Just barely
 --- !u!114 &8895832341889604583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +132,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 20
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

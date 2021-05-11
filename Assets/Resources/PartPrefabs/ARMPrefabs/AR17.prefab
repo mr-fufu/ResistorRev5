@@ -138,22 +138,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 10
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 5
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 135
   ENEMY: 0
-  meleeComponent: 0
+  meleeComponent: 1
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: ZenTech Arm of The Western Plains
+  partDescription: Ceaseless, Undending
 --- !u!114 &8650362783883595973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   - {fileID: 3235503703000709973}
-  viewIdField: 9
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &3235503703000709973

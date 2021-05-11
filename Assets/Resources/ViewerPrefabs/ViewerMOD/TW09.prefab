@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1295635025786472302}
   - component: {fileID: 8754380608450175521}
   m_Layer: 15
-  m_Name: TW9
+  m_Name: TW09
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,25 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 15
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 8
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 1
   FRAME: 0
-  COST: 35
+  COST: 45
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Crusader Reliquary
-  part_description: 'Wear the symbol of your devotion and let it strike fear into
-    the hearts of the unworthy. '
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: Crusader Reliquary
+  partDescription: Wear the Symbol of your Devotion! Let it strike Fear into the
+    Hearts of the Unworthy!
 --- !u!61 &8754380608450175521
 BoxCollider2D:
   m_ObjectHideFlags: 0

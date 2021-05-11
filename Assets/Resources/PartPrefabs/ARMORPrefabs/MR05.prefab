@@ -97,22 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
-  LOGIC: 4
+  PLATE: 20
+  LOGIC: 2
   RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 10
+  COST: 20
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARMOR
+  partName: HobbyBot External Circuitry
+  partDescription: Why hide underneath all that armor? Show everybody your hard work
+    and hand-soldered circuits
 --- !u!114 &1517142895207269709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +134,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 35
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

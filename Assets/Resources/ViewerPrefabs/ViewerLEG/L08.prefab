@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2038617052543341652}
   - component: {fileID: 2038617052543341659}
   m_Layer: 15
-  m_Name: L8
+  m_Name: L08
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 80
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -148,17 +148,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 60
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: Streamline Racer
-  part_description: Lightweight, and balanced, the Streamline Racer provides your
+  partType: LEG
+  partName: Streamline Racer
+  partDescription: Lightweight, and balanced, the Streamline Racer provides your
     bot with both speed and grace. High speed, low drag - feel the Streamline.
-  list_index: 0
 --- !u!1 &2038617052917814043
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,11 +289,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

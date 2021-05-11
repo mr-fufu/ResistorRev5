@@ -101,17 +101,19 @@ MonoBehaviour:
   RANGE: 0
   ARMOR: 0
   SPEED: 0
-  FUEL: 2
-  POWER: 2
+  FUEL: 4
+  POWER: 0
   FRAME: 0
-  COST: 70
+  COST: 50
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: MOD
+  partName: "IndustrialGrade\uFFFD Thermal Generator"
+  partDescription: "IndustrialGrade\uFFFD heats vaporized petroleum to over 2000K
+    to directly heat battery elements. WARNING: Escaping petroleum vapors may temporarily
+    melt flesh."
 --- !u!114 &-1682762417508971505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +134,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 40
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

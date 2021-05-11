@@ -98,23 +98,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PLATE: 30
-  LOGIC: 4
+  LOGIC: 8
   RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 45
+  COST: 55
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: InvaderWare Cranium
-  part_description: Think like a butterfly, sting like a bee
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: InvaderWare Cerebellum
+  partDescription: Be one with Invader
 --- !u!61 &8126935952782965730
 BoxCollider2D:
   m_ObjectHideFlags: 0

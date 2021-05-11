@@ -100,22 +100,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 25
+  PLATE: 20
   LOGIC: 0
-  RANGE: 8
-  ARMOR: 0
+  RANGE: 0
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 45
+  COST: 140
   ENEMY: 0
-  meleeComponent: 0
+  meleeComponent: 1
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARMOR
+  partName: Compact Chest Drill
+  partDescription: Unleash the fighting spirit.
 --- !u!114 &5010993308976241096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 95
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3000333036830194433

@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2812665776802586139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,7 +151,7 @@ GameObject:
   - component: {fileID: 1070465434626834359}
   - component: {fileID: 4417242558500133208}
   m_Layer: 15
-  m_Name: TOPLARGE_AttachmentSlot
+  m_Name: MOD_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,14 +244,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slotType: TOPLARGE
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 1
+  slotType: MOD
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &4417242558500133208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -293,7 +289,7 @@ GameObject:
   - component: {fileID: 4927633825947105301}
   - component: {fileID: 2648526673976477703}
   m_Layer: 15
-  m_Name: ARMOR_AttachmentSlot (1)
+  m_Name: ARMOR_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,14 +382,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2648526673976477703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -544,17 +538,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 4
   FRAME: 0
-  COST: 80
+  COST: 100
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: Crusader Covenant
-  part_description: Divine is the oath, sacred is the vow. Let nothing shake your
-    resolve.
-  list_index: 0
+  partType: TORSO
+  partName: Crusader Covenant
+  partDescription: Divine is the Oath, Sacred is the Vow! Let Nothing shake your
+    Resolve!
 --- !u!61 &3328673752409488284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -568,7 +560,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -579,5 +571,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0

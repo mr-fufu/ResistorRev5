@@ -104,14 +104,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 2
   FRAME: 0
-  COST: 35
+  COST: 40
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: Crusader Power Tripper
+  partDescription: Eviscerate those who do not Heed the Wise! Let True Power com
+    forth and Smite the Heretics!
 --- !u!114 &5806627378647601600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 61
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

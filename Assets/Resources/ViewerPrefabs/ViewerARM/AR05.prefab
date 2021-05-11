@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5498421723673826494}
   - component: {fileID: 4766424650611786653}
   m_Layer: 15
-  m_Name: AR5
+  m_Name: AR05
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -105,16 +105,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 100
+  COST: 150
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: M.I.C. UNIT-09 CHAINGUN
-  part_description: 'MANDATE: Eliminate the resistance. RESULT: More Bullets.'
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: M.I.C. UNIT-09 CHAINGUN
+  partDescription: 'MANDATE: Not enough Bullets. RESULT: More Bullets.'
 --- !u!61 &4766424650611786653
 BoxCollider2D:
   m_ObjectHideFlags: 0

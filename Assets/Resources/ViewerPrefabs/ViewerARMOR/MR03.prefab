@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1014249889976747725}
   - component: {fileID: 8488798439975965802}
   m_Layer: 15
-  m_Name: MR3
+  m_Name: MR03
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,17 +122,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 20
+  COST: 10
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Hydra Head Slot
-  part_description: Two heads are better than one! The Hydra Head Attachment will
+  partType: ARMOR
+  partName: Hydra Head Slot
+  partDescription: Two heads are better than one! The Hydra Head Attachment will
     allow you to add a second head so you can outthink your opponents.
-  list_index: 0
 --- !u!61 &8488798439975965802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -291,11 +289,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

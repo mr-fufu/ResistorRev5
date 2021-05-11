@@ -96,22 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 8
+  ARMOR: 20
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 50
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: "IndustrialGrade\uFFFD Welding Mask"
+  partDescription: "At IndustrialGrade\uFFFD, safety is our number four concern.
+    WARNING: In case of malfunction, avert gaze to avoid permanent blindness."
 --- !u!114 &1887916136309516103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 21
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

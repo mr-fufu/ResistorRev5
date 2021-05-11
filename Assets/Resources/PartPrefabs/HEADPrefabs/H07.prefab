@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
+  PLATE: 20
   LOGIC: 2
   RANGE: 4
   ARMOR: 0
@@ -104,14 +104,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 30
+  COST: 40
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: Cyclops Long Range Scanner
+  partDescription: A high range digital radar sensor that improves robot aiming ability
+    and increases weapon range by mapping target location for increased accuracy.
 --- !u!114 &5020089520615339228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 25
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

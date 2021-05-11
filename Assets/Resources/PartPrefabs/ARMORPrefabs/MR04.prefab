@@ -97,22 +97,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
   SPEED: 0
-  FUEL: 1
-  POWER: 1
+  FUEL: 2
+  POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 30
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARMOR
+  partName: "IndustrialGrade\uFFFD Heat Transfer Vent"
+  partDescription: "The high grade IndustrialGrade\uFFFD paladium provides efficient
+    insulation against high temperatures. WARNING : Inhaling hot paladium fumes may
+    cause blindness."
 --- !u!114 &496930663104286214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +135,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 93
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

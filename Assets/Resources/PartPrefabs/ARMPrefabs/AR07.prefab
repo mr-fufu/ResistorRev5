@@ -102,18 +102,19 @@ MonoBehaviour:
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
-  SPEED: 2
+  SPEED: 6
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 80
+  COST: 50
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: Streamline TurboJet
+  partDescription: Superheated thermal exhaust boosts your bot to unprecedented speeds.
+    High speed, low drag - feel the Streamline.
 --- !u!114 &3106771132552030032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 59
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &455389098596852732

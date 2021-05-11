@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &7180983731853918957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246,14 +244,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &7714724119215496283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -293,7 +289,7 @@ GameObject:
   - component: {fileID: 4070045898737153730}
   - component: {fileID: 1799356328085128604}
   m_Layer: 15
-  m_Name: ARMOR_AttachmentSlot (1)
+  m_Name: ARMOR_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,14 +382,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARMOR
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &1799356328085128604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -526,14 +520,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &4275875040099404104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -677,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 250
+  PLATE: 240
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -687,14 +679,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 140
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: M.I.C. UNIT-04 DOMINION
-  part_description: 'MANDATE : Tower above all else. RESULT : More Tower.'
-  list_index: 0
+  partType: TORSO
+  partName: M.I.C. UNIT-04 DOMINION
+  partDescription: 'MANDATE : Not enough Tower. RESULT : More Tower.'
 --- !u!61 &6735413513603430456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -708,7 +698,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -719,5 +709,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0

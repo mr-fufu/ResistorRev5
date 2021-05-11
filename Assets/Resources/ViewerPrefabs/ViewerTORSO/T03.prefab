@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1710107410744319108}
   - component: {fileID: 8815457468206970173}
   m_Layer: 15
-  m_Name: T3
+  m_Name: T03
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,22 +118,20 @@ MonoBehaviour:
   PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 5
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 70
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: "ThinkSmart\xAE Lightweight Core"
-  part_description: "Reduce overhead while getting results.ThinkSmart\xAE Lightweight:
+  partType: TORSO
+  partName: "ThinkSmart\uFFFD Lightweight Core"
+  partDescription: "Reduce overhead while getting results.ThinkSmart\uFFFD Lightweight:
     Think Light"
-  list_index: 0
 --- !u!61 &8815457468206970173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +145,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -158,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0
 --- !u!1 &6741289304663229758
 GameObject:
@@ -266,14 +264,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &6741289304663229696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -406,14 +402,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: HEAD
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &6741289305251598896
 BoxCollider2D:
   m_ObjectHideFlags: 0

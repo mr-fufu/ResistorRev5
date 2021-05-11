@@ -100,19 +100,19 @@ MonoBehaviour:
   PLATE: 120
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 100
+  COST: 80
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARMOR
+  partName: Compact Plasteel Armor
+  partDescription: Armor made of Plasteel.
 --- !u!114 &1205236447780178628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 8
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

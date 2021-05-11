@@ -99,22 +99,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 90
   LOGIC: 0
   RANGE: 0
-  ARMOR: 24
+  ARMOR: 50
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 100
+  COST: 150
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: ZenTech Enlightenment
+  partDescription: To strike out in anger is to strike oneself.
 --- !u!114 &8739836105263319164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents: []
-  viewIdField: 96
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &6391375847342103997

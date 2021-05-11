@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3654474091846902448}
   - component: {fileID: 3123921004872084728}
   m_Layer: 15
-  m_Name: MR4
+  m_Name: MR04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,26 +97,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
   SPEED: 0
-  FUEL: 1
-  POWER: 1
+  FUEL: 2
+  POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 30
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: "IndustrialGrade\u2122 Heat Transfer Vent"
-  part_description: 'The high grade paladium used in our components raises the efficiency
-    of your bot while generating power. WARNING : Inhaling hot paladium fumes may
-    cause blindness'
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARMOR
+  partName: "IndustrialGrade\uFFFD Heat Transfer Vent"
+  partDescription: "The high grade IndustrialGrade\uFFFD paladium provides efficient
+    insulation against high temperatures. WARNING : Inhaling hot paladium fumes may
+    cause blindness."
 --- !u!61 &3123921004872084728
 BoxCollider2D:
   m_ObjectHideFlags: 0

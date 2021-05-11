@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7378312484353958326}
   - component: {fileID: 3764106743758268507}
   m_Layer: 15
-  m_Name: H3
+  m_Name: H03
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3764106743758268506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10, y: -10, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,26 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 60
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 15
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 50
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: HEAD
-  attached: 0
-  part_name: Crusader Cross Guard
-  part_description: "Raise your weapon and Strike Down your enemies! Your narrow
-    point of view will make it so you\u2019ll be prepared for your enemies, even
-    if you won\u2019t see them coming!"
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: HEAD
+  partName: Crusader Cross Guard
+  partDescription: Brace hardened Steel against the Devious Enemy! Be Blind to their
+    Foul Tricks!
 --- !u!61 &3764106743758268507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4, y: 8}
+  m_Offset: {x: 7, y: 6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -140,5 +137,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 54, y: 30}
+  m_Size: {x: 50, y: 31}
   m_EdgeRadius: 0

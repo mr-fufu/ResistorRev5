@@ -96,22 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
-  LOGIC: 2
+  PLATE: 20
+  LOGIC: 0
   RANGE: 0
   ARMOR: 0
   SPEED: 0
-  FUEL: 1
-  POWER: 1
+  FUEL: 2
+  POWER: 2
   FRAME: 0
-  COST: 80
+  COST: 100
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: "ThinkSmart\uFFFD Solarium"
+  partDescription: "Adapting to a changing environment and embracing the future.
+    ThinkSmart\uFFFD Solarium: Think Sun"
 --- !u!114 &8983002161526060211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 84
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

@@ -107,8 +107,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: HEAD
   partType: 
   partName: 
   partDescription: 
@@ -245,8 +245,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -394,19 +394,21 @@ MonoBehaviour:
   PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 10
   SPEED: 0
-  FUEL: 5
+  FUEL: 4
   POWER: 0
   FRAME: 0
-  COST: 65
+  COST: 80
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: "IndustrialGrade\uFFFD PureO2"
+  partDescription: "At IndustrialGrade\uFFFD, our passion for quality fuel is reflected
+    by our unadulterated abundance. WARNING: Increasing oxygen supply during combustion
+    may result in minor catastrophic failure."
 --- !u!114 &6594076012936017807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +429,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 67
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

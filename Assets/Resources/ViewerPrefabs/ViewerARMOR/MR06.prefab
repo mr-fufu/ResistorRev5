@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3148718615734421892}
   - component: {fileID: 1063459842945482233}
   m_Layer: 15
-  m_Name: MR6
+  m_Name: MR06
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,16 +105,14 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 80
+  COST: 70
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: M.I.C. UNIT-02 CORE
-  part_description: 'MANDATE : Not enough guns. RESULT : Chest gun.'
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARMOR
+  partName: M.I.C. UNIT-02 CORE
+  partDescription: 'MANDATE : Not enough Barrels. RESULT : MoreBarrels.'
 --- !u!61 &1063459842945482233
 BoxCollider2D:
   m_ObjectHideFlags: 0

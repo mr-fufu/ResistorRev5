@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2143790280719025099}
   - component: {fileID: 3710863971442428409}
   m_Layer: 15
-  m_Name: MR2
+  m_Name: MR02
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,25 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
-  ARMOR: 8
+  ARMOR: 15
   SPEED: 0
   FUEL: 0
   POWER: 2
   FRAME: 0
-  COST: 60
+  COST: 70
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: Crusader Aegis
-  part_description: Iron is the fortitude of your will! Let the heathen arrows shatter
-    like waves against the shore!
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARMOR
+  partName: Crusader Aegis
+  partDescription: Iron is but the Manifest of your Will! Let the Heathens shatter
+    like waves against the Unyielding light!
 --- !u!61 &3710863971442428409
 BoxCollider2D:
   m_ObjectHideFlags: 0

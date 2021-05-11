@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 25
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -208,14 +208,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 1
   FRAME: 0
-  COST: 90
+  COST: 60
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: MOD
+  partName: Crusader Lance
+  partDescription: Pierce your Opponents and Absolve them! Repent, those who Oppose
+    the Truth!
 --- !u!114 &7829280419009058808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +260,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 57
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

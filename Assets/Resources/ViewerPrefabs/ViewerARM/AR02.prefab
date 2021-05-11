@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3145341485242521911}
   - component: {fileID: 7137325921825964534}
   m_Layer: 15
-  m_Name: AR2
+  m_Name: AR02
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,17 +105,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 140
+  COST: 150
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: "ThinkSmart\xAE Blizzard"
-  part_description: "Net positive in function and purpose. ThinkSmart\xAE Blizzard:
-    Think Cold"
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: "ThinkSmart\uFFFD Blizzard"
+  partDescription: "Net positive in function and purpose. TSmart\uFFFD Blizzard:
+    Think Positive"
 --- !u!61 &7137325921825964534
 BoxCollider2D:
   m_ObjectHideFlags: 0

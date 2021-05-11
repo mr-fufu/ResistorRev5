@@ -104,14 +104,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 10
+  COST: 30
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: HEAD
+  partName: HobbyBot Scanner
+  partDescription: Be careful not to use this component in an area with a lot of
+    signal traffic as it may short circuit. Also may catch fire
 --- !u!114 &6584662941575706506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 56
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

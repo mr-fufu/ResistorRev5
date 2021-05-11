@@ -132,14 +132,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &4010301589790672402
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 20
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -290,12 +288,10 @@ MonoBehaviour:
   FRAME: 0
   COST: 20
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: HobbyBot Mower Engine
-  part_description: "Strapped for cash but need that bot to move? This baby may sacrifice,
-    power, stability and durability but it\u2019ll definitely move. I mean probably."
-  list_index: 0
+  partType: LEG
+  partName: HobbyBot Mower Engine
+  partDescription: "Strapped for cash but need that bot to move? This baby may sacrifice,
+    power, stability and durability but it\uFFFDll definitely move. Kinda"

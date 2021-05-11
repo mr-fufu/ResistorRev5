@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6413366678298453723}
   - component: {fileID: 55137346828643828}
   m_Layer: 15
-  m_Name: H4
+  m_Name: H04
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 55137346828643827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10, y: -10, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,25 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 25
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
-  SPEED: 1
+  SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 30
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: HEAD
-  attached: 0
-  part_name: Streamline Glide Fin
-  part_description: Once you attach the Glide Fin, your bot will cut through the
-    air like water. High speed, low drag - Feel the Streamline.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: HEAD
+  partName: Streamline Glide Fin
+  partDescription: Once you attach the Glide Fin, your bot will cut through the air
+    like a shark through the water. High speed, low drag - Feel the Streamline.
 --- !u!61 &55137346828643828
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -128,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4, y: 8}
+  m_Offset: {x: 7, y: 6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -139,5 +137,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 54, y: 30}
+  m_Size: {x: 50, y: 31}
   m_EdgeRadius: 0

@@ -177,14 +177,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 75
+  COST: 40
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: LEG
+  partName: Streamline Glider
+  partDescription: Combining propulsion engines with a low-friction ultrasmooth bearing,
+    nothing is faster than a Streamline Glider. High speed, low drag - feel the Streamline.
 --- !u!114 &5180112251785882520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +281,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 37
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &1630520260825798148
@@ -416,8 +417,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TORSO
   partType: 
   partName: 
   partDescription: 
@@ -554,8 +555,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -625,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 8850747076596874358, guid: 46bf4c64c06fd1b4d94319c90af50b77,
         type: 3}
       propertyPath: viewIdField
-      value: 36
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf4c64c06fd1b4d94319c90af50b77, type: 3}

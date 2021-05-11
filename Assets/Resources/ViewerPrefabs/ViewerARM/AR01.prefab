@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5196112620588827379}
   - component: {fileID: 3846346722899743964}
   m_Layer: 15
-  m_Name: AR1
+  m_Name: AR01
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,24 +97,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
+  ARMOR: 10
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 150
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARM
-  attached: 0
-  part_name: Mastodon Missile Launcher
-  part_description: SHAKE THE EARTH! No machine of metal could ever stop you!
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARM
+  partName: Mastodon Missile Launcher
+  partDescription: SHAKE THE EARTH! No machine of metal could ever stop you!
 --- !u!61 &3846346722899743964
 BoxCollider2D:
   m_ObjectHideFlags: 0

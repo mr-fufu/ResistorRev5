@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 849767286707668783}
   - component: {fileID: 8083404770767985888}
   m_Layer: 0
-  m_Name: LegSlot
+  m_Name: LEG_AttachmentSlot
   m_TagString: slot component
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -69,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1012360337
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 50
   m_Sprite: {fileID: 21300080, guid: 75644deddcd195544957be812691a3f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
@@ -147,8 +149,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3659067311616785097}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 0.3160377, g: 1, b: 0.6892104, a: 1}
   m_Intensity: 10
   m_Range: 40

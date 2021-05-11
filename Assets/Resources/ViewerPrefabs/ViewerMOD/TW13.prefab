@@ -96,25 +96,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 10
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
-  SPEED: 1
+  ARMOR: 0
+  SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 15
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Streamline Intake
-  part_description: Increased intake cross sectional area to increase the efficiency
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: Streamline Intake
+  partDescription: Increased intake cross sectional area to increase the efficiency
     of your engines. High speed, low drag - feel the Streamline.
-  list_index: 0
 --- !u!61 &7588179163211202492
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -107,8 +107,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -245,8 +245,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TOPLARGE
   partType: 
   partName: 
   partDescription: 
@@ -383,8 +383,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: ARMOR (1)
   partType: 
   partName: 
   partDescription: 
@@ -538,14 +538,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 4
   FRAME: 0
-  COST: 80
+  COST: 100
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: TORSO
+  partName: Crusader Covenant
+  partDescription: Divine is the Oath, Sacred is the Vow! Let Nothing shake your
+    Resolve!
 --- !u!114 &4254952916036373716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +567,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 41
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

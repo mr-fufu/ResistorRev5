@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1969439554282086184}
   - component: {fileID: 4652067116184200976}
   m_Layer: 15
-  m_Name: TOPLARGE_AttachmentSlot
+  m_Name: MOD_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
-  slotType: TOPLARGE
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 1
+  slotType: MOD
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &4652067116184200976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246,14 +244,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!61 &2215998400790141904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -395,25 +391,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 200
+  PLATE: 160
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
-  POWER: 2
+  POWER: 4
   FRAME: 0
-  COST: 140
+  COST: 150
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: TORSO
-  attached: 0
-  part_name: Crusader Templar
-  part_description: The heart of the faithful is mightier than the sharpest arrow!
-    The Templar is covered in thick sheets of wrought iron just in case.
-  list_index: 0
+  partType: TORSO
+  partName: Crusader Templar
+  partDescription: The  Faithful Heart stands mightier than the Sharpest Arrow! Sheets
+    of Wrought Iron join in Harmonious DefianceQ
 --- !u!61 &2438230745199192577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -427,7 +421,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8, y: 20}
+  m_Offset: {x: 8, y: 15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -438,5 +432,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 90}
+  m_Size: {x: 100, y: 62}
   m_EdgeRadius: 0

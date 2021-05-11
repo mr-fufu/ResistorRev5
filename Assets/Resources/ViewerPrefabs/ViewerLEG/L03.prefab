@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7405706620957617435}
   - component: {fileID: 7405706620957617839}
   m_Layer: 15
-  m_Name: L3
+  m_Name: L03
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,17 +148,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 90
+  COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: "ThinkSmart\xAE Uni Wheel"
-  part_description: "Challenge the Status Quo. Challenge the number of wheels you
-    really even need.ThinkSmart\xAE Uni Wheel : Think Wheel"
-  list_index: 0
+  partType: LEG
+  partName: "ThinkSmart\uFFFD Uni Wheel"
+  partDescription: "Challenge the Status Quo. Challenge how we move in the new age.TSmart\uFFFD
+    Uni Wheel : Think Cyclical"
 --- !u!1 &7405706620957617591
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,11 +289,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

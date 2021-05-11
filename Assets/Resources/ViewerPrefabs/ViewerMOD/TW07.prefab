@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5523644706376301553}
   - component: {fileID: 4666344385276171359}
   m_Layer: 15
-  m_Name: TW7
+  m_Name: TW07
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,26 +96,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 10
-  LOGIC: 0
+  PLATE: 20
+  LOGIC: 4
   RANGE: 0
   ARMOR: 0
   SPEED: 0
-  FUEL: 2
+  FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 30
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: "IndustrialGrade\u2122 HazTank"
-  part_description: "IndustrialGrade\u2122 makes some of the most flammable fuels
-    in the world and you can be sure we know how to store it. NOTE : Evacuate immediately
-    if HazTank leaks"
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: InvaderWare ThinkTank
+  partDescription: Enter the think tank
 --- !u!61 &4666344385276171359
 BoxCollider2D:
   m_ObjectHideFlags: 0

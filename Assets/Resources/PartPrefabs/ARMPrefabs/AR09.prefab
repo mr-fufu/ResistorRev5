@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 40
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -213,14 +213,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 120
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARM
+  partName: "ThinkSmart\uFFFD Ambidex"
+  partDescription: "For when the future is the past. Our hands hold the key, and
+    the key is a gun.TSmart\uFFFD Ambidex: Think Unlocked"
 --- !u!114 &1273757198561464441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +276,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 13
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

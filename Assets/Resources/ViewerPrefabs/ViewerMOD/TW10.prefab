@@ -99,21 +99,19 @@ MonoBehaviour:
   PLATE: 80
   LOGIC: 0
   RANGE: 0
-  ARMOR: 12
+  ARMOR: 15
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 60
+  COST: 70
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Tortuga Composite Shielding
-  part_description: Protect yourself.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: Tortuga Composite Shielding
+  partDescription: Hunker down. Protect yourself.
 --- !u!61 &895262927019622938
 BoxCollider2D:
   m_ObjectHideFlags: 0

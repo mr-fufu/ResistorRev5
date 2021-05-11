@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 10
   LOGIC: 0
   RANGE: 0
-  ARMOR: 4
+  ARMOR: 5
   SPEED: 0
   FUEL: 0
   POWER: 0
@@ -110,9 +110,10 @@ MonoBehaviour:
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: ARMOR
+  partName: HobbyBot High Grade Armor
+  partDescription: Digitally laser printed with custom, precision machining and nope
+    that's just a trash can lid
 --- !u!114 &8173803630285160711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +134,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 64
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

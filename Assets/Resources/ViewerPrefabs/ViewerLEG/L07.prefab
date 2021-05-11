@@ -132,14 +132,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: NOT A PART
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 
 --- !u!1 &2956667271917155018
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +152,7 @@ GameObject:
   - component: {fileID: 2956667271917155023}
   - component: {fileID: 2956667271917155020}
   m_Layer: 15
-  m_Name: L7
+  m_Name: L07
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,25 +279,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 80
-  LOGIC: 0
+  PLATE: 90
+  LOGIC: 2
   RANGE: 0
   ARMOR: 0
   SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 140
+  COST: 110
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: "ThinkSmart\xAE Stratosphere"
-  part_description: "Keep up with the transformation of mobility. Synergy between
-    you and your destination. ThinkSmart\xAE Stratosphere: Think Stratos"
-  list_index: 0
+  partType: LEG
+  partName: "ThinkSmart\uFFFD Stratosphere"
+  partDescription: "Keep up with the transformation of mobility. Synergy between
+    you and your destination. TSmart\uFFFD Stratosphere: Think Upwards"
 --- !u!1 &7704712943650886610
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,11 +428,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: ARM
-  part_type: NOT A PART
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

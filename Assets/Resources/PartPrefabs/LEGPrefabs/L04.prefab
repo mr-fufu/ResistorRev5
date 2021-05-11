@@ -209,19 +209,20 @@ MonoBehaviour:
   PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 20
+  ARMOR: 15
   SPEED: 1
   FUEL: 0
-  POWER: 0
+  POWER: 3
   FRAME: 0
-  COST: 80
+  COST: 110
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 0
   slotType: 
-  partType: 
-  partName: 
-  partDescription: 
+  partType: LEG
+  partName: 'Crusader Iron Steed '
+  partDescription: Push through Doubt as you would an Enemy! Yield not to the Sword
+    nor Blasphemy!
 --- !u!114 &30591334854643344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +243,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 42
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1524459275392897168
@@ -394,8 +395,8 @@ MonoBehaviour:
   COST: 0
   ENEMY: 0
   meleeComponent: 0
-  slotComponent: 0
-  slotType: 
+  slotComponent: 1
+  slotType: TORSO
   partType: 
   partName: 
   partDescription: 

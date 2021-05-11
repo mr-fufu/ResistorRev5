@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7138765966157554235}
   - component: {fileID: 8347985020007387461}
   m_Layer: 15
-  m_Name: TW1
+  m_Name: TW01
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 30
+  PLATE: 10
   LOGIC: 0
   RANGE: 0
   ARMOR: 0
@@ -104,17 +104,15 @@ MonoBehaviour:
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 40
+  COST: 90
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: TOPLARGE
-  attached: 0
-  part_name: Cobra Missile Launcher
-  part_description: The cobra missile bobs and weaves, fickle in its movement. Be
-    wary or suffer its deadly bite.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: MOD
+  partName: Cobra Missile Launcher
+  partDescription: The cobra missile strikes faster than the eye can see. Be wary
+    or suffer its deadly bite.
 --- !u!61 &8347985020007387461
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -140,24 +140,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 40
+  PLATE: 50
   LOGIC: 0
   RANGE: 0
-  ARMOR: 16
+  ARMOR: 20
   SPEED: 2
   FUEL: 0
   POWER: 0
   FRAME: 0
   COST: 80
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
+  meleeComponent: 0
+  slotComponent: 0
   slotType: 
-  part_type: LEG
-  attached: 0
-  part_name: ZenTech Meditator
-  part_description: May peace find you as it does those who would wish you harm
-  list_index: 0
+  partType: LEG
+  partName: ZenTech Meditator
+  partDescription: May peace find you as it does those who would wish you harm
 --- !u!1 &2370684799844040469
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,11 +288,9 @@ MonoBehaviour:
   FRAME: 0
   COST: 0
   ENEMY: 0
-  melee_component: 0
-  slot_component: 1
+  meleeComponent: 0
+  slotComponent: 1
   slotType: TORSO
-  part_type: 
-  attached: 0
-  part_name: 
-  part_description: 
-  list_index: 0
+  partType: 
+  partName: 
+  partDescription: 

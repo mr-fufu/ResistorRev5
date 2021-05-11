@@ -97,25 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 20
+  PLATE: 0
   LOGIC: 0
   RANGE: 0
-  ARMOR: 0
-  SPEED: 0
-  FUEL: 1
+  ARMOR: 5
+  SPEED: 1
+  FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 50
+  COST: 15
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: HobbyBot Volatile Ignition
-  part_description: Is it just a barely regulated gas flow ignited by a cheap lighter?
-    Sure. But now it's your barely regulated gas flow ignited by a cheap lighter.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARMOR
+  partName: HobbyBot Vent Cover
+  partDescription: It may not stop bullets all that well but it should stop dust
+    from getting into the fans
 --- !u!61 &2875588954261819265
 BoxCollider2D:
   m_ObjectHideFlags: 0

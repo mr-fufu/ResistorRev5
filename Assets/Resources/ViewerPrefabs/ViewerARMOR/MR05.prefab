@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 482267611331644351}
   - component: {fileID: 4929448625931643271}
   m_Layer: 15
-  m_Name: MR5
+  m_Name: MR05
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,24 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c2393b6d8ed0942ae63e05c986b007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLATE: 5
-  LOGIC: 4
+  PLATE: 20
+  LOGIC: 2
   RANGE: 0
   ARMOR: 0
   SPEED: 0
   FUEL: 0
   POWER: 0
   FRAME: 0
-  COST: 10
+  COST: 20
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: ARMOR
-  attached: 0
-  part_name: HobbyBot External Circuitry
-  part_description: Show everybody your hard work and hand-soldered circuitry.
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: ARMOR
+  partName: HobbyBot External Circuitry
+  partDescription: Why hide underneath all that armor? Show everybody your hard work
+    and hand-soldered circuits
 --- !u!61 &4929448625931643271
 BoxCollider2D:
   m_ObjectHideFlags: 0

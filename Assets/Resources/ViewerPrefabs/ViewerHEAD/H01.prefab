@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 890890078089634345}
   - component: {fileID: 6169416720750061824}
   m_Layer: 15
-  m_Name: H1
+  m_Name: H01
   m_TagString: DraggableUIPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6169416720750061825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10, y: -10, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,14 +106,12 @@ MonoBehaviour:
   FRAME: 0
   COST: 40
   ENEMY: 0
-  melee_component: 0
-  slot_component: 0
-  slot_type: 
-  part_type: HEAD
-  attached: 0
-  part_name: M.I.C. UNIT-07 BUNKER
-  part_description: 'MANDATE : Survive attacks to the head. RESULT : Less Head.'
-  list_index: 0
+  meleeComponent: 0
+  slotComponent: 0
+  slotType: 
+  partType: HEAD
+  partName: M.I.C. UNIT-07 BUNKER
+  partDescription: 'MANDATE : Not enough Bunker. RESULT : More Bunker.'
 --- !u!61 &6169416720750061824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4, y: 8}
+  m_Offset: {x: 7, y: 6}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -138,5 +136,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 54, y: 30}
+  m_Size: {x: 50, y: 31}
   m_EdgeRadius: 0
