@@ -98,7 +98,7 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks, IPunObservable
 
         // instantiate leg part (0th element in all spawn list arrays)
 
-        GameObject bot_clone = (GameObject) PhotonNetwork.Instantiate("PartPrefabs/LEGprefabs/" + part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
+        GameObject bot_clone = (GameObject) PhotonNetwork.Instantiate("PartPrefabs/LEGPrefabs/" + part_library[part_type_index].part_library[search_library(name_list[0], part_type_index)].name, spawn_location.transform.position, spawn_location.transform.rotation);
         
         // deduct credits for spawning bot
         credit_object.GetComponent<CreditCounter>().credit_value -= credit_cost;

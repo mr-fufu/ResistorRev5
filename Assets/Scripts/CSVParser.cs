@@ -1,32 +1,28 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [ExecuteInEditMode]
 public class CSVParser : MonoBehaviour
 {
-    public List<Part> parts = new List<Part>();
-    
     private static string SPLIT_RE = @",(?=(?:[^""]*""[^""]*"")*(?![^""]*""))";
     private static string LINE_SPLIT_RE = @"\r\n|\n\r|\n|\r";
     private static char[] TRIM_CHARS = { '\"' };
 
-    // Do to "ExecuteInEditMode" above, this is called by the Editor, not on start
+    // Due to "ExecuteInEditMode" above, this is called by the Editor, not on start
 #if UNITY_EDITOR
     
     [ContextMenu("UPDATE PREFABS FROM CSV")]
     private void Start()
     {
         LoadStatData();
-        //WARNING: this updates the prefabs
-        foreach(var part in parts)
-        {
-            part.UpdatePrefab();
-        }
+        UpdatePartsInScene();
     }
+
 #endif
     
     public static List<Dictionary<string, object>> Read(string file)
@@ -70,18 +66,16 @@ public class CSVParser : MonoBehaviour
 
     public void LoadStatData()
     {
-        parts.Clear();
-
         List<Dictionary<string, object>> data = Read("Stats");
         for (int i = 0; i < data.Count; i++)
         {
-            string name = data[i]["PART NAME"].ToString();
+            string partName = data[i]["PART NAME"].ToString();
             string manu = data[i]["MANUFACTURER"].ToString();
             string desc = data[i]["DESC"].ToString();
             string type = data[i]["TYPE"].ToString();
             string id = data[i]["ID"].ToString();
 
-            if(name.Equals("PLACEHOLDER"))
+            if(partName.Equals("PLACEHOLDER"))
                 continue;
 
             try
@@ -96,8 +90,12 @@ public class CSVParser : MonoBehaviour
                 int slots = Convert.ToInt32(data[i]["SLOTS"]);
                 int cost = Convert.ToInt32(data[i]["COST"]);
                 
-                parts.Add(new Part(name, manu, desc, type, id,
-                    plate, logic, range, armor, speed, fuel, power, slots, cost));
+                GameObject prefab = GetAssociatedPrefab("PartPrefabs/" + type + "Prefabs/" + id + ".prefab");
+                GameObject viewerPrefab = GetAssociatedPrefab("ViewerPrefabs/Viewer" + type + "/" + id + ".prefab");
+                UpdatePartsObject(prefab, partName, manu, desc, type, id,
+                    plate, logic, range, armor, speed, fuel, power, slots, cost);
+                UpdatePartsObject(viewerPrefab, partName, manu, desc, type, id,
+                    plate, logic, range, armor, speed, fuel, power, slots, cost);
             }
             catch (Exception e)
             {
@@ -107,5 +105,58 @@ public class CSVParser : MonoBehaviour
             }
         }
     }
+    
+    private void UpdatePartsObject(GameObject gameobj, string partName, string manu, string desc, string type, string id,
+        int plate, int logic, int range,int armor, int speed, int fuel, int power, int slots, int cost)
+    {
+        PartStats stats = gameobj.GetComponent<PartStats>();
 
+        stats.partName = partName;
+        stats.partDescription = desc;
+        stats.partType = type;
+        
+        stats.PLATE = plate;
+        stats.LOGIC = logic;
+        stats.RANGE = range;
+        stats.ARMOR = armor;
+        stats.SPEED = speed;
+        stats.FUEL = fuel;
+        stats.POWER = power;
+        stats.COST = cost;
+        
+        //TODO: stats.slots, manufacturer
+    }
+    
+    //find prefab in editor (before runtime) please
+    private GameObject GetAssociatedPrefab(string fileName)
+    {
+        string prefabPath = "Assets/Resources/" + fileName;
+        GameObject prefab = AssetDatabase.LoadAssetAtPath(prefabPath, typeof(UnityEngine.Object)) as GameObject;
+
+        if (prefab == null)
+        {
+            Debug.LogError("Sam: Error finding prefab: " + name + ". Check csv file. Path: " + prefabPath);
+        }
+
+        return prefab;
+    }
+
+    private void UpdatePartsInScene()
+    {
+        Scene scene = EditorSceneManager.GetActiveScene();
+        var rootObjects = scene.GetRootGameObjects();
+        
+        foreach (var obj in rootObjects)
+        {
+            var partStatsList = obj.GetComponentsInChildren<PartStats>();
+            foreach (var partStats in partStatsList)
+            {
+                if (PrefabUtility.IsPartOfPrefabThatCanBeAppliedTo(partStats.gameObject))
+                {
+                    //automated action => cant undo & no confirmation pop ups
+                    PrefabUtility.ApplyPrefabInstance(partStats.gameObject, InteractionMode.AutomatedAction);
+                }
+            }
+        }
+    }
 }
