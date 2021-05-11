@@ -23950,7 +23950,8 @@ MonoBehaviour:
     type: 3}
   legSlotObject: {fileID: 849767286707668782, guid: 4dc87a5d940376d47a77c6ef34470169,
     type: 3}
-  modSlotObject: {fileID: 0}
+  modSlotObject: {fileID: 663579890788659688, guid: eef84d0770318fb429af29b227efb3a0,
+    type: 3}
   armorSlotObject: {fileID: 4875086885429186869, guid: 930ae97b5701b1a4f81f38d124509aa1,
     type: 3}
   scrollBar: {fileID: 682513971}
@@ -47236,16 +47237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174417695}
     m_Modifications:
-    - target: {fileID: 1661085978739915385, guid: 8f52c995f46cfb44bafebb2ef3596322,
-        type: 3}
-      propertyPath: m_Name
-      value: ARMOR_AttachmentSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1905449277371548957, guid: 8f52c995f46cfb44bafebb2ef3596322,
-        type: 3}
-      propertyPath: m_Name
-      value: ARMOR_AttachmentSlot
-      objectReference: {fileID: 0}
     - target: {fileID: 5593923040744146756, guid: 8f52c995f46cfb44bafebb2ef3596322,
         type: 3}
       propertyPath: m_Name
@@ -51297,11 +51288,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: L1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2152602465111594494, guid: 78a2b43d5e51d424ba8c0c5a297fd90c,
-        type: 3}
-      propertyPath: m_Name
-      value: ARMOR_AttachmentSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78a2b43d5e51d424ba8c0c5a297fd90c, type: 3}

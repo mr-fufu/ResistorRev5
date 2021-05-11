@@ -574,7 +574,7 @@ public class WorkshopDrag : MonoBehaviour {
 
                 returnIndex++;
             }
-            else
+            else if (search.Count == 1)
             {
                 returnTransform = search[0];
             }
