@@ -134,7 +134,7 @@ MonoBehaviour:
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 1
-  slotType: FRONT (1)
+  slotType: ARMOR
   partType: 
   partName: 
   partDescription: 
@@ -410,7 +410,7 @@ MonoBehaviour:
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 1
-  slotType: ARM (1)
+  slotType: ARM
   partType: 
   partName: 
   partDescription: 
@@ -548,7 +548,7 @@ MonoBehaviour:
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 1
-  slotType: FRONT
+  slotType: ARMOR
   partType: 
   partName: 
   partDescription: 

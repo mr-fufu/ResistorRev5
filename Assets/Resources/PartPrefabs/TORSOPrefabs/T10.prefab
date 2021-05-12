@@ -297,7 +297,7 @@ MonoBehaviour:
   ENEMY: 0
   meleeComponent: 0
   slotComponent: 1
-  slotType: TOPLARGE
+  slotType: MOD
   partType: 
   partName: 
   partDescription: 
