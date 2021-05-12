@@ -289,8 +289,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -445,7 +444,7 @@ GameObject:
   - component: {fileID: 1127818033783223810}
   - component: {fileID: 3397399279268218204}
   m_Layer: 15
-  m_Name: ARMOR_AttachmentSlot (1)
+  m_Name: ARMOR_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

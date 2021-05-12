@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9009123902912336239}
   - component: {fileID: 4708278677892846554}
   m_Layer: 15
-  m_Name: FRONT_AttachmentSlot (1)
+  m_Name: ARMOR_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 7577970446874880269}
   - component: {fileID: 7325232516924073781}
   m_Layer: 15
-  m_Name: ARM_AttachmentSlot (1)
+  m_Name: ARM_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 8367989541288631945}
   - component: {fileID: 2338360318747147048}
   m_Layer: 15
-  m_Name: FRONT_AttachmentSlot
+  m_Name: ARMOR_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,8 +812,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

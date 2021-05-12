@@ -173,8 +173,7 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -467,7 +466,7 @@ GameObject:
   - component: {fileID: 2662374228934974869}
   - component: {fileID: 6647769144218338644}
   m_Layer: 15
-  m_Name: TOPLARGE_AttachmentSlot
+  m_Name: MOD_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

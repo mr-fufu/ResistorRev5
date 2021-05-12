@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6794114465400833127}
   - component: {fileID: 8575162265848047701}
   m_Layer: 15
-  m_Name: FRONT_AttachmentSlot
+  m_Name: ARMOR_AttachmentSlot
   m_TagString: UIPartSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
